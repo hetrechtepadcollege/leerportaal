@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramadan Kennisquiz voor Kids!</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap&subset=latin-ext" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<script data-goatcounter="https://hetrechtepadcollege.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+</head>
+<body>
+
+<div class="logo-container">
+    <img src="images/HRPC-logo.png" alt="Logo Het Rechte Pad College">
+</div>
+
+<div class="quiz-container">
+  <div class="moon-box">🌙</div>
+  <h1>De Ramadan Kennisquiz voor Kids!</h1>
+    
+    <div class="character-container">
+        <img src="images/neutral.png" id="quiz-character" class="character" alt="Karakters">
+    </div>
+    
+    <h2 id="question-text">De vraag komt hier...</h2>
+    <div id="answer-buttons"></div>
+  <div id="score-display">Score: 0</div>
+
+  <div class="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+  <div id="result-container" class="hide">
+    <button id="whatsapp-share-btn" class="btn">
+        <i class="fab fa-whatsapp"></i> Deel deze quiz via WhatsApp
+    </button>
+    <button id="restart-btn" class="btn" style="background-color: #d4af37; margin-top: 10px;">Opnieuw spelen</button>
+</div>
+
+<audio id="correct-sound" src="sounds/correct.mp3" preload="auto"></audio>
+<audio id="wrong-sound" src="sounds/wrong.mp3" preload="auto"></audio>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

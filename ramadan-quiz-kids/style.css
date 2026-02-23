@@ -1,0 +1,306 @@
+body {
+    /* 1. De sterrenhemel: we combineren kleine witte stipjes met de diepblauwe gradient */
+    background: 
+        radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 100px 150px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 200px 80px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 300px 250px, #fff, rgba(0,0,0,0)),
+        linear-gradient(-45deg, #010b13, #001f3f, #1a0933, #001f3f);
+    
+    /* Zorgt dat de sterren zich herhalen over het hele scherm */
+    background-size: 350px 350px, 400px 400px, 250px 250px, 500px 500px, 400% 400%;
+    
+    /* De animatie blijft behouden voor de bewegende kleuren */
+    animation: gradient 60s linear infinite;
+
+    /* Layout instellingen (zoals je al had) */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 20px;
+    overflow-y: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* De animatie die de achtergrond langzaam laat 'ademen' */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.logo-container {
+    width: 90%;
+    max-width: 500px; /* Dit zorgt dat het logo niet breder wordt dan de quiz */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container img {
+    width: 100%;      /* Vult de breedte van de container (500px) */
+    max-height: 150px; /* BEPERKING: Dit voorkomt dat het logo te hoog wordt */
+    object-fit: contain; /* Zorgt dat het logo niet vervormt */
+    display: block;
+}
+
+.quiz-container {
+    /* Stel een vaste breedte in die goed werkt op desktop en mobiel */
+    width: 90%;
+    max-width: 600px; /* Dit zorgt ervoor dat het venster nooit breder wordt dan 600px */
+    
+    /* Zorg dat de container in het midden staat */
+    margin: 20px auto;
+    
+    /* Voorkom dat de hoogte ook verspringt door een minimale hoogte te geven */
+    min-height: 450px; 
+
+    /* Netjes afwerken */
+    background-color: #001f3f;
+    padding: 20px;
+    border: 3px solid #d4af37 !important;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); /* Subtiele gouden gloed */
+    border-radius: 15px !important;
+    color: white !important;
+    text-align: center !important;
+    
+    /* Zorg dat inhoud die eruit steekt niet de hele pagina breed maakt */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.moon-box {
+    display: block !important;
+    font-size: 60px !important; /* Iets groter */
+    margin: 10px 0 !important;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6)); /* Laat de maan stralen */
+    animation: floating 3s ease-in-out infinite; /* Laat de maan zachtjes zweven */
+}
+
+h1 {
+display: block !important;
+color: #ffffff !important;
+font-size: 24px !important;
+margin-top: 5px !important;
+}
+
+/* De grijze achtergrond van de balk */
+.progress-container {
+    width: 100%;
+    height: 12px;
+    background-color: #e0e0e0; /* Lichtgrijs */
+    border-radius: 10px;
+    margin-top: 20px;
+    overflow: hidden; /* Zorgt dat de bar binnen de rondingen blijft */
+}
+
+/* De gekleurde balk zelf */
+#progress-bar {
+    height: 100%;
+    width: 0%; 
+    /* Een gouden gradiënt voor een luxe uitstraling */
+    background: linear-gradient(90deg, #b8860b, #d4af37, #f1c40f);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    transition: width 0.4s ease-in-out; 
+}
+
+#question-text {
+    font-size: 26px;             /* Iets groter voor betere leesbaarheid */
+    font-weight: bold;
+    line-height: 1.4;
+    text-align: center;
+    
+    /* Goudkleur die matcht met je knoppen */
+    color: #ffffff;             
+    
+    /* Een subtiele gloed om de tekst van de achtergrond te tillen */
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.4), 1px 1px 2px #000;
+    
+    margin-bottom: 25px;
+    transition: all 0.3s ease;   /* Zorgt voor een zachte overgang bij nieuwe vragen */
+}
+
+.btn {
+    /* Gebruik !important om andere stijlen te overrulen */
+    background-color: #d4af37 !important; 
+    background-image: none !important; /* Verwijdert witte gradiënten */
+    color: #001f3f !important;
+    
+    /* Bestaande stijlen */
+    border: none;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    width: 100%;
+
+    user-select: none;
+    -webkit-user-select: none;
+
+    /* Mobiele resets */
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    -webkit-border-radius: 10px; /* Forceer ook hier de straal */
+}
+
+/* Zorg dat de knop ook op mobiel goud blijft als je hem aanraakt */
+.btn:active, .btn:focus {
+    background-color: #d4af37;
+    outline: none;
+}
+
+.btn:hover:not([disabled]) {
+    background: #ffffff;
+}
+
+.wrong { background-color: #e74c3c !important; color: white !important; animation: shake 0.4s; }
+.correct { background-color: #2ecc71 !important; color: white !important; }
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    75% { transform: translateX(8px); }
+}
+
+#score-display { margin-top: 20px; font-weight: bold; color: #ffffff; }
+
+.hide {
+  display: none !important;
+}
+
+#result-container {
+  text-align: center;
+  padding: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+#restart-btn {
+  background-color: #d4af37;
+  color: #001f3f;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  transition: transform 0.2s;
+}
+
+#restart-btn:hover {
+  transform: scale(1.05);
+  background-color: #f1c40f;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}   
+
+/* --- Karakters & Animaties --- */
+
+.character-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px; /* Iets hoger gemaakt zodat ze goed opvallen */
+    margin-bottom: 20px;
+}
+
+.character {
+    max-height: 100%;
+    width: auto;
+    display: block;
+    border-radius: 10px; /* Maakt de hoekjes van het witte vlak een beetje rond */
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3); /* Een zachte gouden gloed */
+}
+
+.hidden {
+    display: none; /* Zorgt dat ze onzichtbaar zijn tot JS ze oproept */
+}
+
+/* De 'Pop-in' animatie */
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    80% { transform: scale(1.2); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-character {
+    display: block; /* Maak zichtbaar */
+    animation: popIn 0.6s ease-out forwards;
+}
+
+/* Animatie voor een goed antwoord: een vrolijk sprongetje */
+@keyframes celebrate {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px) scale(1.1); }
+}
+
+.celebrate {
+    animation: celebrate 0.5s ease-in-out 2; /* Springt twee keer */
+}
+
+/* Animatie voor een fout antwoord: een kort schud-effect */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.shake {
+    animation: shake 0.2s ease-in-out 3;
+}
+
+/* De definitie van de animatie */
+@keyframes slideFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Deze class passen we toe op de elementen die moeten animeren */
+.fade-in-element {
+    animation: slideFadeIn 0.6s ease-out forwards;
+}
+
+#whatsapp-share-btn {
+    background-color: #25D366 !important; /* De officiële WhatsApp kleur */
+    color: white !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Ruimte tussen het logo en de tekst */
+    font-weight: bold;
+    border: 2px solid #d4af37 !important;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* Hiermee maken we specifiek het icoontje iets groter */
+#whatsapp-share-btn i {
+    font-size: 1.5rem;
+}
+
+#whatsapp-share-btn:hover {
+    background-color: #128C7E !important;
+    transform: scale(1.02);
+}
