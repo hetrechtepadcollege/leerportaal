@@ -172,6 +172,8 @@ let currentIdx = 0;
 let score = 0;
 let firstTry = true;
 let completionTracked = false;
+let completionTrackingRequested = false;
+let completionTrackingRetries = 0;
 
 window.restartQuiz = function restartQuiz() {
     location.reload();
@@ -195,6 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (completionTracked) {
             return;
         }
+        completionTrackingRequested = true;
         if (window.goatcounter && typeof window.goatcounter.count === 'function') {
             window.goatcounter.count({
                 path: 'quiz-voltooid',
@@ -202,8 +205,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 event: true,
             });
             completionTracked = true;
+            return;
+        }
+        if (completionTrackingRetries < 10) {
+            completionTrackingRetries++;
+            setTimeout(trackQuizCompleted, 500);
         }
     }
+
+    window.addEventListener('load', () => {
+        if (completionTrackingRequested && !completionTracked) {
+            trackQuizCompleted();
+        }
+    });
 
     function showQuestion() {
     resetState();

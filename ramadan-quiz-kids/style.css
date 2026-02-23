@@ -84,6 +84,11 @@ body {
     animation: floating 3s ease-in-out infinite; /* Laat de maan zachtjes zweven */
 }
 
+@keyframes floating {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
 h1 {
 display: block !important;
 color: #ffffff !important;
@@ -163,10 +168,10 @@ margin-top: 5px !important;
     background: #ffffff;
 }
 
-.wrong { background-color: #e74c3c !important; color: white !important; animation: shake 0.4s; }
+.wrong { background-color: #e74c3c !important; color: white !important; animation: wrongShake 0.4s; }
 .correct { background-color: #2ecc71 !important; color: white !important; }
 
-@keyframes shake {
+@keyframes wrongShake {
     0%, 100% { transform: translateX(0); }
     25% { transform: translateX(-8px); }
     75% { transform: translateX(8px); }
