@@ -44,14 +44,11 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Geeft diepte aan de tekst */
 }
 
-p.subtitle {
-    margin-bottom: 50px;
-    font-size: 1.2rem;
-    text-align: center;
-    color: var(--text-white);
-    max-width: 700px;
-    line-height: 1.5;
-    opacity: 0.9;
+.subtitle {
+    font-size: 1.5rem; 
+    line-height: 1.6;  
+    max-width: 800px;  
+    margin: 0 auto 40px auto; 
 }
 
 footer {
