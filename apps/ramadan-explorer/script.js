@@ -23,7 +23,7 @@ const factsByMode = {
   kid: {
     title: "Ramadan-feitjes",
     items: [
-      "Vasten in Ramadan betekent niet eten of drinken van de dageraad (fajr) tot zonsondergang.",
+      "Vasten in Ramadan betekent niet eten of drinken van de dageraad tot zonsondergang.",
       "Suḥūr is de vroege maaltijd vóór de vastendag; ifṭār is de maaltijd bij zonsondergang.",
       "Ramadan draait ook om delen, geduld, respect en extra aanbidding.",
       "Kinderen mogen oefenen met vasten; de verplichting begint na de puberteit.",
