@@ -42,7 +42,7 @@ const questions = [
             { text: "B) Nee", correct: false },
             { text: "C) Alleen als het weinig is", correct: false }
         ],
-        uitleg: "Wanneer je opzettelijk braakt en het braaksel een mondvol of meer bedraagt, dan wordt je vasten hierdoor verbroken. Indien het minder is dan een mondvol, wordt je vasten niet verbroken. Als je echter ongewild moet braken, dan blijft je vasten geldig, ongeacht of het veel of weinig is."
+        uitleg: "Wanneer je opzettelijk braakt en het braaksel een mondvol of meer bedraagt, dan wordt je vasten hierdoor verbroken. Indien het minder is dan een mondvol, wordt je vasten niet verbroken. Als je echter noodgedwongen moet braken, dan blijft je vasten geldig, ongeacht of het veel of weinig is."
     },
     {
         question: "Verbreekt het doorslikken van je eigen speeksel je vasten?",
