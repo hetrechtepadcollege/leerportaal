@@ -1,183 +1,192 @@
 const questions = [
     {
-        question: "Wat is de definitie van vasten volgens de sharia?",
+        question: "Voor wie is het vasten in Ramadan verplicht?",
         answers: [
-            { text: "A) Geen vlees eten van zonsopgang tot zonsondergang.", correct: false },
-            { text: "B) Allah dienen door vanaf de ochtendschemering tot zonsondergang niet te eten, drinken of geslachtsgemeenschap te hebben.", correct: true },
-            { text: "C) Je onthouden van wereldse zaken gedurende de gehele maand Ramadan.", correct: false }
+            { text: "A) Alleen voor mannen", correct: false },
+            { text: "B) Voor elke volwassen en toerekeningsvatbare moslim", correct: true },
+            { text: "C) Alleen voor ouderen", correct: false }
         ],
-        uitleg: "De sharia-definitie vereist een intentie en onthouding van specifieke zaken tussen dageraad en zonsondergang."
+        uitleg: "Het vasten in Ramadan is verplicht voor iedere moslim die de puberteit heeft bereikt, bij verstand is en lichamelijk in staat is om te vasten. Personen die bijvoorbeeld ziek zijn of reizen, kunnen tijdelijk vrijgesteld zijn en dienen het vasten later in te halen."
     },
     {
-        question: "Wat is het oordeel over iemand die het vasten van de Ramadan verwerpt?",
+        question: "Op welke leeftijd moeten kinderen worden aangemoedigd om te vasten?",
         answers: [
-            { text: "A) Deze persoon wordt niet als moslim beschouwd.", correct: true },
-            { text: "B) Deze persoon is een grote zondaar, maar blijft moslim.", correct: false },
-            { text: "C) Deze persoon hoeft alleen een boetedoening te verrichten.", correct: false }
+            { text: "A) 18 jaar", correct: false },
+            { text: "B) 7 jaar", correct: true },
+            { text: "C) Alleen als ze zelf willen", correct: false }
         ],
-        uitleg: "Het vasten is een fundamentele verplichting; wie dit verwerpt, valt buiten de islam en wie het zonder geldige reden nalaat, begaat een grote zonde."
+        uitleg: "Hoewel het vasten pas verplicht wordt na het bereiken van de puberteit, is het aanbevolen om kinderen al vanaf zevenjarige leeftijd te laten wennen aan het vasten door hen hierin aan te moedigen. Dit helpt hen om zich geleidelijk voor te bereiden op de verplichting. Vanaf tienjarige leeftijd dienen zij hierin meer aangespoord te worden, zodat zij op latere leeftijd het vasten op een verantwoorde en bewuste manier kunnen verrichten."
     },
     {
-        question: "Wat moet een vrouw doen die vastendagen mist vanwege haar menstruatie?",
+        question: "In welke soera staat dat het vasten verplicht is gemaakt?",
         answers: [
-            { text: "A) Zij hoeft deze dagen niet in te halen.", correct: false },
-            { text: "B) Zij moet deze dagen inhalen nadat de periode is geëindigd.", correct: true },
-            { text: "C) Zij moet een boete (kaffārah) betalen voor elke gemiste dag.", correct: false }
+            { text: "A) Soera al-Fātiḥah", correct: false },
+            { text: "B) Soera al-Baqarah", correct: true },
+            { text: "C) Soera al-Kawthar", correct: false }
         ],
-        uitleg: "Inhalen is verplicht voor gemiste dagen door menstruatie- of kraamperiode zodra deze voorbij is."
+        uitleg: "De verplichting tot het vasten is vastgesteld door een expliciet vers uit de Koran, namelijk Soera al-Baqarah (2:183), waarin het vasten wordt voorgeschreven aan de gelovigen. Hierdoor is de verplichting van het vasten gebaseerd op onomstotelijk bewijs uit de openbaring."
     },
     {
-        question: "Tot wanneer kan men de intentie maken voor de actuele vastendagen van Ramadan?",
+        question: "Wat verbreekt het vasten?",
         answers: [
-            { text: "A) Alleen vóór de ochtendschemering.", correct: false },
-            { text: "B) Tussen zonsondergang en de islamitische middag.", correct: true },
-            { text: "C) De hele dag door, zolang men nog niets gegeten heeft.", correct: false }
+            { text: "A) Slapen", correct: false },
+            { text: "B) Eten of drinken terwijl je weet dat je vast", correct: true },
+            { text: "C) Douchen", correct: false }
         ],
-        uitleg: "Voor de actuele Ramadan-dagen mag de intentie tot aan de 'islamitische middag' worden gevormd."
+        uitleg: "Het vasten wordt verbroken wanneer iemand opzettelijk eet of drinkt terwijl hij of zij zich bewust is van het vasten. Handelingen zoals slapen of douchen hebben geen invloed op de geldigheid van het vasten. Als iemand echter per ongeluk eet of drinkt uit vergetelheid, dan blijft het vasten geldig."
     },
     {
-        question: "Wat wordt bedoeld met de 'islamitische middag'?",
+        question: "Wordt je vasten verbroken als je opzettelijk braakt en het braaksel meer is dan een mondvol?",
         answers: [
-            { text: "A) Precies 12:00 uur in de middag.", correct: false },
-            { text: "B) De helft van de tijd tussen ochtendschemering en zonsondergang.", correct: true },
-            { text: "C) Het tijdstip van het namiddaggebed ('Asr).", correct: false }
+            { text: "A) Ja", correct: true },
+            { text: "B) Nee", correct: false },
+            { text: "C) Alleen als het weinig is", correct: false }
         ],
-        uitleg: "De islamitische middag is precies het midden tussen het begin van de dageraad en het moment van zonsondergang."
+        uitleg: "Wanneer je opzettelijk braakt en het braaksel een mondvol of meer bedraagt, dan wordt je vasten hierdoor verbroken. Indien het minder is dan een mondvol, wordt je vasten niet verbroken. Als je echter ongewild moet braken, dan blijft je vasten geldig, ongeacht of het veel of weinig is."
     },
     {
-        question: "Is het hardop uitspreken van de intentie verplicht?",
+        question: "Verbreekt het doorslikken van je eigen speeksel je vasten?",
         answers: [
-            { text: "A) Ja, zonder uitspraak is het vasten ongeldig.", correct: false },
-            { text: "B) Nee, het is je innerlijke vastberadenheid, maar hardop zeggen is aanbevolen.", correct: true },
-            { text: "C) Het is alleen verplicht voor mensen die voor het eerst vasten.", correct: false }
+            { text: "A) Ja", correct: false },
+            { text: "B) Alleen een beetje", correct: false },
+            { text: "C) Nee", correct: true }
         ],
-        uitleg: "De intentie zit in het hart. De mondelinge uitspraak is 'mustahab' (aanbevolen), maar niet verplicht voor de geldigheid."
+        uitleg: "Het doorslikken van je eigen speeksel is een natuurlijke handeling en heeft geen invloed op de geldigheid van je vasten. Daarom wordt je vasten hierdoor niet verbroken."
     },
     {
-        question: "Wat is de regel voor iemand die vergeet dat hij vast en per ongeluk eet?",
+        question: "Verbreekt het gebruik van een tandenborstel of miswāk-stokje je vasten?",
         answers: [
-            { text: "A) Het vasten is direct verbroken en moet worden ingehaald.", correct: false },
-            { text: "B) Het vasten blijft geldig en men moet gewoon doorgaan.", correct: true },
-            { text: "C) Men moet 60 dagen achter elkaar vasten als boete.", correct: false }
+            { text: "A) Ja", correct: false },
+            { text: "B) Nee", correct: true },
+            { text: "C) Alleen in de middag", correct: false }
         ],
-        uitleg: "Eten of drinken uit pure vergeetachtigheid verbreekt het vasten niet."
+        uitleg: "Het gebruik van een tandenborstel of miswāk-stokje verbreekt je vasten niet. Wanneer je echter tandpasta gebruikt, dien je extra voorzichtig te zijn dat je niets doorslikt. Als er tandpasta of water in de keel terechtkomt en wordt doorgeslikt, dan wordt je vasten hierdoor verbroken."
     },
     {
-        question: "Wat moet een hoogbejaarde doen die fysiek niet meer in staat is om te vasten?",
+        question: "Wordt je vasten verbroken als je tranen inslikt en de zoutigheid ervan in je mond of keel kunt proeven?",
         answers: [
-            { text: "A) Hij is vrijgesteld en hoeft niets te doen.", correct: false },
-            { text: "B) Hij moet voor elke dag tweemaal een behoeftige voeden of een bedrag (fidyah) geven.", correct: true },
-            { text: "C) Hij moet zijn kinderen opdracht geven namens hem te vasten.", correct: false }
+            { text: "A) Ja", correct: true },
+            { text: "B) Nee", correct: false },
+            { text: "C) Alleen als het na zonsondergang gebeurt", correct: false }
         ],
-        uitleg: "Dit is de verplichte compensatie (fidyah) voor wie blijvend niet kan vasten door bijvoorbeeld ouderdom."
+        uitleg: "Als er een of twee tranen in je mond terechtkomen en je deze inslikt, dan wordt je vasten niet verbroken. Als het echter zoveel tranen zijn dat je de zoutigheid ervan in je hele mond kunt proeven en je deze vervolgens inslikt, dan wordt je vasten hierdoor wel verbroken. Voor zweet geldt dezelfde regel."
     },
     {
-        question: "Wat is 'Wājib al-Kifāyah' (collectieve plicht) met betrekking tot de maanwaarneming?",
+        question: "Verbreekt eten of drinken uit vergetelheid je vasten?",
         answers: [
-            { text: "A) Iedere individuele moslim moet de maan persoonlijk proberen te zien.", correct: false },
-            { text: "B) Alleen de imam van de centrale moskee is hiervoor verantwoordelijk.", correct: false },
-            { text: "C) Als een voldoende aantal mensen de maan observeert, is de rest van de gemeenschap ontslagen van de plicht.", correct: true }
+            { text: "A) Ja", correct: false },
+            { text: "B) Nee", correct: true },
+            { text: "C) Alleen bij drinken", correct: false }
         ],
-        uitleg: "Dit is een gemeenschappelijke plicht die vervalt voor de rest als enkelen deze uitvoeren."
+        uitleg: "Wanneer je uit vergetelheid eet of drinkt terwijl je vast, wordt je vasten hierdoor niet verbroken. Zodra je je herinnert dat je vast, dien je direct te stoppen."
     },
     {
-        question: "Wat verbreekt het vasten en vereist zowel inhalen als boetedoening (kaffārah)?",
+        question: "Wat moet je doen als je per ongeluk iets hebt ingeslikt tijdens het vasten (bijvoorbeeld water tijdens het spoelen van de mond)?",
         answers: [
-            { text: "A) Het eten van kiezels of papier.", correct: false },
-            { text: "B) Het bewust eten, drinken of gemeenschap hebben gedurende de vastenperiode van de Ramadan zonder geldige reden.", correct: true },
-            { text: "C) Het per ongeluk inslikken van water tijdens de wassing.", correct: false }
+            { text: "A) Je vasten blijft geldig", correct: false },
+            { text: "B) Je vasten is verbroken en je moet deze dag inhalen (qaḍā)", correct: true },
+            { text: "C) Je moet direct boetedoening (kaffārah) verrichten", correct: false }
         ],
-        uitleg: "Boetedoening is specifiek van toepassing op het opzettelijk verbreken van de huidige Ramadan-vasten met voedsel, drank of gemeenschap."
+        uitleg: "Wanneer je per ongeluk iets inslikt, wordt je vasten verbroken en dien je deze dag in te halen (qaḍā), maar boetedoening (kaffārah) is niet verplicht. Dit in tegenstelling tot eten of drinken uit vergeetachtigheid, waarbij je vasten geldig blijft en je direct moet stoppen."
     },
     {
-        question: "Verbreekt het doorslikken van eigen speeksel het vasten?",
+        question: "Moet je iemand eraan herinneren als hij uit vergeetachtigheid eet tijdens het vasten?",
         answers: [
-            { text: "A) Ja, het wordt beschouwd als drinken.", correct: false },
-            { text: "B) Nee, dit is toegestaan en verbreekt het vasten niet.", correct: true },
-            { text: "C) Alleen als het speeksel buiten de mond is geweest en weer is opgenomen.", correct: false }
+            { text: "A) Ja, altijd", correct: false },
+            { text: "B) Nee, nooit", correct: false },
+            { text: "C) Het hangt af van zijn toestand", correct: true }
         ],
-        uitleg: "Het speeksel dat zich in de mond bevindt, verbreekt het vasten niet bij doorslikken."
+        uitleg: "Als iemand uit vergeetachtigheid eet of drinkt terwijl hij vast, dient hij eraan herinnerd te worden, tenzij hij lichamelijk zwak is en het vasten hem ernstig zou belasten. In dat geval kan het beter zijn om hem niet te herinneren."
     },
     {
-        question: "Wat verbreekt het vasten bij het poetsen van de tanden met tandpasta?",
+        question: "Wordt je vasten verbroken als je noodgedwongen braakt en het braaksel een mondvol of meer bedraagt?",
         answers: [
-            { text: "A) Niets, het is altijd toegestaan.", correct: false },
-            { text: "B) Als er iets van de pasta of de smaak in de keel terechtkomt.", correct: true },
-            { text: "C) Het is alleen toegestaan als men de tanden daarna drie keer spoelt.", correct: false }
+            { text: "A) Ja", correct: false },
+            { text: "B) Nee", correct: true },
+            { text: "C) Alleen als je daarna misselijk blijft", correct: false }
         ],
-        uitleg: "Als stoffen of smaken de keel bereiken, is het vasten verbroken."
+        uitleg: "Wanneer je noodgedwongen moet braken, wordt je vasten niet verbroken, ook al bedraagt het braaksel een mondvol of minder. Alleen wanneer het braken opzettelijk wordt opgewekt en een mondvol of meer bedraagt, wordt je vasten hierdoor verbroken."
     },
     {
-        question: "Wat is de 'boetedoening' (kaffārah) voor het opzettelijk verbreken van een Ramadan-vastendag?",
+        question: "Verbreekt een injectie je vasten?",
         answers: [
-            { text: "A) 30 dagen achtereenvolgens vasten.", correct: false },
-            { text: "B) 60 dagen achtereenvolgens vasten of 60 behoeftigen voeden.", correct: true },
-            { text: "C) 10 arme mensen kleden.", correct: false }
+            { text: "A) Ja, omdat er iets in het lichaam wordt ingebracht", correct: false },
+            { text: "B) Nee, omdat het niet via een lichaamsopening naar binnen gaat", correct: true },
+            { text: "C) Ja, alleen als het een grote hoeveelheid is", correct: false }
         ],
-        uitleg: "De kaffārah bestaat uit 60 opeenvolgende dagen vasten; als dat niet kan, moet men 60 armen voeden."
+        uitleg: "Een injectie verbreekt je vasten niet, omdat deze niet via een lichaamsopening naar binnen gaat. De sharia baseert haar oordelen op wat uiterlijk waarneembaar is."
     },
     {
-        question: "Wanneer moet men stoppen met eten voor de suḥūr?",
+        question: "Wat gebeurt er als menstruatie begint tijdens het vasten?",
         answers: [
-            { text: "A) Bij het horen van de Adhān (oproep tot het gebed).", correct: false },
-            { text: "B) Bij het aanbreken van de ochtendschemering (fadjr).", correct: true },
-            { text: "C) Wanneer de zon opkomt.", correct: false }
+            { text: "A) Het vasten blijft geldig", correct: false },
+            { text: "B) Het vasten wordt verbroken", correct: true },
+            { text: "C) Alleen makrūh (afgekeurd)", correct: false }
         ],
-        uitleg: "Het vasten begint strikt bij de ochtendschemering."
+        uitleg: "Wanneer de menstruatie begint tijdens het vasten, wordt het vasten verbroken en dient deze dag later te worden ingehaald (qaḍā)."
     },
     {
-        question: "Wat is de status van roddelen tijdens het vasten?",
+        question: "Wordt je vasten verbroken als er tijdens wuḍū (kleine wassing) water in je keel komt terwijl je weet dat je vast?",
         answers: [
-            { text: "A) Het verbreekt het vasten onmiddellijk.", correct: false },
-            { text: "B) Het verbreekt het vasten niet, maar is een grote zonde en maakt het vasten afkeurenswaardig (makrūh).", correct: true },
-            { text: "C) Het heeft geen invloed op het vasten, zolang men niet liegt.", correct: false }
+            { text: "A) Nee", correct: false },
+            { text: "B) Ja", correct: true },
+            { text: "C) Alleen bij veel water", correct: false }
         ],
-        uitleg: "Roddelen verbreekt het vasten juridisch niet, maar ontneemt het wel zijn spirituele licht en waarde."
+        uitleg: "Als er tijdens wuḍū water in je keel terechtkomt terwijl je weet dat je vast, wordt je vasten hierdoor verbroken en dien je deze dag in te halen (qaḍā). Boetedoening (kaffārah) is niet verplicht."
     },
     {
-        question: "Wanneer is een zieke vrijgesteld van het vasten?",
+        question: "Verbreekt het doorslikken van slijm je vasten?",
         answers: [
-            { text: "A) Bij elke vorm van ongemak of lichte hoofdpijn.", correct: false },
-            { text: "B) Alleen als een deskundige moslimarts (die geen zondaar is) adviseert dat vasten schadelijk is.", correct: true },
-            { text: "C) Als men zich simpelweg niet fit voelt.", correct: false }
+            { text: "A) Ja", correct: false },
+            { text: "B) Nee", correct: true },
+            { text: "C) Alleen bij ziekte", correct: false }
         ],
-        uitleg: "Er moet een sterk vermoeden van schade zijn, idealiter bevestigd door een betrouwbare moslimarts."
+        uitleg: "Het doorslikken van slijm verbreekt je vasten niet, zolang het niet eerst wordt uitgespuugd en daarna weer ingeslikt."
     },
     {
-        question: "Verbreekt het toedienen van neus- of oordruppels het vasten?",
+        question: "Wat is makrūh (afgekeurd) tijdens het vasten?",
         answers: [
-            { text: "A) Oordruppels verbreken het wel, neusdruppels niet.", correct: false },
-            { text: "B) Beide verbreken het vasten als ze intern doordringen.", correct: true },
-            { text: "C) Oordruppels verbreken het vasten alleen als het trommelvlies doorboord is.", correct: false }
+            { text: "A) Slapen", correct: false },
+            { text: "B) Iets proeven zonder reden", correct: true },
+            { text: "C) Bidden", correct: false }
         ],
-        uitleg: "Oliedruppels in de oren of neusdruppels verbreken het vasten en inhalen is vereist."
+        uitleg: "Met proeven wordt hier niet bedoeld dat je een hap neemt en deze doorslikt. Het gaat erom dat je bijvoorbeeld met het puntje van je tong iets proeft en dit daarna weer uitspuugt zonder het door te slikken. Hoewel het vasten hierdoor niet wordt verbroken, is dit zonder een geldige reden makrūh (afgekeurd)."
     },
     {
-        question: "Hoe zit het met de vastenplicht voor kinderen?",
+        question: "Wanneer mag een zieke het vasten laten?",
         answers: [
-            { text: "A) Vasten is verplicht vanaf zeven jaar.", correct: false },
-            { text: "B) Het vasten is pas verplicht na het bereiken van de puberteit, maar oudere kinderen moeten aangemoedigd worden te vasten.", correct: true },
-            { text: "C) De verplichting van het vasten geldt pas na het huwelijk.", correct: false }
+            { text: "A) Als hij geen zin heeft", correct: false },
+            { text: "B) Als het vasten zijn ziekte kan verergeren", correct: true },
+            { text: "C) Als hij moe is", correct: false }
         ],
-        uitleg: "Het vasten is niet verplicht voor kinderen die nog niet de puberteit hebben bereikt, maar oudere kinderen die kunnen vasten moeten sterk worden aangemoedigd."
+        uitleg: "Een zieke mag het vasten laten wanneer er gegronde vrees is dat het vasten zijn ziekte zal verergeren of het herstel zal vertragen. Deze dagen dienen later te worden ingehaald (qaḍā)."
     },
     {
-        question: "Wat is de minimumbepaling voor reizen om vrijgesteld te zijn van vasten en wat is het advies?",
+        question: "Mag iemand fidyah (compensatie) geven als hij nooit meer kan vasten?",
         answers: [
-            { text: "A) Elke afstand geldt als reis en men moet altijd doorvasten.", correct: false },
-            { text: "B) Reizen is gedefinieerd als een tocht van minstens drie dagen (ongeveer 92 km); als het geen kwaad kan, is vasten beter, maar bij moeilijkheid mag men het vasten verbreken.", correct: true },
-            { text: "C) Men moet bij elke reis het vasten verbreken.", correct: false }
+            { text: "A) Nee", correct: false },
+            { text: "B) Ja", correct: true },
+            { text: "C) Alleen bij ziekte", correct: false }
         ],
-        uitleg: "Reizen wordt omschreven als een tocht met een afstand van drie dagen; het is beter te vasten als het geen kwaad kan, maar wanneer het reizen moeilijk is mag men het vasten laten en later inhalen."
+        uitleg: "Iemand die nooit meer in staat is om te vasten, zoals een zeer oude en zwakke persoon (shaykh fānī), mag fidyah (compensatie) geven voor elke gemiste vastendag."
     },
     {
-        question: "Wat is volgens de overleveringen de aanbevolen manier om met de suḥūr en de ifṭār om te gaan?",
+        question: "Mag een reiziger het vasten laten tijdens Ramadan?",
         answers: [
-            { text: "A) Suḥūr vroeg nemen en ifṭār uitstellen.", correct: false },
-            { text: "B) Suḥūr uitstellen tot vlak voor de dageraad en ifṭār zo snel mogelijk verrichten na zonsondergang.", correct: true },
-            { text: "C) Er is geen specifieke aanbeveling.", correct: false }
+            { text: "A) Nee", correct: false },
+            { text: "B) Ja", correct: true },
+            { text: "C) Alleen 's nachts", correct: false }
         ],
-        uitleg: "De Profeet, vrede zij met hem, zei dat het volk in goede staat blijft zolang ze de ifṭār bespoedigen en de suḥūr uitstellen; het is een soenna om de suḥūr laat te nemen en de ifṭār snel te doen."
+        uitleg: "Een reiziger mag het vasten laten, mits de vasten van de Ramadan voor hem verplicht is geworden terwijl hij zich al in de staat van reis (safar) bevond. Als het vasten voor hem verplicht werd terwijl hij nog geen reiziger was en hij daarna op reis gaat, dan dient hij die dag te vasten."
+    },
+    {
+        question: "Mag je het vasten laten als je bang bent om te sterven door honger of dorst?",
+        answers: [
+            { text: "A) Nee", correct: false },
+            { text: "B) Ja", correct: true },
+            { text: "C) Alleen bij hitte", correct: false }
+        ],
+        uitleg: "Wanneer er gegronde vrees bestaat voor levensgevaar door honger of dorst, is het toegestaan om het vasten te laten."
     }
 ];
 
