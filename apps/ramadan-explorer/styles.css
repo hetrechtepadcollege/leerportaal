@@ -306,7 +306,7 @@ h1 {
 
 @media (max-width: 700px) {
   .sky-glow {
-    display: none;
+    display: none !important;
   }
 
   .app {
@@ -315,5 +315,11 @@ h1 {
 
   .order-actions {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
+  .sky-glow {
+    display: none !important;
   }
 }
