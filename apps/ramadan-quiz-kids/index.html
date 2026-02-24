@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramadan Kennisquiz!</title>
+    <title>Ramadan Kennisquiz voor Kids!</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap&subset=latin-ext" rel="stylesheet">
     
@@ -15,15 +15,15 @@
         async src="//gc.zgo.at/count.js"></script>
    
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://leer.hetrechtepadcollege.nl/ramadan-quiz/">
-<meta property="og:title" content="Ramadan Kennisquiz">
-<meta property="og:description" content="Test je diepgaande kennis over de Ramadan. Hoeveel vragen weet jij goed te beantwoorden? Doe nu mee!">
-<meta property="og:image" content="https://leer.hetrechtepadcollege.nl/ramadan-quiz/images/share-banner.png">
+    <meta property="og:url" content="https://leer.hetrechtepadcollege.nl/apps/ramadan-quiz-kids/">
+<meta property="og:title" content="Ramadan Kennisquiz voor Kids">
+<meta property="og:description" content="Test je kennis over de Ramadan. Hoeveel vragen weet jij goed te beantwoorden? Speel nu mee!">
+    <meta property="og:image" content="https://leer.hetrechtepadcollege.nl/apps/ramadan-quiz-kids/images/share-banner.png">
 
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:title" content="Ramadan Kennisquiz">
-<meta property="twitter:description" content="Test je kennis over de Ramadan. Doe nu mee!">
-<meta property="twitter:image" content="https://leer.hetrechtepadcollege.nl/ramadan-quiz/images/share-banner.png">
+<meta property="twitter:title" content="Ramadan Kennisquiz voor Kids">
+<meta property="twitter:description" content="Test je kennis over de Ramadan. Speel nu mee!">
+    <meta property="twitter:image" content="https://leer.hetrechtepadcollege.nl/apps/ramadan-quiz-kids/images/share-banner.png">
 
 </head>
 <body>
@@ -33,20 +33,16 @@
 </div>
 
 <div class="quiz-container">
-  <div class="moon-box">🌕</div>
-  <h1>De Ramadan Kennisquiz!</h1>
+  <div class="moon-box">🌙</div>
+  <h1>De Ramadan Kennisquiz voor Kids!</h1>
     
     <div class="character-container">
-    <img id="character-img" src="images/mw-neutral.png" alt="Karakter" class="character animate-character">
-</div>
+        <img src="images/neutral.png" id="quiz-character" class="character" alt="Karakters">
+    </div>
     
     <h2 id="question-text">De vraag komt hier...</h2>
     <div id="answer-buttons"></div>
-<div id="uitleg-container" class="hide" style="margin: 20px 0; padding: 15px; border-radius: 10px; background-color: rgba(255, 255, 255, 0.9); border-left: 5px solid #d4af37; color: #333; text-align: left;">
-    <p id="uitleg-tekst"></p>
-    <button id="next-btn" class="btn" style="width: 100%; margin-top: 10px;">Volgende vraag</button>
-</div>
-<div id="score-display">Score: 0</div>
+  <div id="score-display">Score: 0</div>
 
   <div class="progress-container">
         <div id="progress-bar"></div>
@@ -56,9 +52,15 @@
     <button id="whatsapp-share-btn" class="btn">
         <i class="fab fa-whatsapp"></i> Deel deze quiz via WhatsApp
     </button>
-    <button id="restart-btn" class="btn">Opnieuw spelen</button>
+    <button id="restart-btn" class="btn" style="background-color: #d4af37; margin-top: 10px;">Opnieuw spelen</button>
 
-    <a href="../" id="portal-link-btn" class="btn">
+    <a href="../" class="btn" style="
+        display: block; 
+        text-align: center; 
+        text-decoration: none; 
+        background-color: #2c3e50; 
+        margin-top: 10px; 
+        line-height: 1.5;">
         Naar het Leerportaal
     </a>
 </div>
