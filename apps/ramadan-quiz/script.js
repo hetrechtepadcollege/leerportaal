@@ -168,7 +168,7 @@ const questions = [
             { text: "B) Alleen bij ziekte", correct: false },
             { text: "C) Ja", correct: true }
         ],
-        uitleg: "Iemand die nooit meer in staat is om te vasten, zoals een zeer oude en zwakke persoon (shaykh fānī), mag fidyah (compensatie) geven voor elke gemiste vastendag."
+        uitleg: "Iemand die nooit meer in staat is om te vasten, zoals een zeer oude en zwakke persoon (shaykh fānī), moet fidyah (compensatie) geven voor elke gemiste vastendag."
     },
     {
         question: "Mag een reiziger het vasten laten tijdens Ramadan?",

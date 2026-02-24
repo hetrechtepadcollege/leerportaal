@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramadan Deurtjes | Het Rechte Pad College</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Nunito+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-glow bg-glow-left" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow-right" aria-hidden="true"></div>
+
+    <main class="app">
+      <header class="hero">
+        <img
+          class="logo"
+          src="../../images/HRPC-logo.png"
+          alt="Het Rechte Pad College logo"
+        />
+        <p class="kicker">Ramadan Kalender</p>
+        <h1>30 Deurtjes, 30 Goede Daden</h1>
+        <p class="intro">
+          Open elke dag een deurtje en ontvang een korte, haalbare soenna-handeling of goede
+          daad. Voor jong en oud, met een warme Ramadan-sfeer.
+        </p>
+
+        <div class="progress-wrap" aria-live="polite">
+          <p id="progress-text">0 van 30 deurtjes geopend</p>
+          <div class="progress-track">
+            <div id="progress-bar" class="progress-bar"></div>
+          </div>
+        </div>
+      </header>
+
+      <section>
+        <h2 class="section-title">Ramadan Moskee</h2>
+        <p class="section-subtitle">
+          Open de raampjes in de moskee en minaretten. Op dag 30 wacht de hoofddeur.
+        </p>
+        <div id="calendar-grid" class="calendar-grid"></div>
+      </section>
+    </main>
+
+    <dialog id="message-dialog" class="message-dialog">
+      <article class="dialog-card">
+        <button id="close-dialog" class="close-btn" aria-label="Sluiten">×</button>
+        <p id="dialog-day" class="dialog-day"></p>
+        <h3 id="dialog-title"></h3>
+        <p id="dialog-message" class="dialog-message"></p>
+        <button id="cta-btn" class="cta-btn">Ik ga dit vandaag doen</button>
+      </article>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
