@@ -18,6 +18,7 @@
 body {
   margin: 0;
   min-height: 100vh;
+  position: relative;
   font-family: "Nunito", sans-serif;
   color: var(--ink);
   background:
@@ -34,23 +35,26 @@ body {
 }
 
 .sky-glow {
-  position: fixed;
-  top: 28px;
-  right: 78px;
-  width: 190px;
-  height: 190px;
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   background:
-    radial-gradient(circle at 34% 50%, var(--bg-top) 0 52px, transparent 53px),
-    radial-gradient(circle at 48% 50%, rgba(255, 234, 150, 0.96) 0 70px, rgba(255, 234, 150, 0.05) 71px);
-  filter: drop-shadow(0 0 10px rgba(255, 228, 133, 0.38));
+    radial-gradient(circle at 35% 50%, var(--bg-top) 0 40px, transparent 41px),
+    radial-gradient(circle at 50% 50%, rgba(255, 232, 145, 0.96) 0 58px, rgba(255, 232, 145, 0.05) 59px);
+  filter: drop-shadow(0 0 9px rgba(255, 228, 133, 0.34));
   pointer-events: none;
+  z-index: 0;
 }
 
 .app {
   max-width: 1100px;
   margin: 0 auto;
   padding: 24px;
+  position: relative;
+  z-index: 1;
 }
 
 .hero {
@@ -305,21 +309,11 @@ h1 {
 }
 
 @media (max-width: 700px) {
-  .sky-glow {
-    display: none !important;
-  }
-
   .app {
     padding: 14px;
   }
 
   .order-actions {
     flex-direction: column;
-  }
-}
-
-@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
-  .sky-glow {
-    display: none !important;
   }
 }
