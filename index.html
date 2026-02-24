@@ -62,12 +62,20 @@
             max-width: 600px;
         }
 
+        .portal-columns {
+            width: 100%;
+            max-width: 980px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            align-items: start;
+        }
+
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: 1fr;
+            gap: 30px;
             width: 100%;
-            max-width: 900px;
         }
 
         .card {
@@ -83,6 +91,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            min-height: 285px;
         }
 
         .card:hover {
@@ -99,6 +108,19 @@
             margin: 0 0 10px 0;
             color: var(--dark-blue);
             font-size: 1.4rem;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background: rgba(0, 31, 63, 0.08);
+            color: var(--dark-blue);
+            border: 1px solid rgba(0, 31, 63, 0.18);
+            border-radius: 999px;
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
         }
 
         .play-btn {
@@ -135,6 +157,12 @@
         .footer-url {
             text-decoration: underline;
         }
+
+        @media (max-width: 900px) {
+            .portal-columns {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 
 <meta property="og:type" content="website">
@@ -159,41 +187,51 @@
     <h1>Welkom in ons leerportaal!</h1>
     <p class="subtitle">Duik in onze kennisquizzes en ontdek op een speelse, inspirerende manier meer over de islam! En dat is nog maar het begin… naast de quizzes komen er ook educatieve spellen, interactieve games en nóg veel meer leuks om je kennis op een verrassende manier te verdiepen!</p>
 
-    <div class="grid">
-        <a href="ramadan-quiz-kids/" class="card">
-            <div>
-                <div class="emoji">🌙</div>
-                <h2>Ramadan Kennisquiz voor Kids</h2>
-                <p>Test je kennis over de regels, geschiedenis en de spirituele betekenis van de Ramadan.</p>
-            </div>
-            <div class="play-btn">Speel Nu ➔</div>
-        </a>
+    <div class="portal-columns">
+        <div class="portal-col">
+            <div class="grid">
+                <a href="ramadan-quiz/" class="card">
+                    <div>
+                        <div class="emoji">🌕</div>
+                        <h2>Ramadan Kennisquiz</h2>
+                        <p>Test je diepgaande kennis over de heilige maand en de regelgeving.</p>
+                    </div>
+                    <div class="play-btn">Speel Nu ➔</div>
+                </a>
 
-        <a href="ramadan-quiz/" class="card">
-            <div>
-                <div class="emoji">🌕</div>
-                <h2>Ramadan Kennisquiz</h2>
-                <p>Test je diepgaande kennis over de heilige maand en de regelgeving.</p>
+                <div class="card coming-soon">
+                    <div>
+                        <div class="emoji">🕋</div>
+                        <h2>De Hadj</h2>
+                        <p>Alles over de bedevaart naar Mekka en de rituelen van de vijfde zuil van de islam.</p>
+                    </div>
+                    <div class="play-btn">Binnenkort</div>
+                </div>
             </div>
-            <div class="play-btn">Speel Nu ➔</div>
-        </a>
+        </div>
 
-        <a href="apps/ramadan-explorer/" class="card">
-            <div>
-                <div class="emoji">🧭</div>
-                <h2>Ramadan Explorer</h2>
-                <p>Leer over Ramadan met meerdere interactieve minigames, dagelijkse keuzes en een snelheidsronde.</p>
-            </div>
-            <div class="play-btn">Speel Nu ➔</div>
-        </a>
+        <div class="portal-col">
+            <div class="grid">
+                <a href="ramadan-quiz-kids/" class="card">
+                    <div>
+                        <span class="card-tag">Kinderen</span>
+                        <div class="emoji">🌙</div>
+                        <h2>Ramadan Kennisquiz voor Kids</h2>
+                        <p>Test je kennis over de regels, geschiedenis en de spirituele betekenis van de Ramadan.</p>
+                    </div>
+                    <div class="play-btn">Speel Nu ➔</div>
+                </a>
 
-        <div class="card coming-soon">
-            <div>
-                <div class="emoji">🕋</div>
-                <h2>De Hadj</h2>
-                <p>Alles over de bedevaart naar Mekka en de rituelen van de vijfde zuil van de islam.</p>
+                <a href="apps/ramadan-explorer/" class="card">
+                    <div>
+                        <span class="card-tag">Kinderen</span>
+                        <div class="emoji">🧭</div>
+                        <h2>Ramadan Explorer</h2>
+                        <p>Leer over Ramadan met meerdere interactieve minigames, dagelijkse keuzes en een snelheidsronde.</p>
+                    </div>
+                    <div class="play-btn">Speel Nu ➔</div>
+                </a>
             </div>
-            <div class="play-btn">Binnenkort</div>
         </div>
     </div>
 
