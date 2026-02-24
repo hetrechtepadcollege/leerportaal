@@ -1,0 +1,331 @@
+:root {
+  --bg-top: #061a37;
+  --bg-mid: #0b2f57;
+  --bg-bottom: #16456b;
+  --card: #fff9ee;
+  --ink: #16324f;
+  --accent: #0d2b4f;
+  --accent-2: #c7a248;
+  --good: #1f9e58;
+  --bad: #cf374f;
+  --shadow: 0 12px 24px rgba(7, 41, 63, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  font-family: "Nunito", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 239, 170, 0.15) 0 2px, transparent 3px),
+    radial-gradient(circle at 24% 30%, rgba(255, 239, 170, 0.2) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 32% 12%, rgba(255, 239, 170, 0.16) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 44% 25%, rgba(255, 239, 170, 0.2) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 56% 15%, rgba(255, 239, 170, 0.18) 0 2px, transparent 3px),
+    radial-gradient(circle at 68% 28%, rgba(255, 239, 170, 0.16) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 80% 10%, rgba(255, 239, 170, 0.2) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 92% 24%, rgba(255, 239, 170, 0.16) 0 2px, transparent 3px),
+    linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 48%, var(--bg-bottom) 100%);
+  overflow-x: hidden;
+}
+
+.sky-glow {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 50%, var(--bg-top) 0 36px, transparent 37px),
+    radial-gradient(circle at 50% 50%, rgba(255, 232, 145, 0.95) 0 54px, rgba(255, 232, 145, 0.05) 55px);
+  filter: drop-shadow(0 0 9px rgba(255, 228, 133, 0.34));
+  pointer-events: none;
+  z-index: 0;
+}
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  background: rgba(255, 249, 238, 0.9);
+  border: 2px solid #ffe2b4;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  animation: floatIn 700ms ease-out;
+}
+
+.brand-logo-wrap {
+  background: #0d2b4f;
+  border-radius: 16px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  border: 2px solid #c7a248;
+}
+
+.brand-logo {
+  width: 100%;
+  max-width: 430px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+h1,
+h2 {
+  margin-top: 0;
+  font-family: "Baloo 2", cursive;
+  letter-spacing: 0.3px;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1;
+}
+
+.grid {
+  margin-top: 20px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+}
+
+.grid + .facts {
+  margin-top: 16px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 20px;
+  border: 2px solid #f9dfb3;
+  padding: 16px;
+  box-shadow: var(--shadow);
+  animation: rise 600ms ease;
+}
+
+.scoreboard {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-weight: 700;
+}
+
+.mode-switch {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.mode-btn {
+  border: 2px solid #c7a248;
+  background: #0d2b4f;
+  color: #f7f3e7;
+  font-family: inherit;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.mode-btn.active {
+  background: linear-gradient(120deg, #d7b667, #c7a248);
+  color: #0d2b4f;
+}
+
+.mode-badge {
+  font-weight: 800;
+  color: #f7f3e7;
+  background: #0d2b4f;
+  border: 1px solid #c7a248;
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+
+.options {
+  display: grid;
+  gap: 10px;
+}
+
+.btn,
+.option-btn {
+  font-family: inherit;
+  background: linear-gradient(120deg, #0d2b4f, #133b69);
+  color: #f7f3e7;
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.btn:hover,
+.option-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.btn.secondary {
+  background: linear-gradient(120deg, #d7b667, var(--accent-2));
+  color: #0d2b4f;
+}
+
+.feedback {
+  min-height: 24px;
+  margin: 10px 0;
+  font-weight: 700;
+}
+
+.feedback.good {
+  color: var(--good);
+}
+
+.feedback.bad {
+  color: var(--bad);
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(90px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.memory-card {
+  background: #fff;
+  border: 2px solid #ffddb0;
+  border-radius: 12px;
+  padding: 12px 10px;
+  min-height: 76px;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.memory-card.revealed {
+  background: #fff5e5;
+}
+
+.memory-card.matched {
+  background: #d9f8e8;
+  border-color: #7acb9f;
+  cursor: default;
+}
+
+.order-list {
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border: 2px solid #ffdba8;
+  border-radius: 12px;
+  padding: 10px;
+  font-weight: 700;
+}
+
+.order-item .move {
+  background: #ecf8ff;
+  border: 1px solid #9fc6dd;
+  border-radius: 8px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.order-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.tf-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.speed-meta {
+  display: flex;
+  gap: 16px;
+  font-weight: 700;
+}
+
+.speed-track {
+  margin: 10px 0;
+  height: 10px;
+  border-radius: 999px;
+  background: #ffe7c8;
+  overflow: hidden;
+}
+
+.speed-bar {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #ffb86b, #ff7f50);
+  transition: width 300ms linear;
+}
+
+.facts ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 700px) {
+  .sky-glow {
+    top: 8px;
+    right: 8px;
+    width: 110px;
+    height: 110px;
+    opacity: 0.9;
+  }
+
+  .app {
+    padding: 14px;
+  }
+
+  .order-actions {
+    flex-direction: column;
+  }
+}

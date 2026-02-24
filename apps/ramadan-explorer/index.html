@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramadan Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="sky-glow" aria-hidden="true"></div>
+    <main class="app">
+      <header class="hero">
+        <div class="brand-logo-wrap">
+          <img class="brand-logo" src="./assets/hrpc-logo.png" alt="Het Rechte Pad College logo" />
+        </div>
+        <h1>Ramadan Explorer</h1>
+        <p>
+          Ontdek de Ramadan met spellen, weetjes en uitdagingen. Verzamel sterren en word een
+          Ramadan-expert!
+        </p>
+        <div class="scoreboard">
+          <span>⭐ Sterren: <strong id="stars">0</strong></span>
+          <span>🏆 Level: <strong id="level">Beginner</strong></span>
+        </div>
+        <div class="mode-switch" role="group" aria-label="Kies leer-modus">
+          <button id="mode-kid" class="mode-btn active">Kind-modus</button>
+          <button id="mode-mentor" class="mode-btn">Ouder-modus</button>
+          <span id="mode-badge" class="mode-badge">Kind-modus actief</span>
+        </div>
+      </header>
+
+      <section class="grid">
+        <article class="card" id="quiz-card">
+          <h2>1. Kennisquiz</h2>
+          <p id="quiz-question"></p>
+          <div id="quiz-options" class="options"></div>
+          <p id="quiz-feedback" class="feedback"></p>
+          <button id="next-question" class="btn">Volgende vraag</button>
+        </article>
+
+        <article class="card" id="memory-card">
+          <h2>2. Memory Match</h2>
+          <p>Koppel het Ramadan-woord aan de juiste betekenis.</p>
+          <div id="memory-grid" class="memory-grid"></div>
+          <p id="memory-feedback" class="feedback"></p>
+        </article>
+
+        <article class="card" id="order-card">
+          <h2>3. Zet in de juiste volgorde</h2>
+          <p>
+            Zet de stappen van een Ramadan-dag in de juiste volgorde (van vroeg naar laat).
+          </p>
+          <ul id="order-list" class="order-list"></ul>
+          <div class="order-actions">
+            <button id="check-order" class="btn">Controleer</button>
+            <button id="shuffle-order" class="btn secondary">Hussel opnieuw</button>
+          </div>
+          <p id="order-feedback" class="feedback"></p>
+        </article>
+
+        <article class="card" id="truefalse-card">
+          <h2>4. Klopt of Niet?</h2>
+          <p id="tf-statement"></p>
+          <div class="tf-actions">
+            <button id="tf-true" class="btn">Klopt</button>
+            <button id="tf-false" class="btn secondary">Klopt niet</button>
+          </div>
+          <p id="tf-feedback" class="feedback"></p>
+          <button id="tf-next" class="btn">Nieuwe stelling</button>
+        </article>
+
+        <article class="card" id="scenario-card">
+          <h2>5. Wat zou jij doen?</h2>
+          <p id="scenario-text"></p>
+          <div id="scenario-options" class="options"></div>
+          <p id="scenario-feedback" class="feedback"></p>
+          <button id="scenario-next" class="btn">Nieuwe situatie</button>
+        </article>
+
+        <article class="card" id="speed-card">
+          <h2>6. Snelheidsronde</h2>
+          <p>Beantwoord zoveel mogelijk vragen in 45 seconden.</p>
+          <div class="speed-meta">
+            <span>⏱ Tijd: <strong id="speed-time">45</strong>s</span>
+            <span>✅ Goed: <strong id="speed-score">0</strong></span>
+          </div>
+          <div class="speed-track">
+            <div id="speed-bar" class="speed-bar"></div>
+          </div>
+          <p id="speed-question">Klik op start om te beginnen!</p>
+          <div id="speed-options" class="options"></div>
+          <p id="speed-feedback" class="feedback"></p>
+          <div class="order-actions">
+            <button id="speed-start" class="btn">Start ronde</button>
+            <button id="speed-next" class="btn secondary">Volgende</button>
+          </div>
+        </article>
+      </section>
+
+      <section class="card facts">
+        <h2 id="facts-title">Ramadan-feitjes</h2>
+        <ul id="facts-list"></ul>
+      </section>
+
+      <section class="card facts" id="mentor-note-card" hidden>
+        <h2>Extra uitleg voor ouder</h2>
+        <p id="mentor-note"></p>
+      </section>
+
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
