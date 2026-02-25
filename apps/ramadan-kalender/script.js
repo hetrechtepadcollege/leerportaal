@@ -1,38 +1,10 @@
-const MESSAGES = [
-  { title: "Begin met Bismillah", text: "Start vandaag bewust met 'Bismillah' bij een taak die je normaal automatisch doet." },
-  { title: "Lach naar iemand", text: "Geef vandaag minimaal drie mensen een oprechte glimlach." },
-  { title: "Dua voor een ander", text: "Noem iemand bij naam in je dua, zonder dat diegene het hoeft te weten." },
-  { title: "Kleine sadaqah", text: "Geef vandaag iets kleins weg: tijd, hulp of een financiële bijdrage." },
-  { title: "Dank je wel tegen ouders", text: "Bedank je ouders of verzorgers vandaag bewust voor iets concreets." },
-  { title: "Quran-moment", text: "Lees vandaag een kort stukje Quran met aandacht, al is het maar enkele ayaat." },
-  { title: "Help in huis", text: "Neem uit jezelf een taak in huis over zonder dat iemand het vraagt." },
-  { title: "Zeg iets goeds", text: "Spreek vandaag bewust een compliment uit dat oprecht is." },
-  { title: "Bescherm je tong", text: "Laat roddel en negatieve woorden vandaag volledig achterwege." },
-  { title: "Sunnah: rechts beginnen", text: "Begin vandaag bij eten en kleding met de rechterkant." },
-  { title: "Rustig reageren", text: "Als je geïrriteerd raakt: pauzeer, adem en reageer vriendelijk." },
-  { title: "Extra dhikr", text: "Neem vijf minuten voor dhikr, bijvoorbeeld 'SubhanAllah, Alhamdulillah, Allahu Akbar'." },
-  { title: "Groet bewust", text: "Begin vandaag gesprekken met een warme salam." },
-  { title: "Maak iemand blij", text: "Doe vandaag één onverwachte goede daad voor iemand in je omgeving." },
-  { title: "Dua voor ummah", text: "Maak vandaag een korte dua voor moslims wereldwijd." },
-  { title: "Kennis delen", text: "Deel vandaag één islamitisch weetje of reminder met iemand." },
-  { title: "Sunnah bij eten", text: "Eet vandaag met rust, dankbaarheid en zonder verspilling." },
-  { title: "Geduld oefenen", text: "Zie een moeilijk moment vandaag als kans om sabr te trainen." },
-  { title: "Vergeving vragen", text: "Zeg vandaag vaker 'Astaghfirullah' op rustige momenten." },
-  { title: "Band versterken", text: "Neem contact op met een familielid dat je te weinig spreekt." },
-  { title: "Wens het goede", text: "Gun iemand oprecht iets moois en spreek dat ook uit." },
-  { title: "Voorbereid bidden", text: "Bereid je gebed voor met rust en focus, zonder haast." },
-  { title: "Sunnah: water met adab", text: "Drink vandaag zittend en met aandacht, in meerdere kleine slokken." },
-  { title: "Iemand vergeven", text: "Laat vandaag bewust een kleine ergernis los omwille van Allah." },
-  { title: "Kleine opruim-actie", text: "Ruim een plek op die vaak rommelig blijft en maak het makkelijk voor anderen." },
-  { title: "Leer iets nieuws", text: "Lees of luister vandaag 10 minuten over een islamitisch onderwerp." },
-  { title: "Beloon goed gedrag", text: "Moedig een kind, broer, zus of vriend positief aan bij een goede daad." },
-  { title: "Wees zacht", text: "Kies vandaag in toon en woorden voor zachtheid, ook bij meningsverschil." },
-  { title: "Dua bij iftar", text: "Neem bij iftar een extra moment om gerichte dua te doen." },
-  { title: "Sluit af met dankbaarheid", text: "Noem voor het slapen drie dingen waarvoor je Allah dankbaar bent." }
-];
-
-const RAMADAN_START_DATE = "2026-02-19";
 const TOTAL_DAYS = 30;
+const RAMADAN_START_DATE = "2026-02-19";
+
+const FALLBACK_MESSAGES = Array.from({ length: TOTAL_DAYS }, (_, index) => ({
+  daad: `Goede daad ${index + 1}`,
+  toelichting: "Voer vandaag bewust een kleine daad uit met oprechte intentie."
+}));
 
 const gridEl = document.getElementById("calendar-grid");
 const dialogEl = document.getElementById("message-dialog");
@@ -44,7 +16,9 @@ const dialogMessageEl = document.getElementById("dialog-message");
 const progressTextEl = document.getElementById("progress-text");
 const progressBarEl = document.getElementById("progress-bar");
 
+let messages = [...FALLBACK_MESSAGES];
 let activeDay = null;
+
 const openedDays = new Set(JSON.parse(localStorage.getItem("ramadan-opened-days") || "[]"));
 const completedDays = new Set(JSON.parse(localStorage.getItem("ramadan-completed-days") || "[]"));
 
@@ -80,17 +54,62 @@ function renderProgress() {
   progressBarEl.style.width = `${(done / TOTAL_DAYS) * 100}%`;
 }
 
+function normalizeMessage(item, index) {
+  if (item && typeof item.title === "string" && typeof item.text === "string") {
+    return {
+      daad: item.title.trim() || `Goede daad ${index + 1}`,
+      toelichting: item.text.trim()
+    };
+  }
+
+  const ctaRaw = typeof item?.cta === "string" ? item.cta : "";
+  const cta = ctaRaw.replace(/\s+/g, " ").trim();
+  const split = cta.match(/^(.+?[.!?])(?:\s+|$)(.*)$/u);
+
+  const daad = split?.[1]?.trim() || cta || `Goede daad ${index + 1}`;
+  const toelichting =
+    split?.[2]?.trim() || "Voer deze daad vandaag bewust en met oprechte intentie uit.";
+
+  return { daad, toelichting };
+}
+
+async function loadMessages() {
+  const candidateFiles = ["daden.json", "daden2.json"];
+
+  for (const filename of candidateFiles) {
+    try {
+      const response = await fetch(`./${filename}`, { cache: "no-store" });
+      if (!response.ok) throw new Error(`Kon ${filename} niet laden (${response.status})`);
+
+      const data = await response.json();
+      if (!Array.isArray(data) || data.length < TOTAL_DAYS) {
+        throw new Error(`${filename} bevat niet genoeg items`);
+      }
+
+      messages = data.slice(0, TOTAL_DAYS).map((item, index) => normalizeMessage(item, index));
+      return;
+    } catch (error) {
+      console.warn(`Kon ${filename} niet gebruiken:`, error);
+    }
+  }
+
+  console.warn("Geen geldig daden-bestand beschikbaar, fallback-teksten actief.");
+}
+
 function openDoor(day) {
   const tile = gridEl.querySelector(`[data-day="${day}"]`);
   if (!tile || !isDayUnlocked(day)) return;
 
+  tile.classList.add("click-burst");
+  window.setTimeout(() => tile.classList.remove("click-burst"), 420);
+
   openedDays.add(day);
   tile.classList.add("is-open");
 
-  const message = MESSAGES[day - 1];
+  const message = messages[day - 1] || FALLBACK_MESSAGES[day - 1];
   dialogDayEl.textContent = `Dag ${day} van Ramadan`;
-  dialogTitleEl.textContent = message.title;
-  dialogMessageEl.textContent = message.text;
+  dialogTitleEl.textContent = message.daad;
+  dialogMessageEl.textContent = message.toelichting;
   ctaBtn.textContent = completedDays.has(day) ? "Deze daad is al afgevinkt" : "Ik ga dit vandaag doen";
   ctaBtn.disabled = completedDays.has(day);
   activeDay = day;
@@ -129,8 +148,8 @@ function buildGrid() {
     tile.dataset.day = String(day);
     if (day === TOTAL_DAYS) tile.classList.add("main-door");
     if (day <= 10) tile.classList.add("minaret-window");
-    const isUnlocked = day <= currentDay;
 
+    const isUnlocked = day <= currentDay;
     if (!isUnlocked) tile.classList.add("locked");
     if (openedDays.has(day) && isUnlocked) tile.classList.add("is-open");
     if (completedDays.has(day) && isUnlocked) tile.classList.add("done");
@@ -143,10 +162,12 @@ function buildGrid() {
     door.className = "door-button";
     door.setAttribute("aria-label", day === TOTAL_DAYS ? `Open hoofddeur ${day}` : `Open raam ${day}`);
     door.textContent = String(day);
+
     if (!isUnlocked) {
       door.disabled = true;
       door.setAttribute("aria-label", `Deurtje ${day} is nog vergrendeld`);
     }
+
     door.addEventListener("click", () => openDoor(day));
 
     const inside = document.createElement("div");
@@ -156,6 +177,7 @@ function buildGrid() {
 
     frame.append(door, inside);
     tile.append(frame);
+
     if (day <= 5) {
       leftMinaret.append(tile);
     } else if (day <= 10) {
@@ -170,6 +192,7 @@ function buildGrid() {
 }
 
 closeDialogBtn.addEventListener("click", () => dialogEl.close());
+
 dialogEl.addEventListener("click", (event) => {
   const rect = dialogEl.getBoundingClientRect();
   const clickedInDialog =
@@ -197,5 +220,10 @@ ctaBtn.addEventListener("click", () => {
   ctaBtn.disabled = true;
 });
 
-buildGrid();
-renderProgress();
+async function init() {
+  await loadMessages();
+  buildGrid();
+  renderProgress();
+}
+
+init();
