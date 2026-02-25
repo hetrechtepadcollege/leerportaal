@@ -73,6 +73,12 @@ function normalizeMessage(item, index) {
   return { daad, toelichting };
 }
 
+function extractMessageArray(data) {
+  if (Array.isArray(data)) return data;
+  if (data && Array.isArray(data.active)) return data.active;
+  return null;
+}
+
 async function loadMessages() {
   const candidateFiles = ["daden.json", "daden2.json"];
 
@@ -82,11 +88,12 @@ async function loadMessages() {
       if (!response.ok) throw new Error(`Kon ${filename} niet laden (${response.status})`);
 
       const data = await response.json();
-      if (!Array.isArray(data) || data.length < TOTAL_DAYS) {
+      const source = extractMessageArray(data);
+      if (!source || source.length < TOTAL_DAYS) {
         throw new Error(`${filename} bevat niet genoeg items`);
       }
 
-      messages = data.slice(0, TOTAL_DAYS).map((item, index) => normalizeMessage(item, index));
+      messages = source.slice(0, TOTAL_DAYS).map((item, index) => normalizeMessage(item, index));
       return;
     } catch (error) {
       console.warn(`Kon ${filename} niet gebruiken:`, error);

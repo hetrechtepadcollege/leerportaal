@@ -1,4 +1,5 @@
-[
+{
+  "active": [
   {
     "id": 1,
     "cta": "Formuleer vanavond bewust je intentie voor het vasten van morgen. Neem een korte stille moment, spreek je bedoeling uit en start de nieuwe dag met helderheid, focus en oprechte toewijding."
@@ -25,7 +26,7 @@
   },
   {
     "id": 7,
-    "cta": "Geef vandaag minstens een iemand een oprechte glimlach. Een klein gebaar verandert moeiteloos iemands dag en telt direct als ṣadaqah — eenvoudig, licht en waardevol."
+    "cta": "Geef vandaag minstens één iemand een oprechte glimlach. Een klein gebaar verandert moeiteloos iemands dag en telt direct als ṣadaqah — eenvoudig, licht en waardevol."
   },
   {
     "id": 8,
@@ -118,7 +119,9 @@
   {
     "id": 30,
     "cta": "Kies een kleine, terugkerende gewoonte — een potje met wisselgeld of een wekelijkse maaltijd voor iemand. Consistentie maakt kleine daden groots."
-  },
+  }
+    ],
+    "archive": [
     { "id": 31, "cta": "Zeg vandaag bewust 33× Subḥānallāh, 33× Alḥamdulillāh en 34× Allāhu akbar na een gebed. Neem de tijd en proef de woorden." },
     { "id": 32, "cta": "Neem twee minuten om Allah te danken voor drie concrete dingen van vandaag. Laat dankbaarheid je perspectief veranderen." },
     { "id": 33, "cta": "Vermijd vandaag klagen. Vervang elke klacht met Alḥamdulillāh en merk het verschil in je gemoed." },
@@ -148,5 +151,99 @@
     { "id": 57, "cta": "Vraag iemand hoe het echt met hem of haar gaat en luister aandachtig." },
     { "id": 58, "cta": "Herhaal vandaag 100× ‘Lā ilāha illā Allāh’ verspreid over de dag." },
     { "id": 59, "cta": "Maak een korte muḥāsabah vóór het slapen: wat ging goed en wat kan beter?" },
-    { "id": 60, "cta": "Kies één daad uit deze maand die je wekelijks blijft doen en plan het concreet in." }
-]
+    { "id": 60, "cta": "Kies één daad uit deze maand die je wekelijks blijft doen en plan het concreet in." },
+
+    { "id": 61, "cta": "Glimlach vandaag naar een vreemde. Jouw glimlach is ṣadaqah en kan iemands dag lichter maken." },
+    { "id": 62, "cta": "Schenk vandaag een glas water aan iemand. De Profeet ﷺ noemde water geven een van de beste vormen van liefdadigheid." },
+    { "id": 63, "cta": "Verwijder iets schadelijks van de weg, al is het maar een klein stuk afval. Het wegnemen van schade is een tak van imān." },
+    { "id": 64, "cta": "Stuur vandaag een vriendelijk bericht naar familie of vriend. Versterk de familiebanden (ṣilat ar-raḥim) met één warm gebaar." },
+    { "id": 65, "cta": "Zeg na het eten bewust ‘Alḥamdulillāh’. Oefen shukr: dankbaarheid voor zelfs de kleinste gunsten." },
+    { "id": 66, "cta": "Verricht vandaag een extra sunnah-gebed. Kom dichter bij Allah ﷻ door vrijwillige daden." },
+    { "id": 67, "cta": "Geef iemand een welgemeend compliment. Goede woorden groeien als een stevige boom (Koran 14:24)." },
+    { "id": 68, "cta": "Beheers vandaag je boosheid. De echte sterke is degene die zichzelf beheerst bij woede." },
+    { "id": 69, "cta": "Voer een vogel of een dier, of zet water neer. In elke levende lever zit beloning voor barmhartigheid." },
+    { "id": 70, "cta": "Lees vandaag één extra bladzijde Qurʾān. Elk letterteken brengt veelvoudige beloning." },
+    { "id": 71, "cta": "Vergeef iemand die je onrecht deed. Allah zegt: vergeef en schenk kwijtschelding (Koran 24:22)." },
+    { "id": 72, "cta": "Maak vandaag een oprechte duʿā voor een ander. De engelen zeggen: ‘en voor jou hetzelfde’." },
+    { "id": 73, "cta": "Eet vandaag met je rechterhand. Volg de eenvoudige etiquette van de Profeet ﷺ." },
+    { "id": 74, "cta": "Schenk vandaag een klein bedrag aan een goed doel. Ook een klein bedrag telt als ṣadaqah." },
+    { "id": 75, "cta": "Bied iemand je zitplaats aan. Een daad van respect en bescheidenheid (tawāḍuʿ)." },
+    { "id": 76, "cta": "Ruim je eigen rommel direct op. Reinheid en tahārah horen bij het geloof." },
+    { "id": 77, "cta": "Zeg vandaag 33× ‘Subḥānallāh’. Licht op de tong, zwaar op de weegschaal." },
+    { "id": 78, "cta": "Vraag je ouders hoe het écht met ze gaat. Birr al-wālidayn is een kern van het geloof." },
+    { "id": 79, "cta": "Luister vandaag naar iemand zonder te onderbreken. Respect en ṣabr zitten vaak in simpel luisteren." },
+    { "id": 80, "cta": "Deel je ifṭār met een buur. De Profeet ﷺ moedigde aan om zelfs de soep te ‘vermeerderen’ voor buren." },
+    { "id": 81, "cta": "Doe vandaag extra duʿā in de laatste uren van de dag. Zoek de gunst van Laylat al-Qadr in de gezegende momenten." },
+    { "id": 82, "cta": "Vermijd roddel één hele dag. Bewaak je tong; dit raakt de kern van tasawwuf." },
+    { "id": 83, "cta": "Leer vandaag een korte nieuwe duʿā uit je hoofd. Verrijk je innerlijke dialoog met Allah ﷻ." },
+    { "id": 84, "cta": "Geef iemand een hand of een warme groet. De salām verspreidt liefde tussen mensen." },
+    { "id": 85, "cta": "Wees extra geduldig in het verkeer. Geduld is een licht (ḍiyāʾ) dat je houding verandert." },
+    { "id": 86, "cta": "Dank vandaag iemand voor zijn of haar werk. Wie mensen niet bedankt, bedankt Allah niet." },
+    { "id": 87, "cta": "Sta op voor het nachtgebed (tahajjud), al is het kort. Een intiem moment van verbinding in de stilte." },
+    { "id": 88, "cta": "Schenk vandaag een boek of deel nuttige kennis. Kennis die blijft, is blijvende beloning." },
+    { "id": 89, "cta": "Maak vandaag je intentie zuiver voor de dag. Daden worden beoordeeld op intenties (niyyah)." },
+    { "id": 90, "cta": "Zeg vandaag ‘Astaghfirullāh’ met je hart. Vraag vergeving voor de tekortkomingen van de maand." },
+
+    { "id": 91, "cta": "Vernieuw vandaag je intentie. Alles begint bij niyyah: doe wat je doet puur voor Allah ﷻ." },
+    { "id": 92, "cta": "Groet vandaag met de salām. Verspreid vrede onder bekenden en onbekenden." },
+    { "id": 93, "cta": "Drink vandaag zittend. Een eenvoudige maar krachtige soenna van de Profeet ﷺ." },
+    { "id": 94, "cta": "Slik vandaag een boze reactie in. De sterke is niet de worstelaar, maar wie zichzelf beheerst bij woede." },
+    { "id": 95, "cta": "Zeg vandaag iets goeds of zwijg. Oefen in het bewaken van de tong (ḥifẓ al-lisān)." },
+    { "id": 96, "cta": "Ruim vandaag iets op in de moskee, al is het klein. Zorg voor de huizen van Allah ﷻ." },
+    { "id": 97, "cta": "Gebruik vandaag de miswāk, of poets extra zorgvuldig met de intentie van reinheid." },
+    { "id": 98, "cta": "Toon vandaag dankbaarheid: bedank iemand expliciet. Maak shukr concreet." },
+    { "id": 99, "cta": "Bid vandaag op tijd, liefst direct bij de adhān. Geef je ṣalāh de eerste plek." },
+    { "id": 100, "cta": "Eet vandaag met mate. Houd ruimte: een derde voedsel, een derde water, een derde lucht." },
+    { "id": 101, "cta": "Vraag vandaag vergeving: zeg 100× ‘Astaghfirullāh’ met oprechtheid." },
+    { "id": 102, "cta": "Bezoek of bel vandaag een familielid. Onderhoud ṣilat ar-raḥim, ook met een kort contact." },
+    { "id": 103, "cta": "Verricht vandaag twee rakʿāt in het geheim. Laat het enkel tussen jou en je Heer zijn." },
+    { "id": 104, "cta": "Wees vandaag zachtmoedig. Allah is zachtmoedig en houdt van rifq." },
+    { "id": 105, "cta": "Geef vandaag een oprechte naṣīḥah: mild, privé en zonder neerbuigendheid." },
+    { "id": 106, "cta": "Maak je hart schoon vóór het slapen: vergeef iedereen die je vandaag heeft gekwetst." },
+    { "id": 107, "cta": "Schenk vandaag water: voor een mens of een dier. Maak barmhartigheid praktisch." },
+    { "id": 108, "cta": "Zeg vandaag ‘Alḥamdulillāh’ bij tegenslag. Oefen riḍā: tevredenheid met het lot." },
+    { "id": 109, "cta": "Lees vandaag één Qurʾānvers met overpeinzing. Probeer de betekenis te voelen, niet alleen te lezen." },
+    { "id": 110, "cta": "Bedek vandaag de fout van een ander. Verspreid het niet; bescherm hun eer." },
+    { "id": 111, "cta": "Doe vandaag extra duʿā voor je ouders. Vraag Allah om genade zoals zij jou opvoedden." },
+    { "id": 112, "cta": "Vermijd vandaag onnodige discussies. Laat je gelijk los voor vrede, zelfs als je gelijk hebt." },
+    { "id": 113, "cta": "Wees vandaag punctueel. Respecteer de tijd van anderen als een amānah." },
+    { "id": 114, "cta": "Schenk vandaag een glimlach. Een glimlach naar je broeder is ṣadaqah." },
+    { "id": 115, "cta": "Doe vandaag dhikr tijdens het reizen. Gebruik je reistijd om Allah ﷻ te gedenken." },
+    { "id": 116, "cta": "Help vandaag iemand die behoeftig is, al is het klein. Til een tas of bied praktische hulp." },
+    { "id": 117, "cta": "Vraag Allah vandaag om een zuiver hart. Smeek om qalb salīm in je laatste gebeden." },
+    { "id": 118, "cta": "Deel vandaag je kennis. Leg iets uit wat jij weet over geloof of leven, met wijsheid." },
+    { "id": 119, "cta": "Wees vandaag bescheiden. Loop met tawāḍuʿ en laat je ego niet voorop lopen." },
+    { "id": 120, "cta": "Eindig sterk: maak de intentie om je goede gewoontes na Ramadan voort te zetten." },
+
+    { "id": 121, "cta": "Focus vandaag op intentie: vernieuw je niyyah voor elke kleine daad. Maak het bewust, keer op keer." },
+    { "id": 122, "cta": "Focus vandaag op stilte: spreek alleen als het zinvol is. Oefen waardevolle stilte en laat woorden niet lekken." },
+    { "id": 123, "cta": "Focus vandaag op dankbaarheid: noem drie specifieke gunsten die je vaak vergeet. Maak shukr concreet." },
+    { "id": 124, "cta": "Focus vandaag op bescheidenheid: doe een goede daad in het geheim. Laat alleen Allah het weten." },
+    { "id": 125, "cta": "Focus vandaag op geduld: slik een bittere opmerking in en reageer met mildheid (ḥilm)." },
+    { "id": 126, "cta": "Focus vandaag op zelfreflectie: neem 5 minuten na een gebed om je eigen fouten eerlijk te bekijken." },
+    { "id": 127, "cta": "Focus vandaag op zachtmoedigheid: wees extra zacht voor kinderen of ouderen. Laat rifq je toon bepalen." },
+    { "id": 128, "cta": "Focus vandaag op wrok loslaten: vergeef iemand uit het verleden. Laat je hart lichter worden." },
+    { "id": 129, "cta": "Focus vandaag op tevredenheid: zeg ‘Alḥamdulillāh’ voor je situatie, ook als het moeilijk is." },
+    { "id": 130, "cta": "Focus vandaag op waakzaamheid: let op je gedachten en stuur negatieve gedachten direct bij." },
+    { "id": 131, "cta": "Focus vandaag op gastvrijheid: bied iemand iets te drinken of eten aan met een open hart." },
+    { "id": 132, "cta": "Focus vandaag op betrouwbaarheid: kom een belofte na, hoe klein ook. Wees iemand op wie men kan bouwen." },
+    { "id": 133, "cta": "Focus vandaag op matigheid: eet bewust iets minder dan je verzadigingspunt. Stop net op tijd." },
+    { "id": 134, "cta": "Focus vandaag op dienstbaarheid: help iemand zonder dat erom gevraagd wordt. Oefen khidmah." },
+    { "id": 135, "cta": "Focus vandaag op oprechtheid: wees eerlijk in je gesprekken, ook als het ongemakkelijk is." },
+    { "id": 136, "cta": "Focus vandaag op godsbewustzijn: handel alsof je Allah ﷻ ziet; Hij ziet jou immers wel (iḥsān)." },
+    { "id": 137, "cta": "Focus vandaag op gulheid: geef iets weg waar je aan gehecht bent. Oefen loslaten omwille van Allah." },
+    { "id": 138, "cta": "Focus vandaag op broederschap: verdedig de eer van een afwezige wanneer er over die persoon gesproken wordt." },
+    { "id": 139, "cta": "Focus vandaag op optimisme: heb ḥusn aẓ-ẓann over anderen. Kies het goede vermoeden." },
+    { "id": 140, "cta": "Focus vandaag op standvastigheid: houd vast aan één goede gewoonte, ook als je moe bent." },
+    { "id": 141, "cta": "Focus vandaag op berouw: doe een oprechte tawbah voor een verborgen zonde. Wees concreet in je spijt." },
+    { "id": 142, "cta": "Focus vandaag op nederigheid: maak je gebedskleed schoon of ruim de moskee op. Dien zonder status." },
+    { "id": 143, "cta": "Focus vandaag op concentratie: bid één gebed met volledige focus (khushūʿ). Laat haast los." },
+    { "id": 144, "cta": "Focus vandaag op liefde: zeg tegen een gezinslid dat je van hen houdt omwille van Allah ﷻ." },
+    { "id": 145, "cta": "Focus vandaag op wijsheid: luister meer dan je spreekt in een discussie. Kies rust boven winnen." },
+    { "id": 146, "cta": "Focus vandaag op zelfdiscipline: sta 10 minuten eerder op voor extra dhikr. Begin de dag met bewustzijn." },
+    { "id": 147, "cta": "Focus vandaag op verlangen: vraag Allah ﷻ om een zuiver hart (qalb salīm). Houd het in je duʿā." },
+    { "id": 148, "cta": "Focus vandaag op eenvoud: vermijd luxe en onnodige aankopen. Kies genoeg boven meer." },
+    { "id": 149, "cta": "Focus vandaag op gerechtigheid: geef iemand zijn recht terug, zelfs als het om iets kleins gaat." },
+    { "id": 150, "cta": "Focus vandaag op volharding: maak een plan om één van deze daden het hele jaar voort te zetten." }
+    ]
+}
