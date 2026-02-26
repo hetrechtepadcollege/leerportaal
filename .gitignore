@@ -31,3 +31,6 @@ build/
 
 # Tijdelijke bestanden
 *.log.DS_Store
+
+# Lokale backup voor Ramadan-kalender (niet naar GitHub pushen)
+apps/ramadan-kalender/daden2.json
