@@ -314,3 +314,14 @@ p {
     width: 172px;
   }
 }
+
+.portal-home-wrap {
+  margin-top: 8px;
+  text-align: center;
+}
+
+.portal-home-btn {
+  display: inline-block;
+  text-decoration: none;
+  min-width: 260px;
+}
