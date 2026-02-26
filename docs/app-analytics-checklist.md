@@ -44,7 +44,7 @@ Plaats onderaan elke app (in `index.html`) een vaste knop naar het portaal:
 ```html
 <div class="portal-home-wrap">
   <a class="portal-home-btn" href="https://leer.hetrechtepadcollege.nl/">
-    Terug naar leerportaal
+    Terug naar Leerportaal
   </a>
 </div>
 ```
