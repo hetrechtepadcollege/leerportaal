@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mijn band met de Koran - Het Rechte Pad College</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap&subset=latin-ext" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="theme-flat">
+    <main class="app">
+      <header class="hero card">
+        <img src="../../images/HRPC-logo.png" alt="Het Rechte Pad College" class="logo" />
+        <h1>Mijn band met de Koran</h1>
+        <p class="hero-tagline">Lees de Koran. Leer de Koran. Leef de Koran.</p>
+        <p class="subtitle">
+          Elke dag 15-20 minuten: lees iets uit de Koran, test jezelf en pas het direct toe.
+        </p>
+        <div class="stats">
+          <div class="stat"><span>🔥 Reeks</span><strong id="streak">0 dagen</strong></div>
+          <div class="stat"><span>✅ Afgerond</span><strong id="totalDone">0 dagen</strong></div>
+          <div class="stat"><span>📅 Vandaag</span><strong id="todayStatus">Open</strong></div>
+        </div>
+      </header>
+
+      <section class="card lesson" aria-live="polite">
+        <h2 id="lessonTitle">Vers en les van vandaag</h2>
+        <p id="lessonVerse"></p>
+        <p class="reference" id="lessonRef"></p>
+        <p id="revelationContext" class="revelation-context"></p>
+      </section>
+
+      <section class="card daily-plan">
+        <h2>Dagplanning</h2>
+        <div class="progress-wrap">
+          <div class="progress-track"><div id="dailyProgressFill" class="progress-fill"></div></div>
+          <p id="dailyProgressText">0 van 6 stappen afgerond</p>
+        </div>
+        <div class="task-grid">
+          <div id="taskRead" class="task-chip">1. Vers lezen</div>
+          <div id="taskMemorize" class="task-chip">2. Vers memoriseren</div>
+          <div id="taskQuiz" class="task-chip">3. Checkvraag doen</div>
+          <div id="taskTip" class="task-chip">4. Tip toepassen</div>
+          <div id="taskChallenge" class="task-chip">5. Challenge doen</div>
+          <div id="taskReflection" class="task-chip">6. Reflectie opslaan</div>
+        </div>
+      </section>
+
+      <section class="card reading">
+        <h2>Leesmoment in je Koran</h2>
+        <p id="readingPrompt"></p>
+        <div class="reading-controls">
+          <label for="readDuration">Kies leestijd:</label>
+          <select id="readDuration">
+            <option value="120">2 minuten</option>
+            <option value="240" selected>4 minuten</option>
+            <option value="360">6 minuten</option>
+          </select>
+          <button id="startReadTimerBtn" class="btn secondary">Start leestimer</button>
+        </div>
+        <p id="readTimerLabel" class="timer-label">04:00</p>
+        <button id="markReadDoneBtn" class="btn" disabled>Ik heb de vers gelezen</button>
+        <p id="readStatus" class="feedback"></p>
+      </section>
+
+      <section class="card memorization" aria-live="polite">
+        <h2>Memorisatie-meter</h2>
+        <p id="dailyAyahRef" class="reference"></p>
+        <p id="dailyAyahText"></p>
+        <div class="progress-wrap">
+          <div class="progress-track"><div id="memoProgressFill" class="progress-fill"></div></div>
+          <p id="memoProgressText">0 van 3 stappen afgerond</p>
+        </div>
+        <div class="options">
+          <button id="memoListenBtn" class="btn secondary">Luister (3x)</button>
+          <button id="memoRepeatBtn" class="btn secondary">Herhaal (3x)</button>
+          <button id="memoCheckBtn" class="btn secondary">Check (uit het hoofd gelezen)</button>
+        </div>
+        <p id="memoStatus" class="feedback"></p>
+      </section>
+
+      <section class="card quiz" aria-live="polite">
+        <h2>Checkvraag van de dag</h2>
+        <p id="quizQuestion"></p>
+        <div id="quizOptions" class="options"></div>
+        <p id="quizFeedback" class="feedback"></p>
+      </section>
+
+      <section class="card tip">
+        <h2>Tip van de dag</h2>
+        <p class="hint">Deze tip helpt je een duurzame Koran-gewoonte opbouwen.</p>
+        <p id="dailyTip"></p>
+        <button id="applyTipBtn" class="btn secondary">Tip toegepast</button>
+        <p id="tipStatus" class="feedback"></p>
+      </section>
+
+      <section class="card challenge" aria-live="polite">
+        <h2>Challenge van de dag</h2>
+        <p id="challengeQuestion"></p>
+        <div id="challengeOptions" class="options"></div>
+        <p id="challengeFeedback" class="feedback"></p>
+        <p id="completeHint" class="hint">Rond minimaal 4 van de 6 stappen af om je dag te markeren.</p>
+        <button id="completeBtn" class="btn">Markeer vandaag als afgerond</button>
+      </section>
+
+      <section class="card fact" aria-live="polite">
+        <h2>Koranfeit van de dag</h2>
+        <p id="dailyFact"></p>
+        <p id="lessonInsight"></p>
+        <button id="toggleFactContextBtn" class="btn secondary">Toon meer context</button>
+        <p id="dailyFactContext" class="fact-context" hidden></p>
+      </section>
+
+      <section class="card reflection">
+        <h2>Reflectie</h2>
+        <label for="reflectionInput">Wat neem je vandaag mee uit de Koran?</label>
+        <textarea id="reflectionInput" rows="4" placeholder="Bijvoorbeeld: Vandaag ga ik geduld tonen bij een moeilijke situatie."></textarea>
+        <button id="saveReflectionBtn" class="btn secondary">Reflectie opslaan</button>
+        <p id="reflectionStatus" class="feedback"></p>
+      </section>
+
+      <section class="card weekly-goal" aria-live="polite">
+        <h2>Weekdoel</h2>
+        <p id="weeklyGoalText"></p>
+        <p id="weeklyGoalMeta" class="hint"></p>
+        <p id="weeklyGoalBadge" class="goal-badge" hidden>Badge behaald</p>
+      </section>
+
+      <section class="card history">
+        <h2>Laatste 7 dagen</h2>
+        <div id="weekHistory" class="week-history"></div>
+      </section>
+
+      <section class="card partner" aria-live="polite">
+        <h2>Partner-modus</h2>
+        <p class="hint">Werk samen met een vriend of familielid voor dagelijkse accountability.</p>
+        <label for="partnerNameInput">Naam partner</label>
+        <input id="partnerNameInput" type="text" placeholder="Bijv. Ahmed, Fatima, moeder..." />
+        <label class="checkbox-line">
+          <input id="partnerEnableToggle" type="checkbox" />
+          Partner-modus actief
+        </label>
+        <button id="partnerSaveBtn" class="btn secondary">Partnerinstellingen opslaan</button>
+        <button id="partnerCheckinBtn" class="btn secondary">Vandaag samen ingecheckt</button>
+        <p id="partnerReminder" class="feedback"></p>
+      </section>
+
+      <section class="card rhythm" aria-live="polite">
+        <h2>Na-Ramadan ritme</h2>
+        <p id="rhythmModeText"></p>
+        <p id="rhythmDaysText" class="hint"></p>
+        <div class="rhythm-days">
+          <label class="checkbox-line"><input id="rhythmDay1" type="checkbox" /> Maandag</label>
+          <label class="checkbox-line"><input id="rhythmDay2" type="checkbox" /> Dinsdag</label>
+          <label class="checkbox-line"><input id="rhythmDay3" type="checkbox" /> Woensdag</label>
+          <label class="checkbox-line"><input id="rhythmDay4" type="checkbox" /> Donderdag</label>
+          <label class="checkbox-line"><input id="rhythmDay5" type="checkbox" /> Vrijdag</label>
+          <label class="checkbox-line"><input id="rhythmDay6" type="checkbox" /> Zaterdag</label>
+          <label class="checkbox-line"><input id="rhythmDay0" type="checkbox" /> Zondag</label>
+        </div>
+        <button id="rhythmSaveBtn" class="btn secondary">Ritme opslaan</button>
+        <p id="rhythmStatus" class="feedback"></p>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+    <script data-goatcounter="https://hetrechtepadcollege.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+  </body>
+</html>
