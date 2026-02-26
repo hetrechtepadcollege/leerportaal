@@ -16,6 +16,12 @@ const dialogMessageEl = document.getElementById("dialog-message");
 const progressTextEl = document.getElementById("progress-text");
 const progressBarEl = document.getElementById("progress-bar");
 
+function trackEvent(path, title) {
+  if (window.goatcounter && typeof window.goatcounter.count === "function") {
+    window.goatcounter.count({ path, title, event: true });
+  }
+}
+
 let messages = [...FALLBACK_MESSAGES];
 let activeDay = null;
 
@@ -106,6 +112,7 @@ async function loadMessages() {
 function openDoor(day) {
   const tile = gridEl.querySelector(`[data-day="${day}"]`);
   if (!tile || !isDayUnlocked(day)) return;
+  trackEvent("ramadan-kalender/deur-geopend", `Deurtje ${day} geopend`);
 
   tile.classList.add("click-burst");
   window.setTimeout(() => tile.classList.remove("click-burst"), 420);
@@ -213,6 +220,7 @@ dialogEl.addEventListener("click", (event) => {
 ctaBtn.addEventListener("click", () => {
   if (!activeDay) return;
   completedDays.add(activeDay);
+  trackEvent("ramadan-kalender/daad-afgevinkt", `Daad dag ${activeDay} afgevinkt`);
 
   const tile = gridEl.querySelector(`[data-day="${activeDay}"]`);
   if (tile) {
@@ -228,6 +236,7 @@ ctaBtn.addEventListener("click", () => {
 });
 
 async function init() {
+  trackEvent("ramadan-kalender/geopend", "Ramadan kalender geopend");
   await loadMessages();
   buildGrid();
   renderProgress();

@@ -10,15 +10,15 @@
   },
   {
     "id": 3,
-    "cta": "Verbreek je vasten direct bij zonsondergang. Neem een dadel, drink water en ervaar het moment van dankbaarheid zonder uitstel. Gun jezelf deze eenvoudige maar krachtige soenna."
+    "cta": "Neem vandaag een moment om je buren te groeten of te vragen of je ergens mee kunt helpen. Eén kleine stap versterkt respect, vrede en verbondenheid in je omgeving."
   },
   {
     "id": 4,
-    "cta": "Reserveer enkele minuten vlak vóór ifṭār om een oprechte duʿā te doen. Richt je hart volledig tot Allah en benut dit gezegende moment van acceptatie."
+    "cta": "Ontstaat er frictie? Zeg rustig “Ik ben aan het vasten” en stap waardig weg. Bewust kiezen voor kalmte beschermt je vasten én je waardigheid."
   },
   {
     "id": 5,
-    "cta": "Geef vandaag een vastende iets te eten: nodig iemand uit of doneer een ifṭār‑pakket. Een kleine bijdrage levert jou een grote beloning op én versterkt onderlinge verbondenheid."
+    "cta": "Laat vandaag roddel en harde woorden achterwege. Als je toch uitglijdt, herstel direct met vriendelijkheid. Bescherm je vasten én je hart door bewust te spreken."
   },
   {
     "id": 6,
@@ -30,11 +30,11 @@
   },
   {
     "id": 8,
-    "cta": "Neem vandaag een moment om je buren te groeten of te vragen of je ergens mee kunt helpen. Eén kleine stap versterkt respect, vrede en verbondenheid in je omgeving."
+    "cta": "Verbreek je vasten direct bij zonsondergang. Neem een dadel, drink water en ervaar het moment van dankbaarheid zonder uitstel. Gun jezelf deze eenvoudige maar krachtige soenna."
   },
   {
     "id": 9,
-    "cta": "Laat vandaag roddel en harde woorden achterwege. Als je toch uitglijdt, herstel direct met vriendelijkheid. Bescherm je vasten én je hart door bewust te spreken."
+    "cta": "Geef vandaag een vastende iets te eten: nodig iemand uit of doneer een ifṭār‑pakket. Een kleine bijdrage levert jou een grote beloning op én versterkt onderlinge verbondenheid."
   },
   {
     "id": 10,
@@ -54,7 +54,7 @@
   },
   {
     "id": 14,
-    "cta": "Kook vanavond precies genoeg en deel eventuele restjes bewust met buren of mensen in nood. Kleine keuzes maken een groot verschil in dankbaarheid en duurzaamheid."
+    "cta": "Kook vanavond ietsjes meer en deel bewust met buren of mensen in nood. Kleine keuzes maken een groot verschil in dankbaarheid en duurzaamheid."
   },
   {
     "id": 15,
@@ -70,7 +70,7 @@
   },
   {
     "id": 18,
-    "cta": "Doneer vandaag iets kleins aan een betrouwbaar kennis- of onderwijsproject. Bijblijvende kennis levert doorlopende beloning op, Ṣadaqah Jāriyah, zelfs na jouw heengaan."
+    "cta": "Doneer vandaag iets (kleins) aan een betrouwbaar kennis- of onderwijsproject. Bijblijvende kennis levert doorlopende beloning op, Ṣadaqah Jāriyah, zelfs na jouw heengaan."
   },
   {
     "id": 19,
@@ -78,7 +78,7 @@
   },
   {
     "id": 20,
-    "cta": "Leer een kind één korte duʿā of āyah en oefen samen. Kleine momenten van kennis bouwen liefde, herinnering en vertrouwen voor de toekomst."
+    "cta": "Leer een kind of iemand willekeurig één korte duʿā of āyah (koranvers) en oefen samen. Kleine momenten van kennis bouwen liefde, herinnering en vertrouwen voor de toekomst."
   },
   {
     "id": 21,
@@ -86,7 +86,7 @@
   },
   {
     "id": 22,
-    "cta": "Ontstaat er frictie? Zeg rustig “Ik ben aan het vasten” en stap waardig weg. Bewust kiezen voor kalmte beschermt je vasten én je waardigheid."
+    "cta": "Reserveer enkele minuten vlak vóór ifṭār om een oprechte duʿā te doen. Richt je hart volledig tot Allah en benut dit gezegende moment van acceptatie."
   },
   {
     "id": 23,
@@ -110,7 +110,7 @@
   },
   {
     "id": 28,
-    "cta": "Oefen vandaag “filter‑spreken”: vraag jezelf af of je woorden waar, nodig en vriendelijk zijn. Bewuste stilte is soms de beste daad."
+    "cta": "Oefen vandaag “gewogen spreken”: vraag jezelf af of je woorden waar, nodig en vriendelijk zijn. Bewuste stilte is soms de beste daad."
   },
   {
     "id": 29,
@@ -244,6 +244,36 @@
     { "id": 147, "cta": "Focus vandaag op verlangen: vraag Allah ﷻ om een zuiver hart (qalb salīm). Houd het in je duʿā." },
     { "id": 148, "cta": "Focus vandaag op eenvoud: vermijd luxe en onnodige aankopen. Kies genoeg boven meer." },
     { "id": 149, "cta": "Focus vandaag op gerechtigheid: geef iemand zijn recht terug, zelfs als het om iets kleins gaat." },
-    { "id": 150, "cta": "Focus vandaag op volharding: maak een plan om één van deze daden het hele jaar voort te zetten." }
+    { "id": 150, "cta": "Focus vandaag op volharding: maak een plan om één van deze daden het hele jaar voort te zetten." },
+    { "id": 151, "cta": "Oefen vandaag in 'hilm' (zachtmoedigheid). Als iemand je irriteert, reageer dan met een kalme stem of een vriendelijk woord. Beheersing van je emoties is de kern van innerlijke groei." },
+    { "id": 152, "cta": "Zit na het gebed twee minuten langer stil voor 'dhikr' (gedenken). Laat de haast van de wereld even varen en verbind je hart met Allah ﷻ door simpelweg 'SubhanAllah' te herhalen." },
+    { "id": 153, "cta": "Reinig je hart voordat je gaat slapen. Vergeef bewust iedereen die je vandaag onrecht heeft aangedaan. Slaap met een schone lei, vrij van wrok of bitterheid." },
+    { "id": 154, "cta": "Drink vandaag bewust met je rechterhand en in drie kleine slokken, zoals de Profeet ﷺ deed. Maak van een dagelijkse noodzaak een moment van aanbidding door de soenna te volgen." },
+    { "id": 155, "cta": "Toon 'shukr' (dankbaarheid) door iemand vandaag expliciet te bedanken voor hun inspanning, hoe klein ook. Wie de mensen niet bedankt, bedankt Allah ﷻ niet." },
+    { "id": 156, "cta": "Oefen in bescheidenheid door vandaag een taakje te doen dat niemand graag doet, zoals de afwas of het opruimen van een gemeenschappelijke ruimte. Echte grootheid zit in nederigheid." },
+    { "id": 157, "cta": "Bewaak je blik en je gedachten vandaag. Richt je aandacht op het positieve en wend je af van zaken die je hart onrustig maken of je morele waarden niet dienen." },
+    { "id": 158, "cta": "Zorg vandaag voor 'amana' (betrouwbaarheid) in je werk of studie. Kom je afspraken stipt na en lever kwaliteit, want Allah ﷻ houdt ervan als iemand zijn werk perfectioneert." },
+    { "id": 159, "cta": "Maak vandaag een oprechte dua voor iemand die het moeilijk heeft, zonder dat diegene het weet. De engelen zullen zeggen: 'En voor jou hetzelfde'." },
+    { "id": 160, "cta": "Eet vandaag bewust tot je voor een derde vol zit. Matiging in voedsel geeft helderheid aan de geest en maakt de weg vrij voor diepere spirituele reflectie." },
+    { "id": 161, "cta": "Vraag je ouders (of een oudere in de familie) vandaag naar een verhaal uit hun jeugd. Schenk hen je volledige aandacht en toon 'birr' (goedheid) door oprecht te luisteren." },
+    { "id": 162, "cta": "Ruim vandaag zwerfafval op dat je onderweg tegenkomt. Het verwijderen van iets schadelijks van de weg is een daad van geloof en getuigt van respect voor de schepping." },
+    { "id": 163, "cta": "Vervang een kritische gedachte over een ander direct door een 'husn al-dhann' (goed vermoeden). Zoek naar 70 excuses voor je broeder of zuster voordat je oordeelt." },
+    { "id": 164, "cta": "Gebruik vandaag geen overbodig water bij je 'wudu'. Wees spaarzaam met de gunsten van Allah ﷻ, zelfs als je aan een stromende rivier zou staan." },
+    { "id": 165, "cta": "Deel vandaag een inspirerende wijsheid of een vers uit de Koran met iemand. 'Dawah' begint vaak met een goed gesprek dat aanzet tot nadenken." },
+    { "id": 166, "cta": "Oefen vandaag in 'sabr' (geduld) bij een kleine tegenslag, zoals file of een lange wachtrij. Gebruik de tijd voor 'istighfar' in plaats van irritatie." },
+    { "id": 167, "cta": "Verricht vandaag een goede daad in totale anonimiteit. Laat je linkerhand niet weten wat je rechterhand geeft, om je 'ikhlas' (oprechtheid) te beschermen." },
+    { "id": 168, "cta": "Schenk extra aandacht aan de 'sunnah' gebeden voor of na de verplichte gebeden. Deze extra daden vullen de tekortkomingen in je verplichte aanbidding aan." },
+    { "id": 169, "cta": "Bezoek vandaag een zieke of bel iemand die eenzaam is. Een kort bezoek brengt troost en herinnert ons aan de waarde van gezondheid en tijd." },
+    { "id": 170, "cta": "Kies vandaag je woorden zorgvuldig. Vermijd sarcasme of grappen ten koste van anderen. Een moslim is iemand voor wiens tong en hand anderen veilig zijn." },
+    { "id": 171, "cta": "Sta vandaag stil bij de schoonheid van de natuur. Zeg 'SubhanAllah' bij het zien van een bloem of de lucht; reflectie op de schepping sterkt het geloof." },
+    { "id": 172, "cta": "Verbeter vandaag je zithouding en manier van lopen; doe dit met rust en waardigheid ('waqar'). Je uiterlijke houding heeft vaak invloed op je innerlijke staat." },
+    { "id": 173, "cta": "Geef vandaag een nuttig boek of een waardevol artikel door aan iemand. Het verspreiden van kennis is een vorm van blijvende liefdadigheid." },
+    { "id": 174, "cta": "Oefen vandaag in 'tawadu' (nederigheid) door de mening van een ander serieus te overwegen, ook als je denkt dat je het beter weet. Erken dat alle kennis van Allah ﷻ komt." },
+    { "id": 175, "cta": "Maak vandaag tijd voor 'muraqaba' (zelfobservatie). Sta even stil bij je acties van de dag en vraag je af: 'Was dit enkel voor Allah ﷻ?'." },
+    { "id": 176, "cta": "Zorg vandaag extra goed voor je lichaam door gezonde keuzes te maken. Je lichaam is een 'amana' (toevertrouwd goed) waar je zorgvuldig mee om moet gaan." },
+    { "id": 177, "cta": "Groet vandaag de mensen die vaak over het hoofd worden gezien, zoals de schoonmaker of de bezorger. Erken hun waarde als medemens en schepsel van Allah ﷻ." },
+    { "id": 178, "cta": "Probeer vandaag één slechte gewoonte te vervangen door een goede. Als je geneigd bent te klagen, zeg dan direct 'Alhamdulillah' en noem een zegening." },
+    { "id": 179, "cta": "Maak je intentie zuiver voordat je aan een maaltijd begint: 'Ik eet om kracht te krijgen voor de aanbidding van Allah ﷻ'. Zo wordt zelfs eten een beloonde daad." },
+    { "id": 180, "cta": "Sluit de dag af met 'tawbah' (berouw). Vraag vergeving voor je fouten en neem je voor om morgen met een nog beter karakter te beginnen." }
     ]
 }
