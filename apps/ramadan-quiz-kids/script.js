@@ -174,6 +174,19 @@ let firstTry = true;
 let completionTracked = false;
 let completionTrackingRequested = false;
 let completionTrackingRetries = 0;
+let quizStartTracked = false;
+
+function trackEvent(path, title) {
+    if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+        window.goatcounter.count({
+            path,
+            title,
+            event: true,
+        });
+        return true;
+    }
+    return false;
+}
 
 window.restartQuiz = function restartQuiz() {
     location.reload();
@@ -198,12 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         completionTrackingRequested = true;
-        if (window.goatcounter && typeof window.goatcounter.count === 'function') {
-            window.goatcounter.count({
-                path: 'quiz-voltooid',
-                title: 'Leerling heeft de quiz afgerond',
-                event: true,
-            });
+        if (trackEvent('ramadan-quiz-kids/quiz-voltooid', 'Leerling heeft de quiz afgerond')) {
             completionTracked = true;
             return;
         }
@@ -267,6 +275,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (btn.disabled) {
             return;
         }
+        trackEvent(
+            isCorrect ? 'ramadan-quiz-kids/antwoord-goed' : 'ramadan-quiz-kids/antwoord-fout',
+            isCorrect ? 'Ramadan quiz kids antwoord goed' : 'Ramadan quiz kids antwoord fout'
+        );
 
         if (isCorrect) {
             btn.classList.add('correct');
@@ -369,8 +381,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const uitnodiging = `As-Salām ʿAlaykum! Ik heb net een leuke Ramadan kennisquiz gedaan. Wil jij je kennis ook testen? Hier vind je de quiz: ${websiteUrl}`;
             const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(uitnodiging)}`;
             window.open(whatsappUrl, '_blank');
+            trackEvent('ramadan-quiz-kids/gedeeld-whatsapp', 'Ramadan quiz kids gedeeld via WhatsApp');
         });
     }
 
     showQuestion();
+    if (!quizStartTracked) {
+        trackEvent('ramadan-quiz-kids/quiz-gestart', 'Ramadan quiz kids gestart');
+        quizStartTracked = true;
+    }
 });

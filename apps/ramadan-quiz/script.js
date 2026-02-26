@@ -196,6 +196,19 @@ let firstTry = true;
 let completionTracked = false;
 let completionTrackingRequested = false;
 let completionTrackingRetries = 0;
+let quizStartTracked = false;
+
+function trackEvent(path, title) {
+    if (window.goatcounter && typeof window.goatcounter.count === "function") {
+        window.goatcounter.count({
+            path,
+            title,
+            event: true
+        });
+        return true;
+    }
+    return false;
+}
 
 window.restartQuiz = function restartQuiz() {
     location.reload();
@@ -240,6 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const uitnodiging = `As-Salām ʿAlaykum! Ik heb net een leuke Ramadan kennisquiz gedaan. Wil jij je kennis ook testen? Hier vind je de quiz: ${websiteUrl}`;
             const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(uitnodiging)}`;
             window.open(whatsappUrl, "_blank");
+            trackEvent("ramadan-quiz/gedeeld-whatsapp", "Ramadan quiz gedeeld via WhatsApp");
         });
     }
 
@@ -249,12 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         completionTrackingRequested = true;
 
-        if (window.goatcounter && typeof window.goatcounter.count === "function") {
-            window.goatcounter.count({
-                path: "quiz-voltooid",
-                title: "Deelnemer heeft de quiz afgerond",
-                event: true
-            });
+        if (trackEvent("ramadan-quiz/quiz-voltooid", "Deelnemer heeft de quiz afgerond")) {
             completionTracked = true;
             return;
         }
@@ -314,6 +323,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (btn.disabled) {
             return;
         }
+        trackEvent(
+            isCorrect ? "ramadan-quiz/antwoord-goed" : "ramadan-quiz/antwoord-fout",
+            isCorrect ? "Ramadan quiz antwoord goed" : "Ramadan quiz antwoord fout"
+        );
 
         const huidigeVraag = questions[currentIdx];
 
@@ -395,4 +408,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     showQuestion();
+    if (!quizStartTracked) {
+        trackEvent("ramadan-quiz/quiz-gestart", "Ramadan quiz gestart");
+        quizStartTracked = true;
+    }
 });

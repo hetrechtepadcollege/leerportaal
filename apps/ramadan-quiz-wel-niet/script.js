@@ -45,15 +45,6 @@ const questions = [
         uitleg: "Het aanbrengen van olie op het lichaam verbreekt het vasten niet, omdat de olie niet via een open lichaamsopening naar de maag binnendringt. Zelfs als de smaak van de olie in de keel wordt waargenomen, blijft het vasten geldig."
     },
     {
-        question: "Verbreekt het binnendringen van water in het oor het vasten?",
-        answers: [
-            { text: "A) Ja", correct: false },
-            { text: "B) Nee", correct: true },
-            { text: "C) Alleen bij veel water", correct: false }
-        ],
-        uitleg: "Het oor wordt niet beschouwd als een open doorgang naar de maag."
-    },
-    {
         question: "Verbreekt roken (sigaret, waterpijp, shag, sigaar etc.) het vasten?",
         answers: [
             { text: "A) Ja", correct: true },
@@ -80,6 +71,15 @@ const questions = [
         ],
         uitleg: "Het inbrengen van medicatie via de neus verbreekt je vasten, omdat dit via een open lichaamsopening naar de keel of het hoofd kan bereiken. Hierdoor wordt het vasten ongeldig."
     },
+     {
+        question: "Verbreekt het binnendringen van water in het oor het vasten?",
+        answers: [
+            { text: "A) Ja", correct: false },
+            { text: "B) Nee", correct: true },
+            { text: "C) Alleen bij veel water", correct: false }
+        ],
+        uitleg: "Het binnendringen van water in het oor verbreekt het vasten niet. Olieachtige medicatie, zoals oordruppels op oliebasis, verbreekt het vasten wél. Hoewel sommige hedendaagse geleerden op basis van moderne medische inzichten anders oordelen, dient men zich te houden aan de sharia, die haar oordelen baseert op wat uiterlijk waarneembaar is."
+    },
     {
         question: "Verbreekt een injectie het vasten?",
         answers: [
@@ -88,6 +88,15 @@ const questions = [
             { text: "C) Nee, omdat het niet via een lichaamsopening naar binnen gaat", correct: true }
         ],
         uitleg: "Een injectie verbreekt je vasten niet, omdat deze niet via een lichaamsopening naar binnen gaat. De Sharia baseert haar oordelen op wat uiterlijk waarneembaar is."
+    },
+    {
+        question: "Verbreekt het vasten als je medicatie in de ogen aanbrengt?",
+        answers: [
+            { text: "A) Ja", correct: false },
+            { text: "B) Nee", correct: true },
+            { text: "C) Alleen bij pijn", correct: false }
+        ],
+        uitleg: "Het aanbrengen van medicatie in de ogen verbreekt het vasten niet, zelfs als je de smaak ervan in je keel kunt proeven. Het dient duidelijk te zijn dat de mens verplicht is zich te houden aan de Sharia en niet aan wetenschappelijke bevindingen, aangezien de Sharia haar oordelen baseert op wat uiterlijk waarneembaar is."
     },
     {
         question: "Verbreekt een infuus het vasten?",
@@ -106,15 +115,6 @@ const questions = [
             { text: "C) Alleen als je de smaak ervan kunt proeven en het doorslikt", correct: true }
         ],
         uitleg: "Als er meer bloed dan speeksel in je mond is, en dat merk je doordat je de smaak ervan kunt proeven, en je slikt het vervolgens door, dan wordt je vasten hierdoor verbroken. Is dit niet het geval, dan wordt het vasten niet verbroken."
-    },
-    {
-        question: "Verbreekt het vasten als je medicatie in de ogen aanbrengt?",
-        answers: [
-            { text: "A) Ja", correct: false },
-            { text: "B) Nee", correct: true },
-            { text: "C) Alleen bij pijn", correct: false }
-        ],
-        uitleg: "Het aanbrengen van medicatie in de ogen verbreekt het vasten niet, zelfs als je de smaak ervan in je keel kunt proeven. Het dient duidelijk te zijn dat de mens verplicht is zich te houden aan de Sharia en niet aan wetenschappelijke bevindingen, aangezien de Sharia haar oordelen baseert op wat uiterlijk waarneembaar is."
     },
     {
         question: "Wat gebeurt er als menstruatie begint tijdens het vasten?",
