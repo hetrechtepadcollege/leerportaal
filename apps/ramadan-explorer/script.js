@@ -204,11 +204,13 @@ const memoryData = [
   ["Ṣadaqah", "Vrijwillig iets geven aan anderen"],
   ["Laylat al-Qadr", "Een bijzondere nacht in de laatste 10 nachten"]
 ];
+const MEMORY_MISMATCH_HIDE_DELAY_MS = 5000;
 
 let memoryCards = [];
 let firstPick = null;
 let lockBoard = false;
 let memoryMatches = 0;
+let firstPickTimer = null;
 const memoryGridEl = document.getElementById("memory-grid");
 const memoryFeedbackEl = document.getElementById("memory-feedback");
 
@@ -216,6 +218,10 @@ function setupMemory() {
   memoryCards = [];
   memoryMatches = 0;
   memoryFeedbackEl.textContent = "";
+  if (firstPickTimer) {
+    clearTimeout(firstPickTimer);
+    firstPickTimer = null;
+  }
   firstPick = null;
   lockBoard = false;
 
@@ -250,11 +256,26 @@ function revealCard(index) {
 
   if (firstPick === null) {
     firstPick = index;
+    if (firstPickTimer) {
+      clearTimeout(firstPickTimer);
+    }
+    firstPickTimer = setTimeout(() => {
+      if (firstPick === index && !card.matched) {
+        el.textContent = "?";
+        el.classList.remove("revealed");
+        firstPick = null;
+      }
+      firstPickTimer = null;
+    }, MEMORY_MISMATCH_HIDE_DELAY_MS);
     return;
   }
 
   const firstCard = memoryCards[firstPick];
   const firstEl = memoryGridEl.children[firstPick];
+  if (firstPickTimer) {
+    clearTimeout(firstPickTimer);
+    firstPickTimer = null;
+  }
 
   if (firstCard.pairId === card.pairId) {
     card.matched = true;
@@ -292,7 +313,7 @@ function revealCard(index) {
     firstEl.classList.remove("revealed");
     firstPick = null;
     lockBoard = false;
-  }, 900);
+  }, MEMORY_MISMATCH_HIDE_DELAY_MS);
 }
 
 // Order game
@@ -327,15 +348,16 @@ function renderOrder() {
     text.textContent = item;
 
     const controls = document.createElement("div");
+    controls.className = "order-controls";
 
     const up = document.createElement("button");
-    up.className = "move";
+    up.className = "move btn";
     up.textContent = "Omhoog";
     up.disabled = i === 0;
     up.addEventListener("click", () => moveItem(i, -1));
 
     const down = document.createElement("button");
-    down.className = "move";
+    down.className = "move btn";
     down.textContent = "Omlaag";
     down.disabled = i === currentOrder.length - 1;
     down.addEventListener("click", () => moveItem(i, 1));
@@ -485,42 +507,35 @@ tfNextBtn.addEventListener("click", () => {
 // Scenario game
 const scenarios = [
   {
-    text: "Je vriend is prikkelbaar tijdens het vasten en snauwt terug. Wat is de beste reactie?",
-    options: ["Terug snauwen", "Rustig blijven en vriendelijk reageren", "Iedereen uitlachen"],
+    text: "Je vriend/vriendin is prikkelbaar tijdens het vasten en reageert daarom kortaf. Wat is de beste reactie?",
+    options: ["Ook kortaf tegen hem doen", "Rustig blijven en vriendelijk reageren", "Hem uitlachen"],
     answer: 1,
     explain: "Sterk! Rust en vriendelijk blijven past bij de geest van Ramadan.",
     mentorDetail: "Gebruik dit om emotieregulatie te oefenen in lastige momenten."
   },
   {
-    text: "Je klas doet een inzameling in Ramadan. Wat is een sterke keuze?",
-    options: ["Niet meedoen en grappen maken", "Een klein bedrag of hulp geven", "Anderen tegenhouden"],
+    text: "“Je klas zamelt geld en spullen in voor Ramadan. Wat is een goede manier om mee te doen?”",
+    options: ["Niet meedoen en grappen maken", "Een klein bedrag geven of je hulp aanbieden", "Anderen tegenhouden om mee te doen"],
     answer: 1,
-    explain: "Goed gekozen. Kleine bijdragen en hulp passen bij de Ramadan-sfeer.",
+    explain: "Goed gekozen. Kleine bijdragen en hulp passen bij deze goede actie.",
     mentorDetail: "Bespreek dat bijdragen ook tijd, hulp en aandacht kan zijn."
   },
   {
     text: "Je bent moe bij tarāwīḥ. Wat is een verstandige keuze?",
-    options: ["Alles opgeven", "Kort meedoen en rustig opbouwen", "Anderen storen"],
+    options: ["Ermee stoppen", "Kort meedoen en rustig opbouwen", "Anderen storen, omdat je moe bent"],
     answer: 1,
     explain: "Mooi. Rustig opbouwen is vaak beter dan forceren of afhaken.",
     mentorDetail: "Koppel dit aan haalbare doelen en positieve routine."
   },
   {
-    text: "Een klasgenoot is zijn lunch vergeten. Wat doe je?",
-    options: ["Uitlachen", "Helpen en iets delen", "Negeren"],
-    answer: 1,
-    explain: "Sterk. Helpen en delen laat vriendelijkheid en zorg zien.",
-    mentorDetail: "Laat kinderen benoemen hoe ze op school praktisch kunnen helpen."
-  },
-  {
     text: "Thuis is het druk vlak voor ifṭār en iemand maakt een fout. Wat is de beste houding?",
-    options: ["Boos reageren", "Geduldig blijven en rustig helpen", "Weglopen en klagen"],
+    options: ["Boos reageren", "Geduldig blijven en rustig helpen", "Weglopen en niet meer helpen"],
     answer: 1,
     explain: "Goed. Geduld en rustig helpen zorgen voor een fijne sfeer.",
     mentorDetail: "Bespreek hoe je eerst kunt kalmeren voor je reageert."
   },
   {
-    text: "Je ziet online een kwetsende reactie over iemand. Wat past het best?",
+    text: "Je ziet online een kwetsende reactie over iemand. Wat kan je het beste doen?",
     options: ["Meedoen met pesten", "Respectvol blijven en positief reageren", "Nog meer roddels delen"],
     answer: 1,
     explain: "Mooi. Respectvol en vriendelijk reageren past bij goed karakter.",
@@ -534,41 +549,133 @@ const scenarios = [
     mentorDetail: "Laat een concreet gezinsdoel kiezen voor deze week."
   },
   {
-    text: "Iemand zegt iets onaardigs tegen jou op school. Wat is de beste keuze?",
-    options: ["Meteen terug schelden", "Rustig blijven en netjes reageren", "Anderen erbij halen om te lachen"],
+    text: "Iemand zegt iets onaardigs tegen jou op school. Wat is een goede manier om hiermee om te gaan?",
+    options: ["Meteen terug schelden", "Rustig blijven en netjes reageren", "Anderen erbij halen om hem of haar te pesten"],
     answer: 1,
     explain: "Sterk. Rustig en netjes reageren laat zelfbeheersing zien.",
     mentorDetail: "Bespreek taalzinnen om respectvol grenzen aan te geven."
   },
   {
     text: "Na ifṭār is er nog veel eten over. Wat is verstandig?",
-    options: ["Alles weggooien", "Bewaren of delen met anderen", "Het laten staan tot het bederft"],
+    options: ["Alles afruimen en weggooien", "Bewaren of delen met anderen", "Het laten staan tot het bederft"],
     answer: 1,
     explain: "Goed gekozen. Bewaren of delen voorkomt verspilling.",
     mentorDetail: "Koppel dit aan dankbaarheid en verantwoordelijkheid."
   },
   {
     text: "Je merkt dat iemand alleen zit in de moskee of klas. Wat past bij goed gedrag?",
-    options: ["Negeren", "Even groeten en erbij betrekken", "Over die persoon fluisteren"],
+    options: ["Hem of haar gewoon negeren", "Even groeten en erbij betrekken", "Diegene zielig vinden"],
     answer: 1,
     explain: "Mooi. Iemand betrekken is een vorm van vriendelijkheid.",
     mentorDetail: "Vraag hoe kleine sociale aandacht groot verschil kan maken."
   },
   {
     text: "Je hebt een drukke dag en weinig tijd. Hoe kun je toch iets goeds doen?",
-    options: ["Niets doen", "Kleine haalbare goede daad kiezen", "Anderen afsnauwen"],
+    options: ["Je hoeft niets goeds te doen", "Kleine haalbare goede daad kiezen", "Anderen vragen je met rust te laten"],
     answer: 1,
     explain: "Top. Kleine goede daden tellen ook mee.",
     mentorDetail: "Laat per dag 1 mini-goede-daad formuleren."
   },
   {
-    text: "Iemand vraagt hulp bij huiswerk terwijl jij moe bent. Wat is een mooie middenweg?",
-    options: ["Nee schreeuwen", "Kort helpen of een geschikt moment afspreken", "De persoon uitlachen"],
+    text: "Iemand vraagt hulp bij het huiswerk terwijl jij moe bent. Wat is een mooie middenweg?",
+    options: ["Zeggen dat je geen tijd hebt", "Kort helpen of een geschikt moment afspreken", "De persoon negeren"],
     answer: 1,
     explain: "Goed. Helpen kan ook slim en haalbaar gepland worden.",
     mentorDetail: "Bespreek grenzen stellen met vriendelijkheid."
+  },
+  {
+    text: "Je ziet dat iemand in de klas buitengesloten wordt. Wat kan jij het beste doen?",
+    options: ["Meedoen met de rest", "Diegene groeten en erbij betrekken", "Niets doen, want het is niet jouw probleem"],
+    answer: 1,
+    explain: "Mooi. Iemand betrekken is een sterke daad van barmhartigheid en respect.",
+    mentorDetail: "Bespreek concrete zinnen om iemand op een veilige manier erbij te halen."
+  },
+  {
+    text: "Je hebt weinig geld, maar je wilt toch iets goeds doen. Wat is de beste keuze?",
+    options: ["Niets doen", "Een kleine hulpdaad of vriendelijk woord geven", "Alleen wachten tot iemand anders iets doet"],
+    answer: 1,
+    explain: "Top. Goede daden zijn niet alleen geld; ook hulp en vriendelijkheid tellen mee.",
+    mentorDetail: "Laat kinderen drie niet-financiële vormen van ṣadaqah noemen."
+  },
+  {
+    text: "Tijdens een online game begint iemand grof te praten. Wat zou je het beste kunnen doen?",
+    options: ["Terugschelden", "Respectvol blijven en zo nodig uit de game stappen", "Nog harder terugpraten"],
+    answer: 1,
+    explain: "Goed gekozen. Digitale adab hoort ook bij goed gedrag en een goed karakter.",
+    mentorDetail: "Bespreek grenzen stellen zonder agressie of vernedering. Koppel dit aan digitale adab en verantwoordelijkheid."
+  },
+  {
+    text: "Je zusje/broertje wil meedoen met Qur'an lezen maar leest nog langzaam. Wat doe je?",
+    options: ["Uitlachen", "Samen kort oefenen en aanmoedigen", "Zeggen dat het geen zin heeft"],
+    answer: 1,
+    explain: "Mooi. Aanmoedigen bouwt vertrouwen en liefde voor de Qur'an.",
+    mentorDetail: "Maak het haalbaar: korte sessies, positieve feedback, vaste routine."
+  },
+  {
+    text: "Je bent op tijd voor gebed, maar je vrienden willen nog doorpraten. Wat doe je?",
+    options: ["Blijven hangen", "Vriendelijk aangeven dat je eerst wilt bidden", "Zeggen dat gebed later wel kan"],
+    answer: 1,
+    explain: "Goed. Prioriteit geven aan gebed helpt je ritme en discipline opbouwen.",
+    mentorDetail: "Bespreek hoe je grenzen stelt zonder bot over te komen."
+  },
+  {
+    text: "In de rij dringt iemand voor. Wat zou je doen?",
+    options: ["Meteen schreeuwen", "Kalm aanspreken of geduldig blijven", "Iedereen opjutten tegen die persoon"],
+    answer: 1,
+    explain: "Mooi. Kalmte en waardigheid passen bij geduld (sabr).",
+    mentorDetail: "Laat oefenen met respectvolle taal in lastige situaties."
+  },
+  {
+    text: "Je wilt veel goede daden doen, maar raakt snel geïrriteerd. Wat is slim?",
+    options: ["Alles tegelijk doen", "Kleine vaste stappen plannen", "Gewoon stoppen met alles"],
+    answer: 1,
+    explain: "Goed gekozen. Consistente kleine daden werken vaak het best.",
+    mentorDetail: "Koppel dit aan haalbare doelen en volhouden op lange termijn."
+  },
+  {
+    text: "Je vriend is verdrietig en trekt zich terug. Wat is een goede stap?",
+    options: ["Negeren", "Rustig contact zoeken en steun aanbieden", "Grapjes maken over zijn gevoel"],
+    answer: 1,
+    explain: "Mooi. Aandacht en steun zijn vormen van barmhartigheid.",
+    mentorDetail: "Oefen empathische zinnen die veilig en steunend zijn."
+  },
+  {
+    text: "Je hebt net iemand gekwetst met woorden. Wat doe je nu?",
+    options: ["Doen alsof er niets is gebeurd", "Excuses aanbieden en het herstellen", "De schuld bij de ander leggen"],
+    answer: 1,
+    explain: "Goed. Herstel na een fout is een teken van goed karakter.",
+    mentorDetail: "Bespreek hoe excuses concreet en oprecht gemaakt worden."
+  },
+  {
+    text: "Je bent onderweg en ziet afval op straat. Wat past het best?",
+    options: ["Doorlopen", "Het oprapen als het veilig kan", "Er een foto van maken en klagen"],
+    answer: 1,
+    explain: "Top. Schade van de weg halen is een goede daad.",
+    mentorDetail: "Koppel dit aan burgerschap, netheid en religieuze motivatie."
+  },
+  {
+    text: "Je wilt je telefoongebruik in Ramadan verminderen. Wat is een wijze keuze?",
+    options: ["Dat is helemaal niet nodig", "Vaste schermtijden en momenten voor goede daden plannen", "Hopen dat het vanzelf beter gaat"],
+    answer: 1,
+    explain: "Sterk. Duidelijke grenzen helpen om tijd bewust en zinvol te gebruiken.",
+    mentorDetail: "Laat een concreet dagplan maken met begin- en stoptijden."
+  },
+  {
+    text: "Je hebt echt honger en ziet eten in de keuken staan. Niemand kijkt. Wat doe je?",
+    options: ["Snel een hapje nemen", "Bedenken dat Allah alles ziet en geduld hebben", "Aan je ouders vragen of je iets mag eten"],
+    answer: 1,
+    explain: "Heel goed. Dit traint je 'Taqwa' (تَقْوَىٰ): het bewustzijn dat Allah ﷻ altijd bij je is.",
+    mentorDetail: "Bespreek hoe vasten ons helpt om zelfbeheersing te leren, ook als niemand kijkt."
+  },
+  {
+    text: "Je wilt je telefoongebruik in Ramadan verminderen. Wat is een wijze keuze?",
+    options: ["Dat is helemaal niet nodig", "Vaste schermtijden en momenten voor goede daden plannen", "Hopen dat het vanzelf beter gaat"],
+    answer: 1,
+    explain: "Sterk. Duidelijke grenzen helpen om tijd bewust en zinvol te gebruiken.",
+    mentorDetail: "Laat een concreet dagplan maken met begin- en stoptijden."
   }
 ];
+
 
 let scenarioIndex = 0;
 const scenarioTextEl = document.getElementById("scenario-text");

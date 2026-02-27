@@ -1,14 +1,14 @@
 :root {
-  --bg-top: #061a37;
-  --bg-mid: #0b2f57;
-  --bg-bottom: #16456b;
-  --card: #fff9ee;
-  --ink: #16324f;
+  --bg-top: #0a203f;
+  --bg-mid: #123a66;
+  --bg-bottom: #1b4e77;
+  --card: #ffffff;
+  --ink: #122e4b;
   --accent: #0d2b4f;
   --accent-2: #c7a248;
   --good: #1f9e58;
   --bad: #cf374f;
-  --shadow: 0 12px 24px rgba(7, 41, 63, 0.16);
+  --shadow: 0 10px 24px rgba(8, 34, 58, 0.14);
 }
 
 * {
@@ -58,20 +58,20 @@ body {
 }
 
 .hero {
-  background: rgba(255, 249, 238, 0.9);
-  border: 2px solid #ffe2b4;
-  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #dce7f2;
+  border-radius: 18px;
   padding: 24px;
   box-shadow: var(--shadow);
   animation: floatIn 700ms ease-out;
 }
 
 .brand-logo-wrap {
-  background: #0d2b4f;
-  border-radius: 16px;
-  padding: 10px 14px;
+  background: #0f335a;
+  border-radius: 12px;
+  padding: 10px 12px;
   margin-bottom: 14px;
-  border: 2px solid #c7a248;
+  border: 1px solid #c7a248;
 }
 
 .brand-logo {
@@ -107,8 +107,8 @@ h1 {
 
 .card {
   background: var(--card);
-  border-radius: 20px;
-  border: 2px solid #f9dfb3;
+  border-radius: 16px;
+  border: 1px solid #dce7f2;
   padding: 16px;
   box-shadow: var(--shadow);
   animation: rise 600ms ease;
@@ -165,9 +165,9 @@ h1 {
   font-family: inherit;
   background: linear-gradient(120deg, #0d2b4f, #133b69);
   color: #f7f3e7;
-  border: 0;
-  border-radius: 12px;
-  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  padding: 9px 11px;
   font-weight: 700;
   cursor: pointer;
   transition: transform 180ms ease, filter 180ms ease;
@@ -207,8 +207,8 @@ h1 {
 
 .memory-card {
   background: #fff;
-  border: 2px solid #ffddb0;
-  border-radius: 12px;
+  border: 1px solid #d9e5f0;
+  border-radius: 10px;
   padding: 12px 10px;
   min-height: 76px;
   text-align: center;
@@ -239,18 +239,28 @@ h1 {
   justify-content: space-between;
   align-items: center;
   background: #fff;
-  border: 2px solid #ffdba8;
-  border-radius: 12px;
+  border: 1px solid #d9e5f0;
+  border-radius: 10px;
   padding: 10px;
   font-weight: 700;
 }
 
+.order-controls {
+  display: flex;
+  gap: 10px;
+}
+
 .order-item .move {
-  background: #ecf8ff;
-  border: 1px solid #9fc6dd;
-  border-radius: 8px;
-  padding: 4px 8px;
-  cursor: pointer;
+  padding: 6px 9px;
+  border-radius: 10px;
+  min-width: 76px;
+  font-size: 0.9rem;
+}
+
+.order-item .move:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .order-actions {
