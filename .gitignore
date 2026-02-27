@@ -37,3 +37,10 @@ apps/ramadan-kalender/daden2.json
 
 # Lokale backup voor (niet naar GitHub pushen)
 /docs/hrpc-educatieve-apps-backup.md
+
+# Apps nog niet klaar voor productie
+apps/sirah-motion/
+apps/sirah-motion-vite/
+
+# Claude Code werkbestanden
+.claude/
