@@ -331,12 +331,28 @@ h1 {
 }
 
 .portal-home-wrap {
-  margin-top: 8px;
   text-align: center;
+  margin: 28px auto 36px;
+  padding: 0 20px;
 }
 
 .portal-home-btn {
   display: inline-block;
   text-decoration: none;
-  min-width: 260px;
+  text-align: center;
+  background: #d4af37;
+  color: #001f3f;
+  font-weight: 700;
+  padding: 12px 32px;
+  border-radius: 12px;
+  font-size: 1rem;
+  min-width: 240px;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.portal-home-btn:hover {
+  background: #f1c40f;
+  color: #001f3f;
+  transform: translateY(-1px);
+  filter: none;
 }

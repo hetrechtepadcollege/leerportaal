@@ -307,13 +307,26 @@ margin-top: 5px !important;
 }
 
 .portal-home-wrap {
-    width: 90%;
-    max-width: 600px;
-    margin: 8px auto 24px;
+    text-align: center;
+    margin: 28px auto 36px;
+    padding: 0 20px;
 }
 
 .portal-home-btn {
-    display: block;
-    text-align: center;
+    display: inline-block;
     text-decoration: none;
+    text-align: center;
+    background-color: #d4af37;
+    color: #001f3f;
+    font-weight: 700;
+    padding: 12px 32px;
+    border-radius: 12px;
+    font-size: 1rem;
+    min-width: 240px;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.portal-home-btn:hover {
+    background-color: #f1c40f;
+    transform: translateY(-1px);
 }

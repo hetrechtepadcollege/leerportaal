@@ -627,30 +627,26 @@ h1 {
 }
 
 .portal-home-wrap {
-  margin-top: 14px;
-  display: flex;
-  justify-content: center;
+  text-align: center;
+  margin: 28px auto 36px;
+  padding: 0 20px;
 }
 
 .portal-home-btn {
   display: inline-block;
   text-decoration: none;
   text-align: center;
-  font-family: "Nunito Sans", sans-serif;
-  font-weight: 800;
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
-  color: #fef5da;
-  background: linear-gradient(135deg, #8b1f2f 0%, #b44933 45%, #df8a46 100%);
-  border: 1px solid rgba(255, 226, 178, 0.55);
-  border-radius: 999px;
-  padding: 11px 22px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.24);
-  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+  background-color: #d4af37;
+  color: #001f3f;
+  font-weight: 700;
+  padding: 12px 32px;
+  border-radius: 12px;
+  font-size: 1rem;
+  min-width: 240px;
+  transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
 .portal-home-btn:hover {
+  background-color: #f1c40f;
   transform: translateY(-1px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
-  filter: brightness(1.05);
 }

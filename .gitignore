@@ -34,3 +34,6 @@ build/
 
 # Lokale backup voor Ramadan-kalender (niet naar GitHub pushen)
 apps/ramadan-kalender/daden2.json
+
+# Lokale backup voor (niet naar GitHub pushen)
+/docs/hrpc-educatieve-apps-backup.md
