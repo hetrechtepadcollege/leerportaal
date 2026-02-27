@@ -54,6 +54,7 @@ body {
   box-shadow: 0 20px 40px rgba(8, 26, 51, 0.44);
   animation: floatIn 600ms ease-out;
   color: #fff;
+  text-align: center;
 }
 
 .brand-logo-wrap {
@@ -65,6 +66,7 @@ body {
   max-width: 380px;
   height: auto;
   display: block;
+  margin: 0 auto;
 }
 
 h1,
@@ -92,6 +94,7 @@ h1 {
 .scoreboard {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
   margin-top: 4px;
   padding: 10px 14px;
@@ -111,6 +114,7 @@ h1 {
 .mode-switch {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 8px;
   align-items: center;
   margin-top: 14px;
