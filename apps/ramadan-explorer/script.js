@@ -214,7 +214,7 @@ const memoryData = [
   ["Ifṭār", "Maaltijd bij zonsondergang"],
   ["Tarāwīḥ", "Extra gebed in Ramadan-nachten"],
   ["Ṣadaqah", "Vrijwillig iets geven aan anderen"],
-  ["Laylat al-Qadr", "Een bijzondere nacht in de laatste 10 nachten"]
+  ["Laylatul Qadr", "Een bijzondere nacht in de laatste 10 nachten"]
 ];
 
 let memoryCards = [];
@@ -232,12 +232,20 @@ function setupMemory() {
   lockBoard = false;
   memoryRoundTracked = false;
 
-  memoryData.forEach((pair, pairId) => {
-    memoryCards.push({ text: pair[0], pairId, matched: false });
-    memoryCards.push({ text: pair[1], pairId, matched: false });
-  });
+  // Termen (links) en betekenissen (rechts) apart schudden
+  const termCards = shuffleArray(
+    memoryData.map((pair, pairId) => ({ text: pair[0], pairId, matched: false, type: "term" }))
+  );
+  const meaningCards = shuffleArray(
+    memoryData.map((pair, pairId) => ({ text: pair[1], pairId, matched: false, type: "meaning" }))
+  );
 
-  memoryCards.sort(() => Math.random() - 0.5);
+  // Interleave: term links, betekenis rechts per rij
+  for (let i = 0; i < termCards.length; i++) {
+    memoryCards.push(termCards[i]);
+    memoryCards.push(meaningCards[i]);
+  }
+
   memoryGridEl.innerHTML = "";
 
   memoryCards.forEach((card, index) => {
@@ -268,6 +276,14 @@ function revealCard(index) {
 
   const firstCard = memoryCards[firstPick];
   const firstEl = memoryGridEl.children[firstPick];
+
+  // Zelfde kolom (beide termen of beide betekenissen): wissel selectie
+  if (firstCard.type === card.type) {
+    firstEl.textContent = "?";
+    firstEl.classList.remove("revealed");
+    firstPick = index;
+    return;
+  }
 
   if (firstCard.pairId === card.pairId) {
     card.matched = true;
@@ -309,7 +325,7 @@ function revealCard(index) {
     firstEl.classList.remove("revealed");
     firstPick = null;
     lockBoard = false;
-  }, 3000);
+  }, 2000);
 }
 
 // Order game
@@ -396,7 +412,7 @@ function checkOrder() {
 // True/False game
 const tfStatements = [
   {
-    text: "Laylat al-Qadr wordt gezocht in de laatste tien nachten van Ramadan.",
+    text: "Laylatul Qadr wordt gezocht in de laatste tien nachten van Ramadan.",
     isTrue: true,
     explain: "Klopt. Veel mensen besteden in die nachten extra aandacht aan aanbidding.",
     mentorDetail: "Laat kinderen benoemen welke goede daden ze in die periode extra willen doen."
@@ -511,13 +527,13 @@ tfNextBtn.addEventListener("click", () => {
 const scenarios = [
   {
     text: "Je vriend/vriendin is prikkelbaar tijdens het vasten en reageert daarom kortaf. Wat is de beste reactie?",
-    options: ["Ook kortaf tegen hem doen", "Rustig blijven en vriendelijk reageren", "Hem uitlachen"],
-    answer: 1,
+    options: ["Rustig blijven en vriendelijk reageren", "Ook kortaf tegen hem doen", "Hem uitlachen"],
+    answer: 0,
     explain: "Sterk! Rust en vriendelijk blijven past bij de geest van Ramadan.",
     mentorDetail: "Gebruik dit om emotieregulatie te oefenen in lastige momenten."
   },
   {
-    text: "“Je klas zamelt geld en spullen in voor Ramadan. Wat is een goede manier om mee te doen?”",
+    text: '"Je klas zamelt geld en spullen in voor Ramadan. Wat is een goede manier om mee te doen?"',
     options: ["Niet meedoen en grappen maken", "Een klein bedrag geven of je hulp aanbieden", "Anderen tegenhouden om mee te doen"],
     answer: 1,
     explain: "Goed gekozen. Kleine bijdragen en hulp passen bij deze goede actie.",
@@ -525,15 +541,15 @@ const scenarios = [
   },
   {
     text: "Je bent moe bij tarāwīḥ. Wat is een verstandige keuze?",
-    options: ["Ermee stoppen", "Kort meedoen en rustig opbouwen", "Anderen storen, omdat je moe bent"],
-    answer: 1,
+    options: ["Ermee stoppen", "Anderen storen, omdat je moe bent", "Kort meedoen en rustig opbouwen"],
+    answer: 2,
     explain: "Mooi. Rustig opbouwen is vaak beter dan forceren of afhaken.",
     mentorDetail: "Koppel dit aan haalbare doelen en positieve routine."
   },
   {
     text: "Thuis is het druk vlak voor ifṭār en iemand maakt een fout. Wat is de beste houding?",
-    options: ["Boos reageren", "Geduldig blijven en rustig helpen", "Weglopen en niet meer helpen"],
-    answer: 1,
+    options: ["Geduldig blijven en rustig helpen", "Boos reageren", "Weglopen en niet meer helpen"],
+    answer: 0,
     explain: "Goed. Geduld en rustig helpen zorgen voor een fijne sfeer.",
     mentorDetail: "Bespreek hoe je eerst kunt kalmeren voor je reageert."
   },
@@ -546,15 +562,15 @@ const scenarios = [
   },
   {
     text: "Je jongere broer of zus wil meedoen met een goede daad. Wat doe je?",
-    options: ["Zeggen dat hij/zij te klein is", "Samen een kleine goede daad plannen", "Negeren"],
-    answer: 1,
+    options: ["Zeggen dat hij/zij te klein is", "Negeren", "Samen een kleine goede daad plannen"],
+    answer: 2,
     explain: "Top. Samen kleine goede daden doen motiveert en verbindt.",
     mentorDetail: "Laat een concreet gezinsdoel kiezen voor deze week."
   },
   {
     text: "Iemand zegt iets onaardigs tegen jou op school. Wat is een goede manier om hiermee om te gaan?",
-    options: ["Meteen terug schelden", "Rustig blijven en netjes reageren", "Anderen erbij halen om hem of haar te pesten"],
-    answer: 1,
+    options: ["Rustig blijven en netjes reageren", "Meteen terug schelden", "Anderen erbij halen om hem of haar te pesten"],
+    answer: 0,
     explain: "Sterk. Rustig en netjes reageren laat zelfbeheersing zien.",
     mentorDetail: "Bespreek taalzinnen om respectvol grenzen aan te geven."
   },
@@ -567,15 +583,15 @@ const scenarios = [
   },
   {
     text: "Je merkt dat iemand alleen zit in de moskee of klas. Wat past bij goed gedrag?",
-    options: ["Hem of haar gewoon negeren", "Even groeten en erbij betrekken", "Diegene zielig vinden"],
-    answer: 1,
+    options: ["Hem of haar gewoon negeren", "Diegene zielig vinden", "Even groeten en erbij betrekken"],
+    answer: 2,
     explain: "Mooi. Iemand betrekken is een vorm van vriendelijkheid.",
     mentorDetail: "Vraag hoe kleine sociale aandacht groot verschil kan maken."
   },
   {
     text: "Je hebt een drukke dag en weinig tijd. Hoe kun je toch iets goeds doen?",
-    options: ["Je hoeft niets goeds te doen", "Kleine haalbare goede daad kiezen", "Anderen vragen je met rust te laten"],
-    answer: 1,
+    options: ["Kleine haalbare goede daad kiezen", "Je hoeft niets goeds te doen", "Anderen vragen je met rust te laten"],
+    answer: 0,
     explain: "Top. Kleine goede daden tellen ook mee.",
     mentorDetail: "Laat per dag 1 mini-goede-daad formuleren."
   },
@@ -588,15 +604,15 @@ const scenarios = [
   },
   {
     text: "Je ziet dat iemand in de klas buitengesloten wordt. Wat kan jij het beste doen?",
-    options: ["Meedoen met de rest", "Diegene groeten en erbij betrekken", "Niets doen, want het is niet jouw probleem"],
-    answer: 1,
+    options: ["Meedoen met de rest", "Niets doen, want het is niet jouw probleem", "Diegene groeten en erbij betrekken"],
+    answer: 2,
     explain: "Mooi. Iemand betrekken is een sterke daad van barmhartigheid en respect.",
     mentorDetail: "Bespreek concrete zinnen om iemand op een veilige manier erbij te halen."
   },
   {
     text: "Je hebt weinig geld, maar je wilt toch iets goeds doen. Wat is de beste keuze?",
-    options: ["Niets doen", "Een kleine hulpdaad of vriendelijk woord geven", "Alleen wachten tot iemand anders iets doet"],
-    answer: 1,
+    options: ["Een kleine hulpdaad of vriendelijk woord geven", "Niets doen", "Alleen wachten tot iemand anders iets doet"],
+    answer: 0,
     explain: "Top. Goede daden zijn niet alleen geld; ook hulp en vriendelijkheid tellen mee.",
     mentorDetail: "Laat kinderen drie niet-financiële vormen van ṣadaqah noemen."
   },
@@ -609,15 +625,15 @@ const scenarios = [
   },
   {
     text: "Je zusje/broertje wil meedoen met Qur'an lezen maar leest nog langzaam. Wat doe je?",
-    options: ["Uitlachen", "Samen kort oefenen en aanmoedigen", "Zeggen dat het geen zin heeft"],
-    answer: 1,
+    options: ["Uitlachen", "Zeggen dat het geen zin heeft", "Samen kort oefenen en aanmoedigen"],
+    answer: 2,
     explain: "Mooi. Aanmoedigen bouwt vertrouwen en liefde voor de Qur'an.",
     mentorDetail: "Maak het haalbaar: korte sessies, positieve feedback, vaste routine."
   },
   {
     text: "Je bent op tijd voor gebed, maar je vrienden willen nog doorpraten. Wat doe je?",
-    options: ["Blijven hangen", "Vriendelijk aangeven dat je eerst wilt bidden", "Zeggen dat gebed later wel kan"],
-    answer: 1,
+    options: ["Vriendelijk aangeven dat je eerst wilt bidden", "Blijven hangen", "Zeggen dat gebed later wel kan"],
+    answer: 0,
     explain: "Goed. Prioriteit geven aan gebed helpt je ritme en discipline opbouwen.",
     mentorDetail: "Bespreek hoe je grenzen stelt zonder bot over te komen."
   },
@@ -630,15 +646,15 @@ const scenarios = [
   },
   {
     text: "Je wilt veel goede daden doen, maar raakt snel geïrriteerd. Wat is slim?",
-    options: ["Alles tegelijk doen", "Kleine vaste stappen plannen", "Gewoon stoppen met alles"],
-    answer: 1,
+    options: ["Alles tegelijk doen", "Gewoon stoppen met alles", "Kleine vaste stappen plannen"],
+    answer: 2,
     explain: "Goed gekozen. Consistente kleine daden werken vaak het best.",
     mentorDetail: "Koppel dit aan haalbare doelen en volhouden op lange termijn."
   },
   {
     text: "Je vriend is verdrietig en trekt zich terug. Wat is een goede stap?",
-    options: ["Negeren", "Rustig contact zoeken en steun aanbieden", "Grapjes maken over zijn gevoel"],
-    answer: 1,
+    options: ["Rustig contact zoeken en steun aanbieden", "Negeren", "Grapjes maken over zijn gevoel"],
+    answer: 0,
     explain: "Mooi. Aandacht en steun zijn vormen van barmhartigheid.",
     mentorDetail: "Oefen empathische zinnen die veilig en steunend zijn."
   },
@@ -651,15 +667,15 @@ const scenarios = [
   },
   {
     text: "Je bent onderweg en ziet afval op straat. Wat past het best?",
-    options: ["Doorlopen", "Het oprapen als het veilig kan", "Er een foto van maken en klagen"],
-    answer: 1,
+    options: ["Doorlopen", "Er een foto van maken en klagen", "Het oprapen als het veilig kan"],
+    answer: 2,
     explain: "Top. Schade van de weg halen is een goede daad.",
     mentorDetail: "Koppel dit aan burgerschap, netheid en religieuze motivatie."
   },
   {
     text: "Je wilt je telefoongebruik in Ramadan verminderen. Wat is een wijze keuze?",
-    options: ["Dat is helemaal niet nodig", "Vaste schermtijden en momenten voor goede daden plannen", "Hopen dat het vanzelf beter gaat"],
-    answer: 1,
+    options: ["Vaste schermtijden en momenten voor goede daden plannen", "Dat is helemaal niet nodig", "Hopen dat het vanzelf beter gaat"],
+    answer: 0,
     explain: "Sterk. Duidelijke grenzen helpen om tijd bewust en zinvol te gebruiken.",
     mentorDetail: "Laat een concreet dagplan maken met begin- en stoptijden."
   },
@@ -671,11 +687,11 @@ const scenarios = [
     mentorDetail: "Bespreek hoe vasten ons helpt om zelfbeheersing te leren, ook als niemand kijkt."
   },
   {
-    text: "Je wilt je telefoongebruik in Ramadan verminderen. Wat is een wijze keuze?",
-    options: ["Dat is helemaal niet nodig", "Vaste schermtijden en momenten voor goede daden plannen", "Hopen dat het vanzelf beter gaat"],
-    answer: 1,
-    explain: "Sterk. Duidelijke grenzen helpen om tijd bewust en zinvol te gebruiken.",
-    mentorDetail: "Laat een concreet dagplan maken met begin- en stoptijden."
+    text: "Je bent uitgenodigd voor een feestje dat samenvalt met ifṭār-tijd. Wat doe je?",
+    options: ["Gewoon gaan en vasten breken op het feestje", "Helemaal niet reageren op de uitnodiging", "Vriendelijk uitleggen dat je liever thuis ifṭār houdt met je familie"],
+    answer: 2,
+    explain: "Mooi. Ifṭār thuis met familie is een waardevol moment. Vriendelijk communiceren laat respect zien.",
+    mentorDetail: "Bespreek hoe je sociale verplichtingen en religieuze routines kunt combineren."
   }
 ];
 
@@ -773,10 +789,10 @@ const speedPool = [
     mentorDetail: "Benadruk dat gezondheid altijd meetelt."
   },
   {
-    question: "Wat is Laylat al-Qadr?",
+    question: "Wat is Laylatul Qadr?",
     options: ["Een bijzondere nacht", "Een maaltijd", "Een schoolvak"],
     answer: 0,
-    explain: "Laylat al-Qadr is een bijzondere nacht in Ramadan.",
+    explain: "Laylatul Qadr is een bijzondere nacht in Ramadan.",
     mentorDetail: "Laat het kind benoemen welke extra aanbidding het dan wil doen."
   },
   {
