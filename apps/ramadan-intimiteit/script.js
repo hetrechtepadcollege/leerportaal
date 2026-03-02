@@ -2,9 +2,9 @@ const activeQuestions = [
     {
         question: "Wat is kaffārah?",
         answers: [
-            { text: "A) Het inhalen van een gemiste vastendag (qaḍā)", correct: false },
+            { text: "A) Het inhalen van een gemiste vastendag", correct: false },
             { text: "B) Een verplichte, zware boetedoening voor het opzettelijk ongeldig maken van het vasten", correct: true },
-            { text: "C) Een vrijwillige liefdadigheid (ṣadaqah)", correct: false }
+            { text: "C) Een vrijwillige liefdadigheid", correct: false }
         ],
         uitleg: "Kaffārah is een verplichte boetedoening: een slaaf vrijkopen; als dat niet kan, 60 dagen aaneengesloten vasten én de verbroken dag (qaḍā) inhalen; als dat ook niet kan vanwege een geldige reden volgens de Sharia, 60 behoeftigen voeden."
     },
@@ -15,7 +15,7 @@ const activeQuestions = [
             { text: "B) Een verplichte boetedoening", correct: false },
             { text: "C) Het later inhalen van een gemiste of ongeldig gemaakte vastendag", correct: true }
         ],
-        uitleg: "Qaḍā betekent dat je een vastendag die je hebt gemist of ongeldig hebt gemaakt, op een andere dag opnieuw moet vasten."
+        uitleg: "Qaḍā betekent dat je een vastendag die je hebt gemist of ongeldig hebt gemaakt, op een andere dag moet inhalen door opnieuw te vasten."
     },
     {
         question: "Blijft het vasten geldig als beide echtgenoten vergeten dat zij vasten en dan geslachtsgemeenschap hebben?",
@@ -27,7 +27,16 @@ const activeQuestions = [
         uitleg: "Misschien is het moeilijk voor te stellen, maar het kan gebeuren dat beide echtgenoten vergeten dat zij vasten. Wanneer er in zo’n geval geslachtsgemeenschap plaatsvindt uit vergetelheid, wordt het vasten niet ongeldig."
     },
     {
-        question: "Is een kus tijdens het vasten toegestaan?",
+        question: "Wat is janābah?",
+        answers: [
+            { text: "A) Een toestand van rituele onreinheid na seksuele ontlading of geslachtsgemeenschap", correct: true },
+            { text: "B) Een toestand na het verbreken van het vasten door te eten en drinken", correct: false },
+            { text: "C) Een toestand van kleine rituele onreinheid waarvoor wuḍū volstaat", correct: false }
+        ],
+        uitleg: "Janābah is de toestand na seksuele ontlading of geslachtsgemeenschap waarvoor ghusl verplicht is."
+    },
+    {
+        question: "Is het toegestaan om te kussen tijdens het vasten?",
         answers: [
             { text: "A) Nee, dat is altijd verboden", correct: false },
             { text: "B) Ja, maar alleen als men zichzelf kan beheersen", correct: true },
@@ -45,22 +54,13 @@ const activeQuestions = [
         uitleg: "Wanneer als gevolg van kussen een seksuele ontlading plaatsvindt, wordt het vasten ongeldig. Alleen voor de persoon bij wie de ontlading optreedt is het inhalen (qaḍā) verplicht; kaffārah is niet vereist. Deze handeling is uitsluitend toegestaan tussen echtgenoten."
     },
     {
-        question: "Blijft het vasten geldig als iemand door alleen te kijken naar pornografisch materiaal een ontlading krijgt?",
+        question: "Blijft het vasten geldig als iemand door alleen te kijken naar pornografisch materiaal een seksuele ontlading krijgt?",
         answers: [
             { text: "A) Het vasten wordt ongeldig", correct: false },
             { text: "B) Kaffārah (boetedoening) wordt verplicht", correct: false },
             { text: "C) Het vasten blijft geldig", correct: true }
         ],
-        uitleg: "Hoewel het kijken naar pornografisch materiaal verboden is en een zonde vormt, blijft het vasten geldig wanneer een ontlading plaatsvindt door enkel te kijken en zonder lichamelijk contact. Kaffārah is niet verplicht."
-    },
-    {
-        question: "Wat is janābah?",
-        answers: [
-            { text: "A) Een toestand van rituele onreinheid na seksuele ontlading of geslachtsgemeenschap", correct: true },
-            { text: "B) Een toestand na het verbreken van het vasten door te eten en drinken", correct: false },
-            { text: "C) Een toestand van kleine rituele onreinheid waarvoor wuḍū volstaat", correct: false }
-        ],
-        uitleg: "Janābah is de toestand na seksuele ontlading of geslachtsgemeenschap waarvoor ghusl verplicht wordt."
+        uitleg: "Hoewel het bekijken van pornografisch materiaal verboden is en een zonde vormt, blijft het vasten geldig wanneer er een seksuele ontlading plaatsvindt door alleen te kijken, zonder lichamelijk contact. Een kaffārah is in dat geval niet verplicht."
     },
     {
         question: "Blijft het vasten geldig als iemand de ochtend bereikt in staat van janābah?",
@@ -69,10 +69,10 @@ const activeQuestions = [
             { text: "B) Het vasten blijft geldig", correct: true },
             { text: "C) Kaffārah (boetedoening) wordt verplicht", correct: false }
         ],
-        uitleg: "Het vasten blijft geldig, ook als iemand de ochtend bereikt in staat van janābah. Het is wel zondig om ghusl zo lang uit te stellen dat een gebed wordt gemist."
+        uitleg: "Het vasten blijft geldig, ook als iemand de ochtend bereikt in staat van janābah."
     },
     {
-        question: "Hoe is het opzettelijk uitstellen van ghusl tot na het verstrijken van een gebedstijd?",
+        question: "Hoe is het om de rituele wassing (ghusl) die verplicht is bij janābah, opzettelijk uit te stellen tot na het verstrijken van een gebedstijd?",
         answers: [
             { text: "A) Dit is toegestaan", correct: false },
             { text: "B) Dit is aanbevolen", correct: false },
@@ -90,7 +90,7 @@ const activeQuestions = [
         uitleg: "Kaffārah is verplicht wanneer men de intentie had om te vasten, geen reiziger is en bewust overdag geslachtsgemeenschap heeft gehad zonder geldige reden. Zowel qaḍā als kaffārah zijn verplicht."
     },
     {
-        question: "Wat is het oordeel over gedachten die tot ontlading leiden zonder lichamelijk contact?",
+        question: "Wat gebeurt er met het vasten wanneer iemand door enkel te denken aan seks een lozing krijgt, dus zonder zichzelf aan te raken of enig lichamelijk contact?",
         answers: [
             { text: "A) Het vasten blijft geldig", correct: true },
             { text: "B) Het vasten wordt ongeldig", correct: false },
@@ -99,7 +99,7 @@ const activeQuestions = [
         uitleg: "Wanneer een ontlading uitsluitend door gedachten ontstaat en er geen lichamelijk contact is, blijft het vasten geldig. Wel tast dit de spirituele waarde van het vasten aan; men dient zijn gedachten te bewaken."
     },
     {
-        question: "Wat gebeurt er bij een ontlading tijdens de slaap?",
+        question: "Wat gebeurt er met het vasten bij een ontlading (zaadlozing bij een man of vochtafscheiding bij een vrouw) tijdens de slaap?",
         answers: [
             { text: "A) Kaffārah (boetedoening) wordt verplicht", correct: false },
             { text: "B) Het vasten wordt ongeldig", correct: false },
@@ -123,7 +123,7 @@ const activeQuestions = [
             { text: "B) Kaffārah (boetedoening) wordt verplicht", correct: false },
             { text: "C) Het vasten blijft geldig", correct: true }
         ],
-        uitleg: "Wanneer een voorwerp in de vagina wordt geplaatst en een deel buiten blijft, wordt het vasten niet ongeldig."
+        uitleg: "Wanneer een voorwerp in de vagina wordt geplaatst en een deel buiten blijft, wordt het vasten niet ongeldig. Let op: als het voorwerp vochtig is dan zal het vasten wel breken."
     },
     {
         question: "Wat gebeurt er als een droge vinger in de geslachtsopening wordt geplaatst?",
