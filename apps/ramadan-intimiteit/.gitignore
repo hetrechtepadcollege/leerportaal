@@ -1,0 +1,33 @@
+# macOS specifieke bestanden
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+
+# Thumbnails en desktop instellingen
+._*
+.Spotlight-V100
+.Trashes
+
+# VS Code specifieke instellingen (optioneel)
+.vscode/
+*.code-workspace
+
+# Logbestanden en tijdelijke bestanden
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.logs/
+*.log
+
+# Node.js (voor als je later met bibliotheken gaat werken)
+node_modules/
+dist/
+build/
+
+# Omgevingsvariabelen (bevatten vaak wachtwoorden/keys)
+.env
+.env.local
+
+# Tijdelijke bestanden
+*.log.DS_Store

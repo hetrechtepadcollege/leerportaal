@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kennisquiz Ramadan - Intimiteit &amp; Vasten</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script data-goatcounter="https://hetrechtepadcollege.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://leer.hetrechtepadcollege.nl/apps/ramadan-intimiteit/">
+    <meta property="og:title" content="Kennisquiz Ramadan - Intimiteit &amp; Vasten">
+    <meta property="og:description" content="Wat zijn de islamitische regels over intimiteit tijdens het vasten? Doe nu mee met de quiz en toets je kennis!">
+    <meta property="og:image" content="https://leer.hetrechtepadcollege.nl/apps/ramadan-intimiteit/images/share-banner.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Kennisquiz Ramadan - Intimiteit &amp; Vasten">
+    <meta property="twitter:description" content="Test je kennis over intimiteit en vasten tijdens de Ramadan. Doe nu mee!">
+    <meta property="twitter:image" content="https://leer.hetrechtepadcollege.nl/apps/ramadan-intimiteit/images/share-banner.png">
+</head>
+<body>
+
+<!-- Ramadan achtergrond: wassende maan + sterren -->
+<div class="ramadan-bg" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <!-- Sterren -->
+        <circle cx="80" cy="55" r="1.3" fill="rgba(255,255,255,0.60)"/>
+        <circle cx="210" cy="28" r="0.9" fill="rgba(255,255,255,0.42)"/>
+        <circle cx="355" cy="88" r="1.5" fill="rgba(255,255,255,0.52)"/>
+        <circle cx="478" cy="18" r="1.0" fill="rgba(255,255,255,0.65)"/>
+        <circle cx="562" cy="110" r="0.8" fill="rgba(255,255,255,0.38)"/>
+        <circle cx="680" cy="42" r="1.2" fill="rgba(255,255,255,0.55)"/>
+        <circle cx="792" cy="78" r="0.9" fill="rgba(255,255,255,0.48)"/>
+        <circle cx="872" cy="22" r="1.4" fill="rgba(255,255,255,0.60)"/>
+        <circle cx="148" cy="152" r="0.8" fill="rgba(255,255,255,0.32)"/>
+        <circle cx="312" cy="178" r="1.1" fill="rgba(255,255,255,0.38)"/>
+        <circle cx="452" cy="158" r="0.7" fill="rgba(255,255,255,0.32)"/>
+        <circle cx="622" cy="198" r="1.0" fill="rgba(255,255,255,0.36)"/>
+        <circle cx="752" cy="168" r="0.8" fill="rgba(255,255,255,0.32)"/>
+        <circle cx="38" cy="200" r="1.0" fill="rgba(255,255,255,0.28)"/>
+        <circle cx="935" cy="50" r="0.9" fill="rgba(255,255,255,0.44)"/>
+        <circle cx="1035" cy="105" r="1.1" fill="rgba(255,255,255,0.36)"/>
+        <!-- Wassende maan (rechtsboven) -->
+        <defs>
+            <mask id="moon-mask">
+                <rect width="1440" height="900" fill="white"/>
+                <circle cx="1390" cy="-35" r="155" fill="black"/>
+            </mask>
+        </defs>
+        <circle cx="1308" cy="5" r="178" mask="url(#moon-mask)" fill="rgba(212,175,55,0.08)"/>
+        <circle cx="1308" cy="5" r="178" mask="url(#moon-mask)" fill="none" stroke="rgba(212,175,55,0.13)" stroke-width="1.5"/>
+    </svg>
+</div>
+
+<div class="page-wrapper">
+
+    <header class="site-header">
+        <img src="images/HRPC-logo.png" alt="Logo Het Rechte Pad College" class="site-logo">
+    </header>
+
+    <main class="quiz-card">
+
+        <div class="quiz-title-block">
+            <h1>Kennisquiz Ramadan</h1>
+            <p class="quiz-subtitle">Intimiteit &amp; Vasten</p>
+        </div>
+
+        <div id="disclaimer-container">
+            <div class="disclaimer-header">
+                <span class="disclaimer-icon">⚠️</span>
+                <span class="disclaimer-label">Belangrijke disclaimer – lees dit voordat u verdergaat</span>
+            </div>
+            <p id="disclaimer-tekst">Deze quiz bevat vragen over intieme en seksuele handelingen. De vragen zijn uitsluitend bedoeld om de fiqh‑regels omtrent de geldigheid van het vasten te verduidelijken. Het doel is louter educatief en juridisch van aard, niet om dergelijke handelingen te normaliseren of aan te moedigen. Door verder te gaan, bevestigt u dit te begrijpen.</p>
+            <button id="disclaimer-btn" class="btn btn-next">Ik heb dit gelezen en ga verder</button>
+        </div>
+
+        <div id="quiz-content" class="hide">
+
+            <div class="character-container">
+                <img id="character-img" src="images/mw-neutral.png" alt="Karakter" class="character animate-character">
+            </div>
+
+            <h2 id="question-text">De vraag komt hier...</h2>
+
+            <div id="answer-buttons"></div>
+
+            <div id="uitleg-container" class="hide uitleg-box">
+                <div class="uitleg-header">
+                    <span class="uitleg-icon">📖</span>
+                    <span class="uitleg-label">Toelichting</span>
+                </div>
+                <p id="uitleg-tekst"></p>
+                <button id="next-btn" class="btn btn-next">Volgende vraag →</button>
+            </div>
+
+            <div id="score-display" class="score-display">Score: 0</div>
+
+            <div class="progress-section">
+                <div class="progress-container">
+                    <div id="progress-bar"></div>
+                </div>
+            </div>
+
+            <div id="result-container" class="hide result-box">
+                <button id="whatsapp-share-btn" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Deel via WhatsApp
+                </button>
+                <button id="restart-btn" class="btn btn-secondary">Opnieuw spelen</button>
+                <a href="../../" id="portal-link-btn" class="btn btn-secondary">Naar het Leerportaal</a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <div class="portal-home-wrap">
+        <a href="https://leer.hetrechtepadcollege.nl/" class="portal-home-btn">← Terug naar Leerportaal</a>
+    </div>
+
+</div>
+
+<audio id="correct-sound" src="sounds/correct.mp3" preload="auto"></audio>
+<audio id="wrong-sound" src="sounds/wrong.mp3" preload="auto"></audio>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
