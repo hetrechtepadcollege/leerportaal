@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kennisquiz Gebed</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script data-goatcounter="https://hetrechtepadcollege.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://leer.hetrechtepadcollege.nl/apps/gebed-quiz/">
+    <meta property="og:title" content="Kennisquiz Gebed">
+    <meta property="og:description" content="Test je kennis over het gebed: tijden, rakaat, pilaren en wat het gebed ongeldig maakt. Doe nu mee!">
+    <meta property="og:image" content="https://leer.hetrechtepadcollege.nl/apps/gebed-quiz/images/share-banner.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Kennisquiz Gebed">
+    <meta property="twitter:description" content="Test je kennis over het gebed. Doe nu mee!">
+    <meta property="twitter:image" content="https://leer.hetrechtepadcollege.nl/apps/gebed-quiz/images/share-banner.png">
+</head>
+<body>
+
+<!-- Moskee-silhouet achtergrond -->
+<div class="mosque-bg" aria-hidden="true">
+    <svg viewBox="0 0 1200 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
+        <rect x="65" y="25" width="32" height="215" rx="4"/>
+        <polygon points="65,25 81,0 97,25"/>
+        <rect x="53" y="48" width="56" height="9" rx="3"/>
+        <rect x="1103" y="25" width="32" height="215" rx="4"/>
+        <polygon points="1103,25 1119,0 1135,25"/>
+        <rect x="1091" y="48" width="56" height="9" rx="3"/>
+        <rect x="97" y="135" width="255" height="105"/>
+        <path d="M137 135 Q224 72 311 135 Z"/>
+        <rect x="848" y="135" width="255" height="105"/>
+        <path d="M889 135 Q976 72 1063 135 Z"/>
+        <rect x="320" y="120" width="560" height="120"/>
+        <path d="M390 120 Q600 12 810 120 Z"/>
+        <path d="M155 240 L155 198 Q178 172 201 198 L201 240"/>
+        <path d="M228 240 L228 198 Q251 172 274 198 L274 240"/>
+        <path d="M926 240 L926 198 Q949 172 972 198 L972 240"/>
+        <path d="M999 240 L999 198 Q1022 172 1045 198 L1045 240"/>
+        <path d="M370 240 L370 193 Q400 164 430 193 L430 240"/>
+        <path d="M487 240 L487 193 Q517 164 547 193 L547 240"/>
+        <path d="M653 240 L653 193 Q683 164 713 193 L713 240"/>
+        <path d="M770 240 L770 193 Q800 164 830 193 L830 240"/>
+        <path d="M557 240 L557 182 Q600 150 643 182 L643 240"/>
+        <rect x="0" y="238" width="1200" height="4"/>
+    </svg>
+</div>
+
+<div class="page-wrapper">
+
+    <header class="site-header">
+        <img src="images/HRPC-logo.png" alt="Logo Het Rechte Pad College" class="site-logo">
+    </header>
+
+    <main class="quiz-card">
+
+        <div class="quiz-title-block">
+            <h1>Kennisquiz Gebed</h1>
+            <p class="quiz-subtitle">Test je kennis over het gebed</p>
+        </div>
+
+        <div class="character-container">
+            <img id="character-img" src="images/prayer.png" alt="Karakter" class="character animate-character">
+        </div>
+
+        <div class="question-meta">
+            <span id="category-badge" class="category-badge"></span>
+        </div>
+
+        <h2 id="question-text">De vraag komt hier...</h2>
+
+        <div id="answer-buttons"></div>
+
+        <div id="uitleg-container" class="hide uitleg-box">
+            <div class="uitleg-header">
+                <span class="uitleg-icon">📖</span>
+                <span class="uitleg-label">Toelichting</span>
+            </div>
+            <p id="uitleg-tekst"></p>
+            <button id="next-btn" class="btn btn-next">Volgende vraag →</button>
+        </div>
+
+        <div id="score-display" class="score-display">Score: 0</div>
+
+        <div class="progress-section">
+            <div class="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+        </div>
+
+        <div id="result-container" class="hide result-box">
+            <button id="whatsapp-share-btn" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> Deel via WhatsApp
+            </button>
+            <button id="restart-btn" class="btn btn-secondary">Opnieuw spelen</button>
+            <a href="../../" id="portal-link-btn" class="btn btn-secondary">Naar het Leerportaal</a>
+        </div>
+
+    </main>
+
+    <div class="portal-home-wrap">
+        <a href="https://leer.hetrechtepadcollege.nl/" class="portal-home-btn">← Terug naar Leerportaal</a>
+    </div>
+
+</div>
+
+<audio id="correct-sound" src="sounds/correct.mp3" preload="auto"></audio>
+<audio id="wrong-sound" src="sounds/wrong.mp3" preload="auto"></audio>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
