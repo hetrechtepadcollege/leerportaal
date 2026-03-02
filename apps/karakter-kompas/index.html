@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Karakter Kompas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://leer.hetrechtepadcollege.nl/apps/karakter-kompas/" />
+    <meta property="og:title" content="Karakter Kompas" />
+    <meta
+      property="og:description"
+      content="Een visueel educatief spel voor volwassenen met scenario's, reflectie en ruimte voor beeld en video."
+    />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Karakter Kompas" />
+    <meta
+      property="twitter:description"
+      content="Verken realistische scenario's, schuif aan je aanpak en ontdek hoe jouw keuzes uitpakken."
+    />
+  </head>
+  <body>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <main class="app-shell">
+      <section class="hero panel">
+        <div class="hero-copy">
+          <p class="eyebrow">Nieuw volwassen concept</p>
+          <h1>Karakter Kompas</h1>
+          <p class="hero-text">
+            Een educatief spel voor volwassenen waarin je lastige situaties onderzoekt, je
+            afwegingen verfijnt met sliders en via pop-up reflecties feedback krijgt op je keuze.
+          </p>
+
+          <div class="hero-actions">
+            <button class="action-btn primary" id="open-intro">Hoe werkt het?</button>
+            <button class="action-btn ghost" id="open-media">Bekijk media-opzet</button>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-pill">
+              <span class="stat-label">Cases gespeeld</span>
+              <strong id="cases-played">0</strong>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-label">Reflectiescore</span>
+              <strong id="total-score">0</strong>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-label">Niveau</span>
+              <strong id="player-level">Startpositie</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img
+            class="brand-logo"
+            src="../../images/HRPC-logo.png"
+            alt="Het Rechte Pad College logo"
+          />
+          <div class="visual-card">
+            <span class="visual-label">Interactieve bouwstenen</span>
+            <ul>
+              <li>Sliders voor nuance en besluitvorming</li>
+              <li>Pop-up schermen voor uitleg en verdieping</li>
+              <li>Ruimte voor afbeeldingen, posters en video-scenes</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <article class="panel stage-panel">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker">Scenario</p>
+              <h2 id="case-title">Case titel</h2>
+            </div>
+            <span class="case-badge" id="case-category">Categorie</span>
+          </div>
+
+          <p class="case-text" id="case-text"></p>
+
+          <div class="choice-grid" id="choice-grid"></div>
+
+          <div class="slider-wrap">
+            <div class="slider-card">
+              <label for="knowledge-range">Kennis</label>
+              <input id="knowledge-range" type="range" min="0" max="100" value="55" />
+              <div class="slider-meta">
+                <span>Feiten checken</span>
+                <output id="knowledge-output">55</output>
+              </div>
+            </div>
+
+            <div class="slider-card">
+              <label for="empathy-range">Empathie</label>
+              <input id="empathy-range" type="range" min="0" max="100" value="60" />
+              <div class="slider-meta">
+                <span>Mensen meenemen</span>
+                <output id="empathy-output">60</output>
+              </div>
+            </div>
+
+            <div class="slider-card">
+              <label for="action-range">Daadkracht</label>
+              <input id="action-range" type="range" min="0" max="100" value="52" />
+              <div class="slider-meta">
+                <span>Durven handelen</span>
+                <output id="action-output">52</output>
+              </div>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <button class="action-btn primary" id="analyze-btn">Analyseer mijn aanpak</button>
+            <button class="action-btn ghost" id="next-btn">Volgende case</button>
+          </div>
+
+          <div class="feedback-strip" id="feedback-strip">
+            Kies eerst een aanpak en stem daarna de sliders af.
+          </div>
+        </article>
+
+        <aside class="sidebar">
+          <article class="panel insight-panel">
+            <p class="section-kicker">Live profiel</p>
+            <h2>Jouw speelstijl</h2>
+            <div class="profile-bars">
+              <div class="metric">
+                <div class="metric-head">
+                  <span>Evenwicht</span>
+                  <strong id="balance-score">0%</strong>
+                </div>
+                <div class="metric-track"><span id="balance-bar"></span></div>
+              </div>
+
+              <div class="metric">
+                <div class="metric-head">
+                  <span>Mensgericht</span>
+                  <strong id="care-score">0%</strong>
+                </div>
+                <div class="metric-track"><span id="care-bar"></span></div>
+              </div>
+
+              <div class="metric">
+                <div class="metric-head">
+                  <span>Besluitkracht</span>
+                  <strong id="decisive-score">0%</strong>
+                </div>
+                <div class="metric-track"><span id="decisive-bar"></span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel timeline-panel">
+            <p class="section-kicker">Reflectielijn</p>
+            <h2>Wat deze app straks kan dragen</h2>
+            <ul class="timeline-list">
+              <li>Scenario's uitbreiden met afbeeldingen per case</li>
+              <li>Video-uitleg openen in een pop-up of eigen scene</li>
+              <li>Meerdere rondes, badges en voortgang per gebruiker</li>
+              <li>Docent- of begeleidersmodus met extra toelichting</li>
+            </ul>
+          </article>
+
+          <article class="panel media-panel">
+            <div class="section-head compact">
+              <div>
+                <p class="section-kicker">Media</p>
+                <h2>Galerij-opzet</h2>
+              </div>
+              <button class="mini-btn" id="open-media-sidebar">Open</button>
+            </div>
+
+            <div class="media-grid">
+              <button class="media-card" data-media="image">
+                <span class="media-type">Afbeelding</span>
+                <strong>Case-illustratie</strong>
+                <small>Placeholder voor poster of scene-art</small>
+              </button>
+
+              <button class="media-card" data-media="video">
+                <span class="media-type">Video</span>
+                <strong>Mini-college</strong>
+                <small>Placeholder voor mp4/webm of embedded video</small>
+              </button>
+            </div>
+          </article>
+        </aside>
+      </section>
+
+      <div class="portal-link-wrap">
+        <a class="portal-link" href="../../">Terug naar leerportaal</a>
+      </div>
+    </main>
+
+    <dialog class="modal" id="intro-dialog">
+      <form method="dialog" class="modal-card">
+        <div class="modal-head">
+          <div>
+            <p class="section-kicker">Uitleg</p>
+            <h2>Concept voor volwassen spelers</h2>
+          </div>
+          <button class="close-btn" aria-label="Sluiten">Sluiten</button>
+        </div>
+        <p>
+          Deze eerste versie combineert scenario-keuzes met sliders zodat de speler niet alleen een
+          antwoord kiest, maar ook de toon en intensiteit van die keuze bepaalt.
+        </p>
+        <p>
+          Per scenario kun je straks beeld, audio of video toevoegen om de context realistischer en
+          rijker te maken.
+        </p>
+      </form>
+    </dialog>
+
+    <dialog class="modal" id="result-dialog">
+      <form method="dialog" class="modal-card">
+        <div class="modal-head">
+          <div>
+            <p class="section-kicker">Reflectie</p>
+            <h2 id="result-title">Jouw uitkomst</h2>
+          </div>
+          <button class="close-btn" aria-label="Sluiten">Sluiten</button>
+        </div>
+        <p class="result-score" id="result-score">0 / 100</p>
+        <p id="result-body"></p>
+        <p class="result-coach" id="result-coach"></p>
+      </form>
+    </dialog>
+
+    <dialog class="modal" id="media-dialog">
+      <form method="dialog" class="modal-card">
+        <div class="modal-head">
+          <div>
+            <p class="section-kicker">Media-opzet</p>
+            <h2 id="media-title">Ruimte voor beeld en video</h2>
+          </div>
+          <button class="close-btn" aria-label="Sluiten">Sluiten</button>
+        </div>
+        <p id="media-body">
+          Voeg later bestanden toe in <code>apps/karakter-kompas/media/</code> en koppel ze aan
+          cases of uitlegschermen.
+        </p>
+      </form>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
