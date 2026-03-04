@@ -497,7 +497,7 @@ body::after {
 
 .prayer-name {
   font-size: 0.75rem;
-  color: var(--text-subtle);
+  color: var(--text-muted);
   letter-spacing: 0.05em;
   text-align: center;
 }
