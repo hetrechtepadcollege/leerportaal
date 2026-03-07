@@ -420,6 +420,180 @@ h1 {
   }
 }
 
+/* ── RIDDLES ────────────────────────────────────────── */
+.riddle-clues {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.riddle-clue {
+  background: #f8f6f0;
+  border: 1px solid #e5dcc8;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.875rem;
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+/* ── MOON ───────────────────────────────────────────── */
+.moon-display {
+  font-size: 2.8rem;
+  text-align: center;
+  margin: 6px 0 10px;
+  line-height: 1;
+}
+
+/* ── WORLD TRADITION ────────────────────────────────── */
+.world-tradition-text {
+  background: linear-gradient(135deg, #f8f6f0, #f0f4f9);
+  border-left: 3px solid var(--gold);
+  padding: 12px 14px;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.9rem;
+  color: var(--ink);
+  line-height: 1.6;
+  margin: 8px 0;
+}
+
+/* ── JUZ' GRID ──────────────────────────────────────── */
+.juz-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.juz-box {
+  aspect-ratio: 1;
+  background: #f8f6f0;
+  border: 1.5px solid #e5dcc8;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 140ms ease, border-color 140ms ease, color 140ms ease;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.juz-box:hover {
+  background: #edf4fb;
+  border-color: #9bbdd8;
+}
+
+.juz-box.read {
+  background: #e6f4ec;
+  border-color: #6dba95;
+  color: var(--good);
+}
+
+.juz-progress {
+  font-weight: 700;
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin: 4px 0;
+}
+
+.quran-fact {
+  background: #fff8ec;
+  border-left: 3px solid var(--gold);
+  padding: 10px 14px;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.85rem;
+  color: var(--ink);
+  margin-top: 8px;
+  min-height: 36px;
+  line-height: 1.55;
+}
+
+/* ── GOOD DEEDS ─────────────────────────────────────── */
+.deed-display {
+  background: linear-gradient(135deg, #fff8ec, #f0f7f4);
+  border: 1.5px solid var(--gold-border);
+  border-radius: 10px;
+  padding: 16px;
+  margin: 10px 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.55;
+  min-height: 56px;
+  text-align: center;
+}
+
+/* ── CHEF ────────────────────────────────────────────── */
+.chef-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+  margin: 10px 0;
+}
+
+.chef-item {
+  background: #f8f6f0;
+  border: 1.5px solid #e5dcc8;
+  border-radius: 8px;
+  padding: 10px 6px;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 140ms ease;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.chef-item:hover {
+  background: #edf4fb;
+  border-color: #9bbdd8;
+}
+
+.chef-item.selected {
+  background: #e6f4ec;
+  border-color: #6dba95;
+  color: var(--good);
+}
+
+.chef-plate {
+  background: #fff8ec;
+  border: 2px dashed var(--gold);
+  border-radius: 10px;
+  padding: 12px;
+  margin: 6px 0;
+  min-height: 48px;
+}
+
+.chef-plate-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+#chef-selected {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  min-height: 26px;
+}
+
+.chef-selected-tag {
+  background: var(--gold);
+  color: var(--ink);
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
 /* ── RESPONSIVE ─────────────────────────────────────── */
 @media (max-width: 700px) {
   .app {
@@ -432,5 +606,13 @@ h1 {
 
   .order-actions {
     flex-direction: column;
+  }
+
+  .juz-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .chef-items {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

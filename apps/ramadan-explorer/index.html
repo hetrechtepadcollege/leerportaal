@@ -109,6 +109,80 @@
             <button id="speed-next" class="btn secondary">Volgende</button>
           </div>
         </article>
+
+        <article class="card" id="riddle-card">
+          <h2>7. Wie Ben Ik?</h2>
+          <p>Lees de aanwijzingen en raad het Ramadan-begrip!</p>
+          <div id="riddle-clues" class="riddle-clues"></div>
+          <div id="riddle-options" class="options"></div>
+          <p id="riddle-feedback" class="feedback"></p>
+          <button id="riddle-next" class="btn">Volgend raadsel</button>
+        </article>
+
+        <article class="card" id="moon-card">
+          <h2>8. Maankalender Mysterie</h2>
+          <p>Leer hoe de islamitische maankalender werkt!</p>
+          <div class="moon-display" id="moon-display" aria-hidden="true">🌙</div>
+          <p id="moon-question"></p>
+          <div id="moon-options" class="options"></div>
+          <p id="moon-feedback" class="feedback"></p>
+          <button id="moon-next" class="btn">Volgende vraag</button>
+        </article>
+
+        <article class="card" id="world-card">
+          <h2>9. Ramadan Rondom de Wereld</h2>
+          <p>Bij welk land hoort deze Ramadan-traditie?</p>
+          <p id="world-tradition" class="world-tradition-text"></p>
+          <div id="world-options" class="options"></div>
+          <p id="world-feedback" class="feedback"></p>
+          <button id="world-next" class="btn">Volgende traditie</button>
+        </article>
+
+        <!-- TIJDELIJK UITGESCHAKELD — Qur'an Verkenner (kaart 10) wordt nog aangepast
+        <article class="card" id="quran-card">
+          <h2>10. Qur'an Verkenner</h2>
+          <p>De Qur'an heeft 30 delen (Juz'). In Ramadan leest men elke dag één deel. Klik op een Juz' om hem te 'lezen'!</p>
+          <div id="juz-grid" class="juz-grid"></div>
+          <p id="juz-progress" class="juz-progress">0 / 30 Juz' gelezen</p>
+          <p id="quran-fact" class="quran-fact"></p>
+          <button id="juz-reset" class="btn secondary" style="margin-top:8px">Opnieuw beginnen</button>
+        </article>
+        -->
+
+        <article class="card" id="eid-card">
+          <h2>10. 'Eid Verkenner</h2>
+          <p>Ramadan eindigt met een groot feest. Hoe goed ken jij 'Eid al-Fitr?</p>
+          <p id="eid-question"></p>
+          <div id="eid-options" class="options"></div>
+          <p id="eid-feedback" class="feedback"></p>
+          <button id="eid-next" class="btn">Volgende vraag</button>
+        </article>
+
+        <article class="card" id="chef-card">
+          <h2>11. Ramadan-chef</h2>
+          <p>Bouw een iftar-maaltijd! Klik op de etenswaren voor een goede iftar na een vastendag.</p>
+          <div id="chef-items" class="chef-items"></div>
+          <div class="chef-plate">
+            <span class="chef-plate-label">Jouw iftar-bord:</span>
+            <div id="chef-selected"></div>
+          </div>
+          <div class="order-actions">
+            <button id="chef-check" class="btn">Controleer maaltijd</button>
+            <button id="chef-reset" class="btn secondary">Opnieuw</button>
+          </div>
+          <p id="chef-feedback" class="feedback"></p>
+        </article>
+
+        <article class="card" id="deeds-card">
+          <h2>12. Goede Daden Uitdaging</h2>
+          <p>Kies een uitdaging en doe hem vandaag!</p>
+          <div id="deed-display" class="deed-display"></div>
+          <div class="order-actions">
+            <button id="deed-done" class="btn">✓ Gedaan!</button>
+            <button id="deed-shuffle" class="btn secondary">Andere uitdaging</button>
+          </div>
+          <p id="deed-feedback" class="feedback"></p>
+        </article>
       </section>
 
       <section class="card facts">
@@ -129,6 +203,6 @@
 
     </main>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
   </body>
 </html>
