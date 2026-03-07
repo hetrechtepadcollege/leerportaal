@@ -1638,7 +1638,7 @@ function updateJuzProgress() {
 
 const goodDeeds = [
   {
-    deed: "Zeg vandaag 3 keer 'JazākAllāhu khayranja' (Moge Allah jou belonen met het goede) tegen iemand om dankbaarheid te tonen.",
+    deed: "Zeg vandaag 3 keer 'JazākAllāhu khayran' (Moge Allah jou belonen met het goede) tegen iemand om dankbaarheid te tonen.",
     explain: "Dankbaarheid uitspreken is een kleine maar krachtige daad van vriendelijkheid.",
     mentorDetail: "Oefent sociale vaardigheden en dankbaarheid — kernwaarden van Ramadan."
   },
