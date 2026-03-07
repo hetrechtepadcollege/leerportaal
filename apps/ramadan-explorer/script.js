@@ -401,7 +401,7 @@ function checkOrder() {
     orderFeedbackEl.className = "feedback good";
     addStars(4);
   } else {
-    orderFeedbackEl.textContent = "Nog niet helemaal goed. Denk aan vroeg naar laat.";
+    orderFeedbackEl.textContent = "Goed geprobeerd! Denk aan vroeg naar laat.";
     if (currentMode === "mentor") {
       orderFeedbackEl.textContent += " Tip: laat eerst ontbijt/geen eten overdag/ifṭār als ankers kiezen.";
     }
@@ -1219,7 +1219,7 @@ const riddles = [
     answer: "Ifṭār",
     options: ["Suḥūr", "Ifṭār", "Laylatul Qadr"],
     explain: "Ifṭār is de maaltijd bij zonsondergang waarmee het vasten gebroken wordt.",
-    mentorDetail: "De sunnah om te beginnen met dadels en water heeft ook praktische voordelen: snel energie na een lange dag."
+    mentorDetail: "De soenna om te beginnen met dadels en water heeft ook praktische voordelen: snel energie na een lange dag."
   },
   {
     clues: [
@@ -1228,7 +1228,7 @@ const riddles = [
       "Ik zit verborgen in de laatste tien nachten van Ramadan."
     ],
     answer: "Laylatul Qadr",
-    options: ["Eid al-Fitr", "Laylatul Qadr", "Tarāwīḥ"],
+    options: ["ʿEid al-Fitr", "Laylatul Qadr", "Tarāwīḥ"],
     explain: "Laylatul Qadr (de Nacht van de Macht) is de heiligste nacht van Ramadan.",
     mentorDetail: "Bespreek welke eenvoudige ibadat kinderen in die nacht kunnen doen: du'a, Qur'an lezen, dhikr."
   },
@@ -1271,10 +1271,10 @@ const riddles = [
       "Ik komt direct ná de maand Ramadan.",
       "Moslims over de hele wereld vieren mij met gebed, eten en familie."
     ],
-    answer: "Eid al-Fitr",
-    options: ["Eid al-Fitr", "Laylatul Qadr", "Suḥūr"],
-    explain: "Eid al-Fitr is het feest dat de succesvolle afsluiting van Ramadan viert.",
-    mentorDetail: "Bespreek hoe Eid al-Fitr in de familie gevierd wordt en welke tradities daarbij horen."
+    answer: "ʿEid al-Fitr",
+    options: ["ʿEid al-Fitr", "Laylatul Qadr", "Suḥūr"],
+    explain: "ʿEid al-Fitr is het feest dat de succesvolle afsluiting van Ramadan viert.",
+    mentorDetail: "Bespreek hoe ʿEid al-Fitr in de familie gevierd wordt en welke tradities daarbij horen."
   }
 ];
 
@@ -1316,7 +1316,7 @@ function answerRiddle(choice) {
   );
   let feedback = isCorrect
     ? `Goed geraden! ${r.explain}`
-    : `Niet helemaal! Het antwoord is ${r.answer}. ${r.explain}`;
+    : `Goed geprobeerd! Het antwoord is ${r.answer}. ${r.explain}`;
   if (currentMode === "mentor" && r.mentorDetail) {
     feedback += ` Extra uitleg: ${r.mentorDetail}`;
   }
@@ -1359,7 +1359,7 @@ const moonQuestions = [
   {
     question: "Hoe weten moslims wanneer Ramadan begint?",
     options: [
-      "Door de nieuwe maansikkel (hilāl) te zien of astronomisch te berekenen",
+      "Door de nieuwe maansikkel (hilāl) te zien",
       "Door een vaste datum in de kalender",
       "Ramadan begint altijd op een maandag"
     ],
@@ -1529,7 +1529,7 @@ function answerWorldTradition(choice) {
   );
   let feedback = isCorrect
     ? `Goed! ${t.explain}`
-    : `Niet helemaal! Het is ${t.country}. ${t.explain}`;
+    : `Goed geprobeerd! Het is ${t.country}. ${t.explain}`;
   if (currentMode === "mentor") feedback += ` Extra uitleg: ${t.mentorDetail}`;
   worldFeedbackEl.textContent = feedback;
   worldFeedbackEl.className = `feedback ${isCorrect ? "good" : "bad"}`;
@@ -1568,10 +1568,11 @@ let juzRead = new Array(30).fill(false);
 let juzFactIndex = 0;
 const juzMilestonesAwarded = new Set();
 
-const juzGridEl = document.getElementById("juz-grid");
-const juzProgressEl = document.getElementById("juz-progress");
-const quranFactEl = document.getElementById("quran-fact");
-const juzResetBtn = document.getElementById("juz-reset");
+// TIJDELIJK UITGESCHAKELD — Qur'an Verkenner wordt nog aangepast
+// const juzGridEl = document.getElementById("juz-grid");
+// const juzProgressEl = document.getElementById("juz-progress");
+// const quranFactEl = document.getElementById("quran-fact");
+// const juzResetBtn = document.getElementById("juz-reset");
 
 function buildJuzGrid() {
   juzGridEl.innerHTML = "";
@@ -1622,13 +1623,14 @@ function updateJuzProgress() {
   juzProgressEl.textContent = `${readCount} / 30 Juz' gelezen`;
 }
 
-juzResetBtn.addEventListener("click", () => {
-  juzRead = new Array(30).fill(false);
-  juzFactIndex = 0;
-  juzMilestonesAwarded.clear();
-  quranFactEl.textContent = "";
-  buildJuzGrid();
-});
+// TIJDELIJK UITGESCHAKELD — Qur'an Verkenner wordt nog aangepast
+// juzResetBtn.addEventListener("click", () => {
+//   juzRead = new Array(30).fill(false);
+//   juzFactIndex = 0;
+//   juzMilestonesAwarded.clear();
+//   quranFactEl.textContent = "";
+//   buildJuzGrid();
+// });
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 11. GOEDE DADEN UITDAGING
@@ -1636,7 +1638,7 @@ juzResetBtn.addEventListener("click", () => {
 
 const goodDeeds = [
   {
-    deed: "Zeg vandaag 3 keer 'JazākAllāh khayr' (dank je wel) tegen iemand.",
+    deed: "Zeg vandaag 3 keer 'JazākAllāhu khayranja' (Moge Allah jou belonen met het goede) tegen iemand om dankbaarheid te tonen.",
     explain: "Dankbaarheid uitspreken is een kleine maar krachtige daad van vriendelijkheid.",
     mentorDetail: "Oefent sociale vaardigheden en dankbaarheid — kernwaarden van Ramadan."
   },
@@ -1745,8 +1747,8 @@ deedShuffleBtn.addEventListener("click", () => {
 // ─────────────────────────────────────────────────────────────────────────────
 
 const chefItems = [
-  { name: "Dadels 🍂", id: "dadels", good: true, explain: "Sunnah! De Profeet ﷺ brak zijn vasten met dadels — snel energie voor de maag." },
-  { name: "Water 💧", id: "water", good: true, explain: "Beginnen met water is gezond en een sunnah: rehydratie na een lange vastendag." },
+  { name: "Dadels 🍂", id: "dadels", good: true, explain: "Soenna! De Profeet ﷺ brak zijn vasten met dadels — snel energie voor de maag." },
+  { name: "Water 💧", id: "water", good: true, explain: "Beginnen met water is gezond en een soenna: rehydratie na een lange vastendag." },
   { name: "Linzensoep 🍲", id: "soep", good: true, explain: "Soep vult rustig aan en geeft energie zonder de maag te zwaar te belasten." },
   { name: "Brood 🫓", id: "brood", good: true, explain: "Koolhydraten geven duurzame energie na het vasten." },
   { name: "Fruit 🍊", id: "fruit", good: true, explain: "Fruit geeft vitamines, mineralen en suikers snel terug na het vasten." },
@@ -1832,7 +1834,7 @@ function checkChefMeal() {
   }
 
   if (hasDadels && hasWater) {
-    feedback += "Top! Je begint met dadels en water — precies de sunnah van de Profeet ﷺ! ";
+    feedback += "Top! Je begint met dadels en water — precies de soenna van de Profeet ﷺ! ";
   } else if (!hasDadels && goodSelected.length > 0) {
     feedback += "Tip: de Profeet ﷺ begon iftar altijd met dadels. ";
   }
@@ -1871,57 +1873,57 @@ chefResetBtn.addEventListener("click", resetChef);
 
 const eidQuestions = [
   {
-    question: "Wat betekent 'Eid al-Fitr'?",
+    question: "Wat betekent 'ʿEid al-Fitr'?",
     options: ["Het feest van het breken van het vasten", "Het feest van het offer", "Het begin van Ramadan"],
     answer: 0,
-    explain: "'Fitr' betekent het breken van het vasten — Eid al-Fitr viert de afsluiting van Ramadan.",
-    mentorDetail: "Er is ook Eid al-Adha (het offerfeest) — een ander groot islamitisch feest, zo'n twee maanden later."
+    explain: "'Fitr' betekent het breken van het vasten — ʿEid al-Fitr viert de afsluiting van Ramadan.",
+    mentorDetail: "Er is ook ʿEid al-Adha (het offerfeest) — een ander groot islamitisch feest, zo'n twee maanden later."
   },
   {
     question: "Wat is Zakāt al-Fitr?",
     options: [
-      "Een verplichte gift vóór het Eid-gebed aan mensen in nood",
+      "Een verplichte gift vóór het 'Eid-gebed aan mensen in nood",
       "Een vrijwillige gift",
-      "Een speciaal Eid-gebed"
+      "Een speciaal 'Eid-gebed"
     ],
     answer: 0,
-    explain: "Zakāt al-Fitr is een verplichte aalmoes vóór het Eid-gebed, zodat ook armen feest kunnen vieren.",
-    mentorDetail: "Zakāt al-Fitr is een symbool van gemeenschap: niemand mag Eid in armoede vieren."
+    explain: "Zakāt al-Fitr is een verplichte aalmoes vóór het 'Eid-gebed, zodat ook armen feest kunnen vieren.",
+    mentorDetail: "Zakāt al-Fitr is een symbool van gemeenschap: niemand mag 'Eid in armoede vieren."
   },
   {
-    question: "Wanneer wordt het Eid-gebed gebeden?",
+    question: "Wanneer wordt het 'Eid-gebed gebeden?",
     options: ["'s Ochtends vroeg, na zonsopgang", "'s Middags", "'s Avonds bij zonsondergang"],
     answer: 0,
-    explain: "Het Eid-gebed wordt vroeg in de ochtend gebeden, na zonsopgang.",
+    explain: "Het 'Eid-gebed wordt vroeg in de ochtend gebeden, na zonsopgang.",
     mentorDetail: "Het is een feestelijk sociaal moment: families gaan samen naar de moskee of een grote open plek."
   },
   {
-    question: "Wat is een bekende Eid-begroeting in het Arabisch?",
-    options: ["Eid Mubārak!", "Bismillāh!", "Alhamdulillāh!"],
+    question: "Wat is een bekende 'Eid-begroeting in het Arabisch?",
+    options: ["'Eid Mubārak!", "Bismillāh!", "Alhamdulillāh!"],
     answer: 0,
-    explain: "'Eid Mubārak!' betekent 'Gezegend feest!' — de meest gebruikte Eid-begroeting.",
-    mentorDetail: "Er zijn ook andere begroetingen: 'Kullu ʿām wa antum bikhair' (elk jaar goed voor jullie)."
+    explain: "'Eid Mubārak!' betekent 'Gezegend feest!' — de meest gebruikte 'Eid-begroeting.",
+    mentorDetail: "Er zijn ook andere begroetingen: 'Kullu ʿām wa antum bikhair' (Moge elk jaar voorbijgaan terwijl jullie in goede staat (gezondheid en voorspoed) verkeren.)."
   },
   {
-    question: "Waarom is Eid al-Fitr zo bijzonder na Ramadan?",
+    question: "Waarom is ʿEid al-Fitr zo bijzonder na Ramadan?",
     options: [
       "Omdat je een hele maand van discipline en aanbidding viert",
-      "Omdat je op Eid niet hoeft te bidden",
+      "Omdat je op 'Eid niet hoeft te bidden",
       "Omdat het altijd in de zomer valt"
     ],
     answer: 0,
-    explain: "Eid al-Fitr is een dankfeest en beloning voor een maand vol discipline, aanbidding en goed karakter.",
+    explain: "ʿEid al-Fitr is een dankfeest en beloning voor een maand vol discipline, aanbidding en goed karakter.",
     mentorDetail: "Bespreek wat het kind trots op zichzelf maakt na Ramadan."
   },
   {
-    question: "Wat eet je traditioneel op Eid-ochtend vóór het gebed?",
+    question: "Wat eet je traditioneel op 'Eid-ochtend vóór het gebed?",
     options: ["Een oneven aantal dadels", "Een grote maaltijd", "Niets — je vast nog"],
     answer: 0,
-    explain: "Het is sunnah om op Eid-ochtend een oneven aantal dadels te eten vóór het gebed.",
-    mentorDetail: "Dit is het tegenovergestelde van Eid al-Adha, waarbij je juist ná het gebed eet."
+    explain: "Het is soenna om op 'Eid-ochtend een oneven aantal dadels te eten vóór het gebed.",
+    mentorDetail: "Dit is het tegenovergestelde van 'Eid al-Adha, waarbij je juist ná het gebed eet."
   },
   {
-    question: "Ramadan eindigt als de nieuwe maan gezien wordt en Eid begint. Hoe heet deze maansikkel?",
+    question: "Ramadan eindigt als de nieuwe maan gezien wordt en 'Eid begint. Hoe heet deze maansikkel?",
     options: ["Hilāl", "Laylatul Qadr", "Tarāwīḥ"],
     answer: 0,
     explain: "De hilāl (nieuwe maansikkel) markeert zowel het begin als het einde van Ramadan.",
@@ -1980,7 +1982,7 @@ updateSpeedUI();
 renderRiddle();
 renderMoonQuestion();
 renderWorldTradition();
-buildJuzGrid();
+// buildJuzGrid(); // TIJDELIJK UITGESCHAKELD — Qur'an Verkenner wordt nog aangepast
 initDeeds();
 buildChefItems();
 renderEidQuestion();
