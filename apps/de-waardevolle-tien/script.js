@@ -36,9 +36,10 @@ function getRamadanStart() {
 }
 
 function getLastTenStart() {
-  // Dag 21 van Ramadan = eerste van de laatste 10 nachten
+  // Nacht 21 van Ramadan = eerste van de laatste 10 nachten
+  // De nacht begint bij zonsondergang op dag 20, vandaar +19 (niet +20)
   const start = getRamadanStart();
-  start.setDate(start.getDate() + 20);
+  start.setDate(start.getDate() + 19);
   return start;
 }
 
