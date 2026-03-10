@@ -275,11 +275,11 @@ function parseLocalDatum(str) {
 
 // Geeft terug: -1 = te vroeg, 0–9 = huidige nacht (index), 10 = voorbij
 function getNachtStatus() {
-  const vandaag = new Date();
-  vandaag.setHours(0, 0, 0, 0);
+  const nu = new Date();
   const nacht21Start = parseLocalDatum(RAMADAN_START_STR);
   nacht21Start.setDate(nacht21Start.getDate() + 19);
-  const diff = Math.floor((vandaag - nacht21Start) / MS_PER_DAG);
+  nacht21Start.setHours(19, 0, 0, 0); // kaart zichtbaar vanaf 19:00 (na Maghrib)
+  const diff = Math.floor((nu - nacht21Start) / MS_PER_DAG);
   if (diff < 0) return -1;
   if (diff > 9) return 10;
   return diff; // 0 = nacht 21, 9 = nacht 30
