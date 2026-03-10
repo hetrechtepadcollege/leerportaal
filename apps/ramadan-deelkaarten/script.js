@@ -306,10 +306,10 @@ function renderKaart(index) {
   document.getElementById('dua-betekenis').textContent = nacht.dua.betekenis;
   document.getElementById('dua-bron').textContent = `— ${nacht.dua.bron}`;
 
-  document.getElementById('dhikr-arabisch').textContent = nacht.dhikr.arabisch;
-  document.getElementById('dhikr-transliteratie').textContent = nacht.dhikr.transliteratie;
-  document.getElementById('dhikr-betekenis').textContent = nacht.dhikr.betekenis;
-  document.getElementById('dhikr-bron').textContent = `— ${nacht.dhikr.bron}`;
+  document.getElementById('dzikr-arabisch').textContent = nacht.dhikr.arabisch;
+  document.getElementById('dzikr-transliteratie').textContent = nacht.dhikr.transliteratie;
+  document.getElementById('dzikr-betekenis').textContent = nacht.dhikr.betekenis;
+  document.getElementById('dzikr-bron').textContent = `— ${nacht.dhikr.bron}`;
 
   document.getElementById('kaart').hidden = false;
   document.getElementById('deel-knoppen').hidden = false;
