@@ -502,10 +502,10 @@ async function tekenKaartCanvas(nacht) {
     img.onerror = reject;
     img.src = 'images/HRPC-logo-white.png';
   });
-  const logoH = 52;
+  const logoH = 80;
   const logoW = logo.naturalWidth * (logoH / logo.naturalHeight);
   ctx.globalAlpha = 0.85;
-  ctx.drawImage(logo, W / 2 - logoW / 2, footerY - logoH + 8, logoW, logoH);
+  ctx.drawImage(logo, W / 2 - logoW / 2, footerY - logoH / 2, logoW, logoH);
   ctx.globalAlpha = 1;
 
   return canvas.toDataURL('image/png');
