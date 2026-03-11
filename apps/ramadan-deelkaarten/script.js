@@ -20,7 +20,7 @@ const NACHTEN = [
       betekenis: '"O Allah, U bent de Meest Vergevingsgezinde, en U houdt van vergeving; vergeef mij dus.’"',
       bron: 'Tirmidhi'
     },
-    dhikr: {
+    dzikr: {
       arabisch: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، سُبْحَانَ اللَّهِ الْعَظِيمِ',
       transliteratie: "Subḥānallāhi wa biḥamdihī, Subḥānallāhil ʿaẓīm",
       betekenis: '"Heilig is Allah en alle lof komt Hem toe. Heilig is Allah, de Almachtige."',
@@ -46,7 +46,7 @@ const NACHTEN = [
       betekenis: '"Onze Heer, wij hebben onszelf onrecht aangedaan. Als U ons niet vergeeft en ons niet begenadigt, zullen wij zeker tot de verliezers behoren."',
       bron: 'Al-Aʿraf 7:23'
     },
-    dhikr: {
+    dzikr: {
       arabisch: 'أَسْتَغْفِرُ اللَّهَ الْعَظِيمَ الَّذِي لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ وَأَتُوبُ إِلَيْهِ',
       transliteratie: "Astaghfirullāhal-ʿaẓīmal-ladhī lā ilāha illā huwal-Ḥayyul-Qayyūm wa-atūbu ilayh",
       betekenis: '"Ik vraag Allah de Geweldige om vergiffenis — er is geen god dan Hij, de Levende, de Zelfbestaande — en ik keer mij in berouw tot Hem."',
@@ -72,7 +72,7 @@ const NACHTEN = [
       betekenis: '"O Allah, U bent de Vergevende, U houdt van vergeven, vergeef mij."',
       bron: 'Tirmidhi'
     },
-    dhikr: {
+    dzikr: {
       arabisch: 'لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ',
       transliteratie: "Lā ilāha illallāhu waḥdahū lā sharīka lah, lahul-mulku wa-lahul-ḥamdu wa-huwa ʿalā kulli shay'in qadīr",
       betekenis: '"Er is geen god dan Allah, alleen, zonder deelgenoot. Van Hem is de heerschappij en aan Hem komt alle lof toe, en Hij heeft macht over alle zaken."',
@@ -98,7 +98,7 @@ const NACHTEN = [
       betekenis: '"Mijn Heer, maak mij een onderhoudende van het gebed en ook uit mijn nageslacht. Onze Heer, en aanvaard mijn smeekbede."',
       bron: 'Ibrahim 14:40'
     },
-    dhikr: {
+    dzikr: {
       arabisch: 'اللَّهُ أَكْبَرُ كَبِيرًا، وَالْحَمْدُ لِلَّهِ كَثِيرًا، وَسُبْحَانَ اللَّهِ بُكْرَةً وَأَصِيلًا',
       transliteratie: "Allāhu akbaru kabīrā, wal-ḥamdulillāhi kathīrā, wa-subḥānallāhi bukratan wa-aṣīlā",
       betekenis: '"Allah is de Grootste — en alle uitbundige lof komt Allah toe — en glorie zij Allah, \'s morgens vroeg en \'s avonds laat."',
@@ -124,7 +124,7 @@ const NACHTEN = [
       betekenis: '"O Allah, U bent de Vergevende, U houdt van vergeven, vergeef mij."',
       bron: 'Tirmidhi'
     },
-    dhikr: {
+    dzikr: {
       arabisch: 'سُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ وَلَا إِلَهَ إِلَّا اللَّهُ وَاللَّهُ أَكْبَرُ',
       transliteratie: "Subḥānallāhi wal-ḥamdulillāhi wa-lā ilāha illallāhu wallāhu akbar",
       betekenis: '"Glorie zij Allah, en alle lof zij Allah, en er is geen god dan Allah, en Allah is de Grootste."',
@@ -146,11 +146,11 @@ const NACHTEN = [
     },
     dua: {
       arabisch: 'اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ',
-      transliteratie: "Allāhumma aʿinnī ʿalā dhikrika wa-shukrika wa-ḥusni ʿibādatik",
+      transliteratie: "Allāhumma aʿinnī ʿalā dzikrika wa-shukrika wa-ḥusni ʿibādatik",
       betekenis: '"O Allah, help mij U te gedenken, U dankbaar te zijn en U op de schoonste wijze te aanbidden."',
       bron: 'Abu Dawud & Nasai'
     },
-    dhikr: {
+    dzikr: {
       arabisch: 'الْحَمْدُ لِلَّهِ عَلَى كُلِّ حَالٍ',
       transliteratie: "Al-ḥamdulillāhi ʿalā kulli ḥāl",
       betekenis: '"Alle lof zij Allah in elke omstandigheid."',
@@ -176,7 +176,7 @@ const NACHTEN = [
       betekenis: '"O Allah, U bent de Vergevende, U houdt van vergeven, vergeef mij."',
       bron: 'Tirmidhi'
     },
-    dhikr: {
+    dzikr: {
       arabisch: 'لَا إِلَهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ',
       transliteratie: "Lā ilāha illā anta subḥānaka innī kuntu minaẓ-ẓālimīn",
       betekenis: '"Er is geen god dan U, glorie zij U, voorwaar ik behoorde tot de onrechtvaardigen." — Wie dit zegt: Allah verlicht zijn beproeving.',
@@ -202,7 +202,7 @@ const NACHTEN = [
       betekenis: '"Onze Heer, geef ons het goede in deze wereld en het goede in het hiernamaals, en bescherm ons tegen de bestraffing van het Vuur."',
       bron: 'Al-Baqarah 2:201'
     },
-    dhikr: {
+    dzikr: {
       arabisch: 'حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ',
       transliteratie: "Ḥasbunallāhu wa-niʿmal-wakīl",
       betekenis: '"Allah is voldoende voor ons, en Hij is de beste Behoeder."',
@@ -228,7 +228,7 @@ const NACHTEN = [
       betekenis: '"O Allah, U bent de Vergevende, U houdt van vergeven, vergeef mij."',
       bron: 'Tirmidhi'
     },
-    dhikr: {
+    dzikr: {
       arabisch: 'أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ',
       transliteratie: "Astaghfirullāha wa-atūbu ilayh",
       betekenis: '"Ik vraag Allah om vergiffenis en ik keer mij in berouw tot Hem." — 100 maal per dag.',
@@ -254,7 +254,7 @@ const NACHTEN = [
       betekenis: '"Onze Heer, bestraf ons niet als wij vergeten of een fout begaan. Onze Heer, leg ons geen last op zoals U die legde op degenen vóór ons."',
       bron: 'Al-Baqarah 2:286'
     },
-    dhikr: {
+    dzikr: {
       arabisch: 'سُبْحَانَ الْمَلِكِ الْقُدُّوسِ',
       transliteratie: "Subḥānal-Malikil-Quddūs",
       betekenis: '"Glorie zij de Heerser, de Heilige." — 3× na het witrgebed, de derde keer met verheven stem.',
@@ -306,10 +306,10 @@ function renderKaart(index) {
   document.getElementById('dua-betekenis').textContent = nacht.dua.betekenis;
   document.getElementById('dua-bron').textContent = `— ${nacht.dua.bron}`;
 
-  document.getElementById('dhikr-arabisch').textContent = nacht.dhikr.arabisch;
-  document.getElementById('dhikr-transliteratie').textContent = nacht.dhikr.transliteratie;
-  document.getElementById('dhikr-betekenis').textContent = nacht.dhikr.betekenis;
-  document.getElementById('dhikr-bron').textContent = `— ${nacht.dhikr.bron}`;
+  document.getElementById('dzikr-arabisch').textContent = nacht.dzikr.arabisch;
+  document.getElementById('dzikr-transliteratie').textContent = nacht.dzikr.transliteratie;
+  document.getElementById('dzikr-betekenis').textContent = nacht.dzikr.betekenis;
+  document.getElementById('dzikr-bron').textContent = `— ${nacht.dzikr.bron}`;
 
   document.getElementById('kaart').hidden = false;
   document.getElementById('deel-knoppen').hidden = false;
@@ -330,8 +330,8 @@ document.getElementById('btn-whatsapp').addEventListener('click', () => {
     `_${nacht.vers.vertaling}_\n\n` +
     `📜 *Hadith*\n${nacht.hadith.tekst}\n— ${nacht.hadith.bron}\n\n` +
     `🤲 *Du\'a*\n${nacht.dua.arabisch}\n${nacht.dua.transliteratie}\n_${nacht.dua.betekenis}_\n— ${nacht.dua.bron}\n\n` +
-    `📿 *Dhikr / Istigfar*\n${nacht.dhikr.arabisch}\n${nacht.dhikr.transliteratie}\n_${nacht.dhikr.betekenis}_\n— ${nacht.dhikr.bron}\n\n` +
-    `🕌 _Via HRPC Leerportaal_`;
+    `📿 *Dzikr / Istigfar*\n${nacht.dzikr.arabisch}\n${nacht.dzikr.transliteratie}\n_${nacht.dzikr.betekenis}_\n— ${nacht.dzikr.bron}\n\n` +
+    `🕌 _Via Het Rechte Pad College Leerportaal_`;
 
   window.open(`https://wa.me/?text=${encodeURIComponent(tekst)}`, '_blank', 'noopener,noreferrer');
   trackEvent('deel-whatsapp', { nacht: nacht.nacht });
@@ -479,15 +479,15 @@ function tekenKaartCanvas(nacht) {
   y = tekenSeparator(ctx, y, W, PAD, GOUD);
   y += 10;
 
-  // — Dhikr sectie
-  y = tekenSectieLabel(ctx, '📿  Dhikr / Istigfar', y, PAD, GOUD);
-  y = tekenArabischTekst(ctx, nacht.dhikr.arabisch, y, W, PAD, BREED);
+  // — Dzikr sectie
+  y = tekenSectieLabel(ctx, '📿  Dzikr / Istigfar', y, PAD, GOUD);
+  y = tekenArabischTekst(ctx, nacht.dzikr.arabisch, y, W, PAD, BREED);
   y += 6;
-  y = tekenWrapTekst(ctx, nacht.dhikr.transliteratie, y, PAD, MUTED, `italic 25px "Noto Sans", sans-serif`, BREED, 38);
+  y = tekenWrapTekst(ctx, nacht.dzikr.transliteratie, y, PAD, MUTED, `italic 25px "Noto Sans", sans-serif`, BREED, 38);
   y += 4;
-  y = tekenWrapTekst(ctx, nacht.dhikr.betekenis, y, PAD, CREAM, `400 26px "Noto Sans", sans-serif`, BREED, 40);
+  y = tekenWrapTekst(ctx, nacht.dzikr.betekenis, y, PAD, CREAM, `400 26px "Noto Sans", sans-serif`, BREED, 40);
   y += 4;
-  y = tekenBron(ctx, `— ${nacht.dhikr.bron}`, y, PAD, BRON);
+  y = tekenBron(ctx, `— ${nacht.dzikr.bron}`, y, PAD, BRON);
 
   // — Footer
   const footerY = H - 56;
@@ -497,7 +497,7 @@ function tekenKaartCanvas(nacht) {
   ctx.fillStyle = `rgba(200,169,110,0.5)`;
   ctx.font = '400 26px "Noto Sans", sans-serif';
   ctx.textAlign = 'center';
-  ctx.fillText('HRPC Leerportaal', W / 2, footerY);
+  ctx.fillText('Het Rechte Pad College Leerportaal', W / 2, footerY);
 
   return canvas.toDataURL('image/png');
 }
