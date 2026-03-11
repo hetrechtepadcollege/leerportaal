@@ -17,7 +17,7 @@ const NACHTEN = [
     dua: {
       arabisch: 'اللَّهُمَّ إِنَّكَ عُفُوٌّ كَرِيمٌ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي',
       transliteratie: "Allāhumma innaka ʿafuwwun karīmun tuḥibbul ʿafwa faʾfu ʿannī",
-      betekenis: '"O Allah, U bent de Meest Vergevingsgezinde, en U houdt van vergeving; vergeef mij dus.’"',
+      betekenis: '"O Allah, U bent de Meest Vergevingsgezinde, en U houdt van vergeving; vergeef mij dus."',
       bron: 'Tirmidzī'
     },
     dzikr: {
@@ -331,7 +331,7 @@ document.getElementById('btn-whatsapp').addEventListener('click', () => {
     `_${nacht.vers.vertaling}_\n\n` +
     `📜 *Hadith*\n${nacht.hadith.tekst}\n— ${nacht.hadith.bron}\n\n` +
     `🤲 *Du'a*\n${nacht.dua.arabisch}\n${nacht.dua.transliteratie}\n_${nacht.dua.betekenis}_\n— ${nacht.dua.bron}\n\n` +
-    `📿 *Dzikr / Istigfar*\n${nacht.dzikr.arabisch}\n${nacht.dzikr.transliteratie}\n_${nacht.dzikr.betekenis}_\n— ${nacht.dzikr.bron}\n\n` +
+    `📿 *Dzikr / Istighfār*\n${nacht.dzikr.arabisch}\n${nacht.dzikr.transliteratie}\n_${nacht.dzikr.betekenis}_\n— ${nacht.dzikr.bron}\n\n` +
     `🕌 _Via Het Rechte Pad College Leerportaal_`;
 
   window.open(`https://wa.me/?text=${encodeURIComponent(tekst)}`, '_blank', 'noopener,noreferrer');
@@ -481,7 +481,7 @@ function tekenKaartCanvas(nacht) {
   y += 10;
 
   // — Dzikr sectie
-  y = tekenSectieLabel(ctx, '📿  Dzikr / Istigfar', y, PAD, GOUD);
+  y = tekenSectieLabel(ctx, '📿  Dzikr / Istighfār', y, PAD, GOUD);
   y = tekenArabischTekst(ctx, nacht.dzikr.arabisch, y, W, PAD, BREED);
   y += 6;
   y = tekenWrapTekst(ctx, nacht.dzikr.transliteratie, y, PAD, MUTED, `italic 25px "Noto Sans", sans-serif`, BREED, 38);
