@@ -326,11 +326,11 @@ document.getElementById('btn-whatsapp').addEventListener('click', () => {
   const nacht = NACHTEN[huidigIndex];
   const tekst =
     `🌙 *Nacht ${nacht.nacht} — ${nacht.thema}*\n\n` +
-    `📖 *Koranvers (${nacht.vers.referentie})*\n` +
+    `📖 *Koran (${nacht.vers.referentie})*\n` +
     `${nacht.vers.arabisch}\n` +
     `_${nacht.vers.vertaling}_\n\n` +
     `📜 *Hadith*\n${nacht.hadith.tekst}\n— ${nacht.hadith.bron}\n\n` +
-    `🤲 *Du'a*\n${nacht.dua.arabisch}\n${nacht.dua.transliteratie}\n_${nacht.dua.betekenis}_\n— ${nacht.dua.bron}\n\n` +
+    `🤲 *Duāʾ*\n${nacht.dua.arabisch}\n${nacht.dua.transliteratie}\n_${nacht.dua.betekenis}_\n— ${nacht.dua.bron}\n\n` +
     `📿 *Dzikr / Istighfār*\n${nacht.dzikr.arabisch}\n${nacht.dzikr.transliteratie}\n_${nacht.dzikr.betekenis}_\n— ${nacht.dzikr.bron}\n\n` +
     `🕌 _Via Het Rechte Pad College Leerportaal_`;
 
@@ -445,7 +445,7 @@ function tekenKaartCanvas(nacht) {
   y += 10;
 
   // — Verse sectie
-  y = tekenSectieLabel(ctx, '📖  Koranvers', y, PAD, GOUD);
+  y = tekenSectieLabel(ctx, '📖  Koran', y, PAD, GOUD);
   y = tekenArabischTekst(ctx, nacht.vers.arabisch, y, W, PAD, BREED);
   y += 8;
   y = tekenBron(ctx, nacht.vers.referentie, y, PAD, BRON);
@@ -466,8 +466,8 @@ function tekenKaartCanvas(nacht) {
   y = tekenSeparator(ctx, y, W, PAD, GOUD);
   y += 10;
 
-  // — Du'a sectie
-  y = tekenSectieLabel(ctx, "🤲  Du'a", y, PAD, GOUD);
+  // — Duāʾ sectie
+  y = tekenSectieLabel(ctx, "🤲🏽  Duāʾ", y, PAD, GOUD);
   y = tekenArabischTekst(ctx, nacht.dua.arabisch, y, W, PAD, BREED);
   y += 6;
   y = tekenWrapTekst(ctx, nacht.dua.transliteratie, y, PAD, MUTED, `italic 25px "Noto Sans", sans-serif`, BREED, 38);
