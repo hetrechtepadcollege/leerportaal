@@ -358,6 +358,36 @@ body {
   line-height: 1.65;
 }
 
+/* ─── Nacht-navigatie ─────────────────────────────────────────────────────────── */
+.nacht-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 0 4px;
+}
+
+.nav-nacht-btn {
+  background: transparent;
+  border: 1px solid rgba(200, 169, 110, 0.28);
+  color: var(--goud);
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 0.85rem;
+  padding: 8px 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.nav-nacht-btn:hover {
+  background: rgba(200, 169, 110, 0.12);
+  border-color: rgba(200, 169, 110, 0.5);
+}
+
+#btn-volgende-nacht {
+  margin-left: auto;
+}
+
 /* ─── Terug naar Leerportaal ──────────────────────────────────────────────────── */
 .terug-wrap {
   text-align: center;

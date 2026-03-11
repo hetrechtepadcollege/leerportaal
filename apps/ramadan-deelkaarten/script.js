@@ -275,11 +275,11 @@ function parseLocalDatum(str) {
 
 // Geeft terug: -1 = te vroeg, 0–9 = huidige nacht (index), 10 = voorbij
 function getNachtStatus() {
-  const vandaag = new Date();
-  vandaag.setHours(0, 0, 0, 0);
+  const nu = new Date();
   const nacht21Start = parseLocalDatum(RAMADAN_START_STR);
   nacht21Start.setDate(nacht21Start.getDate() + 19);
-  const diff = Math.floor((vandaag - nacht21Start) / MS_PER_DAG);
+  nacht21Start.setHours(19, 0, 0, 0); // kaart zichtbaar vanaf 19:00 (na Maghrib)
+  const diff = Math.floor((nu - nacht21Start) / MS_PER_DAG);
   if (diff < 0) return -1;
   if (diff > 9) return 10;
   return diff; // 0 = nacht 21, 9 = nacht 30
@@ -306,14 +306,22 @@ function renderKaart(index) {
   document.getElementById('dua-betekenis').textContent = nacht.dua.betekenis;
   document.getElementById('dua-bron').textContent = `— ${nacht.dua.bron}`;
 
+<<<<<<< HEAD
   document.getElementById('dzikr-arabisch').textContent = nacht.dzikr.arabisch;
   document.getElementById('dzikr-transliteratie').textContent = nacht.dzikr.transliteratie;
   document.getElementById('dzikr-betekenis').textContent = nacht.dzikr.betekenis;
   document.getElementById('dzikr-bron').textContent = `— ${nacht.dzikr.bron}`;
+=======
+  document.getElementById('dzikr-arabisch').textContent = nacht.dzikr.arabisch;
+  document.getElementById('dzikr-transliteratie').textContent = nacht.dzikr.transliteratie;
+  document.getElementById('dzikr-betekenis').textContent = nacht.dzikr.betekenis;
+  document.getElementById('dzikr-bron').textContent = `— ${nacht.dzikr.bron}`;
+>>>>>>> 812bda81247735fac822c279c429ec19f6fdeff8
 
   document.getElementById('kaart').hidden = false;
   document.getElementById('deel-knoppen').hidden = false;
 
+  updateNavButtons(index, getNachtStatus());
   trackEvent('nacht-bekeken', { nacht: nacht.nacht });
 }
 
@@ -623,6 +631,40 @@ function wrapTekstCanvas(ctx, tekst, maxBreed) {
   if (regel) regels.push(regel);
   return regels;
 }
+
+// ─── Nacht-navigatie ───────────────────────────────────────────────────────────
+
+function updateNavButtons(index, maxIndex) {
+  const nav = document.getElementById('nacht-nav');
+  const btnVorige = document.getElementById('btn-vorige-nacht');
+  const btnVolgende = document.getElementById('btn-volgende-nacht');
+
+  const heeftVorige = index > 0;
+  const heeftVolgende = index < maxIndex;
+
+  btnVorige.hidden = !heeftVorige;
+  btnVolgende.hidden = !heeftVolgende;
+  nav.hidden = !heeftVorige && !heeftVolgende;
+
+  if (heeftVorige) btnVorige.textContent = `← Nacht ${NACHTEN[index - 1].nacht}`;
+  if (heeftVolgende) btnVolgende.textContent = `Nacht ${NACHTEN[index + 1].nacht} →`;
+}
+
+document.getElementById('btn-vorige-nacht').addEventListener('click', () => {
+  if (huidigIndex > 0) {
+    huidigIndex -= 1;
+    renderKaart(huidigIndex);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+});
+
+document.getElementById('btn-volgende-nacht').addEventListener('click', () => {
+  if (huidigIndex < getNachtStatus()) {
+    huidigIndex += 1;
+    renderKaart(huidigIndex);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+});
 
 // ─── GoatCounter tracking ──────────────────────────────────────────────────────
 
