@@ -192,6 +192,81 @@
           </div>
           <p id="deed-feedback" class="feedback"></p>
         </article>
+
+        <article class="card" id="afwijker-card">
+          <h2>13. Zoek de Afwijker</h2>
+          <p>Welk woord of begrip past <strong>niet</strong> bij de andere drie?</p>
+          <p id="afwijker-round" class="afwijker-round"></p>
+          <div id="afwijker-options" class="options"></div>
+          <p id="afwijker-feedback" class="feedback"></p>
+          <button id="afwijker-next" class="btn">Volgende ronde</button>
+        </article>
+
+        <article class="card" id="foutjager-card">
+          <h2>14. Fout-jager</h2>
+          <p>Lees het verhaal en klik op de foute stukjes tekst. Er zijn <strong id="foutjager-count">3</strong> fouten!</p>
+          <div id="foutjager-story" class="foutjager-story"></div>
+          <div class="order-actions">
+            <button id="foutjager-check" class="btn">Controleer</button>
+            <button id="foutjager-next" class="btn secondary">Volgend verhaal</button>
+          </div>
+          <div id="foutjager-result" class="foutjager-result"></div>
+        </article>
+
+        <article class="card" id="emoji-card">
+          <h2>15. Emoji Dekoder</h2>
+          <p>Wat stelt deze emojireeks voor? Kies het juiste Ramadan-begrip!</p>
+          <div id="emoji-display" class="emoji-display" aria-label="Emojireeks"></div>
+          <p id="emoji-round" class="afwijker-round"></p>
+          <div id="emoji-options" class="options"></div>
+          <p id="emoji-feedback" class="feedback"></p>
+          <button id="emoji-next" class="btn">Volgende reeks</button>
+        </article>
+
+        <article class="card" id="sorter-card">
+          <h2>16. Categorie Sorteerspel</h2>
+          <p id="sorter-intro">Klik elk item aan en sleep het naar de juiste categorie.</p>
+          <div id="sorter-items" class="sorter-items"></div>
+          <div id="sorter-buckets" class="sorter-buckets"></div>
+          <div class="order-actions">
+            <button id="sorter-check" class="btn">Controleer</button>
+            <button id="sorter-reset" class="btn secondary">Volgende ronde</button>
+          </div>
+          <p id="sorter-feedback" class="feedback"></p>
+        </article>
+
+        <article class="card" id="tweewaarheden-card">
+          <h2>17. Twee Waarheden, Één Leugen</h2>
+          <p>Drie uitspraken over Ramadan — één ervan is <strong>niet waar</strong>. Welke is het?</p>
+          <p id="tw-round" class="afwijker-round"></p>
+          <div id="tw-statements" class="tw-statements"></div>
+          <p id="tw-feedback" class="feedback"></p>
+          <button id="tw-next" class="btn">Volgende set</button>
+        </article>
+
+        <article class="card" id="woordweb-card">
+          <h2>18. Woordweb</h2>
+          <p>Klik alle woorden aan die bij het centrale begrip horen. Negeer de afleidingen!</p>
+          <div id="ww-center" class="ww-center"></div>
+          <div id="ww-words" class="ww-words"></div>
+          <div class="order-actions">
+            <button id="ww-check" class="btn">Controleer</button>
+            <button id="ww-next" class="btn secondary">Volgend web</button>
+          </div>
+          <p id="ww-feedback" class="feedback"></p>
+        </article>
+
+        <article class="card" id="bingo-card">
+          <h2>19. Ramadan Bingo</h2>
+          <p>Lees de omschrijving en klik het juiste vakje aan. Bingo bij een volle rij, kolom of diagonaal!</p>
+          <div id="bingo-clue" class="bingo-clue"></div>
+          <div id="bingo-grid" class="bingo-grid"></div>
+          <div class="order-actions">
+            <button id="bingo-next-clue" class="btn">Volgende omschrijving</button>
+            <button id="bingo-reset" class="btn secondary">Nieuw spel</button>
+          </div>
+          <p id="bingo-feedback" class="feedback"></p>
+        </article>
       </section>
 
       <section class="card facts">

@@ -594,6 +594,420 @@ h1 {
   font-weight: 700;
 }
 
+/* ── AFWIJKER ───────────────────────────────────────── */
+.afwijker-round {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin: 0 0 6px;
+}
+
+/* ── FOUT-JAGER ─────────────────────────────────────── */
+.foutjager-story {
+  background: #f8f6f0;
+  border: 1px solid #e5dcc8;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin: 10px 0;
+}
+
+.foutjager-titel {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin: 0 0 10px;
+}
+
+.foutjager-tekst {
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: var(--ink);
+  margin: 0;
+}
+
+.fout-segment {
+  display: inline;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--muted);
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 1px 3px;
+  transition: background 140ms ease;
+}
+
+.fout-segment:hover {
+  background: rgba(212, 175, 55, 0.15);
+}
+
+.fout-segment.selected {
+  background: rgba(212, 175, 55, 0.28);
+  text-decoration-color: #b8860b;
+  text-decoration-style: solid;
+}
+
+.fout-segment.correct-pick {
+  background: rgba(26, 122, 69, 0.15);
+  color: var(--good);
+  text-decoration-color: var(--good);
+  text-decoration-style: solid;
+  cursor: default;
+}
+
+.fout-segment.wrong-pick {
+  background: rgba(192, 57, 43, 0.12);
+  color: var(--bad);
+  text-decoration-color: var(--bad);
+  text-decoration-style: solid;
+  cursor: default;
+}
+
+.fout-segment.missed {
+  background: rgba(192, 57, 43, 0.08);
+  color: var(--bad);
+  text-decoration-color: var(--bad);
+  text-decoration-style: wavy;
+  cursor: default;
+}
+
+.foutjager-result {
+  margin-top: 10px;
+  display: grid;
+  gap: 6px;
+}
+
+.foutjager-item {
+  font-size: 0.84rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  line-height: 1.55;
+}
+
+.foutjager-item.goed {
+  background: #e6f4ec;
+  color: var(--good);
+  border: 1px solid #6dba95;
+}
+
+.foutjager-item.gemist {
+  background: rgba(192, 57, 43, 0.07);
+  color: var(--bad);
+  border: 1px solid rgba(192, 57, 43, 0.22);
+}
+
+.foutjager-item.verkeerd {
+  background: rgba(192, 57, 43, 0.07);
+  color: var(--bad);
+  border: 1px solid rgba(192, 57, 43, 0.22);
+}
+
+.mentor-note {
+  background: #fff8ec;
+  border-left: 3px solid var(--gold);
+  padding: 10px 14px;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.84rem;
+  color: var(--ink);
+  margin-top: 6px;
+  line-height: 1.55;
+}
+
+/* ── EMOJI DEKODER ──────────────────────────────────── */
+.emoji-display {
+  font-size: 2.2rem;
+  text-align: center;
+  letter-spacing: 6px;
+  padding: 14px 10px;
+  background: linear-gradient(135deg, #fff8ec, #f0f4f9);
+  border: 1.5px solid var(--gold-border);
+  border-radius: 10px;
+  margin: 10px 0 6px;
+  line-height: 1.2;
+}
+
+/* ── CATEGORIE SORTEERSPEL ──────────────────────────── */
+.sorter-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 10px 0 12px;
+  min-height: 40px;
+}
+
+.sorter-item {
+  background: #f8f6f0;
+  border: 1.5px solid #e5dcc8;
+  border-radius: 8px;
+  padding: 7px 13px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 140ms ease;
+  user-select: none;
+}
+
+.sorter-item:hover {
+  background: #edf4fb;
+  border-color: #9bbdd8;
+}
+
+.sorter-item.active {
+  background: rgba(212, 175, 55, 0.22);
+  border-color: #b8860b;
+  color: var(--ink);
+}
+
+.sorter-item.placed {
+  opacity: 0.45;
+  cursor: default;
+  pointer-events: none;
+}
+
+.sorter-item.correct {
+  background: #e6f4ec;
+  border-color: #6dba95;
+  color: var(--good);
+  cursor: default;
+}
+
+.sorter-item.incorrect {
+  background: rgba(192, 57, 43, 0.08);
+  border-color: rgba(192, 57, 43, 0.35);
+  color: var(--bad);
+  cursor: default;
+}
+
+.sorter-buckets {
+  display: grid;
+  gap: 10px;
+}
+
+.sorter-bucket {
+  border: 2px dashed #c8bfa8;
+  border-radius: 10px;
+  padding: 10px 12px;
+  min-height: 52px;
+  transition: border-color 160ms ease, background 160ms ease;
+}
+
+.sorter-bucket.highlight {
+  border-color: var(--gold);
+  background: rgba(212, 175, 55, 0.06);
+}
+
+.sorter-bucket-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.sorter-bucket-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: 28px;
+}
+
+.sorter-placed-tag {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 140ms ease;
+}
+
+.sorter-placed-tag:hover {
+  background: #1e4a73;
+}
+
+.sorter-placed-tag.correct {
+  background: var(--good);
+  cursor: default;
+}
+
+.sorter-placed-tag.incorrect {
+  background: var(--bad);
+  cursor: default;
+}
+
+/* ── TWEE WAARHEDEN, ÉÉN LEUGEN ────────────────────── */
+.tw-statements {
+  display: grid;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.tw-statement-btn {
+  font-family: "Noto Sans", "Noto Naskh Arabic", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  background: #f8f6f0;
+  color: var(--ink);
+  border: 1.5px solid #e5dcc8;
+  border-radius: 8px;
+  padding: 12px 14px;
+  cursor: pointer;
+  text-align: left;
+  line-height: 1.5;
+  transition: all 140ms ease;
+}
+
+.tw-statement-btn:hover {
+  background: #edf4fb;
+  border-color: #9bbdd8;
+}
+
+.tw-statement-btn.correct {
+  background: #e6f4ec;
+  border-color: #6dba95;
+  color: var(--good);
+  cursor: default;
+}
+
+.tw-statement-btn.incorrect {
+  background: rgba(192, 57, 43, 0.08);
+  border-color: rgba(192, 57, 43, 0.35);
+  color: var(--bad);
+  cursor: default;
+}
+
+/* ── WOORDWEB ────────────────────────────────────────── */
+.ww-center {
+  background: linear-gradient(135deg, #16324f, #1a4270);
+  color: var(--gold);
+  font-family: "Cinzel", serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin: 10px auto;
+  width: fit-content;
+  letter-spacing: 0.5px;
+}
+
+.ww-words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin: 12px 0;
+}
+
+.ww-word {
+  font-family: "Noto Sans", "Noto Naskh Arabic", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: #f8f6f0;
+  color: var(--ink);
+  border: 1.5px solid #e5dcc8;
+  border-radius: 20px;
+  padding: 7px 14px;
+  cursor: pointer;
+  transition: all 140ms ease;
+}
+
+.ww-word:hover {
+  background: #edf4fb;
+  border-color: #9bbdd8;
+}
+
+.ww-word.selected {
+  background: rgba(212, 175, 55, 0.22);
+  border-color: #b8860b;
+}
+
+.ww-word.correct {
+  background: #e6f4ec;
+  border-color: #6dba95;
+  color: var(--good);
+  cursor: default;
+}
+
+.ww-word.incorrect {
+  background: rgba(192, 57, 43, 0.08);
+  border-color: rgba(192, 57, 43, 0.35);
+  color: var(--bad);
+  cursor: default;
+}
+
+.ww-word.missed {
+  background: rgba(192, 57, 43, 0.05);
+  border-color: rgba(192, 57, 43, 0.3);
+  color: var(--bad);
+  border-style: dashed;
+  cursor: default;
+}
+
+/* ── BINGO ───────────────────────────────────────────── */
+.bingo-clue {
+  background: linear-gradient(135deg, #fff8ec, #f0f4f9);
+  border-left: 3px solid var(--gold);
+  padding: 12px 14px;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.55;
+  margin: 8px 0;
+  min-height: 44px;
+}
+
+.bingo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.bingo-cell {
+  aspect-ratio: 1;
+  background: #f8f6f0;
+  border: 1.5px solid #e5dcc8;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-align: center;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1.25;
+  transition: all 140ms ease;
+}
+
+.bingo-cell:hover {
+  background: #edf4fb;
+  border-color: #9bbdd8;
+}
+
+.bingo-cell.marked {
+  background: rgba(212, 175, 55, 0.22);
+  border-color: #b8860b;
+  color: var(--ink);
+}
+
+.bingo-cell.bingo {
+  background: var(--gold);
+  border-color: #b8860b;
+  color: #001f3f;
+  transform: scale(1.04);
+}
+
 /* ── RESPONSIVE ─────────────────────────────────────── */
 @media (max-width: 700px) {
   .app {

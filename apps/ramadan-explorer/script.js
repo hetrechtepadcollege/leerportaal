@@ -1973,6 +1973,1015 @@ eidNextBtn.addEventListener("click", () => {
   renderEidQuestion();
 });
 
+// ── ZOEK DE AFWIJKER ────────────────────────────────────
+const afwijkerData = [
+  {
+    items: ["Suḥūr", "Ifṭār", "Tarāwīḥ", "Zakāt"],
+    correct: 3,
+    uitleg: "Suḥūr, Ifṭār en Tarāwīḥ zijn dagelijkse Ramadan-rituelen. Zakāt is een islamitische pijler die het hele jaar gegeven kan worden.",
+    mentorDetail: "Bespreek hoe Zakāt al-Fitr aan het einde van Ramadan wél verplicht is — een mooie brug naar dit thema."
+  },
+  {
+    items: ["Dadels", "Water", "Linzensoep", "Cola"],
+    correct: 3,
+    uitleg: "Dadels, water en soep zijn klassieke, gezonde keuzes voor ifṭār. Cola is dat niet.",
+    mentorDetail: "Praat over waarom de Profeet ﷺ aanbeval om het vasten te breken met dadels en water: eenvoud en gezondheid."
+  },
+  {
+    items: ["Rajab", "Sha'bān", "Ramadan", "Dhul Ḥijjah"],
+    correct: 3,
+    uitleg: "Rajab, Sha'bān en Ramadan volgen elkaar direct op in de islamitische kalender. Dhul Ḥijjah is de maand van de Ḥajj — niet de maand vóór of na Ramadan.",
+    mentorDetail: "Laat de leerling de volgorde van de twaalf islamitische maanden opzoeken — een mooie kalender-oefening."
+  },
+  {
+    items: ["Geduld", "Dankbaarheid", "Mededogen", "Jaloezie"],
+    correct: 3,
+    uitleg: "Geduld, dankbaarheid en mededogen zijn deugden die Ramadan versterkt. Jaloezie is een negatieve eigenschap die we juist proberen te vermijden.",
+    mentorDetail: "Vraag het kind: welke van deze deugden vind jij het moeilijkst? Dat opent een waardevol gesprek."
+  },
+  {
+    items: ["Laylatul Qadr", "ʿEid al-Fitr", "Ifṭār", "Isrāʾ wal-Miʿrāj"],
+    correct: 3,
+    uitleg: "Laylatul Qadr, ʿEid al-Fitr en Ifṭār horen bij Ramadan. Isrāʾ wal-Miʿrāj (de nachtelijke reis van de Profeet ﷺ) valt in de maand Rajab.",
+    mentorDetail: "Vertel kort over de Isrāʾ wal-Miʿrāj: een aparte, bijzondere gebeurtenis die leerlingen vaak al kennen."
+  },
+  {
+    items: ["Ṣabr (geduld)", "Ṣadaqah (liefdadigheid)", "Ṣiyām (vasten)", "Kibr (arrogantie)"],
+    correct: 3,
+    uitleg: "Ṣabr (geduld), Ṣadaqah (liefdadigheid) en Ṣiyām (vasten) zijn goede daden. Kibr betekent arrogantie — iets wat we in Ramadan juist vermijden.",
+    mentorDetail: "Drie van de vier beginnen met de letter ص — een leuke taalkundige kapstok om het te onthouden."
+  },
+  {
+    items: ["Shahāda", "Salāh", "Ṣiyām", "Tarāwīḥ"],
+    correct: 3,
+    uitleg: "Shahāda, Salāh en Ṣiyām zijn drie van de vijf pijlers van de islam. Tarāwīḥ is een aanbevolen extra nachtgebed in Ramadan — geen pijler.",
+    mentorDetail: "Herhaal de vijf pijlers samen: Shahāda, Salāh, Zakāt, Ṣiyām en Ḥajj."
+  },
+  {
+    items: ["Quran lezen", "Tarāwīḥ bidden", "Ifṭār houden", "ʿEid al-Aḍḥā vieren"],
+    correct: 3,
+    uitleg: "Quran lezen, tarāwīḥ bidden en ifṭār houden horen bij Ramadan. ʿEid al-Aḍḥā (het offerfeest) is het feest na de Ḥajj — niet na Ramadan.",
+    mentorDetail: "ʿEid al-Fitr volgt op Ramadan; ʿEid al-Aḍḥā volgt op de Ḥajj. Bespreek het verschil met de leerling."
+  }
+];
+
+let afwijkerIndex = 0;
+let afwijkerShuffled = shuffleArray(afwijkerData.map((_, i) => i));
+let afwijkerAnswered = false;
+
+const afwijkerRoundEl = document.getElementById("afwijker-round");
+const afwijkerOptionsEl = document.getElementById("afwijker-options");
+const afwijkerFeedbackEl = document.getElementById("afwijker-feedback");
+const afwijkerNextBtn = document.getElementById("afwijker-next");
+
+function renderAfwijker() {
+  const dataIndex = afwijkerShuffled[afwijkerIndex % afwijkerShuffled.length];
+  const round = afwijkerData[dataIndex];
+  afwijkerAnswered = false;
+  afwijkerRoundEl.textContent = `Ronde ${(afwijkerIndex % afwijkerData.length) + 1} van ${afwijkerData.length}`;
+  afwijkerFeedbackEl.textContent = "";
+  afwijkerFeedbackEl.className = "feedback";
+  afwijkerOptionsEl.innerHTML = "";
+
+  const shuffledIndices = shuffleArray([0, 1, 2, 3]);
+  shuffledIndices.forEach((origIdx) => {
+    const btn = document.createElement("button");
+    btn.className = "option-btn";
+    btn.textContent = round.items[origIdx];
+    btn.addEventListener("click", () => {
+      if (afwijkerAnswered) return;
+      afwijkerAnswered = true;
+      const isCorrect = origIdx === round.correct;
+      trackEvent(
+        isCorrect ? "ramadan-explorer/afwijker-goed" : "ramadan-explorer/afwijker-fout",
+        isCorrect ? "Ramadan Explorer afwijker goed" : "Ramadan Explorer afwijker fout"
+      );
+      let feedback = isCorrect
+        ? `✓ Goed! ${round.uitleg}`
+        : `✗ Niet helemaal. Het juiste antwoord is "${round.items[round.correct]}". ${round.uitleg}`;
+      if (currentMode === "mentor") feedback += ` | 💬 ${round.mentorDetail}`;
+      afwijkerFeedbackEl.textContent = feedback;
+      afwijkerFeedbackEl.className = `feedback ${isCorrect ? "good" : "bad"}`;
+      if (isCorrect) addStars(2);
+      Array.from(afwijkerOptionsEl.children).forEach((b) => { b.disabled = true; });
+    });
+    afwijkerOptionsEl.appendChild(btn);
+  });
+}
+
+afwijkerNextBtn.addEventListener("click", () => {
+  afwijkerIndex += 1;
+  if (afwijkerIndex % afwijkerData.length === 0) {
+    afwijkerShuffled = shuffleArray(afwijkerData.map((_, i) => i));
+  }
+  renderAfwijker();
+});
+
+// ── FOUT-JAGER ───────────────────────────────────────────
+const foutjagerVerhalen = [
+  {
+    titel: "Adam's Ramadan-ochtend",
+    aantalFouten: 3,
+    segmenten: [
+      { tekst: "Op een ochtend in Ramadan staat Adam voor zonsopgang op voor zijn ", klikbaar: false },
+      { tekst: "ifṭār", klikbaar: true, fout: true, uitleg: "Dit moet 'suḥūr' zijn — de vroege ochtendmaaltijd vóór het vasten. Ifṭār is het breken van het vasten bij zonsondergang." },
+      { tekst: ". Hij eet ", klikbaar: false },
+      { tekst: "drie dadels", klikbaar: true, fout: false, uitleg: "Correct! Een oneven aantal dadels eten bij suḥūr of ifṭār is sunnah van de Profeet ﷺ." },
+      { tekst: " en drinkt water. Daarna maakt hij zijn niyyah. Op school heeft hij honger, maar hij houdt vol. Zijn vriend biedt hem stiekem een koekje aan. Adam ", klikbaar: false },
+      { tekst: "neemt het stiekem aan", klikbaar: true, fout: true, uitleg: "Fout! Adam breekt hiermee zijn vasten. Goed gedrag in Ramadan betekent ook: standvastig en eerlijk zijn." },
+      { tekst: ". 's Avonds bidt de familie het ", klikbaar: false },
+      { tekst: "Fajr-gebed", klikbaar: true, fout: true, uitleg: "Fout! Bij het breken van het vasten (ifṭār) bidt de familie het Maghrib-gebed — niet het Fajr-gebed. Fajr is het ochtendgebed." },
+      { tekst: " en breken ze samen het vasten. Ze eten daarna harira soep.", klikbaar: false }
+    ]
+  },
+  {
+    titel: "Ramadan-weetjes",
+    aantalFouten: 3,
+    segmenten: [
+      { tekst: "Ramadan is de ", klikbaar: false },
+      { tekst: "negende maand", klikbaar: true, fout: false, uitleg: "Correct! Ramadan is de negende maand van de islamitische (Hijri) kalender." },
+      { tekst: " van de islamitische kalender. Moslims vasten van ", klikbaar: false },
+      { tekst: "zonsondergang tot zonsopgang", klikbaar: true, fout: true, uitleg: "Fout! Het is andersom: moslims vasten van zonsopgang (dageraad) tót zonsondergang." },
+      { tekst: ". In deze heilige maand werd de ", klikbaar: false },
+      { tekst: "Bijbel", klikbaar: true, fout: true, uitleg: "Fout! In Ramadan werd de Koran (Qurʾān) geopenbaard aan de Profeet Muḥammad ﷺ, niet de Bijbel." },
+      { tekst: " geopenbaard aan de Profeet ﷺ. Extra nachtgebeden heten ", klikbaar: false },
+      { tekst: "tarāwīḥ", klikbaar: true, fout: false, uitleg: "Correct! Tarāwīḥ zijn de extra nachtgebeden die speciaal in Ramadan worden gebeden." },
+      { tekst: ". Aan het einde van Ramadan vieren moslims ", klikbaar: false },
+      { tekst: "ʿEid al-Aḍḥā", klikbaar: true, fout: true, uitleg: "Fout! Na Ramadan vieren moslims ʿEid al-Fitr (het suikerfeest). ʿEid al-Aḍḥā (het offerfeest) is na de Ḥajj." },
+      { tekst: ".", klikbaar: false }
+    ]
+  },
+  {
+    titel: "Laylatul Qadr",
+    aantalFouten: 3,
+    segmenten: [
+      { tekst: "In de ", klikbaar: false },
+      { tekst: "laatste vijf nachten", klikbaar: true, fout: true, uitleg: "Fout! Moslims zoeken Laylatul Qadr in de laatste tíén nachten van Ramadan, niet de laatste vijf." },
+      { tekst: " van Ramadan zoeken moslims naar Laylatul Qadr. Het is ", klikbaar: false },
+      { tekst: "de nacht van Qadr", klikbaar: true, fout: false, uitleg: "Correct! Laylatul Qadr wordt ook wel 'de nacht van qadr' of 'de nacht van de bepaling' genoemd." },
+      { tekst: ". De Koran zegt dat deze nacht beter is dan ", klikbaar: false },
+      { tekst: "honderd jaar", klikbaar: true, fout: true, uitleg: "Fout! De Koran zegt dat Laylatul Qadr beter is dan duizend maanden (Sūrah Al-Qadr, vers 3)." },
+      { tekst: ". In die nacht ", klikbaar: false },
+      { tekst: "gaan moslims vroeg slapen", klikbaar: true, fout: true, uitleg: "Fout! Moslims waken juist de hele nacht voor extra gebed, Koranrecitatie en duʿāʾ." },
+      { tekst: ". Moslims lezen ", klikbaar: false },
+      { tekst: "Koran", klikbaar: true, fout: false, uitleg: "Correct! Koranrecitatie is een van de belangrijkste daden tijdens Laylatul Qadr." },
+      { tekst: " en maken duʿāʾ.", klikbaar: false }
+    ]
+  }
+];
+
+let foutjagerIndex = 0;
+let foutjagerGekozen = new Set();
+let foutjagerChecked = false;
+
+const foutjagerStoryEl = document.getElementById("foutjager-story");
+const foutjagerCountEl = document.getElementById("foutjager-count");
+const foutjagerCheckBtn = document.getElementById("foutjager-check");
+const foutjagerNextBtn = document.getElementById("foutjager-next");
+const foutjagerResultEl = document.getElementById("foutjager-result");
+
+function renderFoutjager() {
+  const verhaal = foutjagerVerhalen[foutjagerIndex % foutjagerVerhalen.length];
+  foutjagerGekozen = new Set();
+  foutjagerChecked = false;
+  foutjagerCountEl.textContent = verhaal.aantalFouten;
+  foutjagerResultEl.innerHTML = "";
+  foutjagerCheckBtn.disabled = false;
+  foutjagerStoryEl.innerHTML = "";
+
+  const titleEl = document.createElement("p");
+  titleEl.className = "foutjager-titel";
+  titleEl.textContent = `📖 ${verhaal.titel}`;
+  foutjagerStoryEl.appendChild(titleEl);
+
+  const storyP = document.createElement("p");
+  storyP.className = "foutjager-tekst";
+
+  verhaal.segmenten.forEach((seg, idx) => {
+    if (!seg.klikbaar) {
+      storyP.appendChild(document.createTextNode(seg.tekst));
+    } else {
+      const span = document.createElement("span");
+      span.className = "fout-segment";
+      span.textContent = seg.tekst;
+      span.dataset.idx = idx;
+      span.addEventListener("click", () => {
+        if (foutjagerChecked) return;
+        if (foutjagerGekozen.has(idx)) {
+          foutjagerGekozen.delete(idx);
+          span.classList.remove("selected");
+        } else {
+          foutjagerGekozen.add(idx);
+          span.classList.add("selected");
+        }
+      });
+      storyP.appendChild(span);
+    }
+  });
+
+  foutjagerStoryEl.appendChild(storyP);
+}
+
+function checkFoutjager() {
+  if (foutjagerChecked) return;
+  foutjagerChecked = true;
+  foutjagerCheckBtn.disabled = true;
+
+  const verhaal = foutjagerVerhalen[foutjagerIndex % foutjagerVerhalen.length];
+  const aantalFouten = verhaal.aantalFouten;
+  let aantalGoed = 0;
+  let aantalVerkeerd = 0;
+
+  foutjagerStoryEl.querySelectorAll(".fout-segment").forEach((span) => {
+    const idx = parseInt(span.dataset.idx, 10);
+    const seg = verhaal.segmenten[idx];
+    const wasGekozen = foutjagerGekozen.has(idx);
+    span.classList.remove("selected");
+    if (seg.fout && wasGekozen) {
+      span.classList.add("correct-pick");
+      aantalGoed += 1;
+    } else if (!seg.fout && wasGekozen) {
+      span.classList.add("wrong-pick");
+      aantalVerkeerd += 1;
+    } else if (seg.fout && !wasGekozen) {
+      span.classList.add("missed");
+    }
+  });
+
+  foutjagerResultEl.innerHTML = "";
+
+  const isAllesGoed = aantalGoed === aantalFouten && aantalVerkeerd === 0;
+  trackEvent(
+    isAllesGoed ? "ramadan-explorer/foutjager-perfect" : "ramadan-explorer/foutjager-geprobeerd",
+    isAllesGoed ? "Ramadan Explorer fout-jager perfect" : "Ramadan Explorer fout-jager geprobeerd"
+  );
+
+  const summary = document.createElement("p");
+  summary.className = `feedback ${isAllesGoed ? "good" : "bad"}`;
+  summary.textContent = isAllesGoed
+    ? `🎉 Perfect! Je vond alle ${aantalFouten} fouten! +3 ⭐`
+    : `Je vond ${aantalGoed} van de ${aantalFouten} fouten. Kijk goed naar de uitleg!`;
+  foutjagerResultEl.appendChild(summary);
+
+  if (isAllesGoed) {
+    addStars(3);
+  } else if (aantalGoed > 0) {
+    addStars(1);
+  }
+
+  verhaal.segmenten.forEach((seg, idx) => {
+    if (!seg.klikbaar) return;
+    const wasGekozen = foutjagerGekozen.has(idx);
+    if (!seg.fout && !wasGekozen) return;
+    const div = document.createElement("div");
+    if (seg.fout && wasGekozen) {
+      div.className = "foutjager-item goed";
+      div.textContent = `✓ "${seg.tekst}": ${seg.uitleg}`;
+    } else if (seg.fout && !wasGekozen) {
+      div.className = "foutjager-item gemist";
+      div.textContent = `✗ Gemist — "${seg.tekst}": ${seg.uitleg}`;
+    } else {
+      div.className = "foutjager-item verkeerd";
+      div.textContent = `✗ "${seg.tekst}" is geen fout: ${seg.uitleg}`;
+    }
+    foutjagerResultEl.appendChild(div);
+  });
+
+  if (currentMode === "mentor") {
+    const mentorDiv = document.createElement("div");
+    mentorDiv.className = "mentor-note";
+    mentorDiv.textContent = "💬 Ouder-tip: Lees de uitleg samen na en bespreek welke fouten de slimste afleidingen waren. Vraag je kind ook zelf fouten te verzinnen!";
+    foutjagerResultEl.appendChild(mentorDiv);
+  }
+}
+
+foutjagerCheckBtn.addEventListener("click", checkFoutjager);
+foutjagerNextBtn.addEventListener("click", () => {
+  foutjagerIndex = (foutjagerIndex + 1) % foutjagerVerhalen.length;
+  renderFoutjager();
+});
+
+// ── EMOJI DECODER ────────────────────────────────────────
+const emojiData = [
+  {
+    emojis: "🌙✨📖",
+    antwoord: "Laylatul Qadr",
+    opties: ["Laylatul Qadr", "Ifṭār", "Tarāwīḥ"],
+    uitleg: "🌙 maansikkel + ✨ kracht/majesteit + 📖 Koran = Laylatul Qadr, de nacht waarop de Koran werd geopenbaard.",
+    mentorDetail: "Laylatul Qadr valt in de laatste tien nachten van Ramadan. Het is beter dan duizend maanden (Sūrah Al-Qadr)."
+  },
+  {
+    emojis: "🌅🍽️🤲",
+    antwoord: "Suḥūr",
+    opties: ["Suḥūr", "Ifṭār", "Salāh"],
+    uitleg: "🌅 vroege ochtend + 🍽️ maaltijd + 🤲 duʿāʾ = Suḥūr, de maaltijd vóór de vastendag begint.",
+    mentorDetail: "Suḥūr eten is sunnah — de Profeet ﷺ noemde het een 'zegenrijke maaltijd'."
+  },
+  {
+    emojis: "🌇🕌🍉",
+    antwoord: "Ifṭār",
+    opties: ["Ifṭār", "Suḥūr", "Laylatul Qadr"],
+    uitleg: "🌇 zonsondergang + 🕌 moskee + 🍉 feestelijke maaltijd = Ifṭār, het breken van het vasten.",
+    mentorDetail: "De Profeet ﷺ brak zijn vasten altijd met dadels en water voordat hij bad."
+  },
+  {
+    emojis: "🕌🌙🙏🔁",
+    antwoord: "Tarāwīḥ",
+    opties: ["Tarāwīḥ", "Laylatul Qadr", "Fajr-gebed"],
+    uitleg: "🕌 moskee + 🌙 's nachts + 🙏 gebed + 🔁 meerdere ronden = Tarāwīḥ, de extra nachtgebeden in Ramadan.",
+    mentorDetail: "Tarāwīḥ bestaat uit meerdere rakʿāt (gebedsronden) die na het Ishā-gebed worden gebeden."
+  },
+  {
+    emojis: "💰❤️🤝",
+    antwoord: "Ṣadaqah",
+    opties: ["Ṣadaqah", "Zakāt", "Niyyah"],
+    uitleg: "💰 geld/middelen + ❤️ liefdadigheid + 🤝 helpen = Ṣadaqah, vrijwillig geven aan anderen.",
+    mentorDetail: "Ṣadaqah is vrijwillig; Zakāt is verplicht. In Ramadan worden beiden extra beloond."
+  },
+  {
+    emojis: "🎉🌙🍬👨‍👩‍👧‍👦",
+    antwoord: "ʿEid al-Fitr",
+    opties: ["ʿEid al-Fitr", "ʿEid al-Aḍḥā", "Laylatul Qadr"],
+    uitleg: "🎉 feest + 🌙 einde Ramadan + 🍬 suiker/zoetigheid + 👨‍👩‍👧‍👦 familie = ʿEid al-Fitr.",
+    mentorDetail: "ʿEid al-Fitr begint op de eerste dag van Shawwāl, na het zien van de nieuwe maan."
+  },
+  {
+    emojis: "🧠💪⏳😶",
+    antwoord: "Ṣabr",
+    opties: ["Ṣabr", "Niyyah", "Tawbah"],
+    uitleg: "🧠 wilskracht + 💪 doorzetten + ⏳ geduldig wachten + 😶 tong bewaken = Ṣabr (geduld).",
+    mentorDetail: "De Profeet ﷺ noemde Ramadan 'de maand van geduld'. Ṣabr omvat ook het bewaken van je tong en daden."
+  },
+  {
+    emojis: "💭🫀🌙",
+    antwoord: "Niyyah",
+    opties: ["Niyyah", "Ṣabr", "Ṣadaqah"],
+    uitleg: "💭 gedachte/voornemen + 🫀 hart + 🌙 Ramadan = Niyyah, de intentie in je hart voor het vasten.",
+    mentorDetail: "Niyyah hoeft niet hardop uitgesproken te worden — het is een bewuste keuze in het hart."
+  }
+];
+
+let emojiIndex = 0;
+let emojiShuffled = shuffleArray(emojiData.map((_, i) => i));
+
+const emojiDisplayEl = document.getElementById("emoji-display");
+const emojiRoundEl = document.getElementById("emoji-round");
+const emojiOptionsEl = document.getElementById("emoji-options");
+const emojiFeedbackEl = document.getElementById("emoji-feedback");
+const emojiNextBtn = document.getElementById("emoji-next");
+
+function renderEmoji() {
+  const dataIndex = emojiShuffled[emojiIndex % emojiShuffled.length];
+  const item = emojiData[dataIndex];
+  emojiDisplayEl.textContent = item.emojis;
+  emojiRoundEl.textContent = `Reeks ${(emojiIndex % emojiData.length) + 1} van ${emojiData.length}`;
+  emojiFeedbackEl.textContent = "";
+  emojiFeedbackEl.className = "feedback";
+  emojiOptionsEl.innerHTML = "";
+
+  const shuffledOpties = shuffleArray([...item.opties]);
+  shuffledOpties.forEach((optie) => {
+    const btn = document.createElement("button");
+    btn.className = "option-btn";
+    btn.textContent = optie;
+    btn.addEventListener("click", () => {
+      const isCorrect = optie === item.antwoord;
+      trackEvent(
+        isCorrect ? "ramadan-explorer/emoji-goed" : "ramadan-explorer/emoji-fout",
+        isCorrect ? "Ramadan Explorer emoji goed" : "Ramadan Explorer emoji fout"
+      );
+      let feedback = isCorrect
+        ? `✓ Goed! ${item.uitleg}`
+        : `✗ Niet helemaal. Het juiste antwoord is "${item.antwoord}". ${item.uitleg}`;
+      if (currentMode === "mentor") feedback += ` | 💬 ${item.mentorDetail}`;
+      emojiFeedbackEl.textContent = feedback;
+      emojiFeedbackEl.className = `feedback ${isCorrect ? "good" : "bad"}`;
+      if (isCorrect) addStars(2);
+      Array.from(emojiOptionsEl.children).forEach((b) => { b.disabled = true; });
+    });
+    emojiOptionsEl.appendChild(btn);
+  });
+}
+
+emojiNextBtn.addEventListener("click", () => {
+  emojiIndex += 1;
+  if (emojiIndex % emojiData.length === 0) {
+    emojiShuffled = shuffleArray(emojiData.map((_, i) => i));
+  }
+  renderEmoji();
+});
+
+// ── CATEGORIE SORTEERSPEL ────────────────────────────────
+const sorterRondes = [
+  {
+    intro: "Sorteer elk item: hoort het bij Suḥūr, Ifṭār, of allebei?",
+    categorieen: ["Suḥūr", "Ifṭār", "Allebei"],
+    items: [
+      { label: "Niyyah (intentie) maken", correct: "Suḥūr" },
+      { label: "Dadels eten", correct: "Allebei" },
+      { label: "Fajr-gebed bidden", correct: "Suḥūr" },
+      { label: "Maghrib-gebed bidden", correct: "Ifṭār" },
+      { label: "Duʿāʾ maken", correct: "Allebei" },
+      { label: "Harira soep eten", correct: "Ifṭār" }
+    ],
+    mentorDetail: "Suḥūr eindigt bij de dageraad (Fajr-tijd); Ifṭār begint bij zonsondergang (Maghrib-tijd). Bespreek het verschil in timing."
+  },
+  {
+    intro: "Wat is een deugd die Ramadan versterkt, en wat is iets dat we juist vermijden?",
+    categorieen: ["Versterken ✓", "Vermijden ✗"],
+    items: [
+      { label: "Ṣabr (geduld)", correct: "Versterken ✓" },
+      { label: "Kibr (arrogantie)", correct: "Vermijden ✗" },
+      { label: "Ṣadaqah (vrijgevigheid)", correct: "Versterken ✓" },
+      { label: "Roddelen (ghībah)", correct: "Vermijden ✗" },
+      { label: "Shukr (dankbaarheid)", correct: "Versterken ✓" },
+      { label: "Vloeken en schelden", correct: "Vermijden ✗" }
+    ],
+    mentorDetail: "In Ramadan is het karakter van een moslim extra zichtbaar. Bespreek hoe je elk item in het dagelijks leven herkent."
+  },
+  {
+    intro: "Hoort dit bij de Vijf Pijlers van de Islam, of is het een Ramadan-gewoonte (sunnah)?",
+    categorieen: ["Vijf Pijlers", "Ramadan-sunnah"],
+    items: [
+      { label: "Ṣiyām (vasten)", correct: "Vijf Pijlers" },
+      { label: "Tarāwīḥ bidden", correct: "Ramadan-sunnah" },
+      { label: "Zakāt betalen", correct: "Vijf Pijlers" },
+      { label: "Iʿtikāf (retraite)", correct: "Ramadan-sunnah" },
+      { label: "Salāh (gebed)", correct: "Vijf Pijlers" },
+      { label: "Laylatul Qadr zoeken", correct: "Ramadan-sunnah" }
+    ],
+    mentorDetail: "De vijf pijlers zijn verplicht voor elke moslim. Ramadan-sunnahs zijn extra aanbevolen daden die de Profeet ﷺ deed."
+  }
+];
+
+let sorterRondeIndex = 0;
+let sorterPlaatsingen = {};
+let sorterActiefItem = null;
+let sorterChecked = false;
+
+const sorterIntroEl = document.getElementById("sorter-intro");
+const sorterItemsEl = document.getElementById("sorter-items");
+const sorterBucketsEl = document.getElementById("sorter-buckets");
+const sorterCheckBtn = document.getElementById("sorter-check");
+const sorterResetBtn = document.getElementById("sorter-reset");
+const sorterFeedbackEl = document.getElementById("sorter-feedback");
+
+function renderSorter() {
+  const ronde = sorterRondes[sorterRondeIndex % sorterRondes.length];
+  sorterPlaatsingen = {};
+  sorterActiefItem = null;
+  sorterChecked = false;
+  sorterIntroEl.textContent = ronde.intro;
+  sorterFeedbackEl.textContent = "";
+  sorterFeedbackEl.className = "feedback";
+  sorterCheckBtn.disabled = false;
+  sorterItemsEl.innerHTML = "";
+  sorterBucketsEl.innerHTML = "";
+
+  const shuffledItems = shuffleArray([...ronde.items]);
+  shuffledItems.forEach((item) => {
+    const btn = document.createElement("button");
+    btn.className = "sorter-item";
+    btn.textContent = item.label;
+    btn.dataset.label = item.label;
+    btn.addEventListener("click", () => {
+      if (sorterChecked) return;
+      if (sorterActiefItem === btn) {
+        btn.classList.remove("active");
+        sorterActiefItem = null;
+        highlightBuckets(false);
+      } else {
+        if (sorterActiefItem) sorterActiefItem.classList.remove("active");
+        sorterActiefItem = btn;
+        btn.classList.add("active");
+        highlightBuckets(true);
+      }
+    });
+    sorterItemsEl.appendChild(btn);
+  });
+
+  ronde.categorieen.forEach((cat) => {
+    const bucket = document.createElement("div");
+    bucket.className = "sorter-bucket";
+    bucket.dataset.cat = cat;
+
+    const label = document.createElement("span");
+    label.className = "sorter-bucket-label";
+    label.textContent = cat;
+    bucket.appendChild(label);
+
+    const itemsDiv = document.createElement("div");
+    itemsDiv.className = "sorter-bucket-items";
+    bucket.appendChild(itemsDiv);
+
+    bucket.addEventListener("click", () => {
+      if (sorterChecked || !sorterActiefItem) return;
+      const itemLabel = sorterActiefItem.dataset.label;
+      sorterPlaatsingen[itemLabel] = cat;
+      sorterActiefItem.classList.remove("active");
+      sorterActiefItem.classList.add("placed");
+
+      const tag = document.createElement("span");
+      tag.className = "sorter-placed-tag";
+      tag.textContent = itemLabel;
+      tag.dataset.label = itemLabel;
+      tag.addEventListener("click", (e) => {
+        if (sorterChecked) return;
+        e.stopPropagation();
+        delete sorterPlaatsingen[itemLabel];
+        sorterActiefItem = null;
+        const origBtn = Array.from(sorterItemsEl.children)
+          .find((b) => b.dataset.label === itemLabel);
+        if (origBtn) {
+          origBtn.classList.remove("placed", "active");
+        }
+        tag.remove();
+        highlightBuckets(false);
+      });
+      itemsDiv.appendChild(tag);
+
+      sorterActiefItem = null;
+      highlightBuckets(false);
+    });
+
+    sorterBucketsEl.appendChild(bucket);
+  });
+}
+
+function highlightBuckets(on) {
+  sorterBucketsEl.querySelectorAll(".sorter-bucket").forEach((b) => {
+    b.classList.toggle("highlight", on);
+  });
+}
+
+function checkSorter() {
+  if (sorterChecked) return;
+  const ronde = sorterRondes[sorterRondeIndex % sorterRondes.length];
+  const totaal = ronde.items.length;
+  const geplaatst = Object.keys(sorterPlaatsingen).length;
+
+  if (geplaatst < totaal) {
+    sorterFeedbackEl.textContent = `Nog ${totaal - geplaatst} item(s) te plaatsen!`;
+    sorterFeedbackEl.className = "feedback bad";
+    return;
+  }
+
+  sorterChecked = true;
+  sorterCheckBtn.disabled = true;
+  let aantalGoed = 0;
+
+  sorterBucketsEl.querySelectorAll(".sorter-placed-tag").forEach((tag) => {
+    const item = ronde.items.find((it) => it.label === tag.dataset.label);
+    const isCorrect = item && sorterPlaatsingen[item.label] === item.correct;
+    tag.classList.add(isCorrect ? "correct" : "incorrect");
+    if (isCorrect) aantalGoed += 1;
+  });
+
+  sorterItemsEl.querySelectorAll(".sorter-item").forEach((btn) => {
+    const item = ronde.items.find((it) => it.label === btn.dataset.label);
+    if (item) {
+      btn.classList.add(sorterPlaatsingen[item.label] === item.correct ? "correct" : "incorrect");
+    }
+  });
+
+  const isAllesGoed = aantalGoed === totaal;
+  trackEvent(
+    isAllesGoed ? "ramadan-explorer/sorter-perfect" : "ramadan-explorer/sorter-geprobeerd",
+    isAllesGoed ? "Ramadan Explorer sorter perfect" : "Ramadan Explorer sorter geprobeerd"
+  );
+
+  if (isAllesGoed) {
+    sorterFeedbackEl.textContent = `🎉 Perfect gesorteerd! Alle ${totaal} items kloppen. +3 ⭐`;
+    sorterFeedbackEl.className = "feedback good";
+    addStars(3);
+  } else {
+    sorterFeedbackEl.textContent = `${aantalGoed} van de ${totaal} items correct geplaatst. De rode items staan fout.`;
+    sorterFeedbackEl.className = "feedback bad";
+    if (aantalGoed > 0) addStars(1);
+  }
+
+  if (currentMode === "mentor") {
+    const mentorDiv = document.createElement("div");
+    mentorDiv.className = "mentor-note";
+    mentorDiv.textContent = `💬 Ouder-tip: ${ronde.mentorDetail}`;
+    sorterBucketsEl.after(mentorDiv);
+  }
+}
+
+sorterCheckBtn.addEventListener("click", checkSorter);
+sorterResetBtn.addEventListener("click", () => {
+  sorterRondeIndex = (sorterRondeIndex + 1) % sorterRondes.length;
+  const mentorNote = sorterBucketsEl.parentElement.querySelector(".mentor-note");
+  if (mentorNote) mentorNote.remove();
+  renderSorter();
+});
+
+// ── TWEE WAARHEDEN, ÉÉN LEUGEN ──────────────────────────
+const twData = [
+  {
+    leugen: 0,
+    statements: [
+      "Ramadan is de achtste maand van de islamitische kalender.",
+      "Moslims vasten van de ochtendschemering tot zonsondergang.",
+      "De Koran werd in Ramadan geopenbaard."
+    ],
+    uitleg: [
+      "Fout! Ramadan is de negende maand van de islamitische (Hijri) kalender.",
+      "Correct. Vasten begint bij de dageraad (Fajr) en eindigt bij zonsondergang (Maghrib).",
+      "Correct. Allah openbaarde de eerste verzen van de Koran aan de Profeet ﷺ in Ramadan."
+    ],
+    mentorDetail: "De islamitische kalender telt twaalf maanden. Ramadan is de negende — een fijn moment om de volgorde samen te oefenen."
+  },
+  {
+    leugen: 2,
+    statements: [
+      "Kinderen zijn pas verplicht te vasten na de puberteit.",
+      "Iemand die ziek is mag het vasten later inhalen.",
+      "Je moet het vasten ook overslaan als je gewoon moe bent."
+    ],
+    uitleg: [
+      "Correct. De verplichting geldt voor moslims die volwassen zijn (na de puberteit).",
+      "Correct. Wie ziek is of op reis, mag de gemiste dagen later inhalen (Sūrah Al-Baqarah, vers 185).",
+      "Fout! Gewone vermoeidheid is geen geldige reden om het vasten te verbreken. Dat is alleen bij echte ziekte of zwaarwegende omstandigheden toegestaan."
+    ],
+    mentorDetail: "Bespreek welke situaties een geldig excuus zijn (ziekte, zwangerschap, reis) en waarom gewone vermoeidheid dat niet is."
+  },
+  {
+    leugen: 1,
+    statements: [
+      "Laylatul Qadr valt in de laatste tien nachten van Ramadan.",
+      "Laylatul Qadr valt altijd op de 27e nacht van Ramadan.",
+      "Laylatul Qadr is beter dan duizend maanden."
+    ],
+    uitleg: [
+      "Correct. De Profeet ﷺ zei: 'Zoek haar in de laatste tien nachten van Ramadan.'",
+      "Fout! De exacte nacht is niet zeker. Moslims zoeken haar op de oneven nachten (21, 23, 25, 27, 29). De 27e is een populaire mening maar niet vastgesteld.",
+      "Correct. Allah zegt in de Koran (Sūrah Al-Qadr, vers 3): 'Zij is beter dan duizend maanden.'"
+    ],
+    mentorDetail: "De wijsheid achter het niet vastleggen van de exacte nacht is dat moslims alle laatste tien nachten actief aanbidden — niet slechts één."
+  },
+  {
+    leugen: 0,
+    statements: [
+      "Tarāwīḥ is een verplicht gebed tijdens Ramadan.",
+      "Tarāwīḥ wordt 's avonds gebeden, na het Ishā-gebed.",
+      "Tarāwīḥ bestaat uit meerdere ronden (rakʿāt)."
+    ],
+    uitleg: [
+      "Fout! Tarāwīḥ is een sterk aanbevolen gebed (sunnah muʾakkadah) maar niet verplicht (fard).",
+      "Correct. Tarāwīḥ volgt op het Ishā-avondgebed.",
+      "Correct. Tarāwīḥ bestaat uit minimaal 8 tot maximaal 20 rakʿāt, afhankelijk van de geleerde traditie."
+    ],
+    mentorDetail: "Het onderscheid tussen fard (verplicht) en sunnah (aanbevolen) is belangrijk. Bespreek waarom het toch waardevol is om sunnah-gebeden te verrichten."
+  },
+  {
+    leugen: 2,
+    statements: [
+      "Zakāt al-Fitr is een verplichte aalmoes aan het einde van Ramadan.",
+      "Zakāt al-Fitr moet vóór het ʿEid-gebed betaald worden.",
+      "Zakāt al-Fitr is alleen verplicht voor wie meer dan €1.000 spaart."
+    ],
+    uitleg: [
+      "Correct. Zakāt al-Fitr is verplicht voor elke moslim die op de dag van ʿEid genoeg voedsel heeft.",
+      "Correct. De Profeet ﷺ droeg op om het vóór het ʿEid-gebed te betalen zodat arme mensen ook kunnen feesten.",
+      "Fout! Zakāt al-Fitr is geen percentage van spaargeld. Het is een vaste hoeveelheid voedsel (of de waarde ervan) per persoon, ongeacht rijkdom."
+    ],
+    mentorDetail: "Zakāt al-Fitr en de reguliere Zakāt zijn twee verschillende verplichtingen. Een mooie kans om het onderscheid samen te bespreken."
+  },
+  {
+    leugen: 1,
+    statements: [
+      "Ṣadaqah is vrijwillige liefdadigheid en kan het hele jaar gegeven worden.",
+      "Als je Ṣadaqah geeft, vermindert dat je eigen beloning (sawāb).",
+      "Goed gedrag, zoals glimlachen, telt ook als Ṣadaqah."
+    ],
+    uitleg: [
+      "Correct. Ṣadaqah is vrijwillig geven — elk moment, elk bedrag.",
+      "Fout! Ṣadaqah vermeerdert juist de beloning. De Profeet ﷺ zei dat Ṣadaqah het vermogen niet vermindert.",
+      "Correct. De Profeet ﷺ zei: 'Een glimlach naar je broeder is Ṣadaqah.'"
+    ],
+    mentorDetail: "Ṣadaqah is een breed begrip: geld, hulp, een goed woord, een glimlach. Vraag je kind: welke Ṣadaqah kun jij vandaag doen?"
+  }
+];
+
+let twIndex = 0;
+let twShuffled = shuffleArray(twData.map((_, i) => i));
+
+const twRoundEl = document.getElementById("tw-round");
+const twStatementsEl = document.getElementById("tw-statements");
+const twFeedbackEl = document.getElementById("tw-feedback");
+const twNextBtn = document.getElementById("tw-next");
+
+function renderTweeWaarheden() {
+  const dataIndex = twShuffled[twIndex % twShuffled.length];
+  const set = twData[dataIndex];
+  twRoundEl.textContent = `Set ${(twIndex % twData.length) + 1} van ${twData.length}`;
+  twFeedbackEl.textContent = "";
+  twFeedbackEl.className = "feedback";
+  twStatementsEl.innerHTML = "";
+
+  set.statements.forEach((stmt, idx) => {
+    const btn = document.createElement("button");
+    btn.className = "tw-statement-btn";
+    btn.textContent = `${idx + 1}. ${stmt}`;
+    btn.addEventListener("click", () => {
+      const isCorrect = idx === set.leugen;
+      trackEvent(
+        isCorrect ? "ramadan-explorer/tweewaarheden-goed" : "ramadan-explorer/tweewaarheden-fout",
+        isCorrect ? "Ramadan Explorer 2w1l goed" : "Ramadan Explorer 2w1l fout"
+      );
+      Array.from(twStatementsEl.children).forEach((b, i) => {
+        b.disabled = true;
+        b.classList.add(i === set.leugen ? "correct" : "incorrect");
+      });
+      let feedback = isCorrect
+        ? `✓ Goed gevonden! ${set.uitleg[set.leugen]}`
+        : `✗ Niet helemaal. De leugen was uitspraak ${set.leugen + 1}. ${set.uitleg[set.leugen]}`;
+      if (currentMode === "mentor") feedback += ` | 💬 ${set.mentorDetail}`;
+      twFeedbackEl.textContent = feedback;
+      twFeedbackEl.className = `feedback ${isCorrect ? "good" : "bad"}`;
+      if (isCorrect) addStars(2);
+    });
+    twStatementsEl.appendChild(btn);
+  });
+}
+
+twNextBtn.addEventListener("click", () => {
+  twIndex += 1;
+  if (twIndex % twData.length === 0) {
+    twShuffled = shuffleArray(twData.map((_, i) => i));
+  }
+  renderTweeWaarheden();
+});
+
+// ── WOORDWEB ─────────────────────────────────────────────
+const woordwebData = [
+  {
+    centrum: "VASTEN",
+    woorden: [
+      { woord: "Suḥūr", hoorterbij: true },
+      { woord: "Niyyah", hoorterbij: true },
+      { woord: "Ṣiyām", hoorterbij: true },
+      { woord: "Ifṭār", hoorterbij: true },
+      { woord: "Kerst", hoorterbij: false },
+      { woord: "Sporten", hoorterbij: false },
+      { woord: "Wuḍūʾ", hoorterbij: false },
+      { woord: "Ṣabr", hoorterbij: true }
+    ],
+    uitleg: "Bij VASTEN horen: Suḥūr (ochtendmaaltijd), Niyyah (intentie), Ṣiyām (vasten), Ifṭār (breken van het vasten) en Ṣabr (geduld). Kerst, sporten en Wuḍūʾ horen er niet specifiek bij.",
+    mentorDetail: "Wuḍūʾ (rituele wassing) is voor elke salāh, niet specifiek voor het vasten — een subtiel maar belangrijk onderscheid."
+  },
+  {
+    centrum: "LAYLATUL QADR",
+    woorden: [
+      { woord: "Duizend maanden", hoorterbij: true },
+      { woord: "Laatste tien nachten", hoorterbij: true },
+      { woord: "Extra gebed", hoorterbij: true },
+      { woord: "Koran geopenbaard", hoorterbij: true },
+      { woord: "Offerfeest", hoorterbij: false },
+      { woord: "Oneven nacht", hoorterbij: true },
+      { woord: "Zakāt al-Fitr", hoorterbij: false },
+      { woord: "Iʿtikāf", hoorterbij: true }
+    ],
+    uitleg: "Laylatul Qadr: nacht beter dan duizend maanden, in de laatste tien nachten, op een oneven nacht. Er wordt extra gebeden, iʿtikāf (spirituele retraite) gedaan, en het is de nacht waarop de Koran geopenbaard werd. Offerfeest en Zakāt al-Fitr horen er niet specifiek bij.",
+    mentorDetail: "Iʿtikāf (retraite in de moskee) wordt vaak de laatste tien nachten gedaan, juist om Laylatul Qadr te zoeken — een mooie verbinding."
+  },
+  {
+    centrum: "ʿEID AL-FITR",
+    woorden: [
+      { woord: "Zakāt al-Fitr", hoorterbij: true },
+      { woord: "ʿEid-gebed", hoorterbij: true },
+      { woord: "Dadels voor het gebed", hoorterbij: true },
+      { woord: "Nieuwe kleren", hoorterbij: true },
+      { woord: "Offerdier slachten", hoorterbij: false },
+      { woord: "Hilāl zien", hoorterbij: true },
+      { woord: "Ḥadj", hoorterbij: false },
+      { woord: "Familie bezoeken", hoorterbij: true }
+    ],
+    uitleg: "ʿEid al-Fitr: Zakāt al-Fitr betalen, ʿEid-gebed bidden, dadels eten vóór het gebed, nieuwe kleren, de nieuwe maan (hilāl) zien en familie bezoeken. Offerdier slachten en Ḥadj horen bij ʿEid al-Aḍḥā.",
+    mentorDetail: "Offerdier slachten is kenmerkend voor ʿEid al-Aḍḥā (na de Ḥadj). Dit onderscheid is voor kinderen soms verwarrend — een goed moment om het te verduidelijken."
+  },
+  {
+    centrum: "ṢADAQAH",
+    woorden: [
+      { woord: "Vrijwillig geven", hoorterbij: true },
+      { woord: "Glimlachen", hoorterbij: true },
+      { woord: "Helpen zonder te vragen", hoorterbij: true },
+      { woord: "Verplicht percentage", hoorterbij: false },
+      { woord: "Goed woord spreken", hoorterbij: true },
+      { woord: "Niṣāb-drempel", hoorterbij: false },
+      { woord: "Iemand blij maken", hoorterbij: true },
+      { woord: "Pijler van de islam", hoorterbij: false }
+    ],
+    uitleg: "Ṣadaqah is vrijwillig: geven, glimlachen, helpen, goed spreken en iemand blij maken tellen allemaal. Een verplicht percentage, de niṣāb-drempel en 'pijler van de islam' horen bij Zakāt, niet bij Ṣadaqah.",
+    mentorDetail: "Zakāt is verplicht (pijler) en berekend; Ṣadaqah is vrijwillig en onbegrensd. Bespreek welke het kind al doet zonder het te weten."
+  }
+];
+
+let wwIndex = 0;
+let wwGekozen = new Set();
+let wwChecked = false;
+
+const wwCenterEl = document.getElementById("ww-center");
+const wwWordsEl = document.getElementById("ww-words");
+const wwCheckBtn = document.getElementById("ww-check");
+const wwNextBtn = document.getElementById("ww-next");
+const wwFeedbackEl = document.getElementById("ww-feedback");
+
+function renderWoordweb() {
+  const web = woordwebData[wwIndex % woordwebData.length];
+  wwGekozen = new Set();
+  wwChecked = false;
+  wwCenterEl.textContent = web.centrum;
+  wwFeedbackEl.textContent = "";
+  wwFeedbackEl.className = "feedback";
+  wwCheckBtn.disabled = false;
+  wwWordsEl.innerHTML = "";
+
+  const shuffled = shuffleArray([...web.woorden]);
+  shuffled.forEach((item, idx) => {
+    const btn = document.createElement("button");
+    btn.className = "ww-word";
+    btn.textContent = item.woord;
+    btn.dataset.idx = idx;
+    btn.addEventListener("click", () => {
+      if (wwChecked) return;
+      if (wwGekozen.has(idx)) {
+        wwGekozen.delete(idx);
+        btn.classList.remove("selected");
+      } else {
+        wwGekozen.add(idx);
+        btn.classList.add("selected");
+      }
+    });
+    btn._item = item;
+    wwWordsEl.appendChild(btn);
+  });
+}
+
+function checkWoordweb() {
+  if (wwChecked) return;
+  wwChecked = true;
+  wwCheckBtn.disabled = true;
+  const web = woordwebData[wwIndex % woordwebData.length];
+
+  let aantalGoed = 0;
+  let totaalBijhorend = web.woorden.filter((w) => w.hoorterbij).length;
+
+  Array.from(wwWordsEl.children).forEach((btn, i) => {
+    const item = btn._item;
+    const wasGekozen = wwGekozen.has(i);
+    btn.classList.remove("selected");
+    if (item.hoorterbij && wasGekozen) {
+      btn.classList.add("correct");
+      aantalGoed += 1;
+    } else if (!item.hoorterbij && wasGekozen) {
+      btn.classList.add("incorrect");
+    } else if (item.hoorterbij && !wasGekozen) {
+      btn.classList.add("missed");
+    }
+  });
+
+  const wrongPicks = [...wwGekozen].filter((i) => {
+    const btn = wwWordsEl.children[i];
+    return btn && !btn._item.hoorterbij;
+  }).length;
+
+  const isAllesGoed = aantalGoed === totaalBijhorend && wrongPicks === 0;
+  trackEvent(
+    isAllesGoed ? "ramadan-explorer/woordweb-perfect" : "ramadan-explorer/woordweb-geprobeerd",
+    isAllesGoed ? "Ramadan Explorer woordweb perfect" : "Ramadan Explorer woordweb geprobeerd"
+  );
+
+  let feedback = isAllesGoed
+    ? `🎉 Perfect! Alle ${totaalBijhorend} woorden correct gekozen. +3 ⭐ | ${web.uitleg}`
+    : `${aantalGoed} van de ${totaalBijhorend} juiste woorden gevonden. ${web.uitleg}`;
+  if (currentMode === "mentor") feedback += ` | 💬 ${web.mentorDetail}`;
+  wwFeedbackEl.textContent = feedback;
+  wwFeedbackEl.className = `feedback ${isAllesGoed ? "good" : "bad"}`;
+
+  if (isAllesGoed) addStars(3);
+  else if (aantalGoed > 0) addStars(1);
+}
+
+wwCheckBtn.addEventListener("click", checkWoordweb);
+wwNextBtn.addEventListener("click", () => {
+  wwIndex = (wwIndex + 1) % woordwebData.length;
+  renderWoordweb();
+});
+
+// ── RAMADAN BINGO ────────────────────────────────────────
+const bingoTermen = [
+  "Suḥūr", "Ifṭār", "Tarāwīḥ", "Niyyah",
+  "Laylatul Qadr", "Ṣadaqah", "Ṣabr", "Zakāt",
+  "ʿEid al-Fitr", "Hilāl", "Ramadan", "Tawbah",
+  "Duʿāʾ", "Ṣiyām", "Iʿtikāf", "Koran"
+];
+
+const bingoOmschrijvingen = [
+  { term: "Suḥūr", tekst: "De maaltijd die je vóór zonsopgang eet om de vastendag goed te beginnen." },
+  { term: "Ifṭār", tekst: "Het moment bij zonsondergang waarop je het vasten breekt, vaak met dadels en water." },
+  { term: "Tarāwīḥ", tekst: "Extra nachtgebeden in Ramadan die na het Ishā-gebed worden gebeden." },
+  { term: "Niyyah", tekst: "De intentie in je hart waarmee je aangeeft dat je gaat vasten." },
+  { term: "Laylatul Qadr", tekst: "De 'Nacht van Qadr', beter dan duizend maanden. Gevonden in de laatste tien nachten." },
+  { term: "Ṣadaqah", tekst: "Vrijwillige liefdadigheid — geld, hulp, of zelfs een glimlach." },
+  { term: "Ṣabr", tekst: "Geduld — de centrale deugd die Ramadan versterkt." },
+  { term: "Zakāt", tekst: "Verplichte aalmoes, een van de vijf pijlers van de islam." },
+  { term: "ʿEid al-Fitr", tekst: "Het feest waarmee de maand Ramadan feestelijk wordt afgesloten." },
+  { term: "Hilāl", tekst: "De nieuwe maansikkel die het begin en einde van Ramadan markeert." },
+  { term: "Ramadan", tekst: "De negende maand van de islamitische kalender, de maand van het vasten." },
+  { term: "Tawbah", tekst: "Oprechte berouw en terugkeer naar Allah — in Ramadan extra beloond." },
+  { term: "Duʿāʾ", tekst: "Smeekgebed: jij praat rechtstreeks met Allah, op elk moment van de dag." },
+  { term: "Ṣiyām", tekst: "Het Arabische woord voor vasten — een van de vijf pijlers van de islam." },
+  { term: "Iʿtikāf", tekst: "Retraite in de moskee tijdens de laatste tien nachten van Ramadan." },
+  { term: "Koran", tekst: "Het heilige boek van de islam, geopenbaard in de maand Ramadan." }
+];
+
+let bingoGrid = [];
+let bingoMarked = new Set();
+let bingoOmschrijvingIndex = 0;
+let bingoShuffledOmschrijvingen = [];
+let bingoBingo = false;
+
+const bingoClueEl = document.getElementById("bingo-clue");
+const bingoGridEl = document.getElementById("bingo-grid");
+const bingoNextClueBtn = document.getElementById("bingo-next-clue");
+const bingoResetBtn = document.getElementById("bingo-reset");
+const bingoFeedbackEl = document.getElementById("bingo-feedback");
+
+function initBingo() {
+  bingoGrid = shuffleArray([...bingoTermen]);
+  bingoMarked = new Set();
+  bingoOmschrijvingIndex = 0;
+  bingoShuffledOmschrijvingen = shuffleArray([...bingoOmschrijvingen]);
+  bingoBingo = false;
+  bingoFeedbackEl.textContent = "";
+  bingoFeedbackEl.className = "feedback";
+  renderBingoGrid();
+  renderBingoClue();
+}
+
+function renderBingoGrid() {
+  bingoGridEl.innerHTML = "";
+  bingoGrid.forEach((term, idx) => {
+    const cell = document.createElement("div");
+    cell.className = "bingo-cell";
+    if (bingoMarked.has(idx)) cell.classList.add(bingoBingo ? "bingo" : "marked");
+    cell.textContent = term;
+    cell.dataset.idx = idx;
+    cell.addEventListener("click", () => {
+      if (bingoBingo) return;
+      bingoMarked.has(idx) ? bingoMarked.delete(idx) : bingoMarked.add(idx);
+      renderBingoGrid();
+      checkBingoWin();
+    });
+    bingoGridEl.appendChild(cell);
+  });
+}
+
+function renderBingoClue() {
+  if (bingoOmschrijvingIndex < bingoShuffledOmschrijvingen.length) {
+    bingoClueEl.textContent = bingoShuffledOmschrijvingen[bingoOmschrijvingIndex].tekst;
+  } else {
+    bingoClueEl.textContent = "Alle omschrijvingen zijn voorbij. Klik de vakjes aan die je denkt te weten!";
+  }
+}
+
+function checkBingoWin() {
+  const lines = [
+    [0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12, 13, 14, 15],
+    [0, 4, 8, 12], [1, 5, 9, 13], [2, 6, 10, 14], [3, 7, 11, 15],
+    [0, 5, 10, 15], [3, 6, 9, 12]
+  ];
+  const isCorrectMark = (idx) => {
+    const term = bingoGrid[idx];
+    const omschrijving = bingoShuffledOmschrijvingen[bingoOmschrijvingIndex > 0 ? bingoOmschrijvingIndex - 1 : 0];
+    return bingoMarked.has(idx);
+  };
+
+  const hasBingo = lines.some((line) => line.every((idx) => bingoMarked.has(idx)));
+  if (hasBingo && !bingoBingo) {
+    bingoBingo = true;
+    bingoFeedbackEl.textContent = "🎉 BINGO! Geweldig! +3 ⭐";
+    bingoFeedbackEl.className = "feedback good";
+    addStars(3);
+    trackEvent("ramadan-explorer/bingo-bingo", "Ramadan Explorer bingo gewonnen");
+    renderBingoGrid();
+  }
+}
+
+bingoNextClueBtn.addEventListener("click", () => {
+  if (bingoBingo) return;
+  bingoOmschrijvingIndex = (bingoOmschrijvingIndex + 1) % bingoShuffledOmschrijvingen.length;
+  renderBingoClue();
+  trackEvent("ramadan-explorer/bingo-volgende", "Ramadan Explorer bingo volgende omschrijving");
+});
+
+bingoResetBtn.addEventListener("click", () => {
+  initBingo();
+  trackEvent("ramadan-explorer/bingo-reset", "Ramadan Explorer bingo nieuw spel");
+});
+
 renderQuestion();
 setupMemory();
 shuffleOrder();
@@ -1986,6 +2995,13 @@ renderWorldTradition();
 initDeeds();
 buildChefItems();
 renderEidQuestion();
+renderAfwijker();
+renderFoutjager();
+renderEmoji();
+renderSorter();
+renderTweeWaarheden();
+renderWoordweb();
+initBingo();
 renderModeUI();
 if (!appOpenTracked) {
   trackEvent("ramadan-explorer/geopend", "Ramadan Explorer geopend");
