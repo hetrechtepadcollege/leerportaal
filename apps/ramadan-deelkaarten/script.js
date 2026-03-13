@@ -89,8 +89,8 @@ const NACHTEN = [
       vertaling: '"Blijf de nacht overeind, behalve een klein deel: de helft ervan of trek er een klein deel van af, of voeg er iets aan toe en draag de Koran voor met een duidelijke voordracht."'
     },
     hadith: {
-      tekst: '"Wie met geloof in aanbidding staat tijdens de maand Ramadan en daarbij streeft naar de beloning van Allah, zal zien dat zijn eerdere zonden vergeven worden."',
-      bron: 'Sahih Bukhari & Sahih Muslim'
+      tekst: '"Wie in de nacht van Laylatul Qadr staat in gebed, met oprecht geloof en met om goede daden te verrichten, voor hem worden de zonden die hij eerder heeft begaan vergeven."',
+      bron: 'Sahih Bukhari'
     },
     dua: {
       arabisch: 'رَبِّ اجْعَلْنِي مُقِيمَ الصَّلَاةِ وَمِن ذُرِّيَّتِي ۚ رَبَّنَا وَتَقَبَّلْ دُعَاءِ',
@@ -141,7 +141,7 @@ const NACHTEN = [
       vertaling: '"En (gedenk) toen jullie Heer aankondigde: Als jullie dankbaar zijn, zal Ik jullie zeker meer geven."'
     },
     hadith: {
-      tekst: '"Wie niet dankbaar is voor het weinige, zal ook niet dankbaar zijn voor het veel. En wie niet dankbaar is jegens mensen, is niet dankbaar jegens Allah."',
+      tekst: '"Wie niet dankbaar is voor het weinige, zal ook niet dankbaar zijn voor het vele. En wie niet dankbaar is jegens mensen, is niet dankbaar jegens Allah."',
       bron: 'Ahmad'
     },
     dua: {
@@ -152,7 +152,7 @@ const NACHTEN = [
     },
     dzikr: {
       arabisch: 'الْحَمْدُ لِلَّهِ عَلَى كُلِّ حَالٍ',
-      transliteratie: "Al-ḥamdulillāhi ʿalā kulli ḥāl",
+      transliteratie: "Alḥamdulillāhi ʿalā kulli ḥāl",
       betekenis: '"Alle lof zij Allah in elke omstandigheid."',
       bron: 'Ibn Majah'
     }
@@ -164,22 +164,22 @@ const NACHTEN = [
     vers: {
       arabisch: 'إِنَّا أَنزَلْنَاهُ فِي لَيْلَةِ الْقَدْرِ ۝ وَمَا أَدْرَاكَ مَا لَيْلَةُ الْقَدْرِ ۝ لَيْلَةُ الْقَدْرِ خَيْرٌ مِّنْ أَلْفِ شَهْرٍ ۝ تَنَزَّلُ الْمَلَائِكَةُ وَالرُّوحُ فِيهَا بِإِذْنِ رَبِّهِم مِّن كُلِّ أَمْرٍ ۝ سَلَامٌ هِيَ حَتَّى مَطْلَعِ الْفَجْرِ',
       referentie: 'Al-Qadr 97:1-5',
-      vertaling: '"Voorwaar, Wij hebben hem (de Koran) neergezonden in de Nacht van de Verheven Waarde. En wat zal u doen weten wat de Nacht van de Verheven Waarde is? De Nacht van de Verheven Waarde is beter dan duizend maanden. De engelen en de Geest dalen daarin neer met toestemming van hun Heer voor iedere aangelegenheid. Vrede heerst er tot de aanvang van de dageraad."'
+      vertaling: '"Wij hebben hem [de Koran] neergezonden in de nacht van de beslissing. En wat laat jou weten wat de nacht van de beslissing is? De engelen en de geest [Djibriel] dalen daarin neer met de toestemming van hun Heer voor elke beschikking. De engelen en de Geest dalen daarin neer met toestemming van hun Heer voor iedere aangelegenheid. Vrede is zij tot aan de aanbrekende dageraad."'
     },
     hadith: {
-      tekst: '"Ubayy ibn Kaʿb رضي الله عنه zei: \'Bij Allah, ik ken de nacht (van Qadr). Het is de zevenentwinstigste nacht.\' — en noemde haar tekenen."',
-      bron: 'Sahih Muslim'
+      tekst: '"Wanneer de laatste tien nachten (van de Ramadan) aanbraken, maakte de Profeet ﷺ zijn nachten levendig (met aanbidding), wekte hij zijn gezin en maakte hij zijn lendendoek vast."',
+      bron: 'Sahih al-Bukhari & Sahih Muslim'
     },
     dua: {
       arabisch: 'اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي',
-      transliteratie: "Allāhumma innaka ʿafuwwun tuḥibbu l-ʿafwa fa-ʿfu ʿannī",
+      transliteratie: "Allāhumma innaka ‘afuwwun tuḥibbul ‘afwa fa‘fu ‘annī",
       betekenis: '"O Allah, U bent de Vergevende, U houdt van vergeven, vergeef mij."',
       bron: 'Tirmidzī'
     },
     dzikr: {
       arabisch: 'لَا إِلَهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ',
       transliteratie: "Lā ilāha illā anta subḥānaka innī kuntu minaẓ-ẓālimīn",
-      betekenis: '"Er is geen god dan U, glorie zij U, voorwaar ik behoorde tot de onrechtvaardigen." — Wie dit zegt: Allah verlicht zijn beproeving.',
+      betekenis: '"Er is geen god dan U, geprezen zij U, voorwaar ik behoorde tot de onrechtplegers."',
       bron: 'Al-Anbiya 21:87 | Tirmidzī'
     }
   },
@@ -190,23 +190,23 @@ const NACHTEN = [
     vers: {
       arabisch: 'شَهْرُ رَمَضَانَ الَّذِي أُنزِلَ فِيهِ الْقُرْآنُ هُدًى لِّلنَّاسِ وَبَيِّنَاتٍ مِّنَ الْهُدَى وَالْفُرْقَانِ',
       referentie: 'Al-Baqarah 2:185',
-      vertaling: '"De maand Ramadan is de maand waarin de Koran is neergezonden als leiding voor de mensen en als duidelijke bewijzen van de leiding en de Onderscheiding."'
+      vertaling: 'De maand Ramadan is het waarin de Koran is neergezonden als een leidraad voor de mensen en als duidelijke bewijzen van de leidraad en van het onderscheid. Wie van jullie dan die maand aanwezig is, die moet daarin vasten, maar wie ziek is of op reis, dan een aantal andere dagen. Allah wenst voor jullie het gemakkelijke en Hij wenst voor jullie niet het moeilijke. (Hij wenst) dat jullie het aantal dagen volmaken en dat jullie Allah prijzen om Zijn grootheid, omdat Hij jullie de weg gewezen heeft. Misschien zullen jullie dank betuigen.'
     },
     hadith: {
-      tekst: '"Jibril bezoekt mij in elke nacht van Ramadan en wij reciteren de Koran aan elkaar."',
-      bron: 'Sahih Bukhari'
+      tekst: '"Jibrīl ontmoette hem (De Boodschapper van Allah ﷺ) elke nacht in Ramaḍān, en zij bestudeerden samen de Koran."',
+      bron: 'Sahih Bukhari & Sahih Muslim'
     },
     dua: {
       arabisch: 'رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ',
-      transliteratie: "Rabbanā ātinā fid-dunyā ḥasanatan wa-fil-ākhirati ḥasanatan wa-qinā ʿadhāban-nār",
-      betekenis: '"Onze Heer, geef ons het goede in deze wereld en het goede in het hiernamaals, en bescherm ons tegen de bestraffing van het Vuur."',
+      transliteratie: "Rabbanā ātinā fī ad-dunyā ḥasanatan wa fī al-ākhirati ḥasanatan wa qinā ʿadhāba an-nār",
+      betekenis: '"Onze Heer, geef ons in deze wereld het goede en in het Hiernamaals het goede, en bescherm ons tegen de bestraffing van het Vuur."',
       bron: 'Al-Baqarah 2:201'
     },
     dzikr: {
       arabisch: 'حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ',
-      transliteratie: "Ḥasbunallāhu wa-niʿmal-wakīl",
-      betekenis: '"Allah is voldoende voor ons, en Hij is de beste Behoeder."',
-      bron: 'Al-Imran 3:173 | Bukhari'
+      transliteratie: "Ḥasbunā Allāhu wa niʿma al-wakīl",
+      betekenis: '"Allah is genoeg voor ons, en Hij is de beste Behoeder."',
+      bron: 'Al-Imran 3:173 | Sahih Bukhari'
     }
   },
   {
@@ -224,14 +224,14 @@ const NACHTEN = [
     },
     dua: {
       arabisch: 'اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي',
-      transliteratie: "Allāhumma innaka ʿafuwwun tuḥibbu l-ʿafwa fa-ʿfu ʿannī",
+      transliteratie: "Allāhumma innaka ‘afuwwun tuḥibbul ‘afwa fa‘fu ‘annī",
       betekenis: '"O Allah, U bent de Vergevende, U houdt van vergeven, vergeef mij."',
       bron: 'Tirmidzī'
     },
     dzikr: {
       arabisch: 'أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ',
-      transliteratie: "Astaghfirullāha wa-atūbu ilayh",
-      betekenis: '"Ik vraag Allah om vergiffenis en ik keer mij in berouw tot Hem." — 100 maal per dag.',
+      transliteratie: "Astaghfirullāha wa atūbu ilayh",
+      betekenis: '"Ik vraag Allah om vergeving en ik keer mij in berouw tot Hem."',
       bron: 'Sahih Bukhari & Sahih Muslim'
     }
   },
@@ -251,14 +251,14 @@ const NACHTEN = [
     dua: {
       arabisch: 'رَبَّنَا لَا تُؤَاخِذْنَا إِن نَّسِينَا أَوْ أَخْطَأْنَا ۚ رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَا إِصْرًا كَمَا حَمَلْتَهُ عَلَى الَّذِينَ مِن قَبْلِنَا',
       transliteratie: "Rabbanā lā tuʾākhidhnā in nasīnā aw akhṭaʾnā, rabbanā wa-lā taḥmil ʿalaynā iṣran kamā ḥamaltahū ʿalal-ladhīna min qablinā",
-      betekenis: '"Onze Heer, bestraf ons niet als wij vergeten of een fout begaan. Onze Heer, leg ons geen last op zoals U die legde op degenen vóór ons."',
+      betekenis: '"Onze Heer, reken het ons niet aan als wij vergeten of fouten maken. Onze Heer, leg ons geen last op zoals U die aan hen die er vóór ons waren hebt opgelegd."',
       bron: 'Al-Baqarah 2:286'
     },
     dzikr: {
       arabisch: 'سُبْحَانَ الْمَلِكِ الْقُدُّوسِ',
       transliteratie: "Subḥānal-Malikil-Quddūs",
-      betekenis: '"Glorie zij de Heerser, de Heilige." — 3× na het witrgebed, de derde keer met verheven stem.',
-      bron: 'Nasai & Abu Dawud'
+      betekenis: '"Glorie zij de Koning (Heerser), de Heilige."',
+      bron: 'Nasāʾī & Abu Dawud'
     }
   }
 ];
