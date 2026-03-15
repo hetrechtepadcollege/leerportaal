@@ -348,8 +348,8 @@ document.getElementById('btn-download').addEventListener('click', async () => {
 
   try {
     await document.fonts.ready;
+    await document.fonts.load('400 40px AlQalamQuranMajeed');
     await document.fonts.load('400 40px Amiri');
-    await document.fonts.load('700 40px Amiri');
     const dataUrl = await tekenKaartCanvas(nacht);
     const link = document.createElement('a');
     link.download = `ramadan-nacht-${nacht.nacht}.png`;
@@ -589,7 +589,7 @@ function tekenArabischTekst(ctx, tekst, y, W, pad, maxBreed) {
   ctx.direction = 'rtl';
   ctx.textAlign = 'right';
   ctx.fillStyle = '#F0E8D8';
-  ctx.font = '500 38px Amiri, serif';
+  ctx.font = '400 38px AlQalamQuranMajeed, Amiri, serif';
   const regels = wrapTekstCanvas(ctx, tekst, maxBreed);
   regels.forEach(regel => {
     ctx.fillText(regel, W - pad, y);
