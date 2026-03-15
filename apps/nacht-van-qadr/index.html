@@ -8,7 +8,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
     <link rel="manifest" href="/icons/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://hetrechtepadcollege.goatcounter.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://hetrechtepadcollege.goatcounter.com;">
     <title>De Nacht van Qadr | Het Rechte Pad College</title>
 
     <!-- OG Meta -->
@@ -164,7 +164,7 @@
     <!-- ═══════════════════════════════════════════════════════════
          SECTION 3 — Surah Al-Qadr
          ═══════════════════════════════════════════════════════════ -->
-    <section class="story-section" aria-label="Surah Al-Qadr">
+    <section class="story-section" data-track="soera-al-qadr" aria-label="Surah Al-Qadr">
         <div class="section-divider"><div class="diamond"></div></div>
 
         <h2 class="section-title">
@@ -291,7 +291,7 @@
     <!-- ═══════════════════════════════════════════════════════════
          SECTION 4c — Vergeving en beloning
          ═══════════════════════════════════════════════════════════ -->
-    <section class="story-section" aria-label="Vergeving en beloning">
+    <section class="story-section" data-track="vergeving" aria-label="Vergeving en beloning">
         <div class="section-divider"><div class="diamond"></div></div>
 
         <h2 class="section-title">
@@ -402,7 +402,7 @@
     <!-- ═══════════════════════════════════════════════════════════
          SECTION 7 — Hoe breng je deze nacht door?
          ═══════════════════════════════════════════════════════════ -->
-    <section class="story-section" aria-label="Tips voor de Nacht van de Qadr">
+    <section class="story-section" data-track="tips" aria-label="Tips voor de Nacht van de Qadr">
         <div class="section-divider"><div class="diamond"></div></div>
 
         <h2 class="section-title">
@@ -418,8 +418,11 @@
                     <h3>Maak veel smeekbeden (duāʾ)</h3>
                     <p>Dit is de beste nacht om Allah te vragen wat je nodig hebt. De Profeet <span aria-label="vrede zij met hem">&#65018;</span> leerde ons een speciale smeekbede voor deze nacht:</p>
                     <p class="dua-arabic" dir="rtl" lang="ar">اللَّهُمَّ إِنَّکَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّی</p>
-                    <span class="dua-transliteration">Allāhumma innaka ‘afuwwun tuḥibbul-‘afwa fa‘fu ‘annī.</span>
+                    <span class="dua-transliteration">Allāhumma innaka ‘afuwwun tuḥibbul-’afwa fa’fu ‘annī.</span>
                     <span class="dua-translation">&ldquo;O Allah, U bent Vergevend en houdt van vergeven, vergeef mij dus.&rdquo;</span>
+                    <button class="copy-dua-btn" id="copyDuaBtn" aria-label="Kopieer duāʾ">
+                        <span class="copy-icon">&#128203;</span> Kopieer duāʾ
+                    </button>
                 </div>
             </div>
 
@@ -564,6 +567,52 @@
 
         var tipsGrid = document.querySelector('.tips-grid');
         if (tipsGrid) tipObs.observe(tipsGrid);
+
+        /* ── GoatCounter tracking ── */
+        function trackEvent(path, title) {
+            if (window.goatcounter && window.goatcounter.count) {
+                window.goatcounter.count({ path: 'nacht-van-qadr/' + path, title: title, event: true });
+            }
+        }
+
+        /* App gestart */
+        trackEvent('app-gestart', 'App gestart');
+
+        /* Scroll-tracking: fire eenmalig per sectie */
+        var trackedSections = {};
+        var scrollObs = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var id = entry.target.getAttribute('data-track');
+                    if (id && !trackedSections[id]) {
+                        trackedSections[id] = true;
+                        trackEvent('sectie/' + id, 'Sectie: ' + id);
+                    }
+                }
+            });
+        }, { threshold: 0.4 });
+
+        document.querySelectorAll('[data-track]').forEach(function(el) {
+            scrollObs.observe(el);
+        });
+
+        /* Kopieer duāʾ */
+        var copyBtn = document.getElementById('copyDuaBtn');
+        if (copyBtn) {
+            copyBtn.addEventListener('click', function() {
+                var arabisch = 'اللَّهُمَّ إِنَّکَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّی';
+                var tekst = arabisch + '\n\nAllāhumma innaka \'afuwwun tuḥibbul-\'afwa fa\'fu \'annī.\n\n"O Allah, U bent Vergevend en houdt van vergeven, vergeef mij dus."';
+                navigator.clipboard.writeText(tekst).then(function() {
+                    copyBtn.innerHTML = '&#10003; Gekopieerd!';
+                    copyBtn.classList.add('copied');
+                    trackEvent('dua-gekopieerd', 'Duāʾ gekopieerd');
+                    setTimeout(function() {
+                        copyBtn.innerHTML = '&#128203; Kopieer du\u0101\u02be';
+                        copyBtn.classList.remove('copied');
+                    }, 2500);
+                });
+            });
+        }
 
         /* Counter bar animation */
         var counterBar = document.getElementById('counterBar');

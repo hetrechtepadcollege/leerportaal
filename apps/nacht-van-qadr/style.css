@@ -726,6 +726,35 @@ body::after {
   font-style: italic;
 }
 
+/* ─── Kopieer duāʾ knop ─────────────────────────────────────── */
+.copy-dua-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  padding: 8px 18px;
+  background: rgba(212,175,55,0.12);
+  border: 1px solid rgba(212,175,55,0.35);
+  border-radius: 50px;
+  color: var(--gold-light);
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  touch-action: manipulation;
+}
+
+.copy-dua-btn:hover {
+  background: rgba(212,175,55,0.2);
+  border-color: rgba(212,175,55,0.6);
+}
+
+.copy-dua-btn.copied {
+  background: rgba(80,180,80,0.15);
+  border-color: rgba(80,180,80,0.5);
+  color: #7dcc7d;
+}
+
 /* ─── Closing Section ───────────────────────────────────────── */
 .closing {
   text-align: center;
