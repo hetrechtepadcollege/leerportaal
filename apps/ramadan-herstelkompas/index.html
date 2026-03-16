@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
+  <meta name="description" content="Ramadan Herstelkompas: neem elke nacht een concrete stap om relaties te herstellen in de laatste dagen van Ramadan.">
+  <title>Ramadan Herstelkompas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-glow bg-glow-a"></div>
+  <div class="bg-glow bg-glow-b"></div>
+
+  <main class="app-shell">
+    <header class="hero">
+      <a class="back-link" href="../../index.html"><- Terug naar leerportaal</a>
+      <p class="kicker">Laatste 10 nachten Ramadan</p>
+      <h1>Ramadan Herstelkompas</h1>
+      <p class="lead">Geen quiz, geen puntenjacht. Alleen 1 oprechte herstelstap per nacht: excuses, goedmaken, bedanken, terugbetalen, of bidden voor een ander.</p>
+      <div class="hero-tags">
+        <span>Prive voortgang</span>
+        <span>Praktische scripts</span>
+        <span>5-15 minuten acties</span>
+      </div>
+    </header>
+
+    <section class="layout">
+      <article class="panel controls">
+        <h2>Stel je nacht in</h2>
+
+        <label for="night">Nacht van Ramadan</label>
+        <select id="night"></select>
+
+        <label for="intensity">Diepte van je stap</label>
+        <select id="intensity">
+          <option value="small">Klein (makkelijk starten)</option>
+          <option value="medium" selected>Normaal (balans)</option>
+          <option value="deep">Diep (meer moed)</option>
+        </select>
+
+        <label for="focus">Focus</label>
+        <select id="focus">
+          <option value="all" selected>Alles</option>
+          <option value="family">Familie</option>
+          <option value="friends">Vrienden & buren</option>
+          <option value="debt">Geld & verplichtingen</option>
+          <option value="heart">Innerlijke zuivering</option>
+        </select>
+
+        <button id="generateBtn" class="primary-btn">Geef mijn herstelstap</button>
+
+        <div class="disclaimer">
+          <strong>Belangrijk:</strong> dit is een reflectie-tool. Bij complexe conflicten: zoek begeleiding van een betrouwbare imam of counselor.
+        </div>
+      </article>
+
+      <article class="panel mission" id="missionPanel" aria-live="polite">
+        <h2>Jouw stap voor vannacht</h2>
+        <p class="placeholder">Kies je instellingen en druk op <em>Geef mijn herstelstap</em>.</p>
+      </article>
+
+      <article class="panel progress">
+        <h2>Jouw herstelpad</h2>
+        <div class="stats">
+          <div class="stat">
+            <span id="doneCount">0</span>
+            <small>stappen gedaan</small>
+          </div>
+          <div class="stat">
+            <span id="uniqueNights">0</span>
+            <small>nachten benut</small>
+          </div>
+        </div>
+
+        <h3>Voltooide stappen</h3>
+        <ul id="historyList" class="history-list">
+          <li class="empty">Nog geen stappen afgerond.</li>
+        </ul>
+
+        <button id="resetBtn" class="ghost-btn" type="button">Reset alleen deze app-data</button>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
