@@ -409,15 +409,15 @@ body::after {
 .ayah-arabic,
 .glass-card .ayah-arabic {
   font-family: 'AlQalamQuranMajeed', 'Amiri', serif;
-  font-size: clamp(1.8rem, 7vw, 2.8rem);
-  line-height: 2.6;
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  line-height: 2.2;
   word-spacing: 0.15em;
   color: #fff;
   margin-bottom: 16px;
 }
 
 .glass-card .bismillah {
-  font-size: clamp(1.6rem, 6vw, 2.6rem);
+  font-size: clamp(1.1rem, 3.5vw, 1.4rem);
 }
 
 .ayah-number {
