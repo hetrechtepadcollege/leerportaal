@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
+  <meta name="description" content="Ramadan Einde-Reset: maak in de laatste dagen een concreet 7-daags plan om goede gewoontes na Eid vast te houden.">
+  <title>Ramadan Einde-Reset</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="texture"></div>
+  <main class="shell">
+    <header class="hero">
+      <a class="back" href="../../index.html"><- Terug naar leerportaal</a>
+      <p class="eyebrow">Laatste dagen Ramadan</p>
+      <h1>Ramadan Einde-Reset</h1>
+      <p class="subtitle">Sluit Ramadan niet af met alleen emotie. Maak een plan dat je eerste week na Eid echt overleeft.</p>
+      <div class="chips">
+        <span>3 stappen</span>
+        <span>7-daags plan</span>
+        <span>Lokaal opgeslagen</span>
+      </div>
+    </header>
+
+    <section class="stepper" aria-label="Stappen">
+      <div class="step active" data-step="1">1. Audit</div>
+      <div class="step" data-step="2">2. Gewoontes</div>
+      <div class="step" data-step="3">3. Weekplan</div>
+    </section>
+
+    <section class="panel active" id="step-1">
+      <h2>Stap 1: Snelle einde-audit</h2>
+      <p class="hint">Geef eerlijk aan waar je na Eid risico loopt om terug te vallen.</p>
+
+      <div class="grid two">
+        <label>Salah-consistentie
+          <select id="salah">
+            <option value="laag">Laag</option>
+            <option value="middel" selected>Middel</option>
+            <option value="hoog">Hoog</option>
+          </select>
+        </label>
+
+        <label>Koran-contact
+          <select id="quran">
+            <option value="laag">Laag</option>
+            <option value="middel" selected>Middel</option>
+            <option value="hoog">Hoog</option>
+          </select>
+        </label>
+
+        <label>Dua & dhikr
+          <select id="dua">
+            <option value="laag">Laag</option>
+            <option value="middel" selected>Middel</option>
+            <option value="hoog">Hoog</option>
+          </select>
+        </label>
+
+        <label>Karakter & sabr
+          <select id="character">
+            <option value="laag">Laag</option>
+            <option value="middel" selected>Middel</option>
+            <option value="hoog">Hoog</option>
+          </select>
+        </label>
+      </div>
+
+      <label class="block">Beschikbare tijd per dag na Eid
+        <select id="timeBudget">
+          <option value="10">10 minuten</option>
+          <option value="20" selected>20 minuten</option>
+          <option value="35">35 minuten</option>
+        </select>
+      </label>
+
+      <button class="primary" id="toStep2">Genereer 3 sterke gewoontes</button>
+    </section>
+
+    <section class="panel" id="step-2">
+      <h2>Stap 2: Kies jouw 3 kerngewoontes</h2>
+      <p class="hint">Deze suggesties zijn afgestemd op je audit. Kies exact 3 acties die je volhoudt.</p>
+      <div id="habitSuggestions" class="grid"></div>
+      <div class="actions">
+        <button class="ghost" id="backTo1">Terug</button>
+        <button class="primary" id="toStep3" disabled>Maak mijn weekplan</button>
+      </div>
+    </section>
+
+    <section class="panel" id="step-3">
+      <h2>Stap 3: 7-daags behoudplan</h2>
+      <p class="hint">Dit plan start op dag 1 na Eid. Hou het klein, haalbaar en meetbaar.</p>
+
+      <div id="planOutput" class="plan"></div>
+
+      <label class="block">Accountability buddy (optioneel)
+        <input type="text" id="buddy" placeholder="Bijv. broer, zus, vriend(in)">
+      </label>
+
+      <div class="actions">
+        <button class="ghost" id="backTo2">Terug</button>
+        <button class="primary" id="savePlan">Plan opslaan</button>
+        <button class="ghost" id="copyPlan">Kopieer plan</button>
+      </div>
+
+      <p id="saveState" class="save-state" aria-live="polite"></p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
