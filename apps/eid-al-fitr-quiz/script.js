@@ -1,13 +1,13 @@
 const questions = [
     // Q1 — correct: A
     {
-        question: "In welk jaar begon ʿEid al-Fiṭr voor het eerst gevierd te worden?",
+        question: "In welk jaar na de Hidjra (A.H.) werd ʿEid ul-Fiṭr voor het eerst gevierd?",
         answers: [
-            { text: "A) 624 n.Chr.", correct: true },
-            { text: "B) 610 n.Chr.", correct: false },
-            { text: "C) 632 n.Chr.", correct: false }
+            { text: "A) 1 A.H.", correct: false },
+            { text: "B) 2 A.H.", correct: true },
+            { text: "C) 10 A.H.", correct: false }
         ],
-        uitleg: "ʿEid al-Fiṭr begon in 624 n.Chr., twee jaar nadat de Profeet ﷺ naar Medina was gemigreerd. Sindsdien is het één van de twee grote islamitische feestdagen."
+        uitleg: "ʿEid al-Fiṭr werd ingesteld twee jaar nadat de Profeet ﷺ naar Medina was gemigreerd, in het jaar 2 na de Hidjra (Anno Hegirae). Sindsdien is het een van de twee grote islamitische feestdagen."
     },
     // Q2 — correct: C
     {
@@ -15,7 +15,7 @@ const questions = [
         answers: [
             { text: "A) Yawm al-Qiyāmah", correct: false },
             { text: "B) Yawm al-ʿArafah", correct: false },
-            { text: "C) Yawm al-Jazā'", correct: true }
+            { text: "C) Yawm al-Jazā", correct: true }
         ],
         uitleg: "De Profeet ﷺ noemde ʿEid al-Fiṭr de 'Yawm al-Jazā'' — de dag van beloning. Dit benadrukt dat ʿEid al-Fiṭr niet zomaar een feestdag is, maar een dag waarop gelovigen beloond worden voor hun toewijding tijdens de Ramadan."
     },
@@ -31,23 +31,23 @@ const questions = [
     },
     // Q4 — correct: A
     {
-        question: "Op welk tijdstip wordt het ʿEid al-Fiṭr gebed verricht?",
+        question: "Op welk tijdstip wordt het ʿEid al-Fiṭr-gebed verricht?",
         answers: [
             { text: "A) Na zonsopgang, wanneer de zon één speerlengdte hoog staat", correct: true },
             { text: "B) Voor de fadjr (ochtendschemering)", correct: false },
-            { text: "C) Rond het middaguur, net als het dzohr-gebed", correct: false }
+            { text: "C) Rond het middaguur, net als het Ẓuhr-gebed", correct: false }
         ],
-        uitleg: "Het ʿEid al-Fiṭr gebed wordt verricht na zonsopgang, zodra de zon ongeveer één speerlengdte boven de horizon staat — vergelijkbaar met de tijd van het Ishrāq-gebed. Het gebed is niet geldig vóór zonsopgang of na het middaguur."
+        uitleg: "Het ʿEid al-Fiṭr-gebed wordt verricht na zonsopgang, zodra de zon ongeveer één speerlengdte boven de horizon staat — vergelijkbaar met de tijd van het Ishrāq-gebed. Het gebed is niet geldig vóór zonsopgang of na het middaguur."
     },
     // Q5 — correct: C
     {
-        question: "Wanneer moet Zakat al-Fitr betaald worden?",
+        question: "Wanneer moet Zakāt al-Fiṭr betaald worden?",
         answers: [
-            { text: "A) Na het ʿEid al-Fiṭr gebed", correct: false },
+            { text: "A) Na het ʿEid al-Fiṭr-gebed", correct: false },
             { text: "B) Aan het begin van de Ramadan", correct: false },
-            { text: "C) Voor het ʿEid al-Fiṭr gebed", correct: true }
+            { text: "C) Voor het ʿEid al-Fiṭr-gebed", correct: true }
         ],
-        uitleg: "Zakat al-Fitr is een verplichte liefdadigheid die vóór het ʿEid al-Fiṭr gebed betaald dient te worden. Het doel is om ook de armen in staat te stellen om volwaardig deel te nemen aan de vreugde van Eid."
+        uitleg: "Zakāt al-Fiṭr is een verplichte liefdadigheid die vóór het ʿEid al-Fiṭr-gebed betaald dient te worden. Het doel is om ook de armen in staat te stellen om volwaardig deel te nemen aan de vreugde van Eid."
     },
     // Q6 — correct: B
     {
@@ -61,23 +61,23 @@ const questions = [
     },
     // Q7 — correct: A
     {
-        question: "Wat eet je traditioneel vóór het ʿEid al-Fiṭr gebed?",
+        question: "Wat eet je traditioneel vóór het ʿEid al-Fiṭr-gebed?",
         answers: [
             { text: "A) Dadels, bij voorkeur een oneven aantal", correct: true },
             { text: "B) Brood met honing", correct: false },
             { text: "C) Vlees en rijst", correct: false }
         ],
-        uitleg: "Het is soenna om vóór het ʿEid al-Fiṭr gebed dadels te eten, bij voorkeur een oneven aantal. Dit onderscheidt ʿEid al-Fiṭr van de gewone Ramadan dagen en breekt symbolisch het vasten definitief."
+        uitleg: "Het is soenna om vóór het ʿEid al-Fiṭr-gebed dadels te eten, bij voorkeur een oneven aantal. Dit onderscheidt ʿEid al-Fiṭr van de gewone Ramadan dagen en breekt symbolisch het vasten definitief."
     },
     // Q8 — correct: C
     {
-        question: "Wat is een soenna betreffende de route naar en van het ʿEid-gebed?",
+        question: "Wat is een soenna betreffende de route naar en van het ʿEid al-Fiṭr-gebed?",
         answers: [
             { text: "A) Heen en terug dezelfde route nemen", correct: false },
             { text: "B) Zo ver mogelijk lopen voor extra beloning", correct: false },
             { text: "C) Via een andere route terugkomen dan de heenweg", correct: true }
         ],
-        uitleg: "Het is soenna om via een andere route terug te keren dan de route waarmee je naar het Eid-gebed ging. Hier zijn meerdere verklaringen voor gegeven, waaronder dat er meer mensen getuige zijn van de dag van Eid."
+        uitleg: "Het is soenna om via een andere route terug te keren dan de route waarmee je naar het ʿEid al-Fiṭr-gebed ging. Hier zijn meerdere verklaringen voor gegeven, waaronder dat er meer mensen getuige zijn van de dag van Eid."
     },
     // Q9 — correct: B
     {
@@ -91,43 +91,43 @@ const questions = [
     },
     // Q10 — correct: C
     {
-        question: "Wordt het ʿEid al-Fiṭr gebed afgekondigd met een adzān?",
+        question: "Wordt het ʿEid al-Fiṭr-gebed afgekondigd met een adzān?",
         answers: [
             { text: "A) Ja, net als de vijf dagelijkse gebeden", correct: false },
             { text: "B) Alleen bij grote gemeenschappen", correct: false },
-            { text: "C) Nee, er is geen adzān of iqama", correct: true }
+            { text: "C) Nee, er is geen adzān of iqāmah", correct: true }
         ],
-        uitleg: "Het ʿEid al-Fiṭr gebed gaat niet vooraf aan een adzān of iqama. Dit is één van de kenmerken die het Eid-gebed onderscheidt van de reguliere dagelijkse gebeden."
+        uitleg: "Het ʿEid al-Fiṭr-gebed gaat niet vooraf aan een adzān of iqāmah. Dit is één van de kenmerken die het ʿEid al-Fiṭr-gebed onderscheidt van de reguliere dagelijkse gebeden."
     },
     // Q11 — correct: A
     {
-        question: "Hoeveel rakaʿāt heeft het ʿEid al-Fiṭr gebed?",
+        question: "Hoeveel rakaʿāt heeft het ʿEid al-Fiṭr-gebed?",
         answers: [
             { text: "A) Twee rakaʿāt", correct: true },
             { text: "B) Vier rakaʿāt", correct: false },
             { text: "C) Drie rakaʿāt", correct: false }
         ],
-        uitleg: "Het ʿEid al-Fiṭr gebed bestaat uit twee rakaʿāt. Het is een congregatiegebed dat door de imam wordt voorgegaan en wordt gevolgd door een preek (khutbah)."
+        uitleg: "Het ʿEid al-Fiṭr-gebed bestaat uit twee rakaʿāt. Het is een congregatiegebed dat door de imam wordt voorgegaan en wordt gevolgd door een preek (khutbah)."
     },
     // Q12 — correct: B
     {
-        question: "Wat is de eerste stap bij het verrichten van het ʿEid al-Fiṭr gebed?",
+        question: "Wat is de eerste stap bij het verrichten van het ʿEid al-Fiṭr-gebed?",
         answers: [
             { text: "A) De takbīr hardop uitspreken", correct: false },
             { text: "B) De niyyah (intentie) formuleren", correct: true },
             { text: "C) Wachten op de adzān", correct: false }
         ],
-        uitleg: "Net als bij elk gebed dient men eerst de niyyah (intentie) te formuleren voordat het Eid-gebed begint. De intentie vormt de innerlijke grondslag van elke daad van aanbidding."
+        uitleg: "Net als bij elk gebed dient men eerst de niyyah (intentie) te formuleren voordat het ʿEid al-Fiṭr-gebed begint. De intentie vormt de innerlijke grondslag van elke daad van aanbidding."
     },
     // Q13 — correct: A
     {
-        question: "Hoeveel extra takbīr worden er uitgesproken in het eerste rakaʿāt van het Eid-gebed (na de openingstakbīr)?",
+        question: "Hoeveel extra takbīr worden er uitgesproken in het eerste rakaʿāt van het ʿEid al-Fiṭr-gebed (na de openingstakbīr)?",
         answers: [
             { text: "A) Drie extra takbīr", correct: true },
             { text: "B) Twee extra takbīr", correct: false },
             { text: "C) Vier extra takbīr", correct: false }
         ],
-        uitleg: "In het eerste rakaʿāt van het Eid-gebed worden drie extra takbīr uitgesproken na de openingstakbīr. Na elke takbīr worden de handen langs de zij gehangen, totdat na de derde extra takbīr de handen worden gevouwen voor de Koranrecitatie."
+        uitleg: "In het eerste rakaʿāt van het ʿEid al-Fiṭr-gebed worden drie extra takbīr uitgesproken na de openingstakbīr. Na elke takbīr worden de handen langs de zij gehangen, totdat na de derde extra takbīr de handen worden gevouwen voor de Koranrecitatie."
     },
     // Q14 — correct: C
     {
