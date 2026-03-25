@@ -1,13 +1,14 @@
-// Actieve vraagset.
-// De toelichtingen hieronder zijn beperkt tot informatie die is geverifieerd in:
+// Actieve vraagset — gecorrigeerde versie (maart 2026).
+// Bronvermelding is uitsluitend voor interne referentie en wordt niet weergegeven in de quiz.
+// Geverifieerd via:
 // - hetrechtepad.nl artikelen over gebedstijden en qaḍā
 // - BSI_N1.pdf voor wuḍū, ghusl, tayammum, voorwaarden van de ṣalāt en geldigheid
 const questions = [
     // --- Gebedstijden ---
     {
-        question: "Hoeveel gebeden zijn verplicht gedurende een dag en een nacht?",
+        question: "Hoeveel gebeden moet je elke dag verrichten?",
         answers: [
-            { text: "A) 3", correct: false },
+            { text: "A) 6", correct: false },
             { text: "B) 5", correct: true },
             { text: "C) 7", correct: false }
         ],
@@ -15,33 +16,33 @@ const questions = [
         source: "Website: Van dageraad tot nacht: de vijf verplichte gebeden (2025-09-29); BSI_N1.pdf p.49"
     },
     {
-        question: "Wat is het tijdstip van het Fajr-gebed?",
+        question: "Op welk tijdstip moet je het Fajr-gebed verrichten?",
         answers: [
-            { text: "A) Van middernacht tot de ware ochtendschemering", correct: false },
+            { text: "A) Van middernacht tot de ochtendschemering", correct: false },
             { text: "B) Van zonsopgang tot zawāl (het moment dat de zon haar hoogste punt heeft bereikt)", correct: false },
-            { text: "C) Van de ware ochtendschemering tot zonsopgang", correct: true }
+            { text: "C) Van de ochtendschemering tot zonsopgang", correct: true }
         ],
-        uitleg: "Het Fajr-gebed wordt verricht vanaf de ware ochtendschemering tot zonsopgang.",
+        uitleg: "De tijd van het Fajr-gebed begint bij de ware dageraad. Dit is het moment waarop aan de horizon een licht verschijnt dat zich horizontaal uitstrekt en geleidelijk toeneemt, totdat het de duisternis verdringt. Deze tijd duurt voort tot zonsopgang.",
         source: "Website: De islamitische gebedstijden (2024-01-22); Website: De tijdstippen van de vijf verplichte gebeden (2023-05-25); BSI_N1.pdf p.49"
     },
     {
-        question: "Tot wanneer loopt het Ẓuhr-gebed?",
+        question: "Tot wanneer duurt het Ẓuhr-gebed?",
         answers: [
             { text: "A) Tot de schaduw even lang is als het voorwerp", correct: false },
             { text: "B) Tot de schaduw van een voorwerp dubbel zo lang is, exclusief de eigen schaduw", correct: true },
             { text: "C) Tot de zon geel begint te kleuren", correct: false }
         ],
-        uitleg: "Het Ẓuhr-gebed begint bij zawāl (het moment dat de zon haar hoogste punt heeft bereikt) en loopt tot het moment dat de schaduw van een voorwerp de dubbele lengte heeft bereikt, exclusief de eigen schaduw.",
+        uitleg: "Het Ẓuhr-gebed begint bij zawāl, het moment waarop de zon haar hoogste punt heeft gepasseerd. Deze tijd duurt voort, totdat de schaduw van een voorwerp twee keer zo lang is als het voorwerp zelf, exclusief de oorspronkelijke middagschaduw.",
         source: "Website: De islamitische gebedstijden (2024-01-22); Website: De tijdstippen van de vijf verplichte gebeden (2023-05-25); BSI_N1.pdf p.49"
     },
     {
-        question: "Wat is de aanbevolen houding ten opzichte van het ʿAṣr-gebed?",
+        question: "Wat is het aanbevolen tijdstip om het ʿAṣr-gebed te verrichten?",
         answers: [
             { text: "A) Het direct aan het begin van de tijd verrichten", correct: false },
             { text: "B) Het uitstellen tot vlak voor zonsondergang", correct: false },
             { text: "C) Het wat later verrichten, maar niet uitstellen tot de zon geel kleurt", correct: true }
         ],
-        uitleg: "Het is aanbevolen het ʿAṣr-gebed wat later te verrichten, maar niet uit te stellen tot het moment waarop de zon geel kleurt.",
+        uitleg: "Het is aanbevolen het ʿAṣr-gebed iets later binnen de toegestane tijd te verrichten, maar zonder het uit te stellen tot het moment waarop de zon geel begint te kleuren. Het onnodig uitstellen tot vlak voor zonsondergang is afkeurenswaardig.",
         source: "Website: Van dageraad tot nacht: de vijf verplichte gebeden (2025-09-29); BSI_N1.pdf p.49"
     },
     {
@@ -51,27 +52,27 @@ const questions = [
             { text: "B) Na het verdwijnen van de avondschemering", correct: false },
             { text: "C) Direct na zonsondergang", correct: true }
         ],
-        uitleg: "Het Maghrib-gebed begint direct na zonsondergang en het is aanbevolen dit direct of spoedig te verrichten.",
+        uitleg: "Het Maghrib-gebed begint zodra de zon volledig onder de horizon is verdwenen. Vanaf dat moment treedt de tijd direct in, zonder wachttijd. Het is aanbevolen het gebed onmiddellijk of kort daarna te verrichten, omdat de tijd van Maghrib relatief kort is en eindigt bij het verdwijnen van de avondschemering.",
         source: "Website: Van dageraad tot nacht: de vijf verplichte gebeden (2025-09-29); Website: De islamitische gebedstijden (2024-01-22); BSI_N1.pdf p.50"
     },
     {
-        question: "Tot wanneer mag het ʿIshā-gebed worden verricht?",
+        question: "Tot wanneer mag je het ʿIshā-gebed verrichten?",
         answers: [
             { text: "A) Tot het begin van de ochtendschemering", correct: true },
             { text: "B) Alleen tot de ware middernacht", correct: false },
             { text: "C) Tot de zon opkomt", correct: false }
         ],
-        uitleg: "Het ʿIshā-gebed loopt tot het begin van de ochtendschemering. Het uitstellen tot de ware middernacht is toegestaan.",
+        uitleg: "De tijd van het ʿIshā-gebed duurt tot het begin van de ochtendschemering (Fajr). Het is echter aanbevolen het gebed niet onnodig uit te stellen. Het verrichten tot aan de ware middernacht is toegestaan, maar daarna zonder geldige reden uitstellen is afkeurenswaardig.",
         source: "Website: Van dageraad tot nacht: de vijf verplichte gebeden (2025-09-29); BSI_N1.pdf p.50"
     },
     {
-        question: "Tijdens welk tijdstip mag je geen ṣalāt (gebed) verrichten?",
+        question: "Wanneer mag je geen ṣalāt verrichten?",
         answers: [
             { text: "A) Tijdens zonsopgang", correct: true },
             { text: "B) Tijdens het eerste derde deel van de nacht", correct: false },
             { text: "C) Meteen na de adzān (gebedsoproep) van ʿIshā", correct: false }
         ],
-        uitleg: "Je mag geen ṣalāt (gebed) verrichten tijdens zonsopgang, zonsondergang en de islamitische middag.",
+        uitleg: "Er zijn specifieke momenten waarop het verrichten van ṣalāt niet toegestaan is: tijdens zonsopgang, tijdens zonsondergang en de islamitische middag (rond het moment van zawāl, wanneer de zon haar hoogste punt bereikt voordat zij begint te dalen). Op deze momenten zijn alle gebeden verboden.",
         source: "Website: Kan men de verzuimde gebeden (qaḍā) inhalen op de verboden tijdstippen? (2025-03-07); BSI_N1.pdf p.53"
     },
     {
@@ -81,7 +82,7 @@ const questions = [
             { text: "B) Pas nadat de iqāmah is uitgesproken", correct: false },
             { text: "C) Nadat het tijdstip van de ṣalāt (gebed) is aangebroken", correct: true }
         ],
-        uitleg: "De adzān (gebedsoproep) wordt gegeven nadat het tijdstip van de ṣalāt (gebed) is aangebroken. Is hij eerder gegeven, dan moet hij worden herhaald.",
+        uitleg: "De adzān is gekoppeld aan het daadwerkelijk intreden van de gebedstijd en mag niet daarvoor worden gegeven. Wordt de adzān vóór het begin van de tijd uitgesproken, dan is deze niet geldig en moet hij worden herhaald. De iqāmah daarentegen volgt pas vlak vóór het daadwerkelijke beginnen van het gebed.",
         source: "BSI_N1.pdf pp.57-58"
     },
 
@@ -93,17 +94,17 @@ const questions = [
             { text: "B) De voeten wassen tot en met de enkels", correct: true },
             { text: "C) Een keer over het hele hoofd en de oren strijken", correct: false }
         ],
-        uitleg: "De wuḍū (kleine wassing) heeft vier verplichtingen: het gezicht wassen, beide handen tot en met de ellebogen wassen, over een kwart van het hoofd strijken en de voeten wassen tot en met de enkels.",
+        uitleg: "De wuḍū heeft vier verplichtingen: het gezicht wassen, beide handen tot en met de ellebogen wassen, over een kwart van het hoofd strijken en de voeten wassen tot en met de enkels. Alleen wanneer deze vier onderdelen zijn verricht, is de wuḍū geldig.",
         source: "BSI_N1.pdf p.12"
     },
     {
-        question: "Wat verbreekt de wuḍū (kleine wassing)?",
+        question: "Wat verbreekt je wuḍū (kleine wassing)?",
         answers: [
-            { text: "A) In stilte rusten terwijl je rechtop blijft zitten", correct: false },
-            { text: "B) Je handen en gezicht opnieuw wassen", correct: false },
+            { text: "A) Hard lachen buiten het gebed", correct: false },
+            { text: "B) Zweten of stinken", correct: false },
             { text: "C) Zo diep slapen dat de spieren van het lichaam ontspannen", correct: true }
         ],
-        uitleg: "Onder meer diep slapen, plassen, ontlasting, darmgassen en flauwvallen maken de wuḍū (kleine wassing) ongeldig.",
+        uitleg: "De wuḍū wordt verbroken door alles wat uit de geslachtsdelen of de anus komt, zoals urine, ontlasting en darmgassen. Ook slapen en flauwvallen verbreken de wuḍū, omdat de spieren ontspannen en de controle over het lichaam wegvalt, waardoor er iets uit de geslachtsdelen of de anus kan vrijkomen dat de wuḍū ongeldig maakt.",
         source: "BSI_N1.pdf p.22"
     },
     {
@@ -113,37 +114,37 @@ const questions = [
             { text: "B) 3", correct: true },
             { text: "C) 6", correct: false }
         ],
-        uitleg: "De ghusl (grote wassing) kent drie verplichtingen: de mond spoelen, water in de neus brengen en water over de buitenkant van het hele lichaam laten vloeien.",
+        uitleg: "De ghusl kent drie verplichtingen: de mond spoelen, water in de neus brengen en het gehele lichaam wassen, zodat het water elk deel van de buitenkant van het lichaam bereikt. Alleen wanneer deze drie onderdelen zijn verricht, is de ghusl geldig.",
         source: "BSI_N1.pdf pp.25-26"
     },
     {
-        question: "Wat moet bij ghusl (grote wassing) over het lichaam gebeuren om de verplichting te vervullen?",
+        question: "Wat is verplicht bij het wassen van het lichaam tijdens de ghusl?",
         answers: [
             { text: "A) Alleen hoofd, nek en schouders wassen", correct: false },
             { text: "B) Eerst wuḍū (kleine wassing) verrichten en daarna alleen de voeten wassen", correct: false },
             { text: "C) Water van top tot teen over de buitenkant van het hele lichaam laten vloeien", correct: true }
         ],
-        uitleg: "Een van de verplichtingen van ghusl (grote wassing) is dat water over de buitenkant van het hele lichaam vloeit.",
+        uitleg: "Bij ghusl is het verplicht dat water elk deel van de buitenkant van het lichaam bereikt, van top tot teen. Het is niet voldoende om slechts delen van het lichaam te wassen; het water moet overal overheen vloeien. Alleen dan is deze verplichting van de ghusl vervuld.",
         source: "BSI_N1.pdf pp.25-26"
     },
     {
         question: "Wanneer is tayammum (droge reiniging) toegestaan?",
         answers: [
-            { text: "A) Alleen als er helemaal geen water in het land is", correct: false },
+            { text: "A) Wanneer je geen zin hebt om water te gebruiken", correct: false },
             { text: "B) Wanneer watergebruik niet mogelijk of schadelijk is", correct: true },
-            { text: "C) Wanneer men bang is te laat in de moskee te komen", correct: false }
+            { text: "C) Wanneer je bang bent te laat in de moskee te komen", correct: false }
         ],
-        uitleg: "Tayammum (droge reiniging) is toegestaan wanneer je niet in staat bent water te gebruiken, bijvoorbeeld uit vrees voor ziekte, door extreme kou of wanneer er geen water beschikbaar is binnen de genoemde afstand.",
+        uitleg: "Tayammum is toegestaan wanneer het gebruik van water niet mogelijk is of schade veroorzaakt, zoals bij ziekte, extreme kou of wanneer er geen water beschikbaar is binnen een redelijke afstand. In zulke gevallen vervangt tayammum de wuḍū of ghusl.",
         source: "BSI_N1.pdf pp.33, 36"
     },
     {
-        question: "Hoeveel keer sla je bij tayammum (droge reiniging) met de handen op de grond?",
+        question: "Hoeveel keer laat je bij tayammum (droge reiniging) de handen op de grond ploffen?",
         answers: [
             { text: "A) Eén keer", correct: false },
-            { text: "B) Eén keer voor gezicht en armen samen", correct: false },
-            { text: "C) Twee keer", correct: true }
+            { text: "B) Twee keer", correct: true },
+            { text: "C) Drie keer", correct: false }
         ],
-        uitleg: "Bij tayammum (droge reiniging) sla je eerst op de grond voor het gezicht en daarna opnieuw voor de armen.",
+        uitleg: "Bij tayammum laat je twee keer de handen op de grond ploffen: één keer om het gezicht te vegen en een tweede keer om de armen te vegen. Hiermee worden de verplichte onderdelen van de tayammum vervuld.",
         source: "BSI_N1.pdf p.33"
     },
     {
@@ -153,17 +154,17 @@ const questions = [
             { text: "B) Alles wat de wuḍū (kleine wassing) verbreekt of de ghusl (grote wassing) verplicht maakt", correct: true },
             { text: "C) Alleen het aanraken van aarde met de handen", correct: false }
         ],
-        uitleg: "Tayammum (droge reiniging) wordt ongeldig door alles wat de wuḍū (kleine wassing) verbreekt of de ghusl (grote wassing) verplicht maakt, en ook wanneer je weer in staat bent water te gebruiken.",
+        uitleg: "Tayammum wordt ongeldig door alles wat ook de wuḍū verbreekt of de ghusl verplicht maakt. Daarnaast vervalt tayammum zodra men weer in staat is water te gebruiken, omdat het slechts een vervangende vorm van reiniging is.",
         source: "BSI_N1.pdf p.36"
     },
     {
-        question: "Welke hand moet gebruikt worden bij istindjā?",
+        question: "Welke hand moet gebruikt worden bij istindjā (onderwassing)?",
         answers: [
             { text: "A) De rechterhand, zodat de linkerhand schoon blijft", correct: false },
             { text: "B) Eerst de rechterhand en dan de linkerhand", correct: false },
             { text: "C) De linkerhand", correct: true }
         ],
-        uitleg: "Bij istindjā gebruik je de linkerhand voor het reinigen met toiletpapier en water.",
+        uitleg: "Bij istindjā wordt de linkerhand gebruikt voor het reinigen, omdat de rechterhand is gereserveerd voor eervolle handelingen, zoals eten en drinken. Daarom wordt de linkerhand gebruikt voor het verwijderen van onreinheden.",
         source: "BSI_N1.pdf p.39"
     },
 
@@ -175,7 +176,7 @@ const questions = [
             { text: "B) 6", correct: true },
             { text: "C) 7", correct: false }
         ],
-        uitleg: "De ṣalāt (gebed) kent zes voorwaarden: reinheid, het bedekken van de ʿawrah, de qiblah (gebedsrichting), de tijd, de intentie en de openingstakbīr.",
+        uitleg: "De ṣalāt kent zes voorwaarden: reinheid, het bedekken van de intieme delen (ʿawrah), het richten naar de qiblah, het intreden van de gebedstijd, de intentie en de openingstakbīr. Zonder deze voorwaarden is het gebed niet geldig.",
         source: "BSI_N1.pdf p.79"
     },
     {
@@ -185,17 +186,17 @@ const questions = [
             { text: "B) Goed nadenken en bidden volgens je beste inschatting", correct: true },
             { text: "C) Altijd de richting volgen waarin de meeste mensen staan", correct: false }
         ],
-        uitleg: "Bij twijfel over de qiblah (gebedsrichting) moet je, als je het niemand kunt vragen, goed nadenken en daarna bidden volgens je beste inschatting.",
+        uitleg: "Wanneer de richting van de qiblah onbekend is en niemand geraadpleegd kan worden, ben je verplicht taḥarrī te verrichten. Taḥarrī betekent dat je de richting onderzoekt en vervolgens bidt in de richting die jij het meest waarschijnlijk acht.",
         source: "BSI_N1.pdf p.79"
     },
     {
-        question: "Wat moet bij een vrouw tijdens de ṣalāt (gebed) bedekt zijn?",
+        question: "Welke lichaamsdelen van een vrouw moeten tijdens de ṣalāt bedekt zijn?",
         answers: [
             { text: "A) Het hele lichaam behalve het gezicht en de voeten", correct: false },
             { text: "B) Het hele lichaam behalve gezicht, handpalmen en voeten tot de enkels", correct: true },
             { text: "C) Alles behalve gezicht en handpalmen", correct: false }
         ],
-        uitleg: "Voor de vrouw moet tijdens de ṣalāt (gebed) het hele lichaam bedekt zijn, behalve het gezicht, de handpalmen en de voeten tot de enkels.",
+        uitleg: "Voor een vrouw is tijdens de ṣalāt haar hele lichaam ʿawrah, met uitzondering van het gezicht, de handpalmen en de voeten tot de enkels. ʿAwrah betekent de lichaamsdelen die verplicht bedekt moeten zijn.",
         source: "BSI_N1.pdf p.79"
     },
     {
@@ -205,17 +206,17 @@ const questions = [
             { text: "B) De adzān (gebedsoproep) geven vóór het gebed", correct: false },
             { text: "C) De qiyām, het staan", correct: true }
         ],
-        uitleg: "Tot de farḍ-handelingen van de ṣalāt (gebed) behoren de qiyām, qirāʾat, rukūʾ, sujūd, de laatste zitting en het uit het gebed treden.",
+        uitleg: "De ṣalāt kent verplichte handelingen (farḍ), waaronder staan (qiyām), recitatie (qirā'ah), kniebuiging (rukūʾ), grondbuiging (sujūd), de laatste zitting (qaʿdah ākhirah) en het verlaten van het gebed met een niet ṣalāt-handeling (Khurūdj bi ṣunʿihī). Het weglaten van een van deze maakt het gebed ongeldig.",
         source: "BSI_N1.pdf p.86"
     },
     {
         question: "Welke handeling is wājib (essentieel) in de ṣalāt (gebed)?",
         answers: [
             { text: "A) De adzān (gebedsoproep) geven voor iedere individuele ṣalāt (gebed)", correct: false },
-            { text: "B) In iedere rakaʿat de handen opheffen", correct: false },
+            { text: "B) In iedere rakʿat de handen opheffen", correct: false },
             { text: "C) Soera al-Fātiḥa reciteren", correct: true }
         ],
-        uitleg: "Tot de wājib-handelingen van de ṣalāt (gebed) behoort onder meer het reciteren van soera al-Fātiḥa.",
+        uitleg: "Het reciteren van Soera al-Fātiḥa behoort tot de wājib-handelingen van de ṣalāt. Het opzettelijk weglaten ervan maakt het gebed ongeldig, en bij het per ongeluk weglaten is sujūd as-sahw (vergissingsbuiging) verplicht.",
         source: "BSI_N1.pdf p.90"
     },
     {
@@ -225,7 +226,7 @@ const questions = [
             { text: "B) Een korte onderbreking van enkele ademhalingen", correct: false },
             { text: "C) Meteen de rukūʾ", correct: true }
         ],
-        uitleg: "Tot de wājib-handelingen behoort dat na de Koranrecitatie direct wordt overgegaan tot de rukūʾ.",
+        uitleg: "Het is essentieel (wājib) dat na de recitatie van Soera al-Fātiḥa en de daaropvolgende Koranrecitatie zonder onnodige onderbreking wordt overgegaan naar de rukūʾ.",
         source: "BSI_N1.pdf p.90"
     },
     {
@@ -235,7 +236,7 @@ const questions = [
             { text: "B) In alle drie rakaʿāt hardop reciteren", correct: false },
             { text: "C) De ṣalāt (gebed) beëindigen na twee rakaʿāt", correct: false }
         ],
-        uitleg: "In de Witr is het reciteren van Duʿā Qunūt een wājib-handeling.",
+        uitleg: "In de Witr behoort het reciteren van de Duʿā Qunūt (smeekbede) tot de essentiële handelingen (wājib). Laat je dit opzettelijk weg, dan is je gebed ongeldig; laat je het uit vergetelheid weg, dan is sujūd as-sahw (vergissingsneerknieling) noodzakelijk.",
         source: "BSI_N1.pdf pp.90, 116"
     },
     {
@@ -245,7 +246,7 @@ const questions = [
             { text: "B) Degene die het dichtst bij de miḥrāb staat", correct: false },
             { text: "C) Degene met de meeste kennis over de regels van ṣalāt (gebed) en reinheid", correct: true }
         ],
-        uitleg: "Het meeste recht om voor te gaan heeft degene die de meeste kennis heeft over de regelgeving van ṣalāt (gebed) en reinheid.",
+        uitleg: "Voorrang om voor te gaan in het gebed ligt bij degene die het meest bekwaam is in de regels van ṣalāt en reinheid, omdat dit ervoor zorgt dat het gebed correct en zonder fouten wordt verricht.",
         source: "BSI_N1.pdf p.104"
     },
 
@@ -257,7 +258,7 @@ const questions = [
             { text: "B) Het hoofd licht bewegen zonder de borst af te wenden", correct: false },
             { text: "C) Even je kleding rechttrekken", correct: false }
         ],
-        uitleg: "De ṣalāt (gebed) wordt ongeldig door spreken, of dit nu opzettelijk gebeurt, per vergissing of uit vergeetachtigheid.",
+        uitleg: "Je ṣalāt (gebed) wordt ongeldig wanneer je spreekt, of dit nu opzettelijk gebeurt, per vergissing of uit vergeetachtigheid, omdat je tijdens het gebed verplicht bent stilte en concentratie te bewaren.",
         source: "BSI_N1.pdf p.109"
     },
     {
@@ -267,7 +268,7 @@ const questions = [
             { text: "B) Dat het verbreken van het gebed daardoor een bekende maar onjuiste misvatting is", correct: true },
             { text: "C) Dat dit alleen in een farḍ-ṣalāt (gebed) ongeldig maakt", correct: false }
         ],
-        uitleg: "Het verbreken van de ṣalāt (gebed) door alleen het verplaatsen van de grote teen is een onjuiste misvatting.",
+        uitleg: "Onder veel mensen is het bekend dat het verplaatsen van de grote teen de ṣalāt ongeldig zou maken, maar dit is onjuist. Een verplaatsen van je grote teen heeft geen invloed op de geldigheid van je gebed en behoort niet tot de handelingen die de ṣalāt verbreken.",
         source: "BSI_N1.pdf p.109"
     },
     {
@@ -277,7 +278,7 @@ const questions = [
             { text: "B) Twee extra rakaʿāt na afloop van de ṣalāt (gebed)", correct: false },
             { text: "C) Een extra rukūʾ na de recitatie van Duʿā Qunūt", correct: false }
         ],
-        uitleg: "Sujūd al-sahw (vergissingsbuiging) zijn twee extra grondbuigingen in de laatste zitting om een tekortkoming door vergeetachtigheid te herstellen.",
+        uitleg: "Sujūd al-sahw (vergissingsbuigingen) verricht je wanneer je in de ṣalāt een fout maakt door vergeetachtigheid. Je doet dan twee extra grondbuigingen in de laatste zitting om deze tekortkoming te herstellen.",
         source: "BSI_N1.pdf p.121"
     },
     {
@@ -287,7 +288,7 @@ const questions = [
             { text: "B) Wanneer je een soenna-handeling vergeet", correct: false },
             { text: "C) Wanneer je zonder reden zacht reciteert achter de imām", correct: false }
         ],
-        uitleg: "Sujūd al-sahw (vergissingsbuiging) is wājib (essentieel) wanneer je een wājib-handeling van de ṣalāt (gebed) vergeet.",
+        uitleg: "Sujūd al-sahw (vergissingsbuigingen) zijn essentieel (wājib) wanneer je een wājib-handeling in de ṣalāt uit vergetelheid weglaat, zodat je daarmee de tekortkoming in je gebed herstelt.",
         source: "BSI_N1.pdf p.121"
     },
     {
@@ -297,7 +298,7 @@ const questions = [
             { text: "B) De farḍ- en wājib-gebedseenheden", correct: true },
             { text: "C) Alle soenna- en nafl-gebedseenheden (vrijwillige gebedseenheden)", correct: false }
         ],
-        uitleg: "De farḍ- en wājib-gebedseenheden moeten worden ingehaald. Voor gemiste soenna- en nafl-gebedseenheden (vrijwillige gebedseenheden) geldt die blijvende verplichting niet.",
+        uitleg: "Je bent verplicht farḍ- en wājib-gebedseenheden in te halen wanneer je ze hebt gemist. Voor soenna- en nafl-gebedseenheden geldt deze verplichting niet.",
         source: "Website: Het inhalen van een levenslang aantal gemiste gebeden (2023-06-05); BSI_N1.pdf p.126"
     },
     {
@@ -307,13 +308,12 @@ const questions = [
             { text: "B) Een gemist gebed verrichten nadat de tijd is verstreken", correct: true },
             { text: "C) Een ṣalāt (gebed) vervroegd verrichten vóór het tijdstip ingaat", correct: false }
         ],
-        uitleg: "Adā betekent een gebed verrichten binnen de vastgestelde tijd, terwijl qaḍā betekent dat een gemist gebed wordt verricht nadat de tijd is verstreken.",
+        uitleg: "Qaḍā betekent dat je een gebed in een later tijdstip verricht nadat de oorspronkelijke tijd is verstreken. Dit geldt voor gebeden die je hebt gemist en alsnog moet inhalen.",
         source: "Website: Het inhalen van een levenslang aantal gemiste gebeden (2023-06-05); BSI_N1.pdf p.126"
     }
 ];
 
-// Reserve-set voor later gebruik. Deze vraagbank is bewust inactief:
-// de app rendert alleen `questions` en gebruikt deze set nergens.
+// Reserve-set (niet actief in de quiz)
 const inactiveQuestionBank = [
     {
         question: "Welk gebed wordt direct na het verdwijnen van de avondschemering verricht?",
@@ -655,7 +655,7 @@ document.addEventListener("DOMContentLoaded", () => {
         qTextElement.innerText = "Māshā Allāh! Je hebt de Kennisquiz Gebed afgerond.";
         scoreText.innerHTML = `Eindscore: ${score} van de ${questions.length}<br><br>Moge Allah ons allen helpen ons gebed te onderhouden met aandacht, eerbiedigheid en toewijding. Āmīn!`;
         resultContainer.classList.remove("hide");
-        characterImg.src = "images/prayer_end.png";
+        characterImg.src = "images/mw-dua.png";
         characterImg.classList.add("end");
 
         if (typeof confetti === "function") {

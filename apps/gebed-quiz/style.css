@@ -9,24 +9,30 @@
 :root {
     --gold:       #d4af37;
     --gold-light: #e8c84a;
-    --gold-dim:   rgba(212, 175, 55, 0.22);
-    --gold-glow:  rgba(212, 175, 55, 0.10);
-    --navy:       #001427;
-    --bg:         #060d1b;
-    --card-bg:    rgba(8, 20, 44, 0.82);
-    --text:       #eef2ff;
-    --text-muted: rgba(238, 242, 255, 0.52);
+    --gold-dim:   rgba(212, 175, 55, 0.28);
+    --gold-bg:    rgba(212, 175, 55, 0.10);
+    --navy:       #001f3f;
+    --ink:        #16324f;
+    --muted:      #4b607a;
+    --shadow:     0 14px 30px rgba(7, 41, 63, 0.16);
+    --shadow-hover: 0 18px 34px rgba(7, 41, 63, 0.22);
     --correct:    #27ae60;
     --wrong:      #c0392b;
-    --radius:     16px;
+    --radius:     14px;
 }
 
 /* === BODY === */
 body {
-    font-family: 'Noto Sans', 'Segoe UI', sans-serif;
-    background: linear-gradient(165deg, #030609 0%, #060d1b 30%, #091526 60%, #0c1d35 100%);
+    font-family: 'Noto Sans', 'Noto Naskh Arabic', sans-serif;
+    background:
+        radial-gradient(circle at 10% 8%,  rgba(255, 236, 167, 0.10) 0 2px, transparent 3px),
+        radial-gradient(circle at 26% 5%,  rgba(255, 236, 167, 0.12) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 48% 12%, rgba(255, 236, 167, 0.09) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 70% 6%,  rgba(255, 236, 167, 0.11) 0 2px, transparent 3px),
+        radial-gradient(circle at 88% 10%, rgba(255, 236, 167, 0.10) 0 1.5px, transparent 2.5px),
+        linear-gradient(180deg, #081a33 0%, #0f2d50 50%, #0c2642 100%);
     background-attachment: fixed;
-    color: var(--text);
+    color: var(--ink);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -36,22 +42,8 @@ body {
     overflow-x: hidden;
 }
 
-/* === MOSQUE SILHOUET (ACHTERGROND) === */
-.mosque-bg {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    pointer-events: none;
-    z-index: 0;
-    fill: rgba(212, 175, 55, 0.055);
-}
-
 /* === PAGE WRAPPER === */
 .page-wrapper {
-    position: relative;
-    z-index: 1;
     width: 100%;
     max-width: 620px;
     display: flex;
@@ -77,16 +69,11 @@ body {
 /* === QUIZ KAART === */
 .quiz-card {
     width: 100%;
-    background: var(--card-bg);
-    backdrop-filter: blur(24px) saturate(160%);
-    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    background: #ffffff;
     border: 1px solid var(--gold-dim);
     border-radius: var(--radius);
     padding: 32px 28px 28px;
-    box-shadow:
-        0 28px 70px rgba(0, 0, 0, 0.55),
-        0 0 0 1px rgba(255, 255, 255, 0.03) inset,
-        0 0 60px var(--gold-glow);
+    box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -102,14 +89,14 @@ body {
     font-family: 'Cinzel', serif;
     font-size: clamp(1.35rem, 4vw, 1.85rem);
     font-weight: 700;
-    color: var(--gold);
+    color: var(--navy);
     letter-spacing: 1.5px;
     line-height: 1.2;
 }
 
 .quiz-subtitle {
     font-size: 0.82rem;
-    color: var(--text-muted);
+    color: var(--muted);
     margin-top: 5px;
     letter-spacing: 0.2px;
 }
@@ -128,12 +115,12 @@ body {
     width: auto;
     display: block;
     object-fit: contain;
-    filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.45));
+    filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.18));
     transform: scale(1.05);
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* === VRAAG META (BADGE + TELLER) === */
+/* === VRAAG META (BADGE) === */
 .question-meta {
     display: flex;
     align-items: center;
@@ -149,8 +136,8 @@ body {
     letter-spacing: 0.9px;
     padding: 4px 14px;
     border-radius: 20px;
-    background: rgba(212, 175, 55, 0.10);
-    color: var(--gold);
+    background: var(--gold-bg);
+    color: #7a5f0a;
     border: 1px solid var(--gold-dim);
     white-space: nowrap;
 }
@@ -162,7 +149,7 @@ body {
     font-weight: 700;
     line-height: 1.55;
     text-align: center;
-    color: var(--text);
+    color: var(--ink);
     margin-bottom: 20px;
     width: 100%;
 }
@@ -186,9 +173,9 @@ body {
     font-weight: 600;
     text-align: left;
     cursor: pointer;
-    border: 1.5px solid rgba(212, 175, 55, 0.28);
-    background: rgba(212, 175, 55, 0.06);
-    color: var(--text);
+    border: 1.5px solid rgba(0, 31, 63, 0.18);
+    background: rgba(0, 31, 63, 0.04);
+    color: var(--ink);
     transition: background 0.16s ease, border-color 0.16s ease, color 0.16s ease, transform 0.12s ease;
     user-select: none;
     -webkit-user-select: none;
@@ -199,9 +186,9 @@ body {
 }
 
 .btn:hover:not([disabled]):not(.correct):not(.wrong) {
-    background: rgba(212, 175, 55, 0.16);
-    border-color: rgba(212, 175, 55, 0.60);
-    color: #f0e0a0;
+    background: rgba(212, 175, 55, 0.12);
+    border-color: rgba(212, 175, 55, 0.55);
+    color: var(--navy);
     transform: translateY(-1px);
 }
 
@@ -210,15 +197,15 @@ body {
 }
 
 .btn.correct {
-    background: rgba(39, 174, 96, 0.18) !important;
-    border-color: rgba(39, 174, 96, 0.70) !important;
-    color: #80ffba !important;
+    background: rgba(39, 174, 96, 0.12) !important;
+    border-color: rgba(39, 174, 96, 0.65) !important;
+    color: #1a6e3e !important;
 }
 
 .btn.wrong {
-    background: rgba(192, 57, 43, 0.18) !important;
-    border-color: rgba(192, 57, 43, 0.70) !important;
-    color: #ffaaaa !important;
+    background: rgba(192, 57, 43, 0.10) !important;
+    border-color: rgba(192, 57, 43, 0.60) !important;
+    color: #8b2016 !important;
     animation: wrongShake 0.38s ease;
 }
 
@@ -248,8 +235,8 @@ body {
 /* === TOELICHTING === */
 .uitleg-box {
     width: 100%;
-    background: rgba(255, 255, 255, 0.035);
-    border: 1px solid rgba(212, 175, 55, 0.18);
+    background: rgba(0, 31, 63, 0.03);
+    border: 1px solid rgba(0, 31, 63, 0.12);
     border-radius: 12px;
     padding: 16px 16px 12px;
     margin: 14px 0 4px;
@@ -279,16 +266,17 @@ body {
 #uitleg-tekst {
     font-size: 0.875rem;
     line-height: 1.68;
-    color: rgba(238, 242, 255, 0.82);
+    color: var(--muted);
 }
 
 /* === SCORE === */
 .score-display {
     font-size: 0.82rem;
     font-weight: 700;
-    color: var(--text-muted);
+    color: var(--muted);
     margin-top: 18px;
     letter-spacing: 0.4px;
+    text-align: center;
 }
 
 /* === VOORTGANGSBALK === */
@@ -300,7 +288,7 @@ body {
 .progress-container {
     width: 100%;
     height: 3px;
-    background: rgba(255, 255, 255, 0.07);
+    background: rgba(0, 31, 63, 0.08);
     border-radius: 3px;
     overflow: hidden;
 }
@@ -343,9 +331,9 @@ body {
 
 .btn-secondary {
     text-align: center !important;
-    background: rgba(212, 175, 55, 0.09) !important;
-    border-color: rgba(212, 175, 55, 0.32) !important;
-    color: var(--gold) !important;
+    background: var(--gold-bg) !important;
+    border-color: var(--gold-dim) !important;
+    color: #7a5f0a !important;
     font-weight: 700 !important;
     display: flex !important;
     align-items: center;
@@ -353,9 +341,9 @@ body {
 }
 
 .btn-secondary:hover:not([disabled]) {
-    background: rgba(212, 175, 55, 0.20) !important;
-    border-color: rgba(212, 175, 55, 0.60) !important;
-    color: var(--gold-light) !important;
+    background: rgba(212, 175, 55, 0.18) !important;
+    border-color: rgba(212, 175, 55, 0.55) !important;
+    color: var(--navy) !important;
     transform: translateY(-1px) !important;
 }
 
@@ -369,21 +357,15 @@ body {
     display: inline-block;
     text-decoration: none;
     text-align: center;
-    color: var(--gold);
-    background: rgba(212, 175, 55, 0.10);
-    border: 1px solid var(--gold-dim);
+    color: rgba(255, 255, 255, 0.70);
     font-weight: 600;
     padding: 8px 24px;
-    border-radius: 8px;
     font-size: 0.85rem;
-    transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+    transition: color 0.2s ease;
 }
 
 .portal-home-btn:hover {
-    color: var(--gold-light);
-    background: rgba(212, 175, 55, 0.18);
-    border-color: rgba(212, 175, 55, 0.45);
-    transform: translateY(-1px);
+    color: var(--gold);
 }
 
 /* === VERBERGEN === */
@@ -439,7 +421,6 @@ body {
 @media (max-width: 480px) {
     .quiz-card {
         padding: 24px 16px 20px;
-        border-radius: 14px;
     }
     .character-container {
         height: 170px;
