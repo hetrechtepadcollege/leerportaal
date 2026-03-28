@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Tajweed Basis | Het Rechte Pad College</title>
+  <link rel="icon" href="/icons/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+  <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/icons/site.webmanifest">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://hetrechtepadcollege.goatcounter.com;">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+  <header class="app-header">
+    <a href="../../" class="back-link" aria-label="Terug naar leerportaal">←</a>
+    <div>
+      <h1 class="header-title">Tajweed Basis</h1>
+      <p class="header-subtitle">Leer de regels stap voor stap uit het hoofd</p>
+    </div>
+  </header>
+
+  <section class="intro-section">
+    <p>Tajweed betekent: de letters hun rechten geven tijdens het reciteren van de Koran.</p>
+    <blockquote>"En reciteer de Koran met zorgvuldige, duidelijke recitatie." <span>(73:4)</span></blockquote>
+  </section>
+
+  <div class="toolbar">
+    <div class="mode-toggle" role="tablist" aria-label="Modus">
+      <button class="mode-btn active" id="modeGallery" role="tab" aria-selected="true">Overzicht</button>
+      <button class="mode-btn" id="modeFlashcard" role="tab" aria-selected="false">Flashcards</button>
+      <button class="mode-btn" id="modeQuiz" role="tab" aria-selected="false">Quiz</button>
+      <button class="mode-btn" id="modeLesson" role="tab" aria-selected="false">Lesmodus</button>
+    </div>
+    <div class="search-wrap" id="searchWrap">
+      <input type="search" id="searchInput" class="search-input" placeholder="Zoek op regel, categorie of voorbeeld...">
+    </div>
+  </div>
+
+  <div class="study-utilities" id="studyUtilities">
+    <button class="utility-btn" id="toggleDifficultOnly" type="button">Alleen lastig: uit</button>
+    <button class="utility-btn" id="toggleReviewOnly" type="button">Herhaalmodus: uit</button>
+    <p class="due-info" id="dueInfo">0 regels toe aan herhaling</p>
+  </div>
+
+  <main class="view view-gallery active" id="viewGallery">
+    <div class="rules-grid" id="rulesGrid"></div>
+    <p class="no-results" id="noResults" hidden>Geen regels gevonden.</p>
+  </main>
+
+  <main class="view view-flashcard" id="viewFlashcard" hidden>
+    <div class="fc-progress-wrap">
+      <div class="fc-progress-bar"><div id="fcProgressFill" class="fc-progress-fill"></div></div>
+      <p id="fcProgressText" class="fc-progress-text">0 / 0 geleerd</p>
+    </div>
+
+    <div class="fc-card-wrap">
+      <div class="fc-card" id="fcCard">
+        <div class="fc-card-inner" id="fcCardInner">
+          <div class="fc-front">
+            <span id="fcNumber" class="fc-number">1</span>
+            <span id="fcCategory" class="fc-category">Categorie</span>
+            <p id="fcTitle" class="fc-title"></p>
+            <p id="fcArabic" class="fc-arabic" dir="rtl" lang="ar"></p>
+            <p class="fc-tap-hint">Tik om te draaien</p>
+          </div>
+          <div class="fc-back">
+            <p id="fcKeyword" class="fc-keyword"></p>
+            <p id="fcDefinition"></p>
+            <p id="fcTrigger"></p>
+            <p id="fcHow"></p>
+            <p id="fcExample"></p>
+            <div id="fcArticulation" class="articulation-hint"></div>
+            <p id="fcMemory"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fc-controls">
+      <button id="fcPrev" class="fc-nav-btn" aria-label="Vorige">◀</button>
+      <div class="fc-center-controls">
+        <label class="fc-learned-toggle"><input type="checkbox" id="fcLearnedCheck"><span>Uit het hoofd</span></label>
+        <label class="fc-learned-toggle"><input type="checkbox" id="fcDifficultCheck"><span>Lastig</span></label>
+        <button id="fcShuffleBtn" class="fc-shuffle-btn" type="button">Shuffle</button>
+      </div>
+      <button id="fcNext" class="fc-nav-btn" aria-label="Volgende">▶</button>
+    </div>
+    <p class="fc-counter" id="fcCounter">1 / 1</p>
+
+    <div class="review-controls">
+      <button class="review-btn" id="reviewHard" type="button">Moeilijk</button>
+      <button class="review-btn" id="reviewGood" type="button">Goed</button>
+      <button class="review-btn" id="reviewEasy" type="button">Vlot</button>
+    </div>
+    <p class="review-next" id="reviewNextInfo">Volgende herhaling: -</p>
+  </main>
+
+  <main class="view view-quiz" id="viewQuiz" hidden>
+    <div class="quiz-card">
+      <p id="quizLabel" class="quiz-label">Vraag 1</p>
+      <p class="quiz-question">Welke tajweed-regel past bij dit voorbeeld?</p>
+      <p id="quizExample" class="quiz-example" dir="rtl" lang="ar"></p>
+      <div id="quizArticulation" class="articulation-hint"></div>
+      <div id="quizOptions" class="quiz-options"></div>
+      <p id="quizFeedback" class="quiz-feedback"></p>
+      <div class="quiz-actions"><button class="utility-btn" id="quizNextBtn" type="button">Volgende vraag</button></div>
+    </div>
+    <p class="quiz-score" id="quizScore">Score: 0 goed • 0 fout</p>
+  </main>
+
+  <main class="view view-lesson" id="viewLesson" hidden>
+    <div class="lesson-shell">
+      <div class="lesson-header">
+        <p id="lessonProgress" class="lesson-progress">Les 1 van 10</p>
+        <h2 id="lessonTitle" class="lesson-title">Les titel</h2>
+        <p id="lessonDesc" class="lesson-desc"></p>
+      </div>
+      <section class="lesson-notes" id="lessonNotes">
+        <h3 class="lesson-notes-title">Kernpunten</h3>
+        <ul id="lessonNotesList" class="lesson-notes-list"></ul>
+      </section>
+      <div class="lesson-nav">
+        <button class="utility-btn" id="lessonPrevBtn" type="button">Vorige les</button>
+        <button class="utility-btn" id="lessonNextBtn" type="button">Volgende les</button>
+      </div>
+      <div class="lesson-cards" id="lessonCards"></div>
+      <div class="lesson-checkpoint">
+        <p id="lessonCheckpointLabel" class="quiz-label">Checkpoint</p>
+        <p id="lessonCheckpointQuestion" class="quiz-question">Vraag</p>
+        <div id="lessonCheckpointOptions" class="quiz-options"></div>
+        <p id="lessonCheckpointFeedback" class="quiz-feedback"></p>
+        <div class="quiz-actions">
+          <button class="utility-btn" id="lessonCheckpointNext" type="button">Nieuwe checkpoint</button>
+          <button class="utility-btn" id="lessonMarkDone" type="button">Markeer les afgerond</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal-overlay" id="modalOverlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalClose" aria-label="Sluiten">×</button>
+      <span id="modalNumber" class="modal-number">1</span>
+      <p id="modalCategory" class="modal-category"></p>
+      <p id="modalTitle" class="modal-title"></p>
+      <p id="modalArabic" class="modal-arabic" dir="rtl" lang="ar"></p>
+      <div class="modal-divider"></div>
+      <p id="modalKeyword"></p>
+      <p id="modalDefinition"></p>
+      <p id="modalTrigger"></p>
+      <p id="modalHow"></p>
+      <p id="modalExample"></p>
+      <div id="modalArticulation" class="articulation-hint"></div>
+      <p id="modalMemory"></p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script data-goatcounter="https://hetrechtepadcollege.goatcounter.com/count" async src="https://gc.zgo.at/count.js"
+        integrity="sha384-DGiREytotlUiLflu8vLo0vvfxKWn36pKPT1ZBhh3R+3vhwrS/4p3H9eys9Zr2bPQ" crossorigin="anonymous"></script>
+</body>
+</html>

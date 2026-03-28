@@ -1,0 +1,105 @@
+@font-face {
+  font-family: 'AlQalamQuranMajeed';
+  src: url('fonts/AlQalamQuranMajeed.ttf') format('truetype');
+  font-display: swap;
+}
+:root {
+  --bg-1:#f4f7fc;--bg-2:#ebf0f8;--bg-3:#e2e9f4;--text:#1f294d;--text-soft:#4f5f87;--text-muted:#6a7797;
+  --brand:#1f294d;--brand-2:#2f4e8a;--brand-soft:rgba(31,41,77,.1);--border:#d7e0ef;--surface:#fff;--surface-2:#f6f8fd;
+  --shadow-soft:0 1px 4px rgba(12,24,58,.06);--shadow-card:0 10px 26px rgba(24,40,82,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{font-family:'Noto Sans',sans-serif;color:var(--text);background:radial-gradient(circle at 10% 0,var(--bg-1),var(--bg-2) 42%,var(--bg-3));min-height:100vh}
+body::before{content:'';position:fixed;inset:0;opacity:.05;pointer-events:none;background-image:radial-gradient(circle at 15% 25%,var(--brand) 1px,transparent 1px),radial-gradient(circle at 85% 30%,var(--brand) 1px,transparent 1px);background-size:140px 140px}
+.app-shell{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:0 1rem 2rem;animation:pageIn .45s ease}
+.app-header{display:flex;gap:.75rem;align-items:center;padding:1.1rem 0}
+.back-link{display:grid;place-items:center;width:40px;height:40px;border-radius:999px;color:var(--brand);text-decoration:none}
+.back-link:hover{background:var(--brand-soft)}
+.header-title{font-family:'Cinzel',serif;color:var(--brand);font-size:clamp(1.15rem,4vw,1.6rem)}
+.header-subtitle{font-style:italic;font-size:.85rem;color:var(--text-soft)}
+.intro-section{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1rem;box-shadow:var(--shadow-soft);margin-bottom:1rem;line-height:1.6}
+.intro-section blockquote{margin-top:.4rem;border-left:3px solid var(--brand-2);padding-left:.7rem;color:var(--brand)}
+.toolbar{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap;margin-bottom:.8rem}
+.mode-toggle{display:flex;gap:2px;background:var(--surface);border:1px solid var(--border);padding:3px;border-radius:999px}
+.mode-btn{border:0;background:transparent;border-radius:999px;padding:.45rem .78rem;color:var(--text-muted);font-weight:600;cursor:pointer}
+.mode-btn.active{background:var(--brand);color:#fff}
+.search-wrap{flex:1 1 220px}
+.search-input{width:100%;border:1px solid var(--border);border-radius:999px;padding:.55rem .8rem;background:var(--surface);color:var(--text)}
+.study-utilities{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin-bottom:1rem}
+.utility-btn{border:1px solid var(--border);background:var(--surface);border-radius:999px;padding:.4rem .72rem;font-weight:600;color:var(--text);cursor:pointer}
+.utility-btn:hover{background:var(--surface-2)}
+.due-info{margin-left:auto;color:var(--text-soft);font-size:.8rem}
+.view{display:none}.view.active{display:block}
+.rules-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:.75rem}
+.rule-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:.9rem .8rem;box-shadow:var(--shadow-soft);cursor:pointer}
+.rule-card:hover{transform:translateY(-2px);border-color:var(--brand-2)}
+.rule-card.learned{background:linear-gradient(180deg,var(--surface),var(--surface-2));border-color:rgba(31,41,77,.35)}
+.rule-card.difficult{box-shadow:0 0 0 2px rgba(47,78,138,.1),var(--shadow-soft)}
+.rule-num{display:block;font-size:.72rem;color:var(--brand-2);font-weight:700}
+.rule-cat{display:inline-block;margin-top:.3rem;background:rgba(47,78,138,.12);color:var(--brand);font-size:.66rem;padding:.17rem .45rem;border-radius:999px;font-weight:700}
+.rule-title{margin-top:.5rem;font-size:.97rem;color:var(--brand);font-weight:700}
+.rule-keyword{margin-top:.3rem;color:var(--text-soft);font-size:.84rem}
+.rule-arabic{margin-top:.45rem;font-family:'AlQalamQuranMajeed','Amiri',serif;font-size:clamp(1.3rem,4vw,1.7rem);line-height:2.6;word-spacing:.15em;color:var(--brand)}
+.no-results{padding:2rem 1rem;text-align:center;color:var(--text-soft)}
+.fc-progress-wrap{margin-bottom:.8rem}.fc-progress-bar{height:10px;background:#dfe6f3;border-radius:999px;overflow:hidden}.fc-progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--brand-2),var(--brand));transition:width .25s ease}.fc-progress-text{margin-top:.45rem;text-align:right;color:var(--text-soft);font-size:.82rem}
+.fc-card-wrap{perspective:1200px;margin-bottom:.8rem}.fc-card{cursor:pointer;transition:transform .2s ease}.fc-card:hover{transform:translateY(-2px)}
+.fc-card-inner{position:relative;min-height:390px;transform-style:preserve-3d;transition:transform .55s ease}.fc-card-inner.flipped{transform:rotateY(180deg)}
+.fc-front,.fc-back{position:absolute;inset:0;border:1px solid var(--border);border-radius:18px;background:var(--surface);box-shadow:var(--shadow-card);backface-visibility:hidden;padding:1.1rem;overflow:auto}
+.fc-front{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.fc-number{position:absolute;left:1rem;top:1rem;color:var(--brand-2);font-size:.75rem;font-weight:700}
+.fc-category{display:inline-block;background:rgba(47,78,138,.12);color:var(--brand);border-radius:999px;padding:.2rem .55rem;font-size:.68rem;font-weight:700;text-transform:uppercase}
+.fc-title{margin-top:.7rem;color:var(--brand);font-weight:700;font-size:clamp(1.2rem,5vw,1.75rem)}
+.fc-arabic{margin-top:.7rem;font-family:'AlQalamQuranMajeed','Amiri',serif;font-size:clamp(2rem,8vw,3.2rem);line-height:2.6;word-spacing:.15em;color:var(--brand)}
+.fc-tap-hint{margin-top:1rem;color:var(--text-muted);font-size:.8rem}
+.fc-back{transform:rotateY(180deg)}
+.fc-back p{font-size:.92rem;line-height:1.55;color:var(--text);margin-bottom:.5rem}
+.fc-keyword{font-weight:700;color:var(--brand)}
+.fc-controls{display:flex;align-items:center;justify-content:space-between;gap:.6rem}.fc-nav-btn{width:46px;height:46px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--brand);cursor:pointer}.fc-nav-btn:hover{background:var(--surface-2)}
+.fc-center-controls{display:flex;gap:.45rem;align-items:center;flex-wrap:wrap;justify-content:center}
+.fc-learned-toggle{border:1px solid var(--border);border-radius:999px;padding:.4rem .7rem;background:var(--surface);font-size:.83rem;font-weight:600;color:var(--text);display:inline-flex;gap:.35rem;align-items:center}
+.fc-learned-toggle input{display:none}
+.fc-shuffle-btn{border:1px solid var(--border);border-radius:999px;background:var(--surface);padding:.4rem .72rem;font-weight:600;cursor:pointer}
+.fc-counter{text-align:center;margin-top:.7rem;color:var(--text-soft);font-size:.84rem}
+.review-controls{margin-top:.7rem;display:flex;gap:.45rem;justify-content:center;flex-wrap:wrap}.review-btn{border:1px solid var(--border);background:var(--surface);border-radius:10px;padding:.42rem .75rem;font-weight:600;cursor:pointer}
+.review-next{text-align:center;margin-top:.45rem;font-size:.79rem;color:var(--text-soft)}
+.tw-highlight{background:rgba(47,78,138,.15);border-bottom:2px solid rgba(47,78,138,.55);border-radius:4px;padding:0 .08em}
+.articulation-hint{display:flex;gap:.45rem;align-items:center;border:1px dashed var(--border);border-radius:10px;background:var(--surface-2);padding:.45rem .5rem;margin:.45rem 0 .55rem;color:var(--text-soft);font-size:.82rem}
+.art-icon{width:2.1rem;height:2.1rem;border-radius:12px;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;background:rgba(47,78,138,.12);flex-shrink:0}
+.art-illustration{width:100%;height:100%;display:block}
+.art-icon.nose .art-illustration{animation:cartoonBreathe 1.35s ease-in-out infinite}
+.art-icon.throat .art-illustration{animation:cartoonPulse 1.6s ease-in-out infinite}
+.art-icon.lips .art-illustration{animation:cartoonMouth 1.45s ease-in-out infinite}
+.art-icon.tongue .art-illustration{animation:cartoonWobble 1.55s ease-in-out infinite}
+.art-icon.stretch .art-illustration{animation:cartoonStretch 1.45s ease-in-out infinite}
+.art-icon.echo .art-illustration{animation:cartoonEcho 1.2s ease-in-out infinite}
+.quiz-card,.lesson-shell{background:var(--surface);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow-soft);padding:1rem}
+.quiz-label{font-size:.78rem;font-weight:700;color:var(--brand-2)}
+.quiz-question{margin-top:.3rem;color:var(--brand);font-weight:700}
+.quiz-example{margin-top:.5rem;font-family:'AlQalamQuranMajeed','Amiri',serif;font-size:clamp(1.55rem,6vw,2.2rem);line-height:2.4;color:var(--brand)}
+.quiz-options{display:grid;gap:.45rem;margin-top:.55rem}
+.quiz-option{border:1px solid var(--border);background:var(--surface);border-radius:10px;padding:.58rem .65rem;text-align:left;cursor:pointer}
+.quiz-option strong{display:block;font-size:.9rem}.quiz-option span{display:block;margin-top:.2rem;font-size:.75rem;text-transform:uppercase;color:var(--text-soft)}
+.quiz-option.is-correct{border-color:#2e7d57;background:rgba(46,125,87,.08)}.quiz-option.is-wrong{border-color:#a53b4c;background:rgba(165,59,76,.1)}
+.quiz-feedback{margin-top:.5rem;min-height:1.2rem;font-size:.84rem}.quiz-feedback.ok{color:#2e7d57}.quiz-feedback.bad{color:#a53b4c}
+.quiz-actions{margin-top:.6rem;display:flex;gap:.5rem;justify-content:flex-end}.quiz-score{text-align:right;margin-top:.65rem;color:var(--text-soft);font-size:.8rem}
+.lesson-progress{font-size:.78rem;font-weight:700;color:var(--brand-2)}.lesson-title{margin-top:.25rem;color:var(--brand);font-size:1.1rem}.lesson-desc{margin-top:.35rem;color:var(--text-soft);font-size:.86rem;line-height:1.5}
+.lesson-notes{margin-top:.7rem;border:1px solid var(--border);border-radius:12px;background:var(--surface-2);padding:.7rem .75rem}.lesson-notes-title{font-size:.82rem;color:var(--brand)}.lesson-notes-list{margin:.45rem 0 0 1rem;font-size:.83rem;line-height:1.5;color:var(--text-soft)}
+.lesson-nav{display:flex;gap:.5rem;margin-top:.7rem}.lesson-nav .utility-btn:disabled{opacity:.45;cursor:not-allowed}
+.lesson-cards{display:grid;gap:.55rem;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));margin-top:.8rem}
+.lesson-checkpoint{margin-top:.85rem;border-top:1px solid var(--border);padding-top:.8rem}.lesson-check-ar{display:block;margin-top:.35rem;font-family:'AlQalamQuranMajeed','Amiri',serif;font-size:clamp(1.4rem,6vw,2rem);line-height:2.4}
+.modal-overlay{position:fixed;inset:0;z-index:20;background:rgba(18,28,54,.35);display:grid;place-items:center;padding:max(1rem,env(safe-area-inset-top)) 1rem max(1rem,env(safe-area-inset-bottom));overflow-y:auto;animation:fadeIn .2s ease}
+.modal-overlay[hidden]{display:none}
+.modal{width:100%;max-width:620px;max-height:min(calc(100dvh - 2rem),720px);overflow:auto;background:var(--surface);border:1px solid var(--border);border-radius:16px;box-shadow:0 20px 36px rgba(18,28,54,.24);padding:1.1rem;position:relative;animation:modalIn .25s ease}
+.modal-close{position:absolute;right:.65rem;top:.55rem;width:34px;height:34px;border:0;border-radius:50%;background:var(--surface-2);font-size:1.25rem;color:var(--brand);cursor:pointer}
+.modal-number{font-size:.75rem;font-weight:700;color:var(--brand-2)}.modal-category{margin-top:.25rem;font-size:.72rem;text-transform:uppercase;font-weight:700;color:var(--brand)}.modal-title{margin-top:.3rem;font-size:1.2rem;font-weight:700;color:var(--brand)}
+.modal-arabic{margin-top:.45rem;font-family:'AlQalamQuranMajeed','Amiri',serif;font-size:clamp(2rem,8vw,3rem);line-height:2.6;word-spacing:.15em;color:var(--brand)}
+.modal-divider{margin:.75rem 0;border-top:1px solid var(--border)}.modal p{margin-bottom:.5rem;color:var(--text);font-size:.92rem;line-height:1.6}
+@keyframes pageIn{from{opacity:0}to{opacity:1}}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes modalIn{from{opacity:0;transform:translateY(8px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes cartoonBreathe{0%,100%{transform:translateY(0) scale(1)}40%{transform:translateY(-2px) scale(1.08)}70%{transform:translateY(1px) scale(.98)}}
+@keyframes cartoonPulse{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.08) rotate(-1.5deg)}}
+@keyframes cartoonMouth{0%,100%{transform:scaleX(1)}35%{transform:scaleX(.86) translateY(1px)}70%{transform:scaleX(1.06)}}
+@keyframes cartoonWobble{0%,100%{transform:rotate(0)}25%{transform:rotate(-4deg)}75%{transform:rotate(4deg)}}
+@keyframes cartoonStretch{0%,100%{transform:scaleX(1)}50%{transform:scaleX(1.14) translateY(-1px)}}
+@keyframes cartoonEcho{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.16);opacity:.78}}
+@media (max-width:760px){.fc-card-inner{min-height:430px}.fc-controls{flex-wrap:wrap;justify-content:center}.fc-center-controls{order:3;width:100%}.due-info{width:100%;margin-left:0}.quiz-actions .utility-btn,.lesson-nav .utility-btn{width:100%}.lesson-nav{flex-direction:column}.lesson-cards{grid-template-columns:1fr}.quiz-score{text-align:left}}
