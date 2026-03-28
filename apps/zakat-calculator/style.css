@@ -1,0 +1,685 @@
+/* ========================================
+   Zakat Calculator — portaalstijl (licht thema)
+   ======================================== */
+
+:root {
+    --blue:          #1f294d;
+    --blue-dim:      rgba(31, 41, 77, 0.08);
+    --blue-border:   rgba(31, 41, 77, 0.12);
+    --gold:          #d4af37;
+    --gold-bg:       rgba(212, 175, 55, 0.10);
+    --gold-border:   rgba(212, 175, 55, 0.32);
+    --bg:            #f9f8f6;
+    --card-bg:       #ffffff;
+    --text:          #1c2340;
+    --muted:         #5c6e8a;
+    --border:        rgba(31, 41, 77, 0.09);
+    --shadow:        0 1px 4px rgba(31, 41, 77, 0.06), 0 4px 16px rgba(31, 41, 77, 0.07);
+    --shadow-hover:  0 8px 28px rgba(31, 41, 77, 0.14);
+    --green:         #1a7a4a;
+    --green-bg:      rgba(26, 122, 74, 0.08);
+    --green-border:  rgba(26, 122, 74, 0.24);
+    --red:           #c0392b;
+    --red-bg:        rgba(192, 57, 43, 0.08);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 60px;
+}
+
+/* ── HEADER ── */
+.app-header {
+    width: 100%;
+    background: var(--blue);
+    padding: 16px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.back-link {
+    align-self: flex-start;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.back-link:hover { color: #fff; }
+
+.header-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+}
+
+.header-logo {
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.header-subtitle {
+    margin: 4px 0 0;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.72);
+}
+
+/* ── NISAAB BANNER ── */
+.nisaab-banner {
+    width: 100%;
+    background: var(--gold-bg);
+    border-bottom: 1px solid var(--gold-border);
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    font-size: 0.85rem;
+}
+
+.nisaab-label {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.nisaab-value {
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.nisaab-note {
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+/* ── TABS ── */
+.tab-nav {
+    display: flex;
+    gap: 0;
+    padding: 20px 20px 0;
+    width: 100%;
+    max-width: 960px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 12px 20px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-bottom: none;
+    color: var(--muted);
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 10px 10px 0 0;
+}
+
+.tab-btn:first-child { margin-right: -1px; }
+
+.tab-btn.active {
+    background: var(--card-bg);
+    color: var(--blue);
+    border-color: var(--border);
+    border-bottom-color: var(--card-bg);
+    z-index: 1;
+}
+
+.tab-btn:not(.active):hover {
+    background: var(--blue-dim);
+    color: var(--text);
+}
+
+/* ── TAB PANELS ── */
+.tab-panel {
+    display: none;
+    width: 100%;
+    max-width: 960px;
+    padding: 24px 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 0 0 14px 14px;
+    border-top: none;
+}
+
+.tab-panel.active { display: block; }
+
+/* ── CALCULATOR GRID ── */
+.calc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+@media (max-width: 680px) {
+    .calc-grid { grid-template-columns: 1fr; }
+}
+
+/* ── INVOER CARD ── */
+.card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--blue);
+    margin: 0 0 4px;
+}
+
+.card-subtitle {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin: 0 0 20px;
+}
+
+.input-group {
+    margin-bottom: 16px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border: 1.5px solid var(--blue-border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    transition: border-color 0.2s;
+}
+
+.input-wrapper:focus-within {
+    border-color: var(--blue);
+}
+
+.currency-symbol {
+    padding: 10px 12px;
+    background: var(--blue-dim);
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.input-wrapper.schulden .currency-symbol {
+    background: var(--red-bg);
+    color: var(--red);
+}
+
+.input-wrapper input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    background: transparent;
+    min-width: 0;
+}
+
+.input-wrapper input::placeholder { color: #c0c8d8; }
+
+.input-hint {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 4px;
+}
+
+.divider {
+    height: 1px;
+    background: var(--border);
+    margin: 20px 0;
+}
+
+/* ── RESULTAAT CARD ── */
+.result-card {
+    background: var(--blue);
+    border-radius: 14px;
+    padding: 24px;
+    color: #fff;
+    box-shadow: var(--shadow-hover);
+    position: sticky;
+    top: 20px;
+}
+
+.result-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.result-icon { font-size: 1.4rem; }
+
+.result-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    font-size: 0.9rem;
+}
+
+.result-label { color: rgba(255,255,255,0.72); }
+.result-amount { font-weight: 600; color: #fff; }
+.result-amount.minus { color: rgba(255,255,255,0.6); }
+
+.result-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.15);
+    margin: 10px 0;
+}
+
+.result-row.zakaat-basis .result-label {
+    font-weight: 600;
+    color: rgba(255,255,255,0.9);
+}
+
+.result-row.zakaat-basis .result-amount {
+    font-size: 1rem;
+}
+
+/* Nisaab check */
+.nisaab-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 16px 0;
+    padding: 12px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.8);
+}
+
+.check-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+/* Zakat resultaat */
+.zakat-result {
+    text-align: center;
+    padding: 20px;
+    background: var(--gold-bg);
+    border: 1px solid var(--gold-border);
+    border-radius: 12px;
+    margin: 16px 0;
+    display: none;
+}
+
+.zakat-result.visible { display: block; }
+
+.zakat-percentage {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+}
+
+.zakat-amount {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+}
+
+.zakat-label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+    margin-top: 4px;
+}
+
+/* Bereken button */
+.btn-bereken {
+    width: 100%;
+    padding: 14px;
+    background: var(--gold);
+    color: var(--blue);
+    border: none;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 8px;
+}
+
+.btn-bereken:hover {
+    background: #e8c53d;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.btn-bereken:active { transform: translateY(0); }
+
+/* Zakat tip */
+.zakat-tip {
+    margin-top: 12px;
+    padding: 10px 12px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.5;
+}
+
+.zakat-tip strong { color: rgba(255,255,255,0.9); }
+
+/* ── INFO STRIP ── */
+.info-strip {
+    margin-top: 16px;
+    padding: 10px 14px;
+    background: var(--blue-dim);
+    border-radius: 8px;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-align: center;
+}
+
+/* ── LEREN TAB ── */
+.leren-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 640px) {
+    .leren-grid { grid-template-columns: 1fr; }
+}
+
+/* Hero citaat */
+.leren-hero {
+    grid-column: 1 / -1;
+    background: var(--blue);
+    border-radius: 14px;
+    padding: 28px 24px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.leren-hero-arabic p {
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    line-height: 2.4;
+    word-spacing: 0.15em;
+    margin: 0 0 12px;
+    color: var(--gold);
+}
+
+.leren-hero-trans {
+    font-size: 1rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.85);
+    margin: 0 0 4px;
+}
+
+.leren-hero-ref {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    margin: 0;
+}
+
+/* Leren cards */
+.leren-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+}
+
+.leren-card.accent {
+    background: var(--gold-bg);
+    border-color: var(--gold-border);
+}
+
+.leren-card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.leren-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--blue);
+    margin: 0 0 10px;
+}
+
+.leren-card p {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.65;
+    margin: 0 0 10px;
+}
+
+.leren-card p:last-child { margin-bottom: 0; }
+
+/* Nisaab opties */
+.nisaab-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.nisaab-option {
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 0.85rem;
+}
+
+.nisaab-option.gold {
+    background: var(--gold-bg);
+    border: 1px solid var(--gold-border);
+}
+
+.nisaab-option.silver {
+    background: rgba(180, 180, 200, 0.10);
+    border: 1px solid rgba(180, 180, 200, 0.25);
+}
+
+.nisaab-option strong {
+    font-size: 0.95rem;
+    color: var(--blue);
+}
+
+.nisaab-approx {
+    font-weight: 700;
+    color: var(--muted);
+}
+
+.nisaab-note-leren {
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-style: italic;
+}
+
+/* Formule box */
+.formula-box {
+    background: var(--blue);
+    color: #fff;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 10px 0 4px;
+    line-height: 1.5;
+}
+
+.formula-note {
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-align: center;
+}
+
+/* 8 categorieën */
+.categories-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.category-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.82rem;
+}
+
+.cat-num {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    background: var(--blue);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.category-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.category-item strong {
+    font-size: 0.85rem;
+    color: var(--blue);
+}
+
+.category-item span {
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+/* Vergelijkingstabel */
+.comparison-table {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 0.85rem;
+    margin-top: 10px;
+}
+
+.comparison-header,
+.comparison-row {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 0;
+}
+
+.comparison-header {
+    background: var(--blue);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.82rem;
+}
+
+.comparison-header span,
+.comparison-row span {
+    padding: 8px 10px;
+    border-right: 1px solid var(--border);
+}
+
+.comparison-header span:last-child,
+.comparison-row span:last-child { border-right: none; }
+
+.comparison-row:nth-child(even) { background: var(--blue-dim); }
+
+.comparison-row span:first-child {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.comparison-row .yes { color: var(--green); font-weight: 700; }
+.comparison-row .no  { color: var(--muted); }
+
+/* ── FOOTER ── */
+.app-footer {
+    width: 100%;
+    max-width: 960px;
+    margin-top: 24px;
+    padding: 16px 20px;
+    background: rgba(192, 57, 43, 0.06);
+    border: 1px solid rgba(192, 57, 43, 0.15);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--muted);
+}
+
+.app-footer p { margin: 0 0 8px; }
+.app-footer strong { color: var(--text); }
+
+.footer-link {
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+}
+
+.footer-link:hover { color: var(--gold); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 480px) {
+    .tab-btn { font-size: 0.85rem; padding: 10px 12px; }
+    .result-card { position: static; }
+    .categories-grid { grid-template-columns: 1fr; }
+    .nisaab-options { grid-template-columns: 1fr; }
+    .comparison-table { font-size: 0.78rem; }
+}

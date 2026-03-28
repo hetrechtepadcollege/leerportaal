@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/icons/favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+    <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/icons/site.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://hetrechtepadcollege.goatcounter.com;">
+    <title>Zakat Calculator | Het Rechte Pad College</title>
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://leer.hetrechtepadcollege.nl/apps/zakat-calculator/">
+    <meta property="og:title" content="Zakat Calculator — Bereken jouw zakat">
+    <meta property="og:description" content="Bereken eenvoudig hoeveel zakat jij dit jaar verschuldigd bent en leer alles over de derde zuil van de islam.">
+    <meta property="og:image" content="https://leer.hetrechtepadcollege.nl/images/share-banner.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Zakat Calculator — Bereken jouw zakat">
+    <meta property="twitter:description" content="Bereken eenvoudig hoeveel zakat jij dit jaar verschuldigd bent en leer alles over de derde zuil van de islam.">
+    <meta property="twitter:image" content="https://leer.hetrechtepadcollege.nl/images/share-banner.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="app-header">
+        <a href="../../" class="back-link">← Leerportaal</a>
+        <div class="header-inner">
+            <img src="../../images/HRPC-logo.png" alt="Het Rechte Pad College" class="header-logo">
+            <div class="header-text">
+                <h1>Zakat Calculator</h1>
+                <p class="header-subtitle">Bereken jouw jaarlijkse zakat</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Nisaab banner -->
+    <div class="nisaab-banner" id="nisaabBanner">
+        <span class="nisaab-label">Huidige nisaab (goud 85g):</span>
+        <span class="nisaab-value" id="nisaabDisplay">wordt berekend…</span>
+        <span class="nisaab-note">op basis van goudprijs ≈ €55/g</span>
+    </div>
+
+    <!-- Tabs -->
+    <nav class="tab-nav" role="tablist">
+        <button class="tab-btn active" role="tab" aria-selected="true" data-tab="calculator" id="tab-calculator">
+            🧮 Calculator
+        </button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-tab="leren" id="tab-leren">
+            📖 Leren
+        </button>
+    </nav>
+
+    <!-- ===== TAB: CALCULATOR ===== -->
+    <div class="tab-panel active" id="panel-calculator" role="tabpanel" aria-labelledby="tab-calculator">
+
+        <div class="calc-grid">
+
+            <!-- Bezittingen -->
+            <div class="card">
+                <h2 class="card-title">💰 Jouw bezittingen</h2>
+                <p class="card-subtitle">Voer je bezittingen in die je al minimaal 1 jaar hebt (hawl)</p>
+
+                <div class="input-group">
+                    <label for="spaargeld">Spaargeld &amp; bankrekening</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">€</span>
+                        <input type="number" id="spaargeld" min="0" step="0.01" placeholder="0,00" aria-describedby="spaargeld-hint">
+                    </div>
+                    <span class="input-hint" id="spaargeld-hint">Totaal op al je spaarrekeningen</span>
+                </div>
+
+                <div class="input-group">
+                    <label for="contant">Contant geld</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">€</span>
+                        <input type="number" id="contant" min="0" step="0.01" placeholder="0,00">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="aandelen">Aandelen &amp; beleggingen</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">€</span>
+                        <input type="number" id="aandelen" min="0" step="0.01" placeholder="0,00" aria-describedby="aandelen-hint">
+                    </div>
+                    <span class="input-hint" id="aandelen-hint">Huidige marktwaarde van je aandelen</span>
+                </div>
+
+                <div class="input-group">
+                    <label for="goud">Goud &amp; zilver (waarde)</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">€</span>
+                        <input type="number" id="goud" min="0" step="0.01" placeholder="0,00" aria-describedby="goud-hint">
+                    </div>
+                    <span class="input-hint" id="goud-hint">Voer de huidige marktwaarde in</span>
+                </div>
+
+                <div class="input-group">
+                    <label for="handel">Handelsgoederen &amp; voorraad</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">€</span>
+                        <input type="number" id="handel" min="0" step="0.01" placeholder="0,00">
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="input-group">
+                    <label for="schulden">Aftrek: schulden &amp; verplichtingen</label>
+                    <div class="input-wrapper schulden">
+                        <span class="currency-symbol">−€</span>
+                        <input type="number" id="schulden" min="0" step="0.01" placeholder="0,00" aria-describedby="schulden-hint">
+                    </div>
+                    <span class="input-hint" id="schulden-hint">Direct opeisbare schulden (bijv. nog te betalen huur, lening)</span>
+                </div>
+            </div>
+
+            <!-- Resultaat -->
+            <div class="result-card" id="resultCard">
+                <div class="result-header">
+                    <span class="result-icon">📊</span>
+                    <h2>Jouw zakat</h2>
+                </div>
+
+                <div class="result-row">
+                    <span class="result-label">Totale bezittingen</span>
+                    <span class="result-amount" id="totalBezittingen">€ 0,00</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Aftrek schulden</span>
+                    <span class="result-amount minus" id="totalSchulden">− € 0,00</span>
+                </div>
+                <div class="result-divider"></div>
+                <div class="result-row zakaat-basis">
+                    <span class="result-label">Zakaat-basis</span>
+                    <span class="result-amount" id="zakaatBasis">€ 0,00</span>
+                </div>
+
+                <div class="nisaab-check" id="nisaabCheck">
+                    <div class="check-icon" id="checkIcon">⬜</div>
+                    <div class="check-text" id="checkText">Vul je bezittingen in om te zien of je zakaat verschuldigd bent.</div>
+                </div>
+
+                <div class="zakat-result" id="zakatResult">
+                    <div class="zakat-percentage">2,5%</div>
+                    <div class="zakat-amount" id="zakatAmount">€ 0,00</div>
+                    <div class="zakat-label">verschuldigd</div>
+                </div>
+
+                <button class="btn-bereken" id="btnBereken" type="button">Bereken mijn zakat</button>
+
+                <div class="zakat-tip" id="zakatTip">
+                    <p>💡 <strong>Tip:</strong> Zakat wordt berekend over het vermogen boven de nisaab, minus directe schulden.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Uitleg nisaab onderaan -->
+        <div class="info-strip">
+            <span>ℹ️ De nisaab is gebaseerd op de waarde van 85 gram goud (ca. €55/g = €4.675). Controleer altijd de actuele goudprijs.</span>
+        </div>
+
+    </div>
+
+    <!-- ===== TAB: LEREN ===== -->
+    <div class="tab-panel" id="panel-leren" role="tabpanel" aria-labelledby="tab-leren">
+
+        <div class="leren-grid">
+
+            <div class="leren-hero">
+                <div class="leren-hero-arabic">
+                    <p dir="rtl" lang="ar">وَأَقِيمُوا الصَّلَاةَ وَآتُوا الزَّكَاةَ</p>
+                </div>
+                <p class="leren-hero-trans">"Onderhoud het gebed en betaal de zakaat"</p>
+                <p class="leren-hero-ref">— Al-Baqarah 2:43</p>
+            </div>
+
+            <!-- Wat is zakat -->
+            <div class="leren-card">
+                <div class="leren-card-icon">🕌</div>
+                <h3>Wat is zakat?</h3>
+                <p>Zakat is de derde zuil van de islam. Het is een jaarlijkse verplichte bijdrage van een vast percentage (2,5%) van het vermogen dat boven een bepaalde grens (nisaab) uitkomt en al een vol jaar in bezit is.</p>
+                <p>Het woord <em>zakat</em> (زَكَاة) betekent "zuivering" en "groei". Door zakat te betalen, zuiver je je vermogen en help je degenen die minder hebben.</p>
+            </div>
+
+            <!-- Nisaab -->
+            <div class="leren-card">
+                <div class="leren-card-icon">⚖️</div>
+                <h3>De nisaab — de drempelwaarde</h3>
+                <p>De nisaab is de minimale hoeveelheid vermogen die je moet bezitten voordat zakat verplicht wordt. Er zijn twee nisaab-maatstaven:</p>
+                <div class="nisaab-options">
+                    <div class="nisaab-option gold">
+                        <strong>Goud</strong>
+                        <span>85 gram goud</span>
+                        <span class="nisaab-approx">≈ € 4.675</span>
+                    </div>
+                    <div class="nisaab-option silver">
+                        <strong>Zilver</strong>
+                        <span>595 gram zilver</span>
+                        <span class="nisaab-approx">≈ € 357</span>
+                    </div>
+                </div>
+                <p class="nisaab-note-leren">Veel geleerden adviseren de goud-nisaab te gebruiken. Gebruik altijd de actuele marktprijs.</p>
+            </div>
+
+            <!-- Hawl -->
+            <div class="leren-card">
+                <div class="leren-card-icon">📅</div>
+                <h3>De hawl — het volle jaar</h3>
+                <p>Zakat is alleen verplicht als je vermogen gedurende een volledig islamitisch jaar (hawl) boven de nisaab is gebleven. Als je vermogen halverwege het jaar daalt onder de nisaab, begint de teller opnieuw.</p>
+                <p>Veel moslims kiezen een vaste datum — zoals de eerste dag van Ramadan — om hun zakat jaarlijks te berekenen.</p>
+            </div>
+
+            <!-- 2.5% -->
+            <div class="leren-card accent">
+                <div class="leren-card-icon">💎</div>
+                <h3>Het percentage: 2,5%</h3>
+                <p>Op spaargeld, contant geld, aandelen, goud en handelsgoederen betaal je 2,5% zakat over het bedrag boven de nisaab, na aftrek van directe schulden.</p>
+                <div class="formula-box">
+                    <span>Zakat = (Bezittingen − Schulden − Nisaab) × 2,5%</span>
+                </div>
+                <p class="formula-note">Alleen als bezittingen − schulden ≥ nisaab</p>
+            </div>
+
+            <!-- 8 categorieën -->
+            <div class="leren-card">
+                <div class="leren-card-icon">🤲</div>
+                <h3>8 categorieën van ontvangers</h3>
+                <p>Allah noemt in de Koran (At-Tawbah 9:60) acht groepen die recht hebben op zakat:</p>
+                <div class="categories-grid">
+                    <div class="category-item">
+                        <span class="cat-num">1</span>
+                        <div>
+                            <strong>Al-Fuqarāʾ</strong>
+                            <span>De armen</span>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <span class="cat-num">2</span>
+                        <div>
+                            <strong>Al-Masākīn</strong>
+                            <span>De behoeftigen</span>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <span class="cat-num">3</span>
+                        <div>
+                            <strong>Al-ʿĀmilīn</strong>
+                            <span>Zakat-inners</span>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <span class="cat-num">4</span>
+                        <div>
+                            <strong>Al-Muʾallafa</strong>
+                            <span>Nieuwbekeerden</span>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <span class="cat-num">5</span>
+                        <div>
+                            <strong>Fī r-Riqāb</strong>
+                            <span>Vrijkoop van slaven</span>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <span class="cat-num">6</span>
+                        <div>
+                            <strong>Al-Ghārimīn</strong>
+                            <span>Schuldenaars</span>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <span class="cat-num">7</span>
+                        <div>
+                            <strong>Fī Sabīl Allāh</strong>
+                            <span>Zaak van Allah</span>
+                        </div>
+                    </div>
+                    <div class="category-item">
+                        <span class="cat-num">8</span>
+                        <div>
+                            <strong>Ibn as-Sabīl</strong>
+                            <span>Reiziger in nood</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Zakat vs Sadaqah -->
+            <div class="leren-card">
+                <div class="leren-card-icon">🌸</div>
+                <h3>Zakat vs. Sadaqah</h3>
+                <div class="comparison-table">
+                    <div class="comparison-header">
+                        <span></span>
+                        <span>Zakat</span>
+                        <span>Sadaqah</span>
+                    </div>
+                    <div class="comparison-row">
+                        <span>Verplicht?</span>
+                        <span class="yes">✓ Ja</span>
+                        <span class="no">Vrijwillig</span>
+                    </div>
+                    <div class="comparison-row">
+                        <span>Percentage</span>
+                        <span>Vast: 2,5%</span>
+                        <span>Naar keuze</span>
+                    </div>
+                    <div class="comparison-row">
+                        <span>Ontvanger</span>
+                        <span>8 specifieke groepen</span>
+                        <span>Iedereen</span>
+                    </div>
+                    <div class="comparison-row">
+                        <span>Nisaab vereist?</span>
+                        <span class="yes">✓ Ja</span>
+                        <span class="no">Nee</span>
+                    </div>
+                    <div class="comparison-row">
+                        <span>Hawl vereist?</span>
+                        <span class="yes">✓ Ja</span>
+                        <span class="no">Nee</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <p>⚠️ <strong>Opmerking:</strong> Deze calculator is educatief en geeft een indicatie. Raadpleeg een islamitische geleerde of betrouwbare zakaat-organisatie voor jouw persoonlijke situatie.</p>
+        <a href="../../" class="footer-link">← Terug naar het Leerportaal</a>
+    </footer>
+
+    <script src="script.js"></script>
+    <script data-goatcounter="https://hetrechtepadcollege.goatcounter.com/count"
+            async src="https://gc.zgo.at/count.js"
+            integrity="sha384-DGiREytotlUiLflu8vLo0vvfxKWn36pKPT1ZBhh3R+3vhwrS/4p3H9eys9Zr2bPQ"
+            crossorigin="anonymous"></script>
+</body>
+</html>
