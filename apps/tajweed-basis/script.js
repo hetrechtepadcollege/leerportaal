@@ -208,6 +208,15 @@
     dueInfo.textContent=getDueCount() + ' regels toe aan herhaling';
   }
 
+  var CAT_COLORS = {
+    'Intro':'var(--cat-intro)','Tempo':'var(--cat-tempo)','Fouten':'var(--cat-fouten)',
+    'Qiraat':'var(--cat-qiraat)','Overzicht':'var(--cat-overzicht)','Makharij':'var(--cat-makharij)',
+    'Harakat':'var(--cat-harakat)','Tashkil':'var(--cat-tashkil)','Sifat':'var(--cat-sifat)',
+    'Ahkam':'var(--cat-ahkam)','Nun/Tanwin':'var(--cat-nun)','Mim Sakinah':'var(--cat-mim)',
+    'Ghunnah':'var(--cat-ghunnah)','Madd':'var(--cat-madd)','Waqf':'var(--cat-waqf)'
+  };
+  function catColor(cat){ return CAT_COLORS[cat]||'var(--gold)'; }
+
   function illustrationPath(type){ return 'images/articulation/' + (type||'tongue') + '.svg'; }
   function renderArticulation(el,a){
     if(!el) return;
@@ -223,8 +232,8 @@
       if(state.reviewOnly && !isDue(r.n)) continue;
       var hay=[r.title,r.keyword,r.category,r.example,r.ar].join(' ').toLowerCase();
       if(txt && hay.indexOf(txt)===-1 && String(r.n)!==txt) continue;
-      html += '<article class="rule-card'+(isLearned(r.n)?' learned':'')+(isDifficult(r.n)?' difficult':'')+'" data-index="'+i+'">'+
-        '<span class="rule-num">Regel '+r.n+'</span><span class="rule-cat">'+escapeHtml(r.category)+'</span><p class="rule-title">'+escapeHtml(r.title)+'</p><p class="rule-keyword">'+escapeHtml(r.keyword)+'</p><p class="rule-arabic" dir="rtl" lang="ar">'+escapeHtml(r.ar)+'</p></article>';
+      html += '<article class="rule-card'+(isLearned(r.n)?' learned':'')+(isDifficult(r.n)?' difficult':'')+'" data-index="'+i+'" style="--cat-color:'+catColor(r.category)+';animation:cardStagger .4s cubic-bezier(.22,1,.36,1) '+(.03*count)+'s both">'+
+        '<span class="rule-num">'+r.n+'</span><span class="rule-cat" style="background:'+catColor(r.category)+';color:#fff">'+escapeHtml(r.category)+'</span><p class="rule-title">'+escapeHtml(r.title)+'</p><p class="rule-keyword">'+escapeHtml(r.keyword)+'</p><p class="rule-arabic" dir="rtl" lang="ar">'+escapeHtml(r.ar)+'</p></article>';
       count++;
     }
     rulesGrid.innerHTML=html; noResults.hidden=count>0;
@@ -238,7 +247,7 @@
 
   function renderFlashcard(){
     var r=currentRule(), rev=getReview(r.n);
-    fcNumber.textContent='Regel '+r.n; fcCategory.textContent=r.category; fcTitle.textContent=r.title; fcArabic.textContent=r.ar;
+    fcNumber.textContent=String(r.n); fcCategory.textContent=r.category; fcCategory.style.background=catColor(r.category); fcCategory.style.color='#fff'; fcTitle.textContent=r.title; fcArabic.textContent=r.ar;
     fcKeyword.textContent='Kern: '+r.keyword; fcDefinition.textContent='Definitie: '+r.definition; fcTrigger.textContent='Wanneer: '+r.trigger;
     fcHow.textContent='Uitspraak: '+r.how; fcExample.innerHTML='Voorbeeld: '+highlightArabic(r.example); fcMemory.textContent='Onthouden: '+r.memory;
     renderArticulation(fcArticulation,r.articulation);
@@ -258,7 +267,7 @@
   function shuffleOrder(){ order=shuffleArray(getActiveRuleIndices()); currentPos=0; renderFlashcard(); }
 
   function openModal(r){
-    modalNumber.textContent='Regel '+r.n; modalCategory.textContent=r.category; modalTitle.textContent=r.title; modalArabic.textContent=r.ar;
+    modalNumber.textContent=String(r.n); modalCategory.textContent=r.category; modalCategory.style.color=catColor(r.category); modalTitle.textContent=r.title; modalArabic.textContent=r.ar;
     modalKeyword.textContent='Kern: '+r.keyword; modalDefinition.textContent='Definitie: '+r.definition; modalTrigger.textContent='Wanneer: '+r.trigger;
     modalHow.textContent='Uitspraak: '+r.how; modalExample.innerHTML='Voorbeeld: '+highlightArabic(r.example); modalMemory.textContent='Onthouden: '+r.memory;
     renderArticulation(modalArticulation,r.articulation); modalOverlay.hidden=false;
@@ -323,7 +332,7 @@
     var html='';
     for(var i=0;i<idxs.length;i++){
       var r=RULES[idxs[i]];
-      html += '<article class="rule-card lesson-card'+(isLearned(r.n)?' learned':'')+'" data-rule-index="'+idxs[i]+'"><span class="rule-num">Regel '+r.n+'</span><span class="rule-cat">'+escapeHtml(r.category)+'</span><p class="rule-title">'+escapeHtml(r.title)+'</p><p class="rule-keyword">'+escapeHtml(r.keyword)+'</p></article>';
+      html += '<article class="rule-card lesson-card'+(isLearned(r.n)?' learned':'')+'" data-rule-index="'+idxs[i]+'" style="--cat-color:'+catColor(r.category)+';animation:cardStagger .4s cubic-bezier(.22,1,.36,1) '+(.05*i)+'s both"><span class="rule-num">'+r.n+'</span><span class="rule-cat" style="background:'+catColor(r.category)+';color:#fff">'+escapeHtml(r.category)+'</span><p class="rule-title">'+escapeHtml(r.title)+'</p><p class="rule-keyword">'+escapeHtml(r.keyword)+'</p></article>';
     }
     lessonCards.innerHTML=html;
     renderLessonCheckpoint(lesson);
