@@ -12,7 +12,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://hetrechtepadcollege.goatcounter.com;">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Cinzel:wght@400;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,8 +31,8 @@
   </header>
 
   <section class="intro-section">
-    <p>Tajweed betekent: de letters hun rechten geven tijdens het reciteren van de Koran.</p>
-    <blockquote>"En reciteer de Koran met zorgvuldige, duidelijke recitatie." <span>(73:4)</span></blockquote>
+    <p>Tajweed betekent: dat jij de Koran correct reciteert en de letters hun rechten geeft tijdens het reciteren.</p>
+    <blockquote>"... en reciteer de Koran langzaam en bedachtzaam." <span>(73:4)</span></blockquote>
   </section>
 
   <div class="toolbar">
@@ -41,6 +41,7 @@
       <button class="mode-btn" id="modeFlashcard" role="tab" aria-selected="false">Flashcards</button>
       <button class="mode-btn" id="modeQuiz" role="tab" aria-selected="false">Quiz</button>
       <button class="mode-btn" id="modeLesson" role="tab" aria-selected="false">Lesmodus</button>
+      <button class="mode-btn" id="modeVerdieping" role="tab" aria-selected="false">Verdieping</button>
     </div>
     <div class="search-wrap" id="searchWrap">
       <input type="search" id="searchInput" class="search-input" placeholder="Zoek op regel, categorie of voorbeeld...">
@@ -68,7 +69,6 @@
       <div class="fc-card" id="fcCard">
         <div class="fc-card-inner" id="fcCardInner">
           <div class="fc-front">
-            <span id="fcNumber" class="fc-number">1</span>
             <span id="fcCategory" class="fc-category">Categorie</span>
             <p id="fcTitle" class="fc-title"></p>
             <p id="fcArabic" class="fc-arabic" dir="rtl" lang="ar"></p>
@@ -77,9 +77,10 @@
           <div class="fc-back">
             <p id="fcKeyword" class="fc-keyword"></p>
             <p id="fcDefinition"></p>
-            <p id="fcTrigger"></p>
             <p id="fcHow"></p>
+            <p id="fcTrigger"></p>
             <p id="fcExample"></p>
+            <div id="fcContextLinks" class="context-links" hidden></div>
             <div id="fcArticulation" class="articulation-hint"></div>
             <p id="fcMemory"></p>
           </div>
@@ -151,18 +152,28 @@
   <div class="modal-overlay" id="modalOverlay" hidden>
     <div class="modal" role="dialog" aria-modal="true">
       <button class="modal-close" id="modalClose" aria-label="Sluiten">×</button>
-      <span id="modalNumber" class="modal-number">1</span>
       <p id="modalCategory" class="modal-category"></p>
       <p id="modalTitle" class="modal-title"></p>
       <p id="modalArabic" class="modal-arabic" dir="rtl" lang="ar"></p>
       <div class="modal-divider"></div>
       <p id="modalKeyword"></p>
       <p id="modalDefinition"></p>
-      <p id="modalTrigger"></p>
       <p id="modalHow"></p>
+      <p id="modalTrigger"></p>
       <p id="modalExample"></p>
+      <div id="modalContextLinks" class="context-links" hidden></div>
       <div id="modalArticulation" class="articulation-hint"></div>
       <p id="modalMemory"></p>
+    </div>
+  </div>
+
+  <div class="subcard-overlay" id="subcardOverlay" hidden>
+    <div class="subcard" role="dialog" aria-modal="true" aria-label="Contextkaart">
+      <button class="subcard-close" id="subcardClose" aria-label="Sluiten">×</button>
+      <p id="subcardRule" class="subcard-rule"></p>
+      <p id="subcardTitle" class="subcard-title"></p>
+      <p id="subcardArabic" class="subcard-arabic" dir="rtl" lang="ar"></p>
+      <p id="subcardBody" class="subcard-body"></p>
     </div>
   </div>
 </div>

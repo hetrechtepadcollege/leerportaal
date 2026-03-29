@@ -19,29 +19,54 @@
     { n: 13, category: 'Makharij', title: 'Ash-Shafatan', ar: 'الشَّفَتَانِ', keyword: 'Lippenletters', definition: 'Lippenstand bepaalt enkele letters.', trigger: 'Bij ف / ب م / و.', how: 'Onderlip+tanden, sluiting, ronding.', example: '[ف] [ب م] [و].', memory: 'Lippen: raken/sluiten/ronden.', articulation: { type: 'lips', label: 'Lipwerk', tip: 'Lippenstand bewust aansturen.' } },
     { n: 14, category: 'Makharij', title: 'Al-Khayshum', ar: 'الْخَيْشُومُ', keyword: 'Neusresonantie', definition: 'Bron van ghunnah op nun/mim.', trigger: 'Bij ghunnah-context.', how: 'Nasale resonantie 2 harakah.', example: 'Ghunnah op [ن] en [م].', memory: 'Khayshum geeft ghunnah.', articulation: { type: 'nose', label: 'Neus', tip: 'Laat zachte resonantie horen.' } },
     { n: 15, category: 'Harakat', title: 'Korte klinkers', ar: 'فَ فِ فُ', keyword: 'a i oe', definition: 'Fathah, kasrah, dammah.', trigger: 'Op mutaharrik letters.', how: 'Kort en zuiver lezen.', example: '[فَ]=a [فِ]=i [فُ]=oe.', memory: 'Korte klank, geen verlenging.', articulation: { type: 'tongue', label: 'Klinkers', tip: 'Kort en scherp.' } },
-    { n: 16, category: 'Harakat', title: 'Tanwin', ar: 'ً ٍ ٌ', keyword: 'an/in/un', definition: 'Nunatie met eind-n-klank.', trigger: 'Bij dubbele klinkertekens.', how: 'Lichte eind-n uitspreken.', example: '[ـً] an, [ـٍ] in, [ـٌ] un.', memory: 'Tanwin = korte eind-n.', articulation: { type: 'nose', label: 'Eind-n', tip: 'Licht en kort nasaal.' } },
+    { n: 16, category: 'Harakat', title: 'Tanwin', ar: 'ـً  ـٍ  ـٌ', keyword: 'an/in/un', definition: 'Nunatie met eind-n-klank.', trigger: 'Bij dubbele klinkertekens.', how: 'Lichte eind-n uitspreken.', example: '[ـً] an, [ـٍ] in, [ـٌ] un.', memory: 'Tanwin = korte eind-n.', articulation: { type: 'nose', label: 'Eind-n', tip: 'Licht en kort nasaal.' } },
     { n: 17, category: 'Harakat', title: 'Madd-tekens', ar: 'ٰ ٖ ٗ', keyword: 'Lange klinkers', definition: 'Staande tekens voor verlenging.', trigger: 'Bij deze diakritische tekens.', how: 'Verleng volgens madd-context.', example: 'ٰ [aa], ٖ [ie], ٗ [oe].', memory: 'Teken markeert rek.', articulation: { type: 'stretch', label: 'Verlenging', tip: 'Gelijkmatige rek.' } },
     { n: 18, category: 'Tashkil', title: 'Sukun', ar: 'ْ', keyword: 'Rustteken', definition: 'Letter zonder klinker.', trigger: 'Bij sukunteken.', how: 'Stop klank op medeklinker.', example: 'عَلَيْهِ[مْ].', memory: 'Sukun = geen vocaal.', articulation: { type: 'echo', label: 'Afsluiting', tip: 'Geen extra klinker toevoegen.' } },
     { n: 19, category: 'Tashkil', title: 'Shaddah', ar: 'ّ', keyword: 'Verdubbeling', definition: 'Dubbele letter: vasthouden + loslaten.', trigger: 'Bij shaddah.', how: 'Eerste deel sakin, tweede met harakah.', example: 'شَ[رِّ].', memory: 'Shaddah = letter dubbel.', articulation: { type: 'tongue', label: 'Dubbel', tip: 'Twee fasen hoorbaar maken.' } },
     { n: 20, category: 'Tashkil', title: 'Al-Sifr al-Mustadir', ar: 'ۜ', keyword: 'Niet lezen', definition: 'Kan aanduiden dat maddletter niet wordt uitgesproken.', trigger: 'Bij deze markering op maddletter.', how: 'Volg de mushafnotatie.', example: 'Zoals in [أُولَـٰٓئِكَ].', memory: 'Niet elke letter wordt gelezen.', articulation: { type: 'echo', label: 'Stilte', tip: 'Laat gemarkeerde klank weg.' } },
     { n: 21, category: 'Tashkil', title: 'Hamzat al-Wasl', ar: 'ٱ', keyword: 'Verbindingshamzah', definition: 'Alleen gelezen bij starten, weg bij verbinden.', trigger: 'Binnen lopende recitatie.', how: 'Bij verbinding hamzah laten vallen.', example: '[وَٱللّٰهُ] → wallahu.', memory: 'Wasl = verbinden.', articulation: { type: 'tongue', label: 'Verbinding', tip: 'Koppel woorden vloeiend.' } },
-    { n: 22, category: 'Sifat', title: 'Sifat-overzicht', ar: 'صفات لازمة وعارضة', keyword: 'Klankeigenschappen', definition: 'Vaste en contextafhankelijke eigenschappen.', trigger: 'Bij klankverfijning.', how: 'Eerst lazimah, dan aridah.', example: '[Hams/Jahr], [Shiddah/Rikhawah].', memory: 'Makharij = waar, sifat = hoe.', articulation: { type: 'tongue', label: 'Klankkleur', tip: 'Geef letter haar karakter.' } },
-    { n: 23, category: 'Sifat', title: 'Hams en Jahr', ar: 'همس / جهر', keyword: 'Fluister/stem', definition: 'Hams met ademdoorstroom, jahr met stemkracht.', trigger: 'Bij specifieke lettersets.', how: 'Voel adem versus stemtrilling.', example: 'Hams: [فحثه شخص سكت].', memory: 'Hams fluistert, Jahr klinkt vol.', articulation: { type: 'throat', label: 'Adem', tip: 'Observeer luchtstroom.' } },
-    { n: 24, category: 'Sifat', title: 'Shiddah/Rikhawah/Tawassut', ar: 'شدة رخاوة توسط', keyword: 'Krachtniveau', definition: 'Hard, zacht of ertussenin qua klankstroom.', trigger: 'Bij consonantdruk.', how: 'Pas druk per letter aan.', example: 'Shiddah: [أجد قط بكت].', memory: 'Drie standen van klankstroom.', articulation: { type: 'echo', label: 'Stroom', tip: 'Niet alles even hard.' } },
-    { n: 25, category: 'Sifat', title: "Isti'la / Istifal", ar: 'استعلاء / استفال', keyword: 'Dik/dun', definition: 'Tonghoogte bepaalt zware of lichte klank.', trigger: 'Bij zware letters en tegenhangers.', how: 'Hoge tong voor tafkhim.', example: "[خ ص ض غ ط ق ظ].", memory: 'Hoge tong = dikke klank.', articulation: { type: 'tongue', label: 'Tonghoogte', tip: 'Kies dik of dun bewust.' } },
-    { n: 26, category: 'Sifat', title: 'Safir, Qalqalah, Lin', ar: 'صفير قلقلة لين', keyword: 'Speciale effecten', definition: 'Specifieke letters krijgen specifieke klankkleur.', trigger: 'Bij juiste letter + context.', how: 'Qalqalah alleen op sakin letters.', example: 'Qalqalah: [ق ط ب ج د].', memory: 'Speciale sifat geven kleur.', articulation: { type: 'echo', label: 'Effect', tip: 'Stuiter zonder extra klinker.' } },
-    { n: 27, category: 'Ahkam', title: 'Sifat al-Aridah', ar: 'صفات عارضة', keyword: 'Contextafhankelijk', definition: 'Regels afhankelijk van omringende letters.', trigger: 'Bij lam/ra/nun/mim-context.', how: 'Lees altijd de context mee.', example: '[Lam], [Ra], [Nun], [Mim].', memory: 'Context bepaalt uitspraak.', articulation: { type: 'tongue', label: 'Context', tip: 'Kijk één letter vooruit.' } },
-    { n: 28, category: 'Ahkam', title: 'Lam Qamariyyah/Shamsiyyah', ar: 'القمريّة / الشمسيّة', keyword: 'Lam wel/niet', definition: 'Voor maanletters lees je lam, voor zonletters niet.', trigger: 'Bij woord met ال.', how: 'Shamsiyyah: volgende letter mushaddad.', example: '[الْقَمَرُ] vs [الشَّمْسُ].', memory: 'Qamariyyah leest lam.', articulation: { type: 'tongue', label: 'Lam', tip: 'Herken letter na ال.' } },
-    { n: 29, category: 'Ahkam', title: 'Tafkhim/Tarqiq (ا ل ر)', ar: 'تفخيم ترقيق', keyword: 'Dik of dun', definition: 'Alif, lam, ra volgen contextregels voor dik/dun.', trigger: 'Bij deze letters in woorden.', how: 'Bepaal op basis van harakah/sukun.', example: 'Naam Allah dik/dun volgens vorige klinker.', memory: 'Dikte volgt context.', articulation: { type: 'tongue', label: 'Dikte', tip: 'Kasrah trekt vaak dun.' } },
+    { n: 22, category: 'Sifat', title: 'Sifat-overzicht', ar: 'صِفَاتٌ لَازِمَةٌ وَعَارِضَةٌ', keyword: 'Klankeigenschappen', definition: 'Vaste en contextafhankelijke eigenschappen.', trigger: 'Bij klankverfijning.', how: 'Eerst lazimah, dan aridah.', example: '[Hams/Jahr], [Shiddah/Rikhawah].', memory: 'Makharij = waar, sifat = hoe.', articulation: { type: 'tongue', label: 'Klankkleur', tip: 'Geef letter haar karakter.' } },
+    { n: 23, category: 'Sifat', title: 'Hams en Jahr', ar: 'هَمْسٌ / جَهْرٌ', keyword: 'Fluister/stem', definition: 'Hams met ademdoorstroom, jahr met stemkracht.', trigger: 'Bij specifieke lettersets.', how: 'Voel adem versus stemtrilling.', example: 'Hams: [فحثه شخص سكت].', memory: 'Hams fluistert, Jahr klinkt vol.', articulation: { type: 'throat', label: 'Adem', tip: 'Observeer luchtstroom.' } },
+    { n: 24, category: 'Sifat', title: 'Shiddah/Rikhawah/Tawassut', ar: 'شِدَّةٌ رَخَاوَةٌ تَوَسُّطٌ', keyword: 'Krachtniveau', definition: 'Hard, zacht of ertussenin qua klankstroom.', trigger: 'Bij consonantdruk.', how: 'Pas druk per letter aan.', example: 'Shiddah: [أجد قط بكت].', memory: 'Drie standen van klankstroom.', articulation: { type: 'echo', label: 'Stroom', tip: 'Niet alles even hard.' } },
+    { n: 25, category: 'Sifat', title: "Isti'la / Istifal", ar: 'اسْتِعْلَاءٌ / اسْتِفَالٌ', keyword: 'Dik/dun', definition: 'Tonghoogte bepaalt zware of lichte klank.', trigger: 'Bij zware letters en tegenhangers.', how: 'Hoge tong voor tafkhim.', example: "[خ ص ض غ ط ق ظ].", memory: 'Hoge tong = dikke klank.', articulation: { type: 'tongue', label: 'Tonghoogte', tip: 'Kies dik of dun bewust.' } },
+    { n: 26, category: 'Sifat', title: 'Safir, Qalqalah, Lin', ar: 'صَفِيرٌ قَلْقَلَةٌ لِينٌ', keyword: 'Speciale effecten', definition: 'Specifieke letters krijgen specifieke klankkleur.', trigger: 'Bij juiste letter + context.', how: 'Qalqalah alleen op sakin letters.', example: 'Qalqalah: [ق ط ب ج د].', memory: 'Speciale sifat geven kleur.', articulation: { type: 'echo', label: 'Effect', tip: 'Stuiter zonder extra klinker.' } },
+    { n: 27, category: 'Ahkam', title: 'Sifat al-Aridah', ar: 'صِفَاتٌ عَارِضَةٌ', keyword: 'Contextafhankelijk', definition: 'Regels afhankelijk van omringende letters.', trigger: 'Bij lam/ra/nun/mim-context.', how: 'Lees altijd de context mee.', example: '[Lam], [Ra], [Nun], [Mim].', memory: 'Context bepaalt uitspraak.', articulation: { type: 'tongue', label: 'Context', tip: 'Kijk één letter vooruit.' } },
+    { n: 28, category: 'Ahkam', title: 'Lam Qamariyyah/Shamsiyyah', ar: 'الْقَمَرِيَّةُ / الشَّمْسِيَّةُ', keyword: 'Lam wel/niet', definition: 'Voor maanletters lees je lam, voor zonletters niet.', trigger: 'Bij woord met ال.', how: 'Shamsiyyah: volgende letter mushaddad.', example: '[الْقَمَرُ] vs [الشَّمْسُ].', memory: 'Qamariyyah leest lam.', articulation: { type: 'tongue', label: 'Lam', tip: 'Herken letter na ال.' } },
+    { n: 29, category: 'Ahkam', title: 'Tafkhim/Tarqiq (ا ل ر)', ar: 'تَفْخِيمٌ / تَرْقِيقٌ', keyword: 'Dik of dun', definition: 'Alif, lam, ra volgen contextregels voor dik/dun.', trigger: 'Bij deze letters in woorden.', how: 'Bepaal op basis van harakah/sukun.', example: 'Naam Allah dik/dun volgens vorige klinker.', memory: 'Dikte volgt context.', contexts: [
+      { label: 'Allah-naam', title: 'Lafz Allah', arabic: 'ٱللّٰه', body: 'Na fathah/dammah meestal tafkhim (dik). Na kasrah meestal tarqiq (dun).' },
+      { label: 'Ra-regel', title: 'Ra (ر)', arabic: 'ر', body: 'Ra met fathah/dammah is vaak dik. Ra met kasrah is meestal dun. Bij sukun kijk je naar de voorafgaande klinker.' },
+      { label: 'Zware letters', title: 'Huruf Isti\'la', arabic: 'خ ص ض غ ط ق ظ', body: 'Deze letters hebben van nature een zwaardere, hogere klank (tafkhim).' }
+    ], articulation: { type: 'tongue', label: 'Dikte', tip: 'Kasrah trekt vaak dun.' } },
     { n: 30, category: 'Nun/Tanwin', title: 'Izhar', ar: 'ء هـ ع ح غ خ', keyword: 'Helder', definition: 'Nun/tanwin duidelijk zonder ghunnah.', trigger: 'Bij halqletters.', how: 'N-klank volledig uitspreken.', example: 'مِنْ [هَادٍ].', memory: 'Keelletter = izhar.', articulation: { type: 'throat', label: 'Keel', tip: 'Duidelijke n-klank.' } },
-    { n: 31, category: 'Nun/Tanwin', title: 'Idgham', ar: 'يرملون', keyword: 'Samensmelten', definition: 'Nun/tanwin gaat op in volgende letter.', trigger: 'Bij ي ر م ل و ن.', how: 'Met ghunnah bij ينمو, zonder bij ر ل.', example: '[يَنْمُو] / [ر ل].', memory: 'Yarmalun-regel.', articulation: { type: 'nose', label: 'Ghunnah keuze', tip: 'Check met/zonder ghunnah.' } },
+    { n: 31, category: 'Nun/Tanwin', title: 'Idgham', ar: 'يَرْمَلُونَ', keyword: 'Samensmelten', definition: 'Nun/tanwin gaat op in volgende letter.', trigger: 'Bij ي ر م ل و ن.', how: 'Met ghunnah bij ينمو, zonder bij ر ل.', example: '[يَنْمُو] / [ر ل].', memory: 'Yarmalun-regel.', articulation: { type: 'nose', label: 'Ghunnah keuze', tip: 'Check met/zonder ghunnah.' } },
     { n: 32, category: 'Nun/Tanwin', title: 'Iqlab en Ikhfa', ar: 'ب + overige', keyword: 'Omzetten/verstoppen', definition: 'Bij ب wordt n→m, bij overige letters verborgen n.', trigger: 'Iqlab bij ب, ikhfa bij rest.', how: 'Beide met 2 harakah ghunnah.', example: 'أَنْ[بِئْهُمْ] / مِنْ [شَرّ].', memory: 'Ba = iqlab, rest ikhfa.', articulation: { type: 'nose', label: 'Verborgen n', tip: 'Zachte nasale overgang.' } },
     { n: 33, category: 'Mim Sakinah', title: 'Mim-regels', ar: 'مْ', keyword: 'Izhar/Idgham/Ikhfa', definition: 'Mim sakin kent drie hoofdregels.', trigger: 'Bij mim + volgende letter.', how: 'Idgham bij م, ikhfa bij ب, anders izhar.', example: 'لَهُمْ [مَا] / ...[بِ].', memory: 'Mim+ba/mim zijn uitzonderingen.', articulation: { type: 'lips', label: 'Lippen', tip: 'Lipsluiting goed sturen.' } },
     { n: 34, category: 'Ghunnah', title: 'Nun/Mim Mushaddadah', ar: 'نّ / مّ', keyword: '2 harakah', definition: 'Nun/mim met shaddah altijd ghunnah.', trigger: 'Bij نّ of مّ.', how: 'Houd 2 harakah nasale klank.', example: 'إِ[نَّ]ا / ثُ[مَّ].', memory: 'Shaddah op nun/mim = ghunnah.', articulation: { type: 'nose', label: 'Ghunnah', tip: 'Stabiele duur.' } },
     { n: 35, category: 'Madd', title: 'Madd al-Asli', ar: 'ا و ي', keyword: 'Natuurlijk 2', definition: 'Basismadd van 2 harakah.', trigger: 'Fathah+alif, kasrah+ya, dammah+waw.', how: 'Rek precies 2 harakah.', example: '[قَالَ] [قِيلَ] [يَقُولُ].', memory: 'Asli is de basis.', articulation: { type: 'stretch', label: 'Basisrek', tip: 'Steady 2 harakah.' } },
-    { n: 36, category: 'Madd', title: "Madd al-Far'i", ar: 'مد فرعي', keyword: 'Secundaire madd', definition: 'Langere madd door hamzah/sukun-context.', trigger: 'Muttasil, munfasil, arid, lazim, etc.', how: 'Volg type-specifieke lengte.', example: 'Muttasil 4-5, munfasil 2/4/5, lazim 6.', memory: 'Context verlengt madd.', articulation: { type: 'stretch', label: 'Contextrek', tip: 'Type bepaalt lengte.' } },
-    { n: 37, category: 'Waqf', title: 'Basisregels stoppen', ar: 'الوقف', keyword: 'Stopcorrectie', definition: 'Bij stop wordt eindletter vaak sakin.', trigger: 'Bij ayah-einde of waqfteken.', how: 'Stop correct en herstart netjes.', example: '[ة] wordt bij stop vaak [ه].', memory: 'Waqf verandert eindklank.', articulation: { type: 'echo', label: 'Afsluiting', tip: 'Eindig zonder extra klank.' } },
-    { n: 38, category: 'Waqf', title: 'Waqf-symbolen', ar: 'م ج لا قلي ق ط صلي ۩', keyword: 'Stop/doorgaan', definition: 'Symbolen in mushaf sturen stop of doorgaan.', trigger: 'Tijdens recitatie uit mushaf.', how: 'Volg elk waqfteken bewust.', example: '[م] stop, [لا] doorgaan, [۩] sajdah.', memory: 'Lees symbool vóór je ademt.', articulation: { type: 'echo', label: 'Ritme', tip: 'Waqf bewaakt betekenis.' } }
+    { n: 36, category: 'Madd', title: "Madd al-Far'i", ar: 'مَدٌّ فَرْعِيٌّ', keyword: 'Secundaire madd', definition: 'Langere madd door hamzah/sukun-context.', trigger: 'Muttasil, munfasil, arid, lazim, etc.', how: 'Volg type-specifieke lengte.', example: 'Muttasil 4-5, munfasil 2/4/5, lazim 6.', memory: 'Context verlengt madd.', articulation: { type: 'stretch', label: 'Contextrek', tip: 'Type bepaalt lengte.' } },
+    { n: 37, category: 'Waqf', title: 'Basisregels stoppen', ar: 'الْوَقْفُ', keyword: 'Stopcorrectie', definition: 'Bij stop wordt eindletter vaak sakin.', trigger: 'Bij ayah-einde of waqfteken.', how: 'Stop correct en herstart netjes.', example: '[ة] wordt bij stop vaak [ه].', memory: 'Waqf verandert eindklank.', articulation: { type: 'echo', label: 'Afsluiting', tip: 'Eindig zonder extra klank.' } },
+    { n: 38, category: 'Waqf', title: 'Waqf-symbolen', ar: '۝ م ط ∴ ∴ قلى ج صلى ز ق لا ۩', keyword: 'Stoppen, doorgaan of een handeling verrichten', definition: 'Waqf-symbolen geven aan waar je stopt of doorgaat tijdens het reciteren, zodat de betekenis behouden blijft.', trigger: 'Tijdens het reciteren uit de muṣḥaf, bij het lezen van verzen.', how: 'Lees bij elk teken eerst de regel en pas daarna je adem- en stopmoment aan.', example: '[۝] einde van āyah (stop in lijn met sunnah), [م] verplichte stop, [ط] volledige stop, [∴ ∴] stoppen bij een van de twee en bij de andere doorgaan, [قلى] stoppen heeft voorkeur, [ج] optionele stop, [صلى] stoppen toegestaan maar doorgaan heeft voorkeur, [ز] wenselijk om door te gaan, [ق] wenselijk om door te gaan, [لا] aanbevolen om door te gaan, [۩] Stoppen en grondbuiging', memory: 'Kijk eerst naar het waqf-symbool, dan pas ademhalen of doorgaan.', waqfCategories: [
+  { tone: 'stop', label: 'Stoppen (Waqf – وقف)' },
+  { tone: 'choice', label: 'Keuze (stop of ga door)' },
+  { tone: 'continue', label: 'Lees door (Wasl – وصل)' },
+  { tone: 'sajdah', label: 'Grondbuiging (Sajdah - سجدة)' }
+    ], symbolDetails: [
+      { key: '۝', tone: 'stop', title: 'Einde ayah', arabic: '۝', body: 'Einde van āyah. Stoppen is in lijn met de profetische traditie.' },
+      { key: 'م', tone: 'stop', title: 'Waqf Lazim', arabic: 'م', body: 'Verplichte stop. Doorgaan is niet toegestaan.' },
+      { key: 'ط', tone: 'stop', title: 'Waqf Mutlaq', arabic: 'ط', body: 'Volledige stop.' },
+      { key: '∴ ∴', tone: 'stop', title: 'Mu\'anaqah', arabic: '∴ ∴', body: 'Stoppen bij een van de twee en bij de andere doorgaan.' },
+      { key: 'قلى', tone: 'choice', title: 'Qila', arabic: 'قلى', body: 'Stoppen heeft voorkeur. Doorgaan is toegestaan.' },
+      { key: 'ج', tone: 'choice', title: 'Jaiz', arabic: 'ج', body: 'Optionele stop.' },
+      { key: 'صلى', tone: 'choice', title: 'Sila', arabic: 'صلى', body: 'Stoppen is toegestaan. Doorgaan heeft voorkeur.' },
+      { key: 'ز', tone: 'continue', title: 'Mujawwaz', arabic: 'ز', body: 'Wenselijk om door te gaan.' },
+      { key: 'ق', tone: 'continue', title: 'Qeela', arabic: 'ق', body: 'Wenselijk om door te gaan.' },
+      { key: 'لا', tone: 'continue', title: 'La Taqif', arabic: 'لا', body: 'Aanbevolen om door te gaan.' },
+      { key: '۩', tone: 'sajdah', title: 'Sajdah-symbool', arabic: '۩', body: 'Stoppen en grondbuiging.' }
+    ], contexts: [
+      { label: 'Verplicht stop', title: 'Waqf Lazim', arabic: 'م', body: 'Hier stoppen is verplicht om betekenisverwarring te voorkomen.' },
+      { label: 'Niet stoppen', title: 'La Taqif', arabic: 'لا', body: 'Hier niet stoppen; doorgaan houdt de betekenis vloeiend.' },
+      { label: 'Sajdah-symbool', title: 'Sajdah-teken', arabic: '۩', body: 'Dit markeert een plaats van sajdah (grondbuiging) bij recitatie.' }
+    ], articulation: { type: 'echo', label: 'Ritme', tip: 'Waqf bewaakt betekenis.' } }
   ];
 
   var LESSONS = [
@@ -58,6 +83,7 @@
   ];
 
   var STORAGE_KEY = 'tajweedBasisV2';
+  var VERDIEPING_RULES = [1, 7, 8, 9, 23, 24];
   var state = loadState();
   if (!state.lesson) state.lesson = { current: 0, completed: [] };
   if (!Array.isArray(state.lesson.completed)) state.lesson.completed = [];
@@ -76,6 +102,7 @@
   var modeFlashcard = byId('modeFlashcard');
   var modeQuiz = byId('modeQuiz');
   var modeLesson = byId('modeLesson');
+  var modeVerdieping = byId('modeVerdieping');
   var viewGallery = byId('viewGallery');
   var viewFlashcard = byId('viewFlashcard');
   var viewQuiz = byId('viewQuiz');
@@ -83,7 +110,6 @@
 
   var fcCard = byId('fcCard');
   var fcCardInner = byId('fcCardInner');
-  var fcNumber = byId('fcNumber');
   var fcCategory = byId('fcCategory');
   var fcTitle = byId('fcTitle');
   var fcArabic = byId('fcArabic');
@@ -92,6 +118,7 @@
   var fcTrigger = byId('fcTrigger');
   var fcHow = byId('fcHow');
   var fcExample = byId('fcExample');
+  var fcContextLinks = byId('fcContextLinks');
   var fcMemory = byId('fcMemory');
   var fcArticulation = byId('fcArticulation');
   var fcPrev = byId('fcPrev');
@@ -131,7 +158,6 @@
 
   var modalOverlay = byId('modalOverlay');
   var modalClose = byId('modalClose');
-  var modalNumber = byId('modalNumber');
   var modalCategory = byId('modalCategory');
   var modalTitle = byId('modalTitle');
   var modalArabic = byId('modalArabic');
@@ -140,10 +166,17 @@
   var modalTrigger = byId('modalTrigger');
   var modalHow = byId('modalHow');
   var modalExample = byId('modalExample');
+  var modalContextLinks = byId('modalContextLinks');
   var modalMemory = byId('modalMemory');
   var modalArticulation = byId('modalArticulation');
+  var subcardOverlay = byId('subcardOverlay');
+  var subcardClose = byId('subcardClose');
+  var subcardRule = byId('subcardRule');
+  var subcardTitle = byId('subcardTitle');
+  var subcardArabic = byId('subcardArabic');
+  var subcardBody = byId('subcardBody');
 
-  var order = buildDefaultOrder();
+  var order = [];
   var currentPos = 0;
   var currentMode = 'gallery';
   var quizState = { current:null, answered:false, lastAnswerIndex:null, deck:[], poolKey:'' };
@@ -167,22 +200,203 @@
   }
 
   function saveState(){ try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e){} }
-  function buildDefaultOrder(){ var a=[]; for(var i=0;i<RULES.length;i++) a.push(i); return a; }
+  function isVerdiepingRule(n){ return VERDIEPING_RULES.indexOf(n)!==-1; }
+  function inDeck(rule, deck){
+    if(deck==='verdieping') return isVerdiepingRule(rule.n);
+    return !isVerdiepingRule(rule.n);
+  }
+  function buildDeckOrder(deck){
+    var a=[];
+    for(var i=0;i<RULES.length;i++){
+      if(inDeck(RULES[i], deck||'basis')) a.push(i);
+    }
+    return a;
+  }
   function shuffleArray(arr){ var a=arr.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
   function escapeHtml(t){ return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
-  function highlightArabic(t){
-    return escapeHtml(t).replace(/\[(.*?)\]/g, function(_, token){
-      var isArabic = /[\u0600-\u06FF]/.test(token);
-      return '<span class="tw-highlight' + (isArabic ? ' tw-highlight-ar' : '') + '">' + token + '</span>';
-    });
+  function isArabicLike(t){
+    return /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF\u06DD\u06E9\u2026\u2234]/.test(String(t));
   }
+  function containsArabic(t){ return isArabicLike(t); }
+  function splitExampleLines(t){
+    var parts = String(t || '').split(/\s*,\s*/).filter(function(part){ return part.length > 0; });
+    return parts.length ? parts : [''];
+  }
+  function wrapArabicRunsEscaped(escapedText){
+    return escapedText.replace(/([\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF\u06DD\u06E9\u2026\u2234]+)/g, '<span class="example-ar" dir="rtl" lang="ar">$1</span>');
+  }
+  function decorateArabicSymbols(t){
+    return escapeHtml(t).replace(/۩/g, '<span class="waqf-symbol-inline" dir="rtl" lang="ar">&#x06E9;</span>');
+  }
+  function symbolKey(token){ return String(token||'').trim(); }
+  function findSymbolDetail(rule, key){
+    if(!rule || !Array.isArray(rule.symbolDetails)) return null;
+    for(var i=0;i<rule.symbolDetails.length;i++){
+      if(rule.symbolDetails[i].key===key) return rule.symbolDetails[i];
+    }
+    return null;
+  }
+  function renderTokenSpan(token, rule, interactive){
+    var key = symbolKey(token);
+    var isArabic = isArabicLike(token);
+    if (!isArabic) {
+      return '<span class="tw-highlight">' + escapeHtml(token) + '</span>';
+    }
+    var inner = '';
+    if (key === '۩') inner = '<span class="waqf-symbol" dir="rtl" lang="ar">&#x06E9;</span>';
+    else if (key === 'السَّجْدَة') inner = '<span class="example-ar waqf-symbol-word" dir="rtl" lang="ar">' + escapeHtml(token) + '</span>';
+    else inner = '<span class="example-ar" dir="rtl" lang="ar">' + escapeHtml(token) + '</span>';
+    if (interactive && rule && rule.n===38) {
+      var detail = findSymbolDetail(rule, key);
+      if (detail) {
+        var toneClass = detail.tone ? ' symbol-tone-' + detail.tone : '';
+        return '<button type="button" class="tw-highlight tw-highlight-ar symbol-hotspot' + toneClass + '" data-rule-n="' + String(rule.n) + '" data-symbol-key="' + encodeURIComponent(key) + '">' + inner + '</button>';
+      }
+    }
+    return '<span class="tw-highlight tw-highlight-ar">' + inner + '</span>';
+  }
+  function highlightArabic(t, rule, interactive){
+    var source = String(t || '');
+    var out = '';
+    var re = /\[(.*?)\]/g;
+    var lastIndex = 0;
+    var match;
+    while ((match = re.exec(source))) {
+      var before = source.slice(lastIndex, match.index);
+      out += wrapArabicRunsEscaped(escapeHtml(before));
+      var token = match[1];
+      out += renderTokenSpan(token, rule, !!interactive);
+      lastIndex = re.lastIndex;
+    }
+    out += wrapArabicRunsEscaped(escapeHtml(source.slice(lastIndex)));
+    return out;
+  }
+  function renderExample(el, text, rule){
+    var hasArabic = containsArabic(text);
+    var lines = splitExampleLines(text);
+    el.classList.toggle('example-has-arabic', hasArabic);
+    el.classList.toggle('example-multiline', lines.length > 1);
+    var hint = (rule && rule.n === 38) ? '<span class="symbol-tap-hint">Tik op een symbool voor meer uitleg.</span>' : '';
+    el.innerHTML = '<span class="example-label">Voorbeeld:</span>' + hint + ' <span class="example-value">' + lines.map(function(line){ return '<span class="example-line">' + highlightArabic(line, rule, true) + '</span>'; }).join('') + '</span>';
+  }
+  function getRuleByN(n){
+    for(var i=0;i<RULES.length;i++) if(RULES[i].n===n) return RULES[i];
+    return null;
+  }
+  function renderWaqfCategoryIcon(type){
+  if(type === 'stop'){
+    return '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="6" fill="currentColor"></circle></svg>';
+  }
+  if(type === 'choice'){
+    return '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 7H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path><path d="M13 4L16 7L13 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16 13H4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path><path d="M7 10L4 13L7 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
+  }
+  if(type === 'continue'){
+    return '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path><path d="M12 6L16 10L12 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
+  }
+  if(type === 'sajdah'){
+    return '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 13.2C5.3 13.2 6.5 12.7 7.5 11.2C8.6 9.5 9.7 8.2 11.8 8.2C13.7 8.2 15 9.3 15.8 11.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path><path d="M15.8 11.3V14.2H10.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 14.2H16.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity="0.85"></path></svg>';
+  }
+  return '';
+}
+  function renderContextLinks(el, rule){
+    if(rule && rule.n===38 && Array.isArray(rule.waqfCategories) && rule.waqfCategories.length){
+      var waqfHtml = '<p class="context-label">Categorieën van waqf-symbolen</p><div class="waqf-category-list">';
+      for(var w=0;w<rule.waqfCategories.length;w++){
+        var item = rule.waqfCategories[w];
+        waqfHtml +=
+          '<button type="button" class="waqf-category waqf-' + escapeHtml(item.tone || 'stop') + '" data-waqf-tone="' + escapeHtml(item.tone || 'stop') + '" data-rule-n="38">' +
+            '<span class="waqf-category-icon" aria-hidden="true">' + renderWaqfCategoryIcon(item.tone) + '</span>' +
+            '<span class="waqf-category-text">' +
+              '<span class="waqf-category-label">' + escapeHtml(item.label) + '</span>' +
+              (item.sublabel ? '<span class="waqf-category-sub">(' + escapeHtml(item.sublabel) + ')</span>' : '') +
+            '</span>' +
+            '<span class="waqf-category-arrow" aria-hidden="true">›</span>' +
+          '</button>';
+      }
+      waqfHtml += '</div>';
+      el.innerHTML = waqfHtml;
+      el.hidden = false;
+      return;
+    }
+    var contexts = Array.isArray(rule.contexts) ? rule.contexts : [];
+    if(!contexts.length){
+      el.hidden = true;
+      el.innerHTML = '';
+      return;
+    }
+    var html = '<p class="context-label">Contextvoorbeelden</p><div class="context-chip-wrap">';
+    for(var i=0;i<contexts.length;i++){
+      html += '<button type="button" class="context-chip" data-rule-n="'+rule.n+'" data-context-index="'+i+'">'+escapeHtml(contexts[i].label || ('Context '+(i+1)))+'</button>';
+    }
+    html += '</div>';
+    el.innerHTML = html;
+    el.hidden = false;
+  }
+  function openSubcard(rule, context){
+    if(!rule || !context) return;
+    subcardRule.textContent = rule.title;
+    subcardTitle.textContent = context.title || context.label || 'Context';
+    subcardArabic.innerHTML = context.arabic ? decorateArabicSymbols(context.arabic) : '';
+    subcardArabic.hidden = !context.arabic;
+    subcardBody.textContent = context.body || '';
+    subcardOverlay.hidden = false;
+  }
+  function openWaqfCategorySubcard(tone, rule){
+    if(!rule || !Array.isArray(rule.symbolDetails)) return;
+    var symbols = [];
+    for(var i=0;i<rule.symbolDetails.length;i++){
+      if(rule.symbolDetails[i].tone===tone) symbols.push(rule.symbolDetails[i]);
+    }
+    if(!symbols.length) return;
+    var catLabel = tone;
+    if(Array.isArray(rule.waqfCategories)){
+      for(var j=0;j<rule.waqfCategories.length;j++){
+        if(rule.waqfCategories[j].tone===tone){ catLabel=rule.waqfCategories[j].label; break; }
+      }
+    }
+    subcardRule.textContent = rule.title;
+    subcardTitle.textContent = catLabel;
+    subcardArabic.hidden = true;
+    subcardArabic.innerHTML = '';
+    var html = '<div class="waqf-symbol-list">';
+    for(var k=0;k<symbols.length;k++){
+      var s = symbols[k];
+      var ar = s.arabic || s.key;
+      var arHtml = (ar === '۩')
+        ? '<span class="waqf-symbol symbol-tone-' + escapeHtml(tone) + '" dir="rtl" lang="ar">&#x06E9;</span>'
+        : '<span class="waqf-symbol-ar symbol-tone-' + escapeHtml(tone) + '" dir="rtl" lang="ar">' + escapeHtml(ar) + '</span>';
+      html += '<div class="waqf-symbol-item">' +
+        arHtml +
+        '<span class="waqf-symbol-desc">' + escapeHtml(s.body) + '</span>' +
+        '</div>';
+    }
+    html += '</div>';
+    subcardBody.innerHTML = html;
+    subcardOverlay.hidden = false;
+  }
+  function openSymbolSubcard(ruleN, encodedKey){
+    var rule = getRuleByN(Number(ruleN)); if(!rule) return;
+    var key = '';
+    try { key = decodeURIComponent(String(encodedKey || '')); } catch(e) { key = String(encodedKey || ''); }
+    var detail = findSymbolDetail(rule, key);
+    if(!detail) return;
+    openSubcard(rule, detail);
+  }
+  function closeSubcard(){ subcardOverlay.hidden = true; }
   function isLearned(n){ return state.learned.indexOf(n)!==-1; }
   function isDifficult(n){ return state.difficult.indexOf(n)!==-1; }
   function setLearned(n,val){ var p=state.learned.indexOf(n); if(val&&p===-1)state.learned.push(n); if(!val&&p!==-1)state.learned.splice(p,1); saveState(); renderProgress(); }
   function setDifficult(n,val){ var p=state.difficult.indexOf(n); if(val&&p===-1)state.difficult.push(n); if(!val&&p!==-1)state.difficult.splice(p,1); saveState(); renderProgress(); }
   function getReview(n){ return state.reviews[n] || { interval:0, dueAt:0 }; }
   function isDue(n){ var r=getReview(n); return !r.dueAt || r.dueAt <= Date.now(); }
-  function getDueCount(){ var c=0; for(var i=0;i<RULES.length;i++) if(isDue(RULES[i].n)) c++; return c; }
+  function getDueCount(deck){
+    var c=0;
+    for(var i=0;i<RULES.length;i++){
+      if(!inDeck(RULES[i], deck||'basis')) continue;
+      if(isDue(RULES[i].n)) c++;
+    }
+    return c;
+  }
   function formatDate(ts){ if(!ts) return '-'; return new Date(ts).toLocaleDateString('nl-NL',{day:'2-digit',month:'2-digit'}); }
 
   function gradeReview(ruleN, level){
@@ -196,21 +410,25 @@
     renderFlashcard();
   }
 
-  function getActiveRuleIndices(){
+  function getActiveRuleIndices(deck){
     var out=[];
+    var targetDeck = deck || 'basis';
     for(var i=0;i<RULES.length;i++){
       var r=RULES[i];
-      if(state.difficultOnly && !isDifficult(r.n)) continue;
-      if(state.reviewOnly && !isDue(r.n)) continue;
+      if(!inDeck(r, targetDeck)) continue;
+      if(targetDeck==='basis'){
+        if(state.difficultOnly && !isDifficult(r.n)) continue;
+        if(state.reviewOnly && !isDue(r.n)) continue;
+      }
       out.push(i);
     }
-    return out.length?out:buildDefaultOrder();
+    return out.length?out:buildDeckOrder(targetDeck);
   }
 
   function updateStudyUtilities(){
     toggleDifficultOnly.textContent='Alleen lastig: ' + (state.difficultOnly?'aan':'uit');
     toggleReviewOnly.textContent='Herhaalmodus: ' + (state.reviewOnly?'aan':'uit');
-    dueInfo.textContent=getDueCount() + ' regels toe aan herhaling';
+    dueInfo.textContent=getDueCount('basis') + ' regels toe aan herhaling';
   }
 
   var CAT_COLORS = {
@@ -229,16 +447,20 @@
     el.innerHTML = '<span class="art-icon '+a.type+'"><img class="art-illustration" src="'+illustrationPath(a.type)+'" alt="Illustratie '+escapeHtml(a.label)+'"></span><span><strong>'+escapeHtml(a.label)+':</strong> '+escapeHtml(a.tip)+'</span>';
   }
 
-  function renderGallery(filter){
+  function renderGallery(filter, deck){
+    var targetDeck = deck || 'basis';
     var txt=(filter||'').toLowerCase().trim(), html='', count=0;
     for(var i=0;i<RULES.length;i++){
       var r=RULES[i];
-      if(state.difficultOnly && !isDifficult(r.n)) continue;
-      if(state.reviewOnly && !isDue(r.n)) continue;
+      if(!inDeck(r, targetDeck)) continue;
+      if(targetDeck==='basis'){
+        if(state.difficultOnly && !isDifficult(r.n)) continue;
+        if(state.reviewOnly && !isDue(r.n)) continue;
+      }
       var hay=[r.title,r.keyword,r.category,r.example,r.ar].join(' ').toLowerCase();
       if(txt && hay.indexOf(txt)===-1 && String(r.n)!==txt) continue;
       html += '<article class="rule-card'+(isLearned(r.n)?' learned':'')+(isDifficult(r.n)?' difficult':'')+'" data-index="'+i+'" style="--cat-color:'+catColor(r.category)+';animation:cardStagger .4s cubic-bezier(.22,1,.36,1) '+(.03*count)+'s both">'+
-        '<span class="rule-num">'+r.n+'</span><span class="rule-cat" style="background:'+catColor(r.category)+';color:#fff">'+escapeHtml(r.category)+'</span><p class="rule-title">'+escapeHtml(r.title)+'</p><p class="rule-keyword">'+escapeHtml(r.keyword)+'</p><p class="rule-arabic" dir="rtl" lang="ar">'+escapeHtml(r.ar)+'</p></article>';
+        '<span class="rule-cat" style="background:'+catColor(r.category)+';color:#fff">'+escapeHtml(r.category)+'</span><p class="rule-title">'+escapeHtml(r.title)+'</p><p class="rule-keyword">'+escapeHtml(r.keyword)+'</p><p class="rule-arabic" dir="rtl" lang="ar">'+decorateArabicSymbols(r.ar)+'</p></article>';
       count++;
     }
     rulesGrid.innerHTML=html; noResults.hidden=count>0;
@@ -246,15 +468,20 @@
 
   function currentRule(){ return RULES[order[currentPos]||0]; }
   function rebuildOrderAndPosition(){
-    var cur=currentRule().n; order=getActiveRuleIndices(); currentPos=0;
+    var deck = currentMode==='verdieping' ? 'verdieping' : 'basis';
+    var curRule = currentRule();
+    var cur = curRule ? curRule.n : null;
+    order=getActiveRuleIndices(deck);
+    currentPos=0;
     for(var i=0;i<order.length;i++){ if(RULES[order[i]].n===cur){ currentPos=i; break; } }
   }
 
   function renderFlashcard(){
     var r=currentRule(), rev=getReview(r.n);
-    fcNumber.textContent=String(r.n); fcCategory.textContent=r.category; fcCategory.style.background=catColor(r.category); fcCategory.style.color='#fff'; fcTitle.textContent=r.title; fcArabic.textContent=r.ar;
+    fcCategory.textContent=r.category; fcCategory.style.background=catColor(r.category); fcCategory.style.color='#fff'; fcTitle.textContent=r.title; fcArabic.innerHTML=decorateArabicSymbols(r.ar);
     fcKeyword.textContent='Kern: '+r.keyword; fcDefinition.textContent='Definitie: '+r.definition; fcTrigger.textContent='Wanneer: '+r.trigger;
-    fcHow.textContent='Uitspraak: '+r.how; fcExample.innerHTML='Voorbeeld: '+highlightArabic(r.example); fcMemory.textContent='Onthouden: '+r.memory;
+    fcHow.textContent='Toepassing: '+r.how; renderExample(fcExample, r.example, r); fcMemory.textContent='Onthouden: '+r.memory;
+    renderContextLinks(fcContextLinks, r);
     renderArticulation(fcArticulation,r.articulation);
     fcCardInner.classList.remove('flipped'); fcLearnedCheck.checked=isLearned(r.n); fcDifficultCheck.checked=isDifficult(r.n);
     fcCounter.textContent=(currentPos+1)+' / '+order.length; reviewNextInfo.textContent='Volgende herhaling: '+formatDate(rev.dueAt)+' ('+(isDue(r.n)?'nu oefenen':'niet nu')+')';
@@ -264,22 +491,30 @@
   function renderProgress(){
     var learned=state.learned.length, total=RULES.length, pct=total?Math.round((learned/total)*100):0;
     fcProgressFill.style.width=pct+'%'; fcProgressText.textContent=learned+' / '+total+' geleerd';
-    updateStudyUtilities(); renderGallery(searchInput.value);
+    updateStudyUtilities(); renderGallery(searchInput.value, currentMode==='verdieping' ? 'verdieping' : 'basis');
   }
 
   function goNext(){ currentPos=(currentPos+1)%order.length; renderFlashcard(); }
   function goPrev(){ currentPos=(currentPos-1+order.length)%order.length; renderFlashcard(); }
-  function shuffleOrder(){ order=shuffleArray(getActiveRuleIndices()); currentPos=0; renderFlashcard(); }
+  function shuffleOrder(){ order=shuffleArray(getActiveRuleIndices('basis')); currentPos=0; renderFlashcard(); }
 
   function openModal(r){
-    modalNumber.textContent=String(r.n); modalCategory.textContent=r.category; modalCategory.style.color=catColor(r.category); modalTitle.textContent=r.title; modalArabic.textContent=r.ar;
+    modalCategory.textContent=r.category; modalCategory.style.color=catColor(r.category); modalTitle.textContent=r.title; modalArabic.innerHTML=decorateArabicSymbols(r.ar);
     modalKeyword.textContent='Kern: '+r.keyword; modalDefinition.textContent='Definitie: '+r.definition; modalTrigger.textContent='Wanneer: '+r.trigger;
-    modalHow.textContent='Uitspraak: '+r.how; modalExample.innerHTML='Voorbeeld: '+highlightArabic(r.example); modalMemory.textContent='Onthouden: '+r.memory;
+    modalHow.textContent='Toepassing: '+r.how; renderExample(modalExample, r.example, r); modalMemory.textContent='Onthouden: '+r.memory;
+    renderContextLinks(modalContextLinks, r);
     renderArticulation(modalArticulation,r.articulation); modalOverlay.hidden=false;
   }
-  function closeModal(){ modalOverlay.hidden=true; }
+  function closeModal(){ modalOverlay.hidden=true; closeSubcard(); }
 
-  function lessonRuleIndices(lesson){ var out=[]; for(var i=0;i<RULES.length;i++) if(RULES[i].n>=lesson.range[0]&&RULES[i].n<=lesson.range[1]) out.push(i); return out; }
+  function lessonRuleIndices(lesson){
+    var out=[];
+    for(var i=0;i<RULES.length;i++){
+      if(!inDeck(RULES[i], 'basis')) continue;
+      if(RULES[i].n>=lesson.range[0]&&RULES[i].n<=lesson.range[1]) out.push(i);
+    }
+    return out;
+  }
   function isLessonDone(id){ return state.lesson.completed.indexOf(id)!==-1; }
   function markLessonDone(id){ if(!isLessonDone(id)) { state.lesson.completed.push(id); saveState(); } }
 
@@ -293,7 +528,7 @@
       }
     }
     var answerIndex=deck.shift(); lessonCheckpointState.decks[lesson.id]=deck;
-    var wrongPool=shuffleArray(buildDefaultOrder().filter(function(i){ return i!==answerIndex; }));
+    var wrongPool=shuffleArray(buildDeckOrder('basis').filter(function(i){ return i!==answerIndex; }));
     var options=[answerIndex]; while(options.length<4&&wrongPool.length) options.push(wrongPool.pop()); options=shuffleArray(options);
     return { lessonId:lesson.id, answerIndex:answerIndex, options:options };
   }
@@ -304,7 +539,7 @@
     lessonCheckpointState.lastByLesson[lesson.id]=q.answerIndex;
     var answer=RULES[q.answerIndex];
     lessonCheckpointLabel.textContent='Checkpoint - '+lesson.title;
-    lessonCheckpointQuestion.innerHTML='Welke regel hoort bij dit voorbeeld?<br><span class="lesson-check-ar">'+highlightArabic(answer.example)+'</span>';
+    lessonCheckpointQuestion.innerHTML='Welke regel hoort bij dit voorbeeld?<br><span class="lesson-check-ar">'+highlightArabic(answer.example, null, false)+'</span>';
     var html='';
     for(var i=0;i<q.options.length;i++){
       var opt=RULES[q.options[i]];
@@ -337,14 +572,14 @@
     var html='';
     for(var i=0;i<idxs.length;i++){
       var r=RULES[idxs[i]];
-      html += '<article class="rule-card lesson-card'+(isLearned(r.n)?' learned':'')+'" data-rule-index="'+idxs[i]+'" style="--cat-color:'+catColor(r.category)+';animation:cardStagger .4s cubic-bezier(.22,1,.36,1) '+(.05*i)+'s both"><span class="rule-num">'+r.n+'</span><span class="rule-cat" style="background:'+catColor(r.category)+';color:#fff">'+escapeHtml(r.category)+'</span><p class="rule-title">'+escapeHtml(r.title)+'</p><p class="rule-keyword">'+escapeHtml(r.keyword)+'</p></article>';
+      html += '<article class="rule-card lesson-card'+(isLearned(r.n)?' learned':'')+'" data-rule-index="'+idxs[i]+'" style="--cat-color:'+catColor(r.category)+';animation:cardStagger .4s cubic-bezier(.22,1,.36,1) '+(.05*i)+'s both"><span class="rule-cat" style="background:'+catColor(r.category)+';color:#fff">'+escapeHtml(r.category)+'</span><p class="rule-title">'+escapeHtml(r.title)+'</p><p class="rule-keyword">'+escapeHtml(r.keyword)+'</p></article>';
     }
     lessonCards.innerHTML=html;
     renderLessonCheckpoint(lesson);
   }
 
   function buildQuizQuestion(){
-    var pool=getActiveRuleIndices(); if(!pool.length) pool=buildDefaultOrder();
+    var pool=getActiveRuleIndices('basis'); if(!pool.length) pool=buildDeckOrder('basis');
     var key=pool.join(','); if(quizState.poolKey!==key){ quizState.poolKey=key; quizState.deck=[]; }
     if(!quizState.deck.length){
       quizState.deck=shuffleArray(pool);
@@ -353,7 +588,7 @@
       }
     }
     var answerIndex=quizState.deck.shift();
-    var wrongPool=shuffleArray(buildDefaultOrder().filter(function(i){ return i!==answerIndex; }));
+    var wrongPool=shuffleArray(buildDeckOrder('basis').filter(function(i){ return i!==answerIndex; }));
     var options=[answerIndex]; while(options.length<4&&wrongPool.length) options.push(wrongPool.pop()); options=shuffleArray(options);
     return { answerIndex:answerIndex, options:options, answerRule:RULES[answerIndex] };
   }
@@ -362,7 +597,7 @@
     quizState.current=q; quizState.answered=false; quizState.lastAnswerIndex=q.answerIndex;
     state.quiz.asked += 1; saveState();
     quizLabel.textContent='Vraag '+state.quiz.asked;
-    quizExample.innerHTML=highlightArabic(q.answerRule.example);
+    quizExample.innerHTML=highlightArabic(q.answerRule.example, null, false);
     renderArticulation(quizArticulation,q.answerRule.articulation);
     var html='';
     for(var i=0;i<q.options.length;i++){
@@ -396,17 +631,29 @@
     modeFlashcard.classList.toggle('active',mode==='flashcard'); modeFlashcard.setAttribute('aria-selected',mode==='flashcard'?'true':'false');
     modeQuiz.classList.toggle('active',mode==='quiz'); modeQuiz.setAttribute('aria-selected',mode==='quiz'?'true':'false');
     modeLesson.classList.toggle('active',mode==='lesson'); modeLesson.setAttribute('aria-selected',mode==='lesson'?'true':'false');
+    modeVerdieping.classList.toggle('active',mode==='verdieping'); modeVerdieping.setAttribute('aria-selected',mode==='verdieping'?'true':'false');
     viewGallery.classList.toggle('active',mode==='gallery'); viewGallery.hidden=mode!=='gallery';
     viewFlashcard.classList.toggle('active',mode==='flashcard'); viewFlashcard.hidden=mode!=='flashcard';
     viewQuiz.classList.toggle('active',mode==='quiz'); viewQuiz.hidden=mode!=='quiz';
     viewLesson.classList.toggle('active',mode==='lesson'); viewLesson.hidden=mode!=='lesson';
-    searchWrap.style.display = mode==='gallery' ? '' : 'none';
-    studyUtilities.style.display = mode==='lesson' ? 'none' : '';
+    if(mode==='verdieping'){
+      viewGallery.classList.add('active'); viewGallery.hidden=false;
+      renderGallery(searchInput.value, 'verdieping');
+    } else if(mode==='gallery'){
+      renderGallery(searchInput.value, 'basis');
+    }
+    searchWrap.style.display = (mode==='gallery' || mode==='verdieping') ? '' : 'none';
+    studyUtilities.style.display = (mode==='lesson' || mode==='verdieping') ? 'none' : '';
     if(mode==='quiz') nextQuizQuestion();
     if(mode==='lesson') renderLessonView();
+    if(mode==='flashcard'){
+      order=getActiveRuleIndices('basis');
+      currentPos=0;
+      renderFlashcard();
+    }
   }
 
-  searchInput.addEventListener('input', function(){ renderGallery(searchInput.value); });
+  searchInput.addEventListener('input', function(){ renderGallery(searchInput.value, currentMode==='verdieping' ? 'verdieping' : 'basis'); });
   toggleDifficultOnly.addEventListener('click', function(){ state.difficultOnly=!state.difficultOnly; rebuildOrderAndPosition(); renderProgress(); renderFlashcard(); });
   toggleReviewOnly.addEventListener('click', function(){ state.reviewOnly=!state.reviewOnly; rebuildOrderAndPosition(); renderProgress(); renderFlashcard(); });
 
@@ -416,6 +663,7 @@
   modeFlashcard.addEventListener('click', function(){ setMode('flashcard'); });
   modeQuiz.addEventListener('click', function(){ setMode('quiz'); });
   modeLesson.addEventListener('click', function(){ setMode('lesson'); });
+  modeVerdieping.addEventListener('click', function(){ setMode('verdieping'); });
 
   fcCard.addEventListener('click', function(){ fcCardInner.classList.toggle('flipped'); });
   fcNext.addEventListener('click', function(e){ e.stopPropagation(); goNext(); });
@@ -423,6 +671,24 @@
   fcShuffleBtn.addEventListener('click', function(e){ e.stopPropagation(); shuffleOrder(); });
   fcLearnedCheck.addEventListener('change', function(e){ setLearned(currentRule().n,e.target.checked); });
   fcDifficultCheck.addEventListener('change', function(e){ setDifficult(currentRule().n,e.target.checked); });
+  fcExample.addEventListener('click', function(e){
+    var btn=e.target.closest('.symbol-hotspot'); if(!btn) return;
+    openSymbolSubcard(btn.getAttribute('data-rule-n'), btn.getAttribute('data-symbol-key'));
+  });
+  fcContextLinks.addEventListener('click', function(e){
+    var chip=e.target.closest('.context-chip');
+    if(chip){
+      var rule=getRuleByN(Number(chip.getAttribute('data-rule-n'))); if(!rule) return;
+      var idx=Number(chip.getAttribute('data-context-index')); if(Number.isNaN(idx)) return;
+      var ctx=(rule.contexts||[])[idx]; if(!ctx) return;
+      openSubcard(rule, ctx); return;
+    }
+    var cat=e.target.closest('.waqf-category[data-waqf-tone]');
+    if(cat){
+      var rule=getRuleByN(Number(cat.getAttribute('data-rule-n'))); if(!rule) return;
+      openWaqfCategorySubcard(cat.getAttribute('data-waqf-tone'), rule);
+    }
+  });
   reviewHard.addEventListener('click', function(){ gradeReview(currentRule().n,'hard'); });
   reviewGood.addEventListener('click', function(){ gradeReview(currentRule().n,'good'); });
   reviewEasy.addEventListener('click', function(){ gradeReview(currentRule().n,'easy'); });
@@ -438,9 +704,30 @@
   lessonMarkDone.addEventListener('click', function(){ var lesson=LESSONS[lessonIndex]; markLessonDone(lesson.id); lessonProgress.textContent='Les '+(lessonIndex+1)+' van '+LESSONS.length+' · afgerond'; });
 
   modalClose.addEventListener('click', closeModal);
+  modalContextLinks.addEventListener('click', function(e){
+    var chip=e.target.closest('.context-chip');
+    if(chip){
+      var rule=getRuleByN(Number(chip.getAttribute('data-rule-n'))); if(!rule) return;
+      var idx=Number(chip.getAttribute('data-context-index')); if(Number.isNaN(idx)) return;
+      var ctx=(rule.contexts||[])[idx]; if(!ctx) return;
+      openSubcard(rule, ctx); return;
+    }
+    var cat=e.target.closest('.waqf-category[data-waqf-tone]');
+    if(cat){
+      var rule=getRuleByN(Number(cat.getAttribute('data-rule-n'))); if(!rule) return;
+      openWaqfCategorySubcard(cat.getAttribute('data-waqf-tone'), rule);
+    }
+  });
+  modalExample.addEventListener('click', function(e){
+    var btn=e.target.closest('.symbol-hotspot'); if(!btn) return;
+    openSymbolSubcard(btn.getAttribute('data-rule-n'), btn.getAttribute('data-symbol-key'));
+  });
   modalOverlay.addEventListener('click', function(e){ if(e.target===modalOverlay) closeModal(); });
+  subcardClose.addEventListener('click', closeSubcard);
+  subcardOverlay.addEventListener('click', function(e){ if(e.target===subcardOverlay) closeSubcard(); });
 
   document.addEventListener('keydown', function(e){
+    if(!subcardOverlay.hidden && e.key==='Escape'){ closeSubcard(); return; }
     if(!modalOverlay.hidden && e.key==='Escape'){ closeModal(); return; }
     if(currentMode!=='flashcard') return;
     if(e.key==='ArrowRight') goNext();
@@ -450,9 +737,9 @@
 
   (function init(){
     var savedRuleN=state.lastRule||1;
-    order=getActiveRuleIndices();
+    order=getActiveRuleIndices('basis');
     currentPos=0;
     for(var i=0;i<order.length;i++){ if(RULES[order[i]].n===savedRuleN){ currentPos=i; break; } }
-    updateStudyUtilities(); renderGallery(''); renderProgress(); renderFlashcard(); updateQuizScore();
+    updateStudyUtilities(); renderGallery('', 'basis'); renderProgress(); renderFlashcard(); updateQuizScore();
   })();
 })();
