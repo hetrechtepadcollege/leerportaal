@@ -46,16 +46,34 @@ body {
     gap: 16px;
 }
 
-.back-link {
-    align-self: flex-start;
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 500;
-    transition: color 0.2s;
+.portal-home-wrap {
+    text-align: center;
+    margin: 8px auto 4px;
 }
 
-.back-link:hover { color: #fff; }
+.portal-home-btn {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.70);
+    font-weight: 600;
+    padding: 8px 24px;
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
+}
+
+.portal-home-btn:hover {
+    color: var(--gold);
+}
+
+/* Onderaan de pagina: lichte stijl op lichte achtergrond */
+.app-main ~ .portal-home-wrap .portal-home-btn {
+    color: var(--muted);
+}
+
+.app-main ~ .portal-home-wrap .portal-home-btn:hover {
+    color: var(--blue);
+}
 
 .header-inner {
     display: flex;
