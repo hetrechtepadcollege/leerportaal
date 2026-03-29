@@ -370,8 +370,8 @@ body::before {
 .rule-arabic {
   margin-top: .5rem;
   font-family: 'AlQalamQuranMajeed', 'Amiri', serif;
-  font-size: clamp(1.3rem, 4vw, 1.7rem);
-  line-height: 2.4;
+  font-size: clamp(1.75rem, 4.8vw, 2.35rem);
+  line-height: 2.55;
   word-spacing: .15em;
   color: var(--brand);
 }
@@ -480,8 +480,8 @@ body::before {
 .fc-arabic {
   margin-top: 1rem;
   font-family: 'AlQalamQuranMajeed', 'Amiri', serif;
-  font-size: clamp(2.2rem, 8vw, 3.5rem);
-  line-height: 2.4;
+  font-size: clamp(2.6rem, 8.4vw, 4.1rem);
+  line-height: 2.6;
   word-spacing: .15em;
   color: var(--brand);
 }
@@ -668,7 +668,7 @@ body::before {
 .quiz-example {
   margin-top: .65rem;
   font-family: 'AlQalamQuranMajeed', 'Amiri', serif;
-  font-size: clamp(1.6rem, 6vw, 2.4rem);
+  font-size: clamp(1.9rem, 6.2vw, 2.8rem);
   line-height: 2.4;
   color: var(--brand);
 }
@@ -804,7 +804,7 @@ body::before {
   display: block;
   margin-top: .4rem;
   font-family: 'AlQalamQuranMajeed', 'Amiri', serif;
-  font-size: clamp(1.4rem, 6vw, 2rem);
+  font-size: clamp(1.8rem, 6.4vw, 2.4rem);
   line-height: 2.4;
   color: var(--brand);
 }
@@ -879,8 +879,8 @@ body::before {
 .modal-arabic {
   margin-top: .55rem;
   font-family: 'AlQalamQuranMajeed', 'Amiri', serif;
-  font-size: clamp(2.2rem, 8vw, 3.2rem);
-  line-height: 2.4;
+  font-size: clamp(2.9rem, 9vw, 4.4rem);
+  line-height: 2.7;
   word-spacing: .15em;
   color: #1f294d;
 }
