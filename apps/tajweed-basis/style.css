@@ -610,6 +610,19 @@ body::before {
   border-radius: 3px;
   padding: 0 .1em;
 }
+.tw-highlight-ar {
+  font-family: 'AlQalamQuranMajeed', 'Amiri', serif;
+  font-size: clamp(1.5rem, 4.8vw, 2.1rem);
+  line-height: 1.9;
+  direction: rtl;
+  unicode-bidi: isolate;
+  display: inline-block;
+  padding: 0 .2em;
+}
+.modal .tw-highlight-ar {
+  font-size: clamp(1.9rem, 5.8vw, 2.7rem);
+  line-height: 2;
+}
 
 /* ── Articulation ── */
 .articulation-hint {

@@ -170,7 +170,12 @@
   function buildDefaultOrder(){ var a=[]; for(var i=0;i<RULES.length;i++) a.push(i); return a; }
   function shuffleArray(arr){ var a=arr.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
   function escapeHtml(t){ return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
-  function highlightArabic(t){ return escapeHtml(t).replace(/\[(.*?)\]/g,'<span class="tw-highlight">$1</span>'); }
+  function highlightArabic(t){
+    return escapeHtml(t).replace(/\[(.*?)\]/g, function(_, token){
+      var isArabic = /[\u0600-\u06FF]/.test(token);
+      return '<span class="tw-highlight' + (isArabic ? ' tw-highlight-ar' : '') + '">' + token + '</span>';
+    });
+  }
   function isLearned(n){ return state.learned.indexOf(n)!==-1; }
   function isDifficult(n){ return state.difficult.indexOf(n)!==-1; }
   function setLearned(n,val){ var p=state.learned.indexOf(n); if(val&&p===-1)state.learned.push(n); if(!val&&p!==-1)state.learned.splice(p,1); saveState(); renderProgress(); }
