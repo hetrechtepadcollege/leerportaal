@@ -90,57 +90,62 @@ body::before {
   animation: pageIn .5s cubic-bezier(.22, 1, .36, 1);
 }
 
-/* ── Portal Hero (matches landing page) ── */
-.portal-hero {
-  width: 100%;
-  background: #1f294d;
-  padding: 2.1rem 1rem 1.9rem;
-  margin-bottom: .8rem;
-}
-
-.portal-hero-logo {
-  width: min(680px, 100%);
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
 /* ── Header ── */
 .app-header {
+  width: calc(100% + 2.5rem);
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
+  background: #1f294d;
+  padding: 1rem 1.25rem 1.4rem;
   display: flex;
-  gap: .75rem;
+  flex-direction: column;
   align-items: center;
-  padding: 1.25rem 0;
+  gap: .9rem;
 }
 
-.back-link {
-  display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-pill);
-  color: var(--brand);
-  text-decoration: none;
-  font-size: 1.1rem;
-  transition: all .2s ease;
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .6rem;
+  text-align: center;
 }
-.back-link:hover {
-  background: var(--brand-soft);
+
+.header-logo {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
 }
 
 .header-title {
-  font-family: 'Cinzel', serif;
-  color: var(--brand);
-  font-size: clamp(1.2rem, 4vw, 1.65rem);
+  color: #fff;
+  font-size: clamp(1.45rem, 4.8vw, 2rem);
   font-weight: 700;
-  letter-spacing: .02em;
 }
 
 .header-subtitle {
-  font-style: italic;
-  font-size: .85rem;
-  color: var(--text-soft);
+  font-size: .95rem;
+  color: rgba(255, 255, 255, .74);
+}
+
+.portal-home-wrap {
+  text-align: center;
   margin-top: .1rem;
+}
+
+.portal-home-btn {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  color: rgba(255, 255, 255, .72);
+  font-weight: 600;
+  padding: .38rem 1rem;
+  font-size: .9rem;
+  transition: color .2s ease;
+}
+
+.portal-home-btn:hover {
+  color: #d4af37;
 }
 
 /* ── Intro / Quran Verse Hero ── */
@@ -961,12 +966,15 @@ body::before {
 
 /* ── Responsive ── */
 @media (max-width: 760px) {
-  .portal-hero {
-    padding: 1.4rem .8rem 1.3rem;
+  .app-header {
+    width: calc(100% + 1.7rem);
+    margin-left: -.85rem;
+    margin-right: -.85rem;
+    padding: .95rem .9rem 1.2rem;
   }
 
-  .portal-hero-logo {
-    width: min(92vw, 560px);
+  .header-logo {
+    max-width: 220px;
   }
 
   .app-shell { padding: 0 .85rem 2rem; }
