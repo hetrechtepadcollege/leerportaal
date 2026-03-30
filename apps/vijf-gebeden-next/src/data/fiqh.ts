@@ -408,6 +408,15 @@ export const fiqhItems: FiqhItem[] = [
 
   // ── Makrūh ──────────────────────────────────────────────────────
   {
+    id: 'm0',
+    categorie: 'makruh',
+    titel: 'Verboden tijden voor nafl-gebeden',
+    omschrijving:
+      'Nafl-gebeden zijn verboden op zes momenten: (1) tijdens zonsopkomst, de zawāl (islamitische middag) en zonsondergang; (2) na de ochtendschemering (subḥ ṣādiq) tot zonsopkomst, behalve de 2 soenna van Fajr; (3) na het farḍ van ʿAṣr tot Maghrib; (4) tijdens de khuṭbah van de Jumuʿah; (5) vóór het ʿEid-gebed (thuis, op het gebedsterrein of in de moskee); (6) ná het ʿEid-gebed — tenzij dit thuis plaatsvindt.',
+    bron: 'Fatāwā ʿĀlamgīrī, Durr al-Mukhtār, Bahāre Sharīʿat, BSI N2',
+    nota: 'Bij de verboden tijden onder (1) is zelfs het farḍ-gebed niet toegestaan, met uitzondering van het actuele ʿAṣr-gebed dat tijdens zonsondergang alsnog mag worden verricht.',
+  },
+  {
     id: 'm1',
     categorie: 'makruh',
     titel: 'Onnodige bewegingen',
