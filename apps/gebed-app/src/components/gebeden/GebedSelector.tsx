@@ -10,16 +10,6 @@ interface Props {
   onSelect: (index: number) => void
 }
 
-// Tijdlabel per gebed
-const tijdLabel: Record<string, string> = {
-  fajr: 'Voor zonsopgang',
-  dhuhr: 'Middag',
-  asr: 'Middag/namiddag',
-  maghrib: 'Bij zonsondergang',
-  isha: 'Nacht',
-  witr: 'Na ʿIshā',
-}
-
 export default function GebedSelector({ gebeden, actieveIndex, onSelect }: Props) {
   return (
     <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 mb-6">
@@ -58,7 +48,7 @@ export default function GebedSelector({ gebeden, actieveIndex, onSelect }: Props
               'block text-[0.62rem] mt-1.5 leading-tight',
               isActief ? 'text-white/60' : 'text-[#8898b0]',
             )}>
-              {tijdLabel[gebed.id] ?? ''}
+              {gebed.betekenis}
             </span>
           </motion.button>
         )
