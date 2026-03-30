@@ -15,7 +15,7 @@ export const weetjes: Weetje[] = [
   },
   {
     icon: '🏆',
-    titel: 'Het geliefdste deed bij Allah',
+    titel: 'De meest geliefdse daad bij Allah',
     tekst:
       'Een metgezel vroeg de Profeet ﷺ welk deed Allah het meest liefheeft. Het antwoord: "Het gebed op de vastgestelde tijd (ṣalāt op zijn tijd)." Gevolgd door: het eren van de ouders, en daarna inspanning op het pad van Allah.',
   },
