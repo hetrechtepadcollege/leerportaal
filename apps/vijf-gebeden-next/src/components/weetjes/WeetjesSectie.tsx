@@ -1,3 +1,5 @@
+'use client'
+
 import { motion } from 'framer-motion'
 import type { Weetje } from '@/types'
 import { weetjes } from '@/data/weetjes'

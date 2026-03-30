@@ -2,15 +2,13 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'De Vijf Gebeden | Het Rechte Pad College',
-  description:
-    "Leer alles over de vijf dagelijkse gebeden: tijden, raka'at, betekenis en een quiz.",
+  title: 'Het Gebed | Het Rechte Pad College',
+  description: 'Ontdek en leer alles over het gebed.',
   openGraph: {
     type: 'article',
     url: 'https://leer.hetrechtepadcollege.nl/apps/vijf-gebeden/',
-    title: 'De Vijf Gebeden — Alles over de dagelijkse gebeden',
-    description:
-      "Leer alles over de vijf dagelijkse gebeden: tijden, raka'at, betekenis en een quiz.",
+    title: 'Het Gebed — Ontdek en leer alles over het gebed',
+    description: 'Ontdek en leer alles over het gebed.',
     images: [
       {
         url: 'https://leer.hetrechtepadcollege.nl/apps/vijf-gebeden/images/share-banner.png',
@@ -19,9 +17,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'De Vijf Gebeden — Alles over de dagelijkse gebeden',
-    description:
-      "Leer alles over de vijf dagelijkse gebeden: tijden, raka'at, betekenis en een quiz.",
+    title: 'Het Gebed — Ontdek en leer alles over het gebed',
+    description: 'Ontdek en leer alles over het gebed.',
     images: ['https://leer.hetrechtepadcollege.nl/apps/vijf-gebeden/images/share-banner.png'],
   },
 }
@@ -35,10 +32,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96" />
         <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
         <link rel="manifest" href="/icons/site.webmanifest" />
-        <meta
-          httpEquiv="Content-Security-Policy"
-          content="default-src 'self'; script-src 'self' 'unsafe-inline' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://hetrechtepadcollege.goatcounter.com;"
-        />
+        {/* CSP wordt ingesteld via serverheaders (Cloudflare / GitHub Pages configuratie),
+            niet via meta-tag — meta-tag blokkeert Next.js dev-runtime (eval, WebSocket HMR) */}
       </head>
       <body>
         {children}

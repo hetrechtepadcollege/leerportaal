@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function AppHeader() {
   return (
-    <header className="w-full bg-[#1f294d] px-6 pb-6 pt-4 flex flex-col items-center gap-4">
+    <header className="w-full bg-[#1f294d] px-6 pb-4 pt-4 flex flex-col items-center gap-4">
       <div className="flex flex-col items-center gap-3 text-center">
         <Image
           src="/images/HRPC-logo.png"
@@ -14,9 +14,9 @@ export default function AppHeader() {
           priority
         />
         <div>
-          <h1 className="text-[1.8rem] font-bold text-white m-0">De Vijf Gebeden</h1>
+          <h1 className="text-[1.8rem] font-bold text-white m-0">Het Gebed</h1>
           <p className="mt-1 text-[0.95rem] text-white/70">
-            Leer alles over de dagelijkse gebeden
+            Ontdek en leer alles over het gebed
           </p>
         </div>
       </div>
