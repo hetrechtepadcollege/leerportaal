@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/icons/favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+    <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/icons/site.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://hetrechtepadcollege.goatcounter.com;">
+    <title>De Vijf Gebeden | Het Rechte Pad College</title>
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://leer.hetrechtepadcollege.nl/apps/vijf-gebeden/">
+    <meta property="og:title" content="De Vijf Gebeden — Alles over de dagelijkse gebeden">
+    <meta property="og:description" content="Leer alles over de vijf dagelijkse gebeden: tijden, raka'at, betekenis en een quiz.">
+    <meta property="og:image" content="https://leer.hetrechtepadcollege.nl/apps/vijf-gebeden/images/share-banner.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="De Vijf Gebeden — Alles over de dagelijkse gebeden">
+    <meta property="twitter:description" content="Leer alles over de vijf dagelijkse gebeden: tijden, raka'at, betekenis en een quiz.">
+    <meta property="twitter:image" content="https://leer.hetrechtepadcollege.nl/apps/vijf-gebeden/images/share-banner.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+    <header class="app-header">
+        <div class="header-inner">
+            <img src="../../images/HRPC-logo.png" alt="Het Rechte Pad College" class="header-logo">
+            <div class="header-text">
+                <h1>De Vijf Gebeden</h1>
+                <p class="header-subtitle">Leer alles over de dagelijkse gebeden</p>
+            </div>
+        </div>
+        <div class="portal-home-wrap">
+            <a href="../../" class="portal-home-btn">← Terug naar Leerportaal</a>
+        </div>
+    </header>
+    <main class="app-main">
+        <div class="gebed-selector" id="gebedSelector" role="tablist"></div>
+        <div class="card gebed-detail" id="gebedDetail"></div>
+        <section class="quiz-sectie">
+            <h2 class="quiz-titel">🎯 Test je kennis</h2>
+            <div class="card quiz-kaart" id="quizKaart">
+                <p class="quiz-vraag" id="quizVraag"></p>
+                <div class="quiz-opties" id="quizOpties"></div>
+                <p class="quiz-feedback" id="quizFeedback"></p>
+                <button class="btn-primary hidden" id="quizVolgende" onclick="volgendeQuizVraag()">Volgende →</button>
+            </div>
+        </section>
+        <section class="weetjes-sectie">
+            <h2 class="weetjes-titel">📚 Weetjes over de ṣalāt</h2>
+            <div class="weetjes-container" id="weetjesContainer"></div>
+        </section>
+    </main>
+
+    <div class="portal-home-wrap">
+        <a href="../../" class="portal-home-btn">← Terug naar Leerportaal</a>
+    </div>
+
+    <footer class="app-footer">
+        <p>© 2026 Het Rechte Pad College</p>
+        <a href="https://www.hetrechtepad.nl" target="_blank" rel="noopener noreferrer" class="footer-link">www.hetrechtepad.nl</a>
+    </footer>
+</div>
+<script src="script.js"></script>
+<script data-goatcounter="https://hetrechtepadcollege.goatcounter.com/count"
+        async src="https://gc.zgo.at/count.js"
+        integrity="sha384-DGiREytotlUiLflu8vLo0vvfxKWn36pKPT1ZBhh3R+3vhwrS/4p3H9eys9Zr2bPQ"
+        crossorigin="anonymous"></script>
+</body>
+</html>
