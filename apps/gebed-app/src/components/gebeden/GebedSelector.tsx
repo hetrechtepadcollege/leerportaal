@@ -10,13 +10,19 @@ interface Props {
   onSelect: (index: number) => void
 }
 
+// Tijdlabel per gebed
+const tijdLabel: Record<string, string> = {
+  fajr: 'Voor zonsopgang',
+  dhuhr: 'Middag',
+  asr: 'Middag/namiddag',
+  maghrib: 'Bij zonsondergang',
+  isha: 'Nacht',
+  witr: 'Na ʿIshā',
+}
+
 export default function GebedSelector({ gebeden, actieveIndex, onSelect }: Props) {
   return (
-    <div
-      role="tablist"
-      className="flex gap-2 mb-5 overflow-x-auto pb-1 scroll-smooth [-webkit-overflow-scrolling:touch]
-        [scrollbar-width:thin] [scrollbar-color:rgba(31,41,77,0.08)_rgba(31,41,77,0.09)]"
-    >
+    <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 mb-6">
       {gebeden.map((gebed, index) => {
         const isActief = index === actieveIndex
         return (
@@ -25,27 +31,35 @@ export default function GebedSelector({ gebeden, actieveIndex, onSelect }: Props
             role="tab"
             aria-selected={isActief}
             onClick={() => onSelect(index)}
-            whileHover={{ y: -2 }}
+            whileHover={{ y: -2, transition: { duration: 0.15 } }}
             whileTap={{ scale: 0.97 }}
-            transition={{ duration: 0.15 }}
             className={cn(
-              'flex-shrink-0 px-4 py-3 rounded-xl text-center min-w-[90px] font-["Plus_Jakarta_Sans",sans-serif]',
-              'border-[1.5px] cursor-pointer transition-all duration-[0.18s]',
+              'flex flex-col items-center justify-between p-3 rounded-xl text-center cursor-pointer',
+              'transition-all duration-200 border',
               isActief
-                ? 'border-[#1f294d] bg-[rgba(31,41,77,0.08)]'
-                : 'border-[rgba(31,41,77,0.09)] bg-white hover:border-[#d4af37] hover:shadow-card',
+                ? 'bg-[#1f294d] border-[#1f294d] shadow-md text-white'
+                : 'bg-white border-transparent shadow-[0_1px_4px_rgba(31,41,77,0.10)] text-[#1c2340] hover:border-[#1f294d]/20 hover:shadow-md',
             )}
           >
-            <span className="block text-[1.5rem] mb-1">{gebed.emoji}</span>
-            <span
-              className={cn(
-                'block text-[0.78rem] font-bold',
-                isActief ? 'text-[#1f294d]' : 'text-[#1c2340]',
-              )}
-            >
+            <span className="text-[1.4rem] mb-1 leading-none">{gebed.emoji}</span>
+            <span className={cn(
+              'block text-[0.78rem] font-bold leading-tight mb-1',
+              isActief ? 'text-white' : 'text-[#1c2340]',
+            )}>
               {gebed.naam}
             </span>
-            <span className="block text-[0.85rem] text-[#1f294d] mt-0.5">{gebed.arabisch}</span>
+            <span className={cn(
+              'block text-[1rem] leading-none mt-auto',
+              isActief ? 'text-white/80' : 'text-[#1f294d]',
+            )}>
+              {gebed.arabisch}
+            </span>
+            <span className={cn(
+              'block text-[0.62rem] mt-1.5 leading-tight',
+              isActief ? 'text-white/60' : 'text-[#8898b0]',
+            )}>
+              {tijdLabel[gebed.id] ?? ''}
+            </span>
           </motion.button>
         )
       })}
