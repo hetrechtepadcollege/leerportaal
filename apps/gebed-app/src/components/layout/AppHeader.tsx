@@ -1,17 +1,18 @@
-import Image from 'next/image'
 import Link from 'next/link'
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
 export default function AppHeader() {
   return (
     <header className="w-full bg-[#1f294d] px-6 pb-4 pt-4 flex flex-col items-center gap-4">
       <div className="flex flex-col items-center gap-3 text-center">
-        <Image
-          src="/images/HRPC-logo.png"
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`${basePath}/images/HRPC-logo.png`}
           alt="Het Rechte Pad College"
           width={240}
           height={80}
           className="w-full max-w-[240px] h-auto"
-          priority
         />
         <div>
           <h1 className="text-[1.8rem] font-bold text-white m-0">Het Gebed</h1>
