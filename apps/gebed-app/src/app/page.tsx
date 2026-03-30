@@ -10,7 +10,6 @@ import ModulePlaceholder from '@/components/layout/ModulePlaceholder'
 
 import GebedSelector from '@/components/gebeden/GebedSelector'
 import GebedDetail from '@/components/gebeden/GebedDetail'
-import QuizSectie from '@/components/quiz/QuizSectie'
 import WeetjesSectie from '@/components/weetjes/WeetjesSectie'
 import FiqhModule from '@/components/fiqh/FiqhModule'
 import SituatiesModule from '@/components/situaties/SituatiesModule'
@@ -48,7 +47,6 @@ export default function HetGebed() {
               onSelect={handleSelectGebed}
             />
             <GebedDetail gebed={gebeden[actieveGebedIndex]} />
-            <QuizSectie />
             <WeetjesSectie />
           </>
         )
