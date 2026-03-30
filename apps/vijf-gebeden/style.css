@@ -243,8 +243,14 @@ body {
     border-radius: 10px;
     padding: 12px 8px;
     text-align: center;
-    border: 1px solid var(--border);
+    border: 3px solid var(--border);
 }
+
+.rakat-box.rakat-fard        { border-color: #1a7a45; }
+.rakat-box.rakat-soenna-mua  { border-color: #1a3a8a; }
+.rakat-box.rakat-soenna-ghayr { border-color: #4f8fd4; }
+.rakat-box.rakat-wajib       { border-color: #c96a00; }
+.rakat-box.rakat-nafl        { border-color: #b89000; }
 
 .rakat-box .rb-getal {
     font-size: 1.6rem;
@@ -258,6 +264,28 @@ body {
     margin-top: 2px;
     font-weight: 500;
 }
+
+.rakat-legenda {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
+.rl-item {
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 2px 9px;
+    border-radius: 20px;
+    border: 2px solid;
+}
+
+.rl-item.rl-fard         { color: #1a7a45; border-color: #1a7a45; background: rgba(26,122,69,0.08); }
+.rl-item.rl-soenna-mua   { color: #1a3a8a; border-color: #1a3a8a; background: rgba(26,58,138,0.08); }
+.rl-item.rl-soenna-ghayr { color: #1a60aa; border-color: #4f8fd4; background: rgba(79,143,212,0.10); }
+.rl-item.rl-wajib        { color: #c96a00; border-color: #c96a00; background: rgba(201,106,0,0.08); }
+.rl-item.rl-nafl         { color: #7a5c00; border-color: #b89000; background: rgba(184,144,0,0.08); }
 
 .gd-info-rij {
     display: flex;
@@ -405,6 +433,67 @@ body {
 
 .btn-primary.hidden {
     display: none;
+}
+
+.weetjes-sectie {
+    margin-top: 24px;
+}
+
+.weetjes-titel {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: var(--text);
+}
+
+.weetjes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.weetje-kaart {
+    background: var(--card-bg);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    padding: 16px 18px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.wk-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.wk-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.wk-titel {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.wk-tekst {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 640px) {
+    .weetje-kaart {
+        padding: 14px 14px;
+        gap: 12px;
+    }
 }
 
 .app-footer {
