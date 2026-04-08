@@ -11,6 +11,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   update-sri:
@@ -73,15 +74,14 @@ jobs:
               print("Hash ongewijzigd — geen bestanden bijgewerkt.")
           PYEOF
 
-      - name: Commit en push indien gewijzigd
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
-          if git diff --cached --quiet; then
-            echo "Geen wijzigingen — niets te committen."
-          else
-            SHORT="${{ steps.sri.outputs.hash }}"
-            git commit -m "GoatCounter SRI hash bijgewerkt (sha384-${SHORT:0:20}…)"
-            git push
-          fi
+      - name: Maak PR aan indien gewijzigd
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "GoatCounter SRI hash bijgewerkt"
+          branch: bot/update-goatcounter-sri
+          delete-branch: true
+          title: "GoatCounter SRI hash bijgewerkt"
+          body: |
+            De SHA-384 integrity-hash van `gc.zgo.at/count.js` is gewijzigd.
+            Deze PR is automatisch aangemaakt door de dagelijkse SRI-check workflow.
+          labels: automated
