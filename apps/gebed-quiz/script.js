@@ -317,7 +317,7 @@ const questions = [
     {
         type: "scenario",
         category: "Voorwaarden & uitvoering",
-        scenario: "Yusuf staat klaar om zijn gebed te beginnen. Na het maken van zijn intentie heft hij beide handen op tot schouderhoogte en verricht de openingstakbīr — het uitspreken van Allāhu Akbar terwijl je beide handen optilt tot de hoogte van de oren (bij de man) of de schouders (bij de vrouw).",
+        scenario: "Yusuf staat klaar om zijn gebed te beginnen. Na het maken van zijn intentie heft hij beide handen op tot schouderhoogte en verricht de openingstakbīr — het uitspreken van Allāhu Akbar terwijl je beide handen optilt.",
         question: "Is de manier waarop Yusuf zijn handen opheft correct voor een man?",
         answers: [
             { text: "A) Ja, dit is de juiste hoogte voor iedereen", correct: false },
