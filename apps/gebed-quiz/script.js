@@ -369,7 +369,7 @@ const questions = [
     {
         type: "scenario",
         category: "Voorwaarden & uitvoering",
-        scenario: "Suleiman bidt zijn ʿAṣr-gebed (namiddaggebed, 4 rakʿāt — gebedseenheden). In de derde rakʿah (gebedseenheid) leest hij soera al-Fātiḥa en daarna ook nog soera al-Ikhlāṣ.",
+        scenario: "Suleiman bidt zijn ʿAṣr-gebed (namiddaggebed). In de derde rakʿah (gebedseenheid) leest hij soera al-Fātiḥa en daarna ook nog soera al-Ikhlāṣ.",
         question: "Is het lezen van de extra soera in de derde rakʿah (gebedseenheid) van een farḍ-gebed (verplicht gebed) correct?",
         answers: [
             { text: "A) Ja, het is aanbevolen om in elke rakʿah (gebedseenheid) een extra soera te lezen", correct: false },
