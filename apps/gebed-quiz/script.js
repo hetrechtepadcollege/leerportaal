@@ -421,14 +421,14 @@ const questions = [
     {
         type: "scenario",
         category: "Gebedstijden",
-        scenario: "Nadia reist met de auto van Rotterdam naar Groningen, een afstand van ruim 220 km. Ze twijfelt of ze haar ʿAṣr-gebed (namiddaggebed) mag inkorten — qasr (het inkorten van het gebed van 4 naar 2 rakʿāt — gebedseenheden) — tijdens de reis.",
-        question: "Mag Nadia haar gebed inkorten (qasr) tijdens deze reis?",
+        scenario: "Nadia reist met de auto van Rotterdam naar Groningen, een afstand van ruim 220 km. Ze twijfelt of ze haar ʿAṣr-gebed (namiddaggebed) mag inkorten — qaṣr (het inkorten van het gebed van 4 naar 2 rakʿāt — gebedseenheden) — tijdens de reis.",
+        question: "Mag Nadia haar gebed inkorten (qaṣr) tijdens deze reis?",
         answers: [
-            { text: "A) Nee, qasr (het inkorten) is alleen buiten Nederland toegestaan", correct: false },
-            { text: "B) Ja, de minimale reisafstand voor qasr (het inkorten) is 92 km en Nadia reist ruim verder", correct: true },
-            { text: "C) Nee, qasr (het inkorten) is alleen voor mannen", correct: false }
+            { text: "A) Nee, qaṣr (het inkorten) is alleen buiten Nederland toegestaan", correct: false },
+            { text: "B) Ja, de minimale reisafstand voor qaṣr (het inkorten) is 92 km en Nadia reist ruim verder", correct: true },
+            { text: "C) Nee, qaṣr (het inkorten) is alleen voor mannen", correct: false }
         ],
-        uitleg: "Qasr (het inkorten van een farḍ-gebed — verplicht gebed — van 4 rakʿāt naar 2 rakʿāt) is toegestaan wanneer men een reisafstand van minimaal 92 km (48 mijl) aflegt. Nadia's reis van Rotterdam naar Groningen is ruim 220 km en overschrijdt deze grens ruimschoots. Qasr is voor haar dus toegestaan.",
+        uitleg: "Qaṣr (het inkorten van een farḍ-gebed — verplicht gebed — van 4 rakʿāt naar 2 rakʿāt) is toegestaan wanneer men een reisafstand van minimaal 92 km (48 mijl) aflegt. Nadia's reis van Rotterdam naar Groningen is ruim 220 km en overschrijdt deze grens ruimschoots. Qaṣr is voor haar dus toegestaan.",
         source: "N2_BSI_GP_FINAL.pdf p.14"
     },
     {
