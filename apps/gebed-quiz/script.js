@@ -317,7 +317,7 @@ const questions = [
     {
         type: "scenario",
         category: "Voorwaarden & uitvoering",
-        scenario: "Yusuf staat klaar om zijn gebed te beginnen. Na het maken van zijn intentie heft hij beide handen op tot schouderhoogte terwijl hij 'Allāhu Akbar' (de openingstakbīr — de openingsformule van het gebed) zegt.",
+        scenario: "Yusuf staat klaar om zijn gebed te beginnen. Na het maken van zijn intentie heft hij beide handen op tot schouderhoogte en verricht de openingstakbīr — het uitspreken van Allāhu Akbar terwijl je beide handen optilt tot de hoogte van de oren (bij de man) of de schouders (bij de vrouw).",
         question: "Is de manier waarop Yusuf zijn handen opheft correct voor een man?",
         answers: [
             { text: "A) Ja, dit is de juiste hoogte voor iedereen", correct: false },
@@ -692,6 +692,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const categoryBadge = document.getElementById("category-badge");
     const scenarioBlock = document.getElementById("scenario-block");
     const scenarioTekst = document.getElementById("scenario-tekst");
+    const modeBackWrap = document.getElementById("mode-back-wrap");
+    const modeTerugQuizBtn = document.getElementById("mode-terug-quiz-btn");
 
     function startQuiz(mode) {
         quizMode = mode;
@@ -728,6 +730,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     if (modeKeuzeBtn) {
         modeKeuzeBtn.addEventListener("click", () => location.reload());
+    }
+    if (modeTerugQuizBtn) {
+        modeTerugQuizBtn.addEventListener("click", () => location.reload());
     }
 
     // Auto-start als er een opgeslagen modus is (na herladen via "Opnieuw spelen")
@@ -872,6 +877,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function showResult() {
         resetState();
         uitlegContainer.classList.add("hide");
+        if (modeBackWrap) modeBackWrap.classList.add("hide");
         progressBar.style.width = "100%";
         qTextElement.innerText = "Māshā Allāh! Je hebt de Kennisquiz Gebed afgerond.";
         scoreText.innerHTML = `Eindscore: ${score} van de ${activeQuestions.length}<br><br>Moge Allah ons allen helpen ons gebed te onderhouden met aandacht, eerbiedigheid en toewijding. Āmīn!`;

@@ -516,6 +516,21 @@ body {
     margin: 0;
 }
 
+/* === TERUG-NAAR-BEGIN KNOP (in quiz) === */
+.mode-back-wrap {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.mode-terug-btn {
+    width: auto !important;
+    font-size: 0.80rem !important;
+    padding: 7px 20px !important;
+    font-weight: 600 !important;
+}
+
 /* === RESPONSIVE === */
 @media (max-width: 480px) {
     .quiz-card {
