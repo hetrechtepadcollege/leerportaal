@@ -417,6 +417,67 @@ body {
     to   { opacity: 1; }
 }
 
+/* === MODUSSKEUZE === */
+.mode-selector-screen {
+    width: 100%;
+    padding: 12px 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mode-intro {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.mode-buttons {
+    display: flex;
+    gap: 14px;
+    width: 100%;
+}
+
+.btn-mode {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 22px 14px 18px;
+    background: var(--gold-bg);
+    border: 1.5px solid var(--gold-dim);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+    text-align: center;
+}
+
+.btn-mode:hover {
+    border-color: var(--gold);
+    background: rgba(212, 175, 55, 0.16);
+    transform: translateY(-2px);
+}
+
+.mode-icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.mode-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+.mode-desc {
+    font-size: 0.76rem;
+    color: var(--muted);
+    line-height: 1.45;
+}
+
 /* === SCENARIO BLOCK === */
 .scenario-block {
     width: 100%;
