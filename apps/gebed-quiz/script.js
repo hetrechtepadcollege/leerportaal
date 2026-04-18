@@ -176,7 +176,7 @@ const questions = [
             { text: "B) 6", correct: true },
             { text: "C) 7", correct: false }
         ],
-        uitleg: "De ṣalāt kent zes voorwaarden: reinheid, het bedekken van de intieme delen (ʿawrah), het richten naar de qiblah, het intreden van de gebedstijd, de intentie en de openingstakbīr. Zonder deze voorwaarden is het gebed niet geldig.",
+        uitleg: "De ṣalāt kent zes voorwaarden: reinheid, het bedekken van de intieme delen (ʿawrah), het richten naar de qiblah, het intreden van de gebedstijd, de intentie en de openingstakbīr (het uitspreken van Allāhu Akbar terwijl je beide handen optilt). Zonder deze voorwaarden is het gebed niet geldig.",
         source: "BSI_N1.pdf p.79"
     },
     {
@@ -324,13 +324,13 @@ const questions = [
             { text: "B) Nee, mannen heffen hun handen op tot de hoogte van de oren", correct: true },
             { text: "C) Nee, mannen heffen hun handen helemaal niet op", correct: false }
         ],
-        uitleg: "Mannen heffen bij de openingstakbīr (de openingsformule) beide handen op tot de hoogte van de oren, waarbij de duimen de oorlellen aanraken en de handpalmen naar de qiblah (gebedsrichting) zijn gericht. Vrouwen heffen hun handen op tot schouderhoogte — niet hoger. Yusuf moet dus zijn handen hoger heffen.",
+        uitleg: "Mannen heffen bij de openingstakbīr (het uitspreken van Allāhu Akbar terwijl je beide handen optilt) beide handen op tot de hoogte van de oren, waarbij de duimen de oorlellen aanraken en de handpalmen naar de qiblah (gebedsrichting) zijn gericht. Vrouwen heffen hun handen op tot schouderhoogte — niet hoger. Yusuf moet dus zijn handen hoger heffen.",
         source: "BSI Les 18 (lesbrief p.1); BSI_N1.pdf p.82"
     },
     {
         type: "scenario",
         category: "Voorwaarden & uitvoering",
-        scenario: "Hafsa bidt haar Ẓuhr-gebed (middaggebed) thuis. Na de openingstakbīr (de openingsformule 'Allāhu Akbar') vouwt ze haar handen onder haar navel, zoals ze haar vader ziet doen.",
+        scenario: "Hafsa bidt haar Ẓuhr-gebed (middaggebed) thuis. Na de openingstakbīr (het uitspreken van Allāhu Akbar terwijl je beide handen optilt) vouwt ze haar handen onder haar navel, zoals ze haar vader ziet doen.",
         question: "Vouwt Hafsa haar handen op de juiste wijze?",
         answers: [
             { text: "A) Ja, iedereen vouwt de handen onder de navel", correct: false },
@@ -553,7 +553,7 @@ const inactiveQuestionBank = [
             { text: "B) De iqāmah", correct: false },
             { text: "C) De khuṭbah", correct: false }
         ],
-        uitleg: "De openingstakbīr, het uitspreken van Allāhu Akbar bij het begin van het gebed, behoort tot de zes voorwaarden van de ṣalāt (gebed)."
+        uitleg: "De openingstakbīr (het uitspreken van Allāhu Akbar terwijl je beide handen optilt) behoort tot de zes voorwaarden van de ṣalāt (gebed)."
     },
     {
         question: "Welke handeling is wājib (essentieel) in de ṣalāt (gebed)?",
