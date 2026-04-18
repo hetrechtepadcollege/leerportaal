@@ -417,6 +417,44 @@ body {
     to   { opacity: 1; }
 }
 
+/* === SCENARIO BLOCK === */
+.scenario-block {
+    width: 100%;
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid var(--gold-dim);
+    border-left: 4px solid var(--gold);
+    border-radius: 10px;
+    padding: 14px 16px 12px;
+    margin-bottom: 18px;
+}
+
+.scenario-header {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 8px;
+}
+
+.scenario-icon {
+    font-size: 0.95rem;
+    line-height: 1;
+}
+
+.scenario-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+}
+
+.scenario-block p {
+    font-size: 0.93rem;
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 0;
+}
+
 /* === RESPONSIVE === */
 @media (max-width: 480px) {
     .quiz-card {

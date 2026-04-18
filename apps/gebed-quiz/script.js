@@ -310,6 +310,165 @@ const questions = [
         ],
         uitleg: "Qaḍā betekent dat je een gebed in een later tijdstip verricht nadat de oorspronkelijke tijd is verstreken. Dit geldt voor gebeden die je hebt gemist en alsnog moet inhalen.",
         source: "Website: Het inhalen van een levenslang aantal gemiste gebeden (2023-06-05); BSI_N1.pdf p.126"
+    },
+
+    // --- Scenario-vragen (29–40) ---
+    // Bronnen: BSI_N1.pdf, BSI Les 18 (presentatie + lesbrief), N2_BSI_GP_FINAL.pdf
+    {
+        type: "scenario",
+        category: "Voorwaarden & uitvoering",
+        scenario: "Yusuf staat klaar om zijn gebed te beginnen. Na het maken van zijn intentie heft hij beide handen op tot schouderhoogte terwijl hij 'Allāhu Akbar' zegt.",
+        question: "Is de manier waarop Yusuf zijn handen opheft correct voor een man?",
+        answers: [
+            { text: "A) Ja, dit is de juiste hoogte voor iedereen", correct: false },
+            { text: "B) Nee, mannen heffen hun handen op tot de hoogte van de oren", correct: true },
+            { text: "C) Nee, mannen heffen hun handen helemaal niet op", correct: false }
+        ],
+        uitleg: "Mannen heffen bij de openingstakbīr beide handen op tot de hoogte van de oren, waarbij de duimen de oorlellen aanraken en de handpalmen naar de qiblah zijn gericht. Vrouwen heffen hun handen op tot schouderhoogte — niet hoger. Yusuf moet dus zijn handen hoger heffen.",
+        source: "BSI Les 18 (lesbrief p.1); BSI_N1.pdf p.82"
+    },
+    {
+        type: "scenario",
+        category: "Voorwaarden & uitvoering",
+        scenario: "Hafsa bidt haar Ẓuhr-gebed thuis. Na de openingstakbīr vouwt ze haar handen onder haar navel, zoals ze haar vader ziet doen.",
+        question: "Vouwt Hafsa haar handen op de juiste wijze?",
+        answers: [
+            { text: "A) Ja, iedereen vouwt de handen onder de navel", correct: false },
+            { text: "B) Nee, vrouwen plaatsen hun handen op de borstkast, onder de boezem", correct: true },
+            { text: "C) Nee, vrouwen laten hun handen langs het lichaam hangen", correct: false }
+        ],
+        uitleg: "Mannen vouwen beide handen onder de navel (rechterhand op de rug van de linkerhand). Vrouwen vouwen hun handen hoger, op de borstkast, onder de boezem — de rechterhandpalm op de rug van de linkerhand. Hafsa moet haar handen dus hoger plaatsen dan haar vader doet.",
+        source: "BSI Les 18 (lesbrief p.1); BSI_N1.pdf p.82"
+    },
+    {
+        type: "scenario",
+        category: "Voorwaarden & uitvoering",
+        scenario: "Ahmad verricht de rukū'. Hij staat voorovergebogen met zijn handen op zijn knieën, de vingers gespreid en zijn rug recht, zodat zijn hoofd op één lijn staat met zijn rug.",
+        question: "Is de rukū' houding van Ahmad correct voor een man?",
+        answers: [
+            { text: "A) Nee, mannen buigen de rug licht en houden de vingers aaneengesloten", correct: false },
+            { text: "B) Nee, mannen plaatsen de handen langs het lichaam tijdens de rukū'", correct: false },
+            { text: "C) Ja, dit is de correcte houding voor mannen", correct: true }
+        ],
+        uitleg: "Bij de rukū' steunt de man met beide handen op zijn knieën terwijl hij ze stevig vastpakt. De vingers zijn gespreid, de rug is recht en het hoofd staat op één lijn met de rug. Ahmad doet dit correct. Voor vrouwen gelden andere regels: zij buigen minder ver en houden de vingers aaneengesloten.",
+        source: "BSI Les 18 (lesbrief p.2); BSI_N1.pdf p.86"
+    },
+    {
+        type: "scenario",
+        category: "Voorwaarden & uitvoering",
+        scenario: "Tariq maakt de sujūd. Zijn knieën, handen en voorhoofd raken de grond aan, maar zijn neus zweeft er net boven.",
+        question: "Is de sujūd van Tariq geldig?",
+        answers: [
+            { text: "A) Ja, het voorhoofd raakt de grond, dus de sujūd is geldig", correct: false },
+            { text: "B) Ja, de neus is aanbevolen maar niet verplicht", correct: false },
+            { text: "C) Nee, zowel het voorhoofd als de neus moeten goed op de grond worden gedrukt", correct: true }
+        ],
+        uitleg: "Bij de sujūd moeten zeven lichaamsdelen de grond aanraken: beide voeten (met de tenen), beide knieën, beide handen, en het gezicht — waarbij neus én voorhoofd goed op de grond moeten worden gedrukt. Beide zijn verplicht. Het weglaten van de neus maakt de sujūd ongeldig.",
+        source: "BSI Les 18 (lesbrief p.3); BSI_N1.pdf p.87"
+    },
+    {
+        type: "scenario",
+        category: "Voorwaarden & uitvoering",
+        scenario: "Suleiman bidt zijn ʿAṣr-gebed (4 rakʿāt). In de derde rakʿah leest hij soera al-Fātiḥa en daarna ook nog soera al-Ikhlāṣ.",
+        question: "Is het lezen van de extra soera in de derde rakʿah van een farḍ-gebed correct?",
+        answers: [
+            { text: "A) Ja, het is aanbevolen om in elke rakʿah een extra soera te lezen", correct: false },
+            { text: "B) Nee, in de 3e en 4e rakʿah van een farḍ-gebed leest men alleen soera al-Fātiḥa", correct: true },
+            { text: "C) Nee, in de 3e en 4e rakʿah mag ook soera al-Fātiḥa niet worden gelezen", correct: false }
+        ],
+        uitleg: "In de 1e en 2e rakʿah van een farḍ-gebed leest men na soera al-Fātiḥa een extra soera of minimaal drie verzen. In de 3e en 4e rakʿah volstaat soera al-Fātiḥa alleen — een extra soera is daar niet nodig en ook niet aangewezen.",
+        source: "BSI Les 18 (lesbrief p.2); BSI_N1.pdf p.90"
+    },
+    {
+        type: "scenario",
+        category: "Voorwaarden & uitvoering",
+        scenario: "Layla zit in de tashahhud. Bij het reciteren van de shahādah heft ze haar wijsvinger op bij het woord 'lā' en houdt die omhoog tot het einde van de tashahhud.",
+        question: "Is het vingergebaar van Layla correct?",
+        answers: [
+            { text: "A) Ja, de wijsvinger blijft omhoog tot het einde van de tashahhud", correct: false },
+            { text: "B) Nee, de wijsvinger wordt helemaal niet opgeheven", correct: false },
+            { text: "C) Nee, de wijsvinger wordt omhoog geheven bij 'lā' en neergelaten bij 'illā'", correct: true }
+        ],
+        uitleg: "Tijdens de tashahhud maakt men een ringvorm met de duim en middelvinger. Bij het woord 'lā' wordt de wijsvinger opgeheven, en bij het woord 'illā' wordt die weer neergelaten. De vinger tot het einde omhoog houden is niet de juiste handeling.",
+        source: "BSI Les 18 (lesbrief p.4); BSI_N1.pdf p.98"
+    },
+    {
+        type: "scenario",
+        category: "Voorwaarden & uitvoering",
+        scenario: "Karima sluit haar gebed af. Ze draait haar hoofd eerst naar links en zegt 'As-Salāmu ʿalaykum wa raḥmatullāh', daarna naar rechts en geeft eveneens de salām.",
+        question: "Is de volgorde van de taslīm correct?",
+        answers: [
+            { text: "A) Ja, de volgorde mag naar keuze worden bepaald", correct: false },
+            { text: "B) Nee, men draait eerst naar rechts, dan naar links", correct: true },
+            { text: "C) Nee, de salām wordt slechts één keer gegeven", correct: false }
+        ],
+        uitleg: "Het gebed wordt afgesloten met de taslīm: men kijkt eerst naar de rechterschouder en zegt 'As-Salāmu ʿalaykum wa raḥmatullāh', daarna naar de linkerschouder en herhaalt de salām. De volgorde rechts-dan-links is vereist.",
+        source: "BSI Les 18 (lesbrief p.5); BSI_N1.pdf p.102"
+    },
+    {
+        type: "scenario",
+        category: "Voorwaarden & uitvoering",
+        scenario: "Bilal zit voor de tashahhud. Hij strekt beide voeten zijdelings naar rechts uit en gaat op zijn linkerzijde zitten — een houding die hij bij vrouwen heeft gezien.",
+        question: "Is de zittingspositie van Bilal correct voor mannen?",
+        answers: [
+            { text: "A) Ja, dit is de juiste zittingspositie voor iedereen", correct: false },
+            { text: "B) Nee, mannen zitten op het linkerbeen met de rechtervoet met de tenen voorovergebogen", correct: true },
+            { text: "C) Nee, mannen zitten rechtop met beide voeten plat op de grond", correct: false }
+        ],
+        uitleg: "Voor mannen geldt bij de tashahhud-zitting: zitten op het linkerbeen, terwijl de rechtervoet met de tenen voorovergebogen richting de qiblah is. De vrouw strekt beide voeten naar rechts en zit op haar linkerzijde. Bilal gebruikt de vrouwelijke zittingspositie — dat is niet correct voor hem.",
+        source: "BSI Les 18 (lesbrief p.3–4); BSI_N1.pdf p.97"
+    },
+    {
+        type: "scenario",
+        category: "Gebedstijden",
+        scenario: "Nadia reist met de auto van Rotterdam naar Groningen, een afstand van ruim 220 km. Ze twijfelt of ze haar ʿAṣr-gebed mag inkorten (qasr) van 4 naar 2 rakʿāt.",
+        question: "Mag Nadia haar gebed inkorten (qasr) tijdens deze reis?",
+        answers: [
+            { text: "A) Nee, qasr is alleen buiten Nederland toegestaan", correct: false },
+            { text: "B) Ja, de minimale reisafstand voor qasr is 92 km en Nadia reist ruim verder", correct: true },
+            { text: "C) Nee, qasr is alleen voor mannen", correct: false }
+        ],
+        uitleg: "Qasr — het inkorten van een farḍ-gebed van 4 rakʿāt naar 2 — is toegestaan wanneer men een reisafstand van minimaal 92 km (48 mijl) aflegt. Nadia's reis van Rotterdam naar Groningen is ruim 220 km en overschrijdt deze grens ruimschoots. Qasr is voor haar dus toegestaan.",
+        source: "N2_BSI_GP_FINAL.pdf p.14"
+    },
+    {
+        type: "scenario",
+        category: "Geldigheid & herstel",
+        scenario: "Omar bidt zijn Maghrib-gebed. In de 2e rakʿah vergeet hij de eerste tashahhud te reciteren en staat op voor de 3e rakʿah. Hij realiseert dit pas later en zet zijn gebed voort.",
+        question: "Wat moet Omar doen om deze vergissing te herstellen?",
+        answers: [
+            { text: "A) Niets, de tashahhud is soenna en het gebed blijft volledig geldig", correct: false },
+            { text: "B) Zijn gebed helemaal opnieuw beginnen", correct: false },
+            { text: "C) Zijn gebed voltooien en daarna sujūd al-sahw verrichten", correct: true }
+        ],
+        uitleg: "De eerste tashahhud is een wājib-handeling. Wie hem vergeet en al is opgestaan, keert niet meer terug naar de zitting. Na het voltooien van het gebed verricht men sujūd al-sahw: twee vergissingsbuigingen in de laatste zitting, gevolgd door een nieuwe taslīm. Het gebed opnieuw starten is niet nodig.",
+        source: "BSI_N1.pdf p.121"
+    },
+    {
+        type: "scenario",
+        category: "Geldigheid & herstel",
+        scenario: "Hassan bidt zijn witr-gebed. Omdat hij de tekst van de Duʿā Qunūt niet goed kent, besluit hij hem bewust weg te laten.",
+        question: "Wat is het gevolg van het opzettelijk weglaten van de Duʿā Qunūt in het witr-gebed?",
+        answers: [
+            { text: "A) Geen gevolg — Duʿā Qunūt is aanbevolen maar niet verplicht", correct: false },
+            { text: "B) Er is alleen sujūd al-sahw nodig om het te herstellen", correct: false },
+            { text: "C) Het witr-gebed wordt ongeldig", correct: true }
+        ],
+        uitleg: "De Duʿā Qunūt is een wājib-handeling in het witr-gebed. Het opzettelijk weglaten ervan maakt het gebed ongeldig. Wie de tekst per vergissing vergeet, kan sujūd al-sahw verrichten. Hassan dient de Duʿā Qunūt te leren zodat hij hem niet opzettelijk hoeft over te slaan.",
+        source: "BSI_N1.pdf pp.90, 116"
+    },
+    {
+        type: "scenario",
+        category: "Geldigheid & herstel",
+        scenario: "Fatimah leest voor zichzelf uit de Koran en reciteert een vers van de sujūd (sajdah-vers). Ze blijft rustig zitten en verricht geen verdere handeling.",
+        question: "Welke handeling is wājib (essentieel) wanneer men een sajdah-vers reciteert?",
+        answers: [
+            { text: "A) Twee rakʿāt bidden als dankbaarheid", correct: false },
+            { text: "B) Sujūd al-tilāwah verrichten: één grondbuiging", correct: true },
+            { text: "C) Niets — sujūd al-tilāwah is slechts aanbevolen", correct: false }
+        ],
+        uitleg: "Wanneer men een sajdah-vers reciteert of hoort, is sujūd al-tilāwah wājib. Men onderbreekt de recitatie en verricht één grondbuiging als eerbetoon aan Allah. Het opzettelijk weglaten hiervan is zondig. Fatimah had sujūd al-tilāwah moeten verrichten.",
+        source: "N2_BSI_GP_FINAL.pdf p.26"
     }
 ];
 
@@ -451,6 +610,8 @@ const CATEGORIES = [
 ];
 
 function getCategoryLabel(idx) {
+    const q = questions[idx];
+    if (q && q.category) return q.category;
     if (idx < 8) return CATEGORIES[0];
     if (idx < 16) return CATEGORIES[1];
     if (idx < 24) return CATEGORIES[2];
@@ -512,6 +673,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextBtn = document.getElementById("next-btn");
     const shareBtn = document.getElementById("whatsapp-share-btn");
     const categoryBadge = document.getElementById("category-badge");
+    const scenarioBlock = document.getElementById("scenario-block");
+    const scenarioTekst = document.getElementById("scenario-tekst");
 
     if (
         !characterImg ||
@@ -583,6 +746,17 @@ document.addEventListener("DOMContentLoaded", () => {
         uitlegContainer.classList.add("hide");
 
         const currentQuestion = questions[currentIdx];
+
+        // Scenario-block: tonen bij type "scenario", verbergen anders
+        if (scenarioBlock && scenarioTekst) {
+            if (currentQuestion.type === "scenario" && currentQuestion.scenario) {
+                scenarioTekst.innerText = currentQuestion.scenario;
+                scenarioBlock.classList.remove("hide");
+            } else {
+                scenarioBlock.classList.add("hide");
+            }
+        }
+
         qTextElement.innerText = currentQuestion.question;
         progressBar.style.width = `${(currentIdx / questions.length) * 100}%`;
 
