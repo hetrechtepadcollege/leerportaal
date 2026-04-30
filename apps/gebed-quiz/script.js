@@ -420,16 +420,16 @@ const questions = [
     },
     {
         type: "scenario",
-        category: "Gebedstijden",
+        category: "Reizigersgebed",
         scenario: "Nadia reist met de auto van Rotterdam naar Groningen, een afstand van ruim 220 km. Ze twijfelt of ze haar ʿAṣr-gebed (namiddaggebed) mag inkorten — qaṣr (het inkorten van het gebed van 4 naar 2 rakʿāt — gebedseenheden) — tijdens de reis.",
-        question: "Mag Nadia haar gebed inkorten (qaṣr) tijdens deze reis?",
+        question: "Wat geldt voor Nadia met betrekking tot qaṣr tijdens deze reis?",
         answers: [
             { text: "A) Nee, qaṣr (het inkorten) is alleen buiten Nederland toegestaan", correct: false },
-            { text: "B) Ja, de minimale reisafstand voor qaṣr (het inkorten) is 92 km en Nadia reist ruim verder", correct: true },
+            { text: "B) Ja, qaṣr is voor haar wājib (verplicht): de minimale reisafstand van 92 km is ruimschoots overschreden", correct: true },
             { text: "C) Nee, qaṣr (het inkorten) is alleen voor mannen", correct: false }
         ],
-        uitleg: "Qaṣr (het inkorten van een farḍ-gebed — verplicht gebed — van 4 rakʿāt naar 2 rakʿāt) is toegestaan wanneer men een reisafstand van minimaal 92 km (48 mijl) aflegt. Nadia's reis van Rotterdam naar Groningen is ruim 220 km en overschrijdt deze grens ruimschoots. Qaṣr is voor haar dus toegestaan.",
-        source: "N2_BSI_GP_FINAL.pdf p.14"
+        uitleg: "Qaṣr (het inkorten van een farḍ-gebed — verplicht gebed — van 4 rakʿāt naar 2 rakʿāt) is wājib (verplicht) voor reizigers die een afstand van minimaal 92 km (48 mijl) afleggen. Nadia's reis van Rotterdam naar Groningen is ruim 220 km en overschrijdt deze grens ruimschoots. Qaṣr is voor haar dus niet slechts toegestaan — het is verplicht.",
+        source: "N2_BSI_GP_FINAL.pdf p.14-15"
     },
     {
         type: "scenario",
@@ -469,6 +469,112 @@ const questions = [
         ],
         uitleg: "Wanneer men een sajdah-vers (grondbuigingvers) reciteert of hoort, is sujūd al-tilāwah (grondbuiging bij Koranrecitatie) wājib (essentieel/verplicht). Men onderbreekt de recitatie en verricht één grondbuiging als eerbetoon aan Allah. Het opzettelijk weglaten hiervan is zondig. Fatimah had sujūd al-tilāwah moeten verrichten.",
         source: "N2_BSI_GP_FINAL.pdf p.26"
+    },
+
+    // --- Nieuwe scenario-vragen (21–28) ---
+    {
+        type: "scenario",
+        category: "Reizigersgebed",
+        scenario: "Khalid is op reis van Amsterdam naar Maastricht (ruim 200 km). Hij bidt zijn Ẓuhr-gebed (middaggebed) en besluit het vrijwillig niet in te korten, omdat hij denkt dat qaṣr (het inkorten) een persoonlijke keuze is.",
+        question: "Heeft Khalid zijn Ẓuhr-gebed correct verricht?",
+        answers: [
+            { text: "A) Ja, qaṣr is een vergunning en de reiziger mag zelf kiezen", correct: false },
+            { text: "B) Nee, qaṣr is voor de reiziger wājib (verplicht) — hij had 2 rakʿāt moeten bidden", correct: true },
+            { text: "C) Ja, volledig bidden is altijd beter dan inkorten", correct: false }
+        ],
+        uitleg: "Qaṣr — het inkorten van Ẓuhr, ʿAṣr en ʿIshā van 4 naar 2 rakʿāt — is voor de reiziger wājib (verplicht), geen vrijblijvende keuze. Khalid had zijn Ẓuhr moeten inkorten. Wie de reisafstand van minimaal 92 km aflegt en zijn woonplaats heeft verlaten, is verplicht tot qaṣr.",
+        source: "N2_BSI_GP_FINAL.pdf p.14-15"
+    },
+    {
+        type: "scenario",
+        category: "Reizigersgebed",
+        scenario: "Amira is op reis en bidt haar Fajr-gebed (ochtendgebed). Ze denkt dat ze, net als bij Ẓuhr en ʿAṣr, het Fajr-gebed mag inkorten naar 1 rakʿah (gebedseenheid).",
+        question: "Mag Amira haar Fajr-gebed inkorten tijdens de reis?",
+        answers: [
+            { text: "A) Ja, qaṣr geldt voor alle vijf de verplichte gebeden", correct: false },
+            { text: "B) Nee, Fajr (2 rakʿāt) wordt niet ingekort — qaṣr geldt alleen voor Ẓuhr, ʿAṣr en ʿIshā", correct: true },
+            { text: "C) Ja, maar alleen als de reis langer duurt dan 3 dagen", correct: false }
+        ],
+        uitleg: "Qaṣr (inkorten) geldt uitsluitend voor de drie vierdelige gebeden: Ẓuhr, ʿAṣr en ʿIshā. Deze worden ingekort van 4 naar 2 rakʿāt. Fajr (2 rakʿāt) en Maghrib (3 rakʿāt) worden niet ingekort. Amira bidt haar Fajr-gebed gewoon volledig met 2 rakʿāt.",
+        source: "N2_BSI_GP_FINAL.pdf p.15"
+    },
+    {
+        type: "scenario",
+        category: "Reizigersgebed",
+        scenario: "Ibrahim is op reis en bidt mee in de congregatie achter een imam die geen reiziger is. De imam bidt het Ẓuhr-gebed volledig met 4 rakʿāt (gebedseenheden). Ibrahim denkt dat hij na 2 rakʿāt mag stoppen omdat hij reiziger is.",
+        question: "Mag Ibrahim zijn gebed beëindigen na 2 rakʿāt, omdat hij reiziger is?",
+        answers: [
+            { text: "A) Ja, de reiziger bidt altijd 2 rakʿāt, ook achter een niet-reiziger imam", correct: false },
+            { text: "B) Nee, de reiziger die bidt achter een niet-reiziger imam bidt het gebed volledig mee", correct: true },
+            { text: "C) Ja, maar hij moet wel wachten totdat de imam klaar is met de salām", correct: false }
+        ],
+        uitleg: "Wanneer een reiziger zijn gebed verricht achter een imam die geen reiziger is (een muqīm), dan volgt hij de imam volledig en bidt hij het gebed volledig mee — dus 4 rakʿāt voor Ẓuhr. Ibrahim had niet na 2 rakʿāt mogen stoppen.",
+        source: "N2_BSI_GP_FINAL.pdf p.16"
+    },
+    {
+        type: "scenario",
+        category: "Reizigersgebed",
+        scenario: "Samir is geen reiziger en bidt zijn ʿAṣr-gebed achter een imam die wel op reis is. De imam bidt qaṣr: 2 rakʿāt (gebedseenheden). Na de salām (afsluitende groet) van de imam staat Samir op om de overgebleven 2 rakʿāt bij te maken, maar een medebroeder zegt hem dat dit niet nodig is.",
+        question: "Moet Samir na de salām van de imam nog 2 rakʿāt bijmaken?",
+        answers: [
+            { text: "A) Nee, Samir heeft zijn ʿAṣr volledig verricht door mee te bidden achter de imam", correct: false },
+            { text: "B) Ja, Samir moet na de salām van de imam zelfstandig de resterende 2 rakʿāt bijmaken", correct: true },
+            { text: "C) Nee, Samir hoeft alleen de laatste rakʿah bij te maken", correct: false }
+        ],
+        uitleg: "Wanneer een niet-reiziger (muqīm) bidt achter een reiziger-imam, dan maakt hij na de salām van de imam de resterende rakʿāt zelfstandig af — zonder recitatie van een soera, omdat hij in het midden van zijn gebed zit. Samir had dus na de salām van de imam nog 2 rakʿāt moeten bijmaken.",
+        source: "N2_BSI_GP_FINAL.pdf p.16-17"
+    },
+    {
+        type: "scenario",
+        category: "Gebed voor zieken",
+        scenario: "Youssef heeft ernstige rugpijn. Elke keer dat hij probeert te staan voor zijn gebed, neemt de pijn ondraaglijk toe. Hij bidt zijn Maghrib-gebed (avondgebed) zittend op een stoel, zonder te proberen te staan.",
+        question: "Is het voor Youssef toegestaan om zijn gebed zittend te verrichten?",
+        answers: [
+            { text: "A) Nee, men moet altijd staand bidden tenzij men zich helemaal niet kan bewegen", correct: false },
+            { text: "B) Ja, wie door ziekte niet kan staan zonder ondraaglijke pijn mag zittend bidden", correct: true },
+            { text: "C) Nee, zittend bidden is alleen toegestaan bij nafl-gebeden (vrijwillige gebeden)", correct: false }
+        ],
+        uitleg: "Wie door ziekte niet kan staan — omdat het staan ondraaglijke pijn veroorzaakt, het herstel vertraagt of duizeligheid geeft — mag zijn gebed zittend verrichten. Het is wel aanbevolen om voor de openingstakbīr kort te staan als dat enigszins mogelijk is. Youssef handelt correct door zittend te bidden.",
+        source: "N2_BSI_GP_FINAL.pdf p.17-18"
+    },
+    {
+        type: "scenario",
+        category: "Gebed voor zieken",
+        scenario: "Nora ligt in het ziekenhuis na een operatie en kan niet zitten. De verpleegkundige legt haar op haar rug richting het plafond. Nora vraagt zich af of ze haar gebed moet uitstellen totdat ze weer kan zitten.",
+        question: "Wat moet Nora doen als ze niet kan zitten?",
+        answers: [
+            { text: "A) Het gebed uitstellen totdat ze weer kan zitten of staan", correct: false },
+            { text: "B) Het gebed liggend op haar rug verrichten, met het gezicht richting de qiblah (gebedsrichting)", correct: true },
+            { text: "C) Alleen de verplichte gebeden uitstellen; soenna-gebeden mag ze ook liggend verrichten", correct: false }
+        ],
+        uitleg: "Wie niet kan zitten, verricht zijn gebed liggend op zijn rug — met het gezicht en de voeten richting de qiblah (gebedsrichting), zodat het hoofd in de richting van de qiblah wijst. Voor rukūʿ (kniebuiging) en sujūd (grondbuiging) maakt men gebaren met het hoofd, waarbij het hoofd voor sujūd iets dieper buigt dan voor rukūʿ. Nora hoeft het gebed niet uit te stellen.",
+        source: "N2_BSI_GP_FINAL.pdf p.18-19"
+    },
+    {
+        type: "scenario",
+        category: "Soenna & nafl",
+        scenario: "Fatima heeft haar farḍ-ʿAṣr-gebed (verplicht namiddaggebed) zojuist verricht. Ze wil nog twee rakʿāt (gebedseenheden) extra bidden als nafl (vrijwillig gebed) vóór het Maghrib-gebed (avondgebed). Een vriendin zegt haar dat dit niet mag.",
+        question: "Mag Fatima nafl-gebeden verrichten tussen het farḍ-ʿAṣr-gebed en het farḍ-Maghrib-gebed?",
+        answers: [
+            { text: "A) Ja, nafl bidden is altijd toegestaan zolang het farḍ-gebed is verricht", correct: false },
+            { text: "B) Nee, na het farḍ-ʿAṣr-gebed is het verboden nafl te verrichten totdat het farḍ-Maghrib-gebed is begonnen", correct: true },
+            { text: "C) Ja, maar alleen als men minder dan 4 rakʿāt bidt", correct: false }
+        ],
+        uitleg: "Een van de verboden tijdstippen voor nafl-gebeden is de periode na het farḍ-ʿAṣr-gebed totdat het farḍ-Maghrib-gebed aanvangt. In deze periode zijn vrijwillige gebeden niet toegestaan. Fatima's vriendin heeft gelijk: zij mag geen nafl bidden tussen ʿAṣr en Maghrib.",
+        source: "N2_BSI_GP_FINAL.pdf p.3-4"
+    },
+    {
+        type: "scenario",
+        category: "Gemiste gebeden",
+        scenario: "Tariq heeft door ziekte zijn Ẓuhr-gebed (middaggebed) en ʿAṣr-gebed (namiddaggebed) gemist. Het is nu tijd voor Maghrib (avondgebed). Hij overweegt eerst Maghrib te bidden en daarna de twee gemiste gebeden in te halen.",
+        question: "In welke volgorde moet Tariq zijn gebeden verrichten?",
+        answers: [
+            { text: "A) Eerst Maghrib, daarna Ẓuhr en ʿAṣr inhalen — de volgorde maakt niet uit", correct: false },
+            { text: "B) Eerst Ẓuhr en ʿAṣr inhalen (qaḍā), dan pas Maghrib verrichten", correct: true },
+            { text: "C) Alleen Ẓuhr inhalen; ʿAṣr vervalt na het verstrijken van de tijd", correct: false }
+        ],
+        uitleg: "Wie minder dan vijf gebeden heeft gemist, is een Ṣāḥib al-tartīb: hij moet de gemiste gebeden in volgorde inhalen vóór het actuele gebed. Tariq heeft Ẓuhr en ʿAṣr gemist — dat zijn twee gebeden. Hij moet eerst Ẓuhr (qaḍā) en daarna ʿAṣr (qaḍā) inhalen, en vervolgens pas Maghrib verrichten. Gemiste farḍ-gebeden vervallen niet.",
+        source: "BSI_N1.pdf p.126-127"
     }
 ];
 
