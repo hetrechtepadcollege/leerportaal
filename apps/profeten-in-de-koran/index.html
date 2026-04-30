@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profeten in de Koran | Het Rechte Pad College</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
+
+<main class="page-shell">
+
+    <section class="hero panel">
+        <div class="hero-copy">
+            <p class="eyebrow">Interactieve tijdlijn</p>
+            <h1>Profeten in de Koran</h1>
+            <p class="subtext">Ontdek de 25 profeten die worden genoemd in de Koran. Scroll door de tijdlijn en klik op een profeet voor meer informatie.</p>
+
+        </div>
+
+        <div class="hero-visual">
+            <img src="images/HRPC-logo-black.png" alt="HRPC Logo" class="brand-logo">
+            <div class="visual-card">
+                <span class="visual-label">Wat je hier ontdekt</span>
+                <ul>
+                    <li>De profeten in chronologische volgorde</li>
+                    <li>Korte samenvattingen per profeet</li>
+                    <li>Extra achtergrond en Koranverwijzingen</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="jump-section">
+        <p class="jump-label">Spring naar profeet</p>
+        <div class="jump-row" id="jump-row"></div>
+    </section>
+
+    <section class="timeline-stage">
+        <div class="timeline-line" aria-hidden="true"></div>
+        <div class="timeline-container" id="timeline" aria-label="Verticale tijdlijn van Koranische profeten"></div>
+    </section>
+
+</main>
+
+<div class="portal-home-wrap">
+    <a href="https://leer.hetrechtepadcollege.nl/" class="portal-home-btn">
+        Terug naar Leerportaal
+    </a>
+</div>
+
+<div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal-panel">
+        <button class="close" id="modal-close" aria-label="Sluiten">&times;</button>
+        <p id="modal-period" class="period-badge"></p>
+        <p id="modal-arabic" class="arabic-name"></p>
+        <h2 id="modal-title"></h2>
+        <p id="modal-description" class="modal-description"></p>
+        <figure class="media-block" id="image-wrap"></figure>
+        <div class="media-block" id="video-wrap"></div>
+        <div id="quran-refs" class="quran-refs"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script data-goatcounter="https://hetrechtepadcollege.goatcounter.com/count"
+    async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
