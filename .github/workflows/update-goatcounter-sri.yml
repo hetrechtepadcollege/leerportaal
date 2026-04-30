@@ -1,12 +1,8 @@
 name: Update GoatCounter SRI Hash
 
-# Draait dagelijks om 03:00 UTC én is handmatig te starten via GitHub UI.
-# Werkt automatisch voor alle huidige én toekomstige apps: elke HTML-pagina
-# die gc.zgo.at/count.js laadt wordt gevonden en bijgewerkt.
+# Uitgeschakeld in dev-omgeving — draait alleen in productie (leerportaal).
 
 on:
-  schedule:
-    - cron: '0 3 * * *'
   workflow_dispatch:
 
 permissions:
