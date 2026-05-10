@@ -1909,6 +1909,7 @@ body::before {
 /* portal-home-btn — terug naar leerportaal */
 .portal-home-btn {
     display: inline-block;
+    font-family: 'Inter', sans-serif;
     text-decoration: none;
     text-align: center;
     color: #d4af37;
@@ -1921,6 +1922,7 @@ body::before {
     transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
 }
 .portal-home-btn:hover {
+    color: #d4af37;
     background: rgba(212, 175, 55, 0.18);
     border-color: rgba(212, 175, 55, 0.45);
     transform: translateY(-1px);
