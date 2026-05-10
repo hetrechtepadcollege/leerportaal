@@ -437,7 +437,7 @@ body { font-family: 'Inter', sans-serif; }
 .header-subtitle { font-family: 'Inter', sans-serif !important; font-size: 0.9rem !important; color: rgba(255,255,255,0.7) !important; margin: 0 !important; font-style: normal !important; }
 
 /* header-logo-link — clickable logo */
-.header-logo-link { display: block; width: fit-content; margin: 0 auto 0.75rem; border-radius: 6px; transition: opacity 0.2s; }
+.header-logo-link { display: block; width: fit-content; margin: 0 auto 2.5rem; border-radius: 6px; transition: opacity 0.2s; }
 .header-logo-link .header-logo { margin: 0; display: block; }
 .header-logo-link:hover,
 .header-logo-link:focus-visible { opacity: 0.85; outline: 2px solid #d4af37; outline-offset: 6px; border-radius: 4px; }
