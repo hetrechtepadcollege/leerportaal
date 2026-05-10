@@ -1116,7 +1116,12 @@ body::before, body::after { display: none; }
     background-size: 48px 48px, 48px 48px, auto !important;
     padding: 28px 20px 58px !important;
     border-bottom: 1px solid rgba(31, 41, 77, .09);
-    margin: 0 0 42px;
+    width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 42px;
+    box-sizing: border-box;
     color: #1c2340;
 }
 .header-logo {
