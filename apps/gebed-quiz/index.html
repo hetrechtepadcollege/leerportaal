@@ -7,7 +7,9 @@
 
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://gc.zgo.at https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self' https://hetrechtepadcollege.goatcounter.com;">
 
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans:wght@400;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=3">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
@@ -23,18 +25,15 @@
 </head>
 <body>
 
+<header class="app-header">
+    <a href="../../" class="header-logo-link" title="Terug naar Leerportaal"><img src="../../images/HRPC-logo.png" alt="Het Rechte Pad College" class="header-logo"></a>
+    <h1 class="header-title">Kennisquiz Gebed</h1>
+    <p class="header-subtitle">Test je kennis over het gebed</p>
+</header>
+
 <div class="page-wrapper">
 
-    <header class="site-header">
-        <img src="images/HRPC-logo.png" alt="Logo Het Rechte Pad College" class="site-logo">
-    </header>
-
     <main class="quiz-card">
-
-        <div class="quiz-title-block">
-            <h1>Kennisquiz Gebed</h1>
-            <p class="quiz-subtitle">Test je kennis over het gebed</p>
-        </div>
 
         <!-- Modusskeuze (zichtbaar bij start) -->
         <div id="mode-selector" class="mode-selector-screen">
