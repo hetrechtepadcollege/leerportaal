@@ -23,7 +23,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Newsreader:opsz,wght@6..72,400..800&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -51,7 +51,7 @@
                     De Profeet &#xFDFA; zei:</p>
                 <p class="hadith-ref">"Het verschil tussen degene die zijn Heer gedenkt en degene die dat niet doet,
                     is als het verschil tussen de levende en de dode." <br> (Ṣaḥīḥ al-Bukhārī)</p>
-                <p>In deze tuin ontdek je vier vormen van dzikr. Laat je tuin verder groeien en bloeien.</p>
+                <p>In deze tuin ontdek je dagelijkse vormen van dzikr en duʿā. Laat je tuin verder groeien en bloeien.</p>
             </section>
 
             <!-- Garden -->
@@ -69,6 +69,8 @@
             <!-- Dzikr cards -->
             <div class="dzikr-cards">
 
+                <h2 class="dzikr-group-title">Lofprijzingen</h2>
+
                 <article class="dzikr-card card-subhanallah">
                     <p class="dzikr-arabic" dir="rtl" lang="ar">سُبْحَانَ اللّٰهِ</p>
                     <p class="dzikr-translit">SubḥānAllāh</p>
@@ -82,7 +84,7 @@
                                 aria-label="Zeg SubḥānAllāh en plant een bloem">
                             Plant een bloem
                         </button>
-                        <span class="dzikr-count" id="countSubhanallah">0</span>
+                        <span class="dzikr-count" id="countSubhanallah" data-count="subhanallah">0</span>
                     </div>
                 </article>
 
@@ -99,7 +101,7 @@
                                 aria-label="Zeg Alḥamdulillāh en plant een boom">
                             Plant een boom
                         </button>
-                        <span class="dzikr-count" id="countAlhamdulillah">0</span>
+                        <span class="dzikr-count" id="countAlhamdulillah" data-count="alhamdulillah">0</span>
                     </div>
                 </article>
 
@@ -115,7 +117,7 @@
                                 aria-label="Zeg Allāhu Akbar en laat een lichtbloesem verschijnen">
                             Laat licht bloeien
                         </button>
-                        <span class="dzikr-count" id="countAllahuakbar">0</span>
+                        <span class="dzikr-count" id="countAllahuakbar" data-count="allahuakbar">0</span>
                     </div>
                 </article>
 
@@ -133,7 +135,146 @@
                                 aria-label="Zeg Lā ilāha illā Allāh en laat een juweel schitteren">
                             Laat een juweel schitteren
                         </button>
-                        <span class="dzikr-count" id="countLailahaillallah">0</span>
+                        <span class="dzikr-count" id="countLailahaillallah" data-count="lailahaillallah">0</span>
+                    </div>
+                </article>
+
+                <h2 class="dzikr-group-title">Herinnering</h2>
+
+                <article class="dzikr-card card-daily">
+                    <p class="dzikr-arabic" dir="rtl" lang="ar">سُبْحَانَ اللّٰهِ وَبِحَمْدِهِ</p>
+                    <p class="dzikr-translit">SubḥānAllāhi wa biḥamdihī</p>
+                    <p class="dzikr-meaning">Glorie zij Allah en met Zijn lof</p>
+                    <p class="dzikr-explain">Deze dzikr verenigt tasbīḥ en ḥamd: je verklaart Allah vrij van elk gebrek en prijst Hem tegelijk met dankbaarheid.</p>
+                    <blockquote class="dzikr-hadith">"Wie SubḥānAllāhi wa biḥamdihī honderd keer zegt, diens zonden worden uitgewist, al waren ze als het schuim van de zee." <span>(Ṣaḥīḥ al-Bukhārī &amp; Muslim)</span></blockquote>
+                    <div class="dzikr-action">
+                        <button class="dzikr-btn btn-daily" data-dzikr="subhanallahiwabihamdihi"
+                                aria-label="Zeg SubḥānAllāhi wa biḥamdihī en laat je tuin groeien">
+                            Tel deze dzikr
+                        </button>
+                        <span class="dzikr-count" data-count="subhanallahiwabihamdihi">0</span>
+                    </div>
+                </article>
+
+                <article class="dzikr-card card-daily">
+                    <p class="dzikr-arabic" dir="rtl" lang="ar">سُبْحَانَ اللّٰهِ الْعَظِيمِ</p>
+                    <p class="dzikr-translit">SubḥānAllāhi al-ʿAẓīm</p>
+                    <p class="dzikr-meaning">Glorie zij Allah, de Geweldige</p>
+                    <p class="dzikr-explain">Met deze woorden erken je Allahs volmaakte verhevenheid en Zijn grootheid boven alles wat wij kunnen bevatten.</p>
+                    <blockquote class="dzikr-hadith">"Twee woorden zijn licht op de tong, zwaar op de weegschaal en geliefd bij de Meest Barmhartige: SubḥānAllāhi wa biḥamdihī, SubḥānAllāhi al-ʿAẓīm." <span>(Ṣaḥīḥ al-Bukhārī &amp; Muslim)</span></blockquote>
+                    <div class="dzikr-action">
+                        <button class="dzikr-btn btn-daily" data-dzikr="subhanallahilazim"
+                                aria-label="Zeg SubḥānAllāhi al-ʿAẓīm en laat je tuin groeien">
+                            Tel deze dzikr
+                        </button>
+                        <span class="dzikr-count" data-count="subhanallahilazim">0</span>
+                    </div>
+                </article>
+
+                <article class="dzikr-card card-daily">
+                    <p class="dzikr-arabic" dir="rtl" lang="ar">حَسْبُنَا اللّٰهُ وَنِعْمَ الْوَكِيلُ</p>
+                    <p class="dzikr-translit">ḤasbunAllāhu wa niʿma al-wakīl</p>
+                    <p class="dzikr-meaning">Allah is voldoende voor ons en Hij is de beste Beschermer</p>
+                    <p class="dzikr-explain">Dit is een woord van tawakkul: vertrouwen op Allah wanneer zaken zwaar, onzeker of groter dan jezelf voelen.</p>
+                    <blockquote class="dzikr-hadith">Deze woorden worden in de Koran genoemd als uitdrukking van standvastig vertrouwen op Allah. <span>(Koran, 3:173)</span></blockquote>
+                    <div class="dzikr-action">
+                        <button class="dzikr-btn btn-daily" data-dzikr="hasbunallahu"
+                                aria-label="Zeg ḤasbunAllāhu wa niʿma al-wakīl en laat je tuin groeien">
+                            Tel deze dzikr
+                        </button>
+                        <span class="dzikr-count" data-count="hasbunallahu">0</span>
+                    </div>
+                </article>
+
+                <article class="dzikr-card card-daily">
+                    <p class="dzikr-arabic" dir="rtl" lang="ar">لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللّٰهِ</p>
+                    <p class="dzikr-translit">Lā ḥawla wa lā quwwata illā billāh</p>
+                    <p class="dzikr-meaning">Er is geen macht en geen kracht behalve door Allah</p>
+                    <p class="dzikr-explain">Deze dzikr herinnert je eraan dat echte kracht, verandering en standvastigheid alleen van Allah komen.</p>
+                    <blockquote class="dzikr-hadith">De Profeet &#xFDFA; noemde deze woorden een schat uit de schatten van het Paradijs. <span>(Ṣaḥīḥ al-Bukhārī &amp; Muslim)</span></blockquote>
+                    <div class="dzikr-action">
+                        <button class="dzikr-btn btn-daily" data-dzikr="lahawla"
+                                aria-label="Zeg Lā ḥawla wa lā quwwata illā billāh en laat je tuin groeien">
+                            Tel deze dzikr
+                        </button>
+                        <span class="dzikr-count" data-count="lahawla">0</span>
+                    </div>
+                </article>
+
+                <article class="dzikr-card card-daily">
+                    <p class="dzikr-arabic" dir="rtl" lang="ar">أَسْتَغْفِرُ اللّٰهَ</p>
+                    <p class="dzikr-translit">Astaghfirullāh</p>
+                    <p class="dzikr-meaning">Ik vraag Allah om vergeving</p>
+                    <p class="dzikr-explain">Met Astaghfirullāh keer je terug naar Allah met nederigheid. Het is een korte smeekbede om vergeving, zuivering van het hart en een nieuwe start.</p>
+                    <blockquote class="dzikr-hadith">De Profeet &#xFDFA; vroeg Allah veelvuldig om vergeving en moedigde zijn ummah aan om istighfār te vermeerderen. <span>(Ṣaḥīḥ Muslim)</span></blockquote>
+                    <div class="dzikr-action">
+                        <button class="dzikr-btn btn-daily" data-dzikr="astaghfirullah"
+                                aria-label="Zeg Astaghfirullāh en laat je tuin groeien">
+                            Tel deze dzikr
+                        </button>
+                        <span class="dzikr-count" data-count="astaghfirullah">0</span>
+                    </div>
+                </article>
+
+                <h2 class="dzikr-group-title">Duʿā's</h2>
+
+                <article class="dzikr-card card-daily">
+                    <p class="dzikr-arabic" dir="rtl" lang="ar">يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ</p>
+                    <p class="dzikr-translit">Yā Ḥayyu Yā Qayyūm, bi raḥmatika astaghīth</p>
+                    <p class="dzikr-meaning">O Eeuwig Levende, O Zelfbestaande, met Uw barmhartigheid zoek ik hulp</p>
+                    <p class="dzikr-explain">Een krachtige duʿā waarin je Allah aanroept met Zijn namen al-Ḥayy en al-Qayyūm en je volledig tot Zijn barmhartigheid wendt.</p>
+                    <blockquote class="dzikr-hadith">Deze smeekbede is overgeleverd als een smeekbede bij nood, verdriet en behoefte aan Allahs hulp. <span>(Tirmizī)</span></blockquote>
+                    <div class="dzikr-action">
+                        <button class="dzikr-btn btn-daily" data-dzikr="yahayyuyaqayyum"
+                                aria-label="Zeg Yā Ḥayyu Yā Qayyūm, bi raḥmatika astaghīth en laat je tuin groeien">
+                            Tel deze duʿā
+                        </button>
+                        <span class="dzikr-count" data-count="yahayyuyaqayyum">0</span>
+                    </div>
+                </article>
+
+                <article class="dzikr-card card-daily">
+                    <p class="dzikr-arabic" dir="rtl" lang="ar">رَبِّ إِنِّي لِمَا أَنْزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ</p>
+                    <p class="dzikr-translit">Rabbi innī limā anzalta ilayya min khayrin faqīr</p>
+                    <p class="dzikr-meaning">Mijn Heer, ik heb behoefte aan al het goede dat U tot mij neerzendt</p>
+                    <p class="dzikr-explain">Dit is de duʿā van Mūsā (vrede zij met hem): bescheiden, afhankelijk van Allah en vol vertrouwen dat elke vorm van goed van Hem komt.</p>
+                    <blockquote class="dzikr-hadith">Deze smeekbede staat in het verhaal van Mūsā (vrede zij met hem). <span>(Koran, 28:24)</span></blockquote>
+                    <div class="dzikr-action">
+                        <button class="dzikr-btn btn-daily" data-dzikr="rabbiinni"
+                                aria-label="Zeg Rabbi innī limā anzalta ilayya min khayrin faqīr en laat je tuin groeien">
+                            Tel deze duʿā
+                        </button>
+                        <span class="dzikr-count" data-count="rabbiinni">0</span>
+                    </div>
+                </article>
+
+                <article class="dzikr-card card-daily">
+                    <p class="dzikr-arabic" dir="rtl" lang="ar">اللّٰهُمَّ إِنِّي أَسْأَلُكَ حُسْنَ الْخَاتِمَةِ</p>
+                    <p class="dzikr-translit">Allāhumma innī asʾaluka ḥusna al-khātimah</p>
+                    <p class="dzikr-meaning">O Allah, ik vraag U om een goed einde</p>
+                    <p class="dzikr-explain">Met deze duʿā vraag je Allah om standvastigheid, een goed slot van je leven en een terugkeer naar Hem in een staat die Hem behaagt.</p>
+                    <blockquote class="dzikr-hadith">Een goede afsluiting van het leven behoort tot de grootste gunsten waar een gelovige Allah om vraagt.</blockquote>
+                    <div class="dzikr-action">
+                        <button class="dzikr-btn btn-daily" data-dzikr="husnalkhatimah"
+                                aria-label="Zeg Allāhumma innī asʾaluka ḥusna al-khātimah en laat je tuin groeien">
+                            Tel deze duʿā
+                        </button>
+                        <span class="dzikr-count" data-count="husnalkhatimah">0</span>
+                    </div>
+                </article>
+
+                <article class="dzikr-card card-daily">
+                    <p class="dzikr-arabic" dir="rtl" lang="ar">اللّٰهُمَّ أَجِرْنِي مِنَ النَّارِ</p>
+                    <p class="dzikr-translit">Allāhumma ajirnī minan-nār</p>
+                    <p class="dzikr-meaning">O Allah, bescherm mij tegen het Vuur</p>
+                    <p class="dzikr-explain">Een korte en indringende duʿā om veiligheid, vergeving en bescherming tegen de bestraffing van de Hel.</p>
+                    <blockquote class="dzikr-hadith">Vraag Allah om het Paradijs en zoek bescherming bij Hem tegen het Vuur.</blockquote>
+                    <div class="dzikr-action">
+                        <button class="dzikr-btn btn-daily" data-dzikr="ajirniminannar"
+                                aria-label="Zeg Allāhumma ajirnī minan-nār en laat je tuin groeien">
+                            Tel deze duʿā
+                        </button>
+                        <span class="dzikr-count" data-count="ajirniminannar">0</span>
                     </div>
                 </article>
 
@@ -224,6 +365,15 @@
                     <button class="tasbih-type-btn" data-type="alhamdulillah">Alḥamdulillāh</button>
                     <button class="tasbih-type-btn" data-type="allahuakbar">Allāhu Akbar</button>
                     <button class="tasbih-type-btn" data-type="lailahaillallah">Lā ilāha illā Allāh</button>
+                    <button class="tasbih-type-btn" data-type="subhanallahiwabihamdihi">SubḥānAllāhi wa biḥamdihī</button>
+                    <button class="tasbih-type-btn" data-type="subhanallahilazim">SubḥānAllāhi al-ʿAẓīm</button>
+                    <button class="tasbih-type-btn" data-type="hasbunallahu">ḤasbunAllāhu wa niʿma al-wakīl</button>
+                    <button class="tasbih-type-btn" data-type="lahawla">Lā ḥawla wa lā quwwata illā billāh</button>
+                    <button class="tasbih-type-btn" data-type="astaghfirullah">Astaghfirullāh</button>
+                    <button class="tasbih-type-btn" data-type="yahayyuyaqayyum">Yā Ḥayyu Yā Qayyūm</button>
+                    <button class="tasbih-type-btn" data-type="rabbiinni">Rabbi innī limā anzalta ilayya</button>
+                    <button class="tasbih-type-btn" data-type="husnalkhatimah">Ḥusna al-khātimah</button>
+                    <button class="tasbih-type-btn" data-type="ajirniminannar">Ajirnī minan-nār</button>
                 </div>
 
                 <!-- Bead circle -->
@@ -294,20 +444,56 @@
                     <h3 class="stats-section-title">Vandaag</h3>
                     <div class="stats-today-grid">
                         <div class="stats-today-item">
-                            <span class="stats-today-count" id="statsTodaySubhanallah">0</span>
+                            <span class="stats-today-count" id="statsTodaySubhanallah" data-stats-today="subhanallah">0</span>
                             <span class="stats-today-label">SubḥānAllāh</span>
                         </div>
                         <div class="stats-today-item">
-                            <span class="stats-today-count" id="statsTodayAlhamdulillah">0</span>
+                            <span class="stats-today-count" id="statsTodayAlhamdulillah" data-stats-today="alhamdulillah">0</span>
                             <span class="stats-today-label">Alḥamdulillāh</span>
                         </div>
                         <div class="stats-today-item">
-                            <span class="stats-today-count" id="statsTodayAllahuakbar">0</span>
+                            <span class="stats-today-count" id="statsTodayAllahuakbar" data-stats-today="allahuakbar">0</span>
                             <span class="stats-today-label">Allāhu Akbar</span>
                         </div>
                         <div class="stats-today-item">
-                            <span class="stats-today-count" id="statsTodayLailahaillallah">0</span>
+                            <span class="stats-today-count" id="statsTodayLailahaillallah" data-stats-today="lailahaillallah">0</span>
                             <span class="stats-today-label">Lā ilāha illā Allāh</span>
+                        </div>
+                        <div class="stats-today-item">
+                            <span class="stats-today-count" data-stats-today="subhanallahiwabihamdihi">0</span>
+                            <span class="stats-today-label">SubḥānAllāhi wa biḥamdihī</span>
+                        </div>
+                        <div class="stats-today-item">
+                            <span class="stats-today-count" data-stats-today="subhanallahilazim">0</span>
+                            <span class="stats-today-label">SubḥānAllāhi al-ʿAẓīm</span>
+                        </div>
+                        <div class="stats-today-item">
+                            <span class="stats-today-count" data-stats-today="hasbunallahu">0</span>
+                            <span class="stats-today-label">ḤasbunAllāhu</span>
+                        </div>
+                        <div class="stats-today-item">
+                            <span class="stats-today-count" data-stats-today="lahawla">0</span>
+                            <span class="stats-today-label">Lā ḥawla</span>
+                        </div>
+                        <div class="stats-today-item">
+                            <span class="stats-today-count" id="statsTodayAstaghfirullah" data-stats-today="astaghfirullah">0</span>
+                            <span class="stats-today-label">Astaghfirullāh</span>
+                        </div>
+                        <div class="stats-today-item">
+                            <span class="stats-today-count" data-stats-today="yahayyuyaqayyum">0</span>
+                            <span class="stats-today-label">Yā Ḥayyu Yā Qayyūm</span>
+                        </div>
+                        <div class="stats-today-item">
+                            <span class="stats-today-count" data-stats-today="rabbiinni">0</span>
+                            <span class="stats-today-label">Rabbi innī...</span>
+                        </div>
+                        <div class="stats-today-item">
+                            <span class="stats-today-count" data-stats-today="husnalkhatimah">0</span>
+                            <span class="stats-today-label">Ḥusna al-khātimah</span>
+                        </div>
+                        <div class="stats-today-item">
+                            <span class="stats-today-count" data-stats-today="ajirniminannar">0</span>
+                            <span class="stats-today-label">Ajirnī minan-nār</span>
                         </div>
                     </div>
                 </div>
@@ -333,20 +519,56 @@
                     <h3 class="stats-section-title">Totaal (alle tijd)</h3>
                     <div class="stats-totals-grid">
                         <div class="stats-total-item">
-                            <span class="stats-total-count" id="statsTotalSubhanallah">0</span>
+                            <span class="stats-total-count" id="statsTotalSubhanallah" data-stats-total="subhanallah">0</span>
                             <span class="stats-total-label">SubḥānAllāh</span>
                         </div>
                         <div class="stats-total-item">
-                            <span class="stats-total-count" id="statsTotalAlhamdulillah">0</span>
+                            <span class="stats-total-count" id="statsTotalAlhamdulillah" data-stats-total="alhamdulillah">0</span>
                             <span class="stats-total-label">Alḥamdulillāh</span>
                         </div>
                         <div class="stats-total-item">
-                            <span class="stats-total-count" id="statsTotalAllahuakbar">0</span>
+                            <span class="stats-total-count" id="statsTotalAllahuakbar" data-stats-total="allahuakbar">0</span>
                             <span class="stats-total-label">Allāhu Akbar</span>
                         </div>
                         <div class="stats-total-item">
-                            <span class="stats-total-count" id="statsTotalLailahaillallah">0</span>
+                            <span class="stats-total-count" id="statsTotalLailahaillallah" data-stats-total="lailahaillallah">0</span>
                             <span class="stats-total-label">Lā ilāha illā Allāh</span>
+                        </div>
+                        <div class="stats-total-item">
+                            <span class="stats-total-count" data-stats-total="subhanallahiwabihamdihi">0</span>
+                            <span class="stats-total-label">SubḥānAllāhi wa biḥamdihī</span>
+                        </div>
+                        <div class="stats-total-item">
+                            <span class="stats-total-count" data-stats-total="subhanallahilazim">0</span>
+                            <span class="stats-total-label">SubḥānAllāhi al-ʿAẓīm</span>
+                        </div>
+                        <div class="stats-total-item">
+                            <span class="stats-total-count" data-stats-total="hasbunallahu">0</span>
+                            <span class="stats-total-label">ḤasbunAllāhu</span>
+                        </div>
+                        <div class="stats-total-item">
+                            <span class="stats-total-count" data-stats-total="lahawla">0</span>
+                            <span class="stats-total-label">Lā ḥawla</span>
+                        </div>
+                        <div class="stats-total-item">
+                            <span class="stats-total-count" id="statsTotalAstaghfirullah" data-stats-total="astaghfirullah">0</span>
+                            <span class="stats-total-label">Astaghfirullāh</span>
+                        </div>
+                        <div class="stats-total-item">
+                            <span class="stats-total-count" data-stats-total="yahayyuyaqayyum">0</span>
+                            <span class="stats-total-label">Yā Ḥayyu Yā Qayyūm</span>
+                        </div>
+                        <div class="stats-total-item">
+                            <span class="stats-total-count" data-stats-total="rabbiinni">0</span>
+                            <span class="stats-total-label">Rabbi innī...</span>
+                        </div>
+                        <div class="stats-total-item">
+                            <span class="stats-total-count" data-stats-total="husnalkhatimah">0</span>
+                            <span class="stats-total-label">Ḥusna al-khātimah</span>
+                        </div>
+                        <div class="stats-total-item">
+                            <span class="stats-total-count" data-stats-total="ajirniminannar">0</span>
+                            <span class="stats-total-label">Ajirnī minan-nār</span>
                         </div>
                     </div>
                 </div>
