@@ -583,6 +583,17 @@ body::before {
     margin-bottom: 1.5rem;
 }
 
+.dzikr-group-title {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: .9rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #d4af37;
+    text-align: center;
+    margin: .35rem 0 -.2rem;
+}
+
 .dzikr-card {
     background: rgba(212, 175, 55, .04);
     border: 1px solid rgba(212, 175, 55, .15);
@@ -600,6 +611,7 @@ body::before {
 .dzikr-card.card-alhamdulillah { border-left: 3px solid #5cb85c; }
 .dzikr-card.card-allahuakbar { border-left: 3px solid #f5d76e; }
 .dzikr-card.card-lailahaillallah { border-left: 3px solid #9b59b6; }
+.dzikr-card.card-daily { border-left: 3px solid #d4af37; }
 
 .dzikr-arabic {
     font-family: 'AlQalamQuranMajeed', 'Amiri', serif;
@@ -731,6 +743,13 @@ body::before {
 }
 .btn-lailahaillallah:hover { box-shadow: 0 8px 22px rgba(155, 89, 182, .5); }
 .btn-lailahaillallah:active { background: linear-gradient(180deg, #9b59b6, #7d3c98); }
+
+.btn-daily {
+    background: linear-gradient(180deg, #f4d87d 0%, #d4af37 100%);
+    box-shadow: 0 6px 16px rgba(212, 175, 55, .35);
+}
+.btn-daily:hover { box-shadow: 0 8px 22px rgba(212, 175, 55, .45); }
+.btn-daily:active { background: linear-gradient(180deg, #d4af37, #b8941e); }
 
 .dzikr-count {
     font-family: 'Cinzel', serif;
@@ -1149,6 +1168,7 @@ body::before {
     font-size: .68rem;
     color: rgba(240, 236, 228, .55);
     margin-top: .2rem;
+    overflow-wrap: anywhere;
 }
 
 /* Heatmap */
@@ -1232,6 +1252,7 @@ body::before {
     font-size: .68rem;
     color: rgba(240, 236, 228, .55);
     margin-top: .2rem;
+    overflow-wrap: anywhere;
 }
 
 /* Records */
@@ -1305,6 +1326,7 @@ body::before {
         gap: .85rem;
     }
 
+    .dzikr-group-title { grid-column: 1 / -1; }
     .dzikr-card { padding: 1rem .9rem; }
     .dzikr-arabic { font-size: 1.4rem; }
     .dzikr-explain { font-size: .8rem; }
@@ -1339,4 +1361,542 @@ body::before {
     .tasbih-celebration-content { animation: none; }
 
     .tab-icon svg { transition: none; }
+}
+
+/* =============================================
+   MODERN LEERPORTAAL REDESIGN
+   ============================================= */
+:root {
+    --blue: #1f294d;
+    --blue-soft: rgba(31, 41, 77, 0.06);
+    --blue-border: rgba(31, 41, 77, 0.10);
+    --gold: #d4af37;
+    --gold-soft: rgba(212, 175, 55, 0.10);
+    --gold-border: rgba(212, 175, 55, 0.28);
+    --bg: #f9f8f6;
+    --surface: #ffffff;
+    --surface-soft: #f3f1ed;
+    --text: #1c2340;
+    --muted: #5c6e8a;
+    --border: rgba(31, 41, 77, 0.09);
+    --shadow: 0 1px 4px rgba(31, 41, 77, 0.06), 0 4px 16px rgba(31, 41, 77, 0.07);
+    --shadow-hover: 0 8px 28px rgba(31, 41, 77, 0.14);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background: var(--bg);
+}
+
+body::before {
+    display: none;
+}
+
+.app-shell {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+.app-header {
+    max-width: none;
+    width: 100%;
+    padding: 28px 20px 58px;
+    margin: 0 0 42px;
+    background:
+        linear-gradient(rgba(31, 41, 77, .045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(31, 41, 77, .045) 1px, transparent 1px),
+        radial-gradient(circle at 88% 72%, rgba(212, 175, 55, .32) 0 0, rgba(212, 175, 55, .32) 78px, rgba(212, 175, 55, .10) 79px, transparent 128px),
+        var(--bg);
+    background-size: 48px 48px, 48px 48px, auto, auto;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+}
+
+.header-logo {
+    width: min(360px, 78vw);
+    height: auto;
+    margin: 0 auto 38px;
+    filter: invert(1);
+    opacity: .92;
+}
+
+.header-title {
+    font-family: 'Newsreader', serif;
+    font-size: clamp(3.2rem, 10vw, 7.5rem);
+    font-weight: 800;
+    letter-spacing: -0.06em;
+    line-height: .82;
+    color: #0d0e14;
+    text-transform: none;
+    text-shadow: none;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.header-arabic {
+    color: var(--gold);
+    font-size: clamp(1.65rem, 5vw, 2.6rem);
+    margin-top: .55rem;
+}
+
+.header-subtitle {
+    max-width: 620px;
+    margin: .8rem auto 0;
+    color: var(--muted);
+    font-size: .98rem;
+    font-style: normal;
+    line-height: 1.65;
+}
+
+.app-views {
+    max-width: 980px;
+    padding: 0 20px calc(88px + env(safe-area-inset-bottom, 0px));
+    min-height: auto;
+}
+
+.intro-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 28px;
+    color: var(--text);
+    font-size: .95rem;
+    line-height: 1.75;
+    margin-bottom: 22px;
+}
+
+.intro-section strong {
+    color: var(--text);
+}
+
+.hadith-ref {
+    color: #7a5f0a;
+    background: var(--gold-soft);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 14px;
+    margin: 18px 0;
+    font-size: .9rem;
+}
+
+.garden-wrap {
+    height: 360px;
+    border-radius: 14px;
+    border: 1px solid var(--blue-border);
+    box-shadow: var(--shadow);
+    margin-bottom: 28px;
+    background:
+        linear-gradient(180deg, rgba(31, 41, 77, .02), rgba(31, 41, 77, .16)),
+        linear-gradient(180deg, #1f294d 0%, #24355e 48%, #edf0e6 48%, #dae4ce 100%);
+}
+
+.garden-wrap::after {
+    height: 42%;
+    background: linear-gradient(180deg, rgba(231, 236, 223, 0) 0%, rgba(231, 236, 223, .86) 44%, rgba(216, 226, 205, .98) 100%);
+}
+
+.zone-label {
+    color: rgba(31, 41, 77, .38);
+}
+
+.dzikr-cards {
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.dzikr-group-title,
+.edu-title,
+.stats-section-title,
+.patroon-level {
+    font-family: 'Inter', sans-serif;
+    color: var(--blue);
+    letter-spacing: .08em;
+}
+
+.dzikr-group-title {
+    text-align: left;
+    font-size: .72rem;
+    font-weight: 800;
+    margin: 10px 0 -4px;
+}
+
+.dzikr-card,
+.edu-fact,
+.stats-streak-card,
+.stats-today-item,
+.stats-total-item,
+.stats-record-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+}
+
+.dzikr-card {
+    padding: 24px;
+    transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.dzikr-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(31, 41, 77, .16);
+    box-shadow: var(--shadow-hover);
+}
+
+.dzikr-card.card-subhanallah,
+.dzikr-card.card-alhamdulillah,
+.dzikr-card.card-allahuakbar,
+.dzikr-card.card-lailahaillallah,
+.dzikr-card.card-daily {
+    border-left: 4px solid var(--gold);
+}
+
+.dzikr-arabic {
+    color: var(--blue);
+    font-size: clamp(1.55rem, 5vw, 2.15rem);
+}
+
+.dzikr-translit {
+    color: var(--text);
+    font-size: .9rem;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.dzikr-meaning {
+    color: var(--muted);
+    font-size: .84rem;
+    line-height: 1.55;
+}
+
+.dzikr-explain {
+    color: var(--muted);
+    font-size: .86rem;
+    line-height: 1.68;
+}
+
+.dzikr-hadith {
+    color: #7a5f0a;
+    background: var(--gold-soft);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 14px;
+}
+
+.dzikr-btn,
+.tasbih-tap-btn,
+.tasbih-celebration button {
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0;
+}
+
+.dzikr-btn {
+    background: var(--blue) !important;
+    color: #ffffff;
+    border: 1px solid var(--blue);
+    border-bottom: none;
+    box-shadow: none !important;
+    min-height: 44px;
+    padding: .68rem 1rem;
+}
+
+.dzikr-btn:hover {
+    transform: translateY(-1px);
+    background: #17203d !important;
+}
+
+.dzikr-btn:active {
+    transform: translateY(0);
+}
+
+.dzikr-count {
+    min-width: 44px;
+    border-radius: 8px;
+    padding: 8px 10px;
+    background: var(--gold-soft);
+    border: 1px solid var(--gold-border);
+    color: #7a5f0a;
+    font-family: 'Inter', sans-serif;
+}
+
+.edu-section {
+    margin-bottom: 28px;
+}
+
+.edu-title {
+    text-align: left;
+    font-size: .9rem;
+    font-weight: 800;
+}
+
+.edu-fact {
+    color: var(--muted);
+    line-height: 1.65;
+}
+
+.edu-fact .fact-icon {
+    color: var(--gold);
+}
+
+.tasbih-container,
+.patroon-container,
+.stats-container {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 28px;
+}
+
+.tasbih-selector {
+    gap: .55rem;
+}
+
+.tasbih-type-btn {
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--muted);
+    font-family: 'Inter', sans-serif;
+    font-size: .76rem;
+}
+
+.tasbih-type-btn:hover {
+    border-color: var(--blue-border);
+    color: var(--blue);
+}
+
+.tasbih-type-btn.active {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #ffffff;
+}
+
+.tasbih-circle-wrap {
+    width: min(320px, 72vw);
+    height: min(320px, 72vw);
+}
+
+.tasbih-bead {
+    background: #f0eee9;
+    border-color: rgba(31, 41, 77, .16);
+}
+
+.tasbih-bead.completed,
+.tasbih-bead.current {
+    background: var(--gold);
+    border-color: #b8941e;
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, .13);
+}
+
+.tasbih-center-arabic,
+.tasbih-center-count,
+.stats-streak-number,
+.stats-today-count,
+.stats-total-count,
+.stats-record-value {
+    color: var(--blue);
+    font-family: 'Inter', sans-serif;
+    text-shadow: none;
+}
+
+.tasbih-center-rounds,
+.patroon-desc,
+.stats-streak-label,
+.stats-today-label,
+.stats-total-label,
+.stats-record-label,
+.stats-heatmap-months,
+.stats-heatmap-legend-label {
+    color: var(--muted);
+}
+
+.tasbih-tap-btn {
+    width: 80px;
+    height: 48px;
+    background: var(--blue);
+    border: 1px solid var(--blue);
+    color: #ffffff;
+}
+
+.tasbih-tap-btn:hover {
+    background: #17203d;
+    box-shadow: none;
+}
+
+.tasbih-control-btn,
+.tasbih-control-toggle {
+    color: var(--muted);
+    border-color: var(--border);
+    font-family: 'Inter', sans-serif;
+}
+
+.tasbih-control-btn:hover,
+.tasbih-control-toggle:hover,
+.tasbih-control-toggle:has(input:checked) {
+    color: var(--blue);
+    border-color: var(--blue-border);
+}
+
+.patroon-canvas-wrap {
+    border-radius: 14px;
+    border-color: var(--border);
+    background: #f1efe9;
+}
+
+.stats-container {
+    gap: 24px;
+}
+
+.stats-section-title {
+    font-size: .78rem;
+    font-weight: 800;
+}
+
+.stats-streak-card,
+.stats-today-item,
+.stats-total-item,
+.stats-record-item {
+    padding: 18px 14px;
+}
+
+.stats-heatmap-cell {
+    background: rgba(31, 41, 77, .07);
+}
+
+.stats-heatmap-cell[data-level="1"] { background: rgba(212, 175, 55, .20); }
+.stats-heatmap-cell[data-level="2"] { background: rgba(212, 175, 55, .42); }
+.stats-heatmap-cell[data-level="3"] { background: rgba(212, 175, 55, .68); }
+.stats-heatmap-cell[data-level="4"] { background: rgba(31, 41, 77, .90); }
+
+.reset-btn {
+    border-color: var(--border);
+    color: var(--muted);
+    font-family: 'Inter', sans-serif;
+    border-radius: 8px;
+}
+
+.reset-btn:hover {
+    color: var(--blue);
+    border-color: var(--blue-border);
+}
+
+.tab-bar {
+    left: 50%;
+    right: auto;
+    bottom: 16px;
+    width: min(560px, calc(100% - 28px));
+    height: 64px;
+    transform: translateX(-50%);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .92);
+    box-shadow: var(--shadow-hover);
+}
+
+.tab {
+    color: var(--muted);
+    font-family: 'Inter', sans-serif;
+    font-size: .68rem;
+}
+
+.tab:hover,
+.tab.active {
+    color: var(--blue);
+}
+
+.tab.active .tab-icon svg {
+    filter: none;
+}
+
+.tasbih-celebration {
+    background: rgba(31, 41, 77, .72);
+}
+
+.tasbih-celebration h2 {
+    font-family: 'Newsreader', serif;
+    color: #ffffff;
+}
+
+.tasbih-celebration p {
+    color: rgba(255, 255, 255, .78);
+}
+
+@media (min-width: 768px) {
+    .app-views {
+        max-width: 980px;
+    }
+
+    .intro-section {
+        padding: 32px 36px;
+    }
+
+    .garden-wrap {
+        height: 430px;
+    }
+
+    .dzikr-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .dzikr-card {
+        padding: 26px;
+    }
+
+    .dzikr-arabic {
+        font-size: 1.75rem;
+    }
+
+    .dzikr-explain {
+        font-size: .86rem;
+    }
+
+    .dzikr-hadith {
+        font-size: .8rem;
+    }
+
+    .dzikr-action {
+        flex-direction: row;
+    }
+
+    .stats-today-grid,
+    .stats-totals-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .app-header {
+        padding: 28px 18px 42px;
+        margin-bottom: 24px;
+    }
+
+    .app-views {
+        padding-inline: 16px;
+    }
+
+    .intro-section,
+    .dzikr-card,
+    .tasbih-container,
+    .patroon-container,
+    .stats-container {
+        padding: 20px;
+    }
+
+    .garden-wrap {
+        height: 320px;
+    }
+
+    .dzikr-action {
+        align-items: stretch;
+    }
+
+    .dzikr-btn {
+        width: 100%;
+    }
 }

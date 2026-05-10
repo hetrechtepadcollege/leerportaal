@@ -176,7 +176,7 @@ const questions = [
             { text: "B) 6", correct: true },
             { text: "C) 7", correct: false }
         ],
-        uitleg: "De ṣalāt kent zes voorwaarden: reinheid, het bedekken van de intieme delen (ʿawrah), het richten naar de qiblah, het intreden van de gebedstijd, de intentie en de openingstakbīr. Zonder deze voorwaarden is het gebed niet geldig.",
+        uitleg: "De ṣalāt kent zes voorwaarden: reinheid, het bedekken van de intieme delen (ʿawrah), het richten naar de qiblah, het intreden van de gebedstijd, de intentie en de openingstakbīr (het uitspreken van Allāhu Akbar terwijl je beide handen optilt). Zonder deze voorwaarden is het gebed niet geldig.",
         source: "BSI_N1.pdf p.79"
     },
     {
@@ -310,6 +310,165 @@ const questions = [
         ],
         uitleg: "Qaḍā betekent dat je een gebed in een later tijdstip verricht nadat de oorspronkelijke tijd is verstreken. Dit geldt voor gebeden die je hebt gemist en alsnog moet inhalen.",
         source: "Website: Het inhalen van een levenslang aantal gemiste gebeden (2023-06-05); BSI_N1.pdf p.126"
+    },
+
+    // --- Scenario-vragen (29–40) ---
+    // Bronnen: BSI_N1.pdf, BSI Les 18 (presentatie + lesbrief), N2_BSI_GP_FINAL.pdf
+    {
+        type: "scenario",
+        category: "Voorwaarden & uitvoering",
+        scenario: "Yusuf staat klaar om zijn gebed te beginnen. Na het maken van zijn intentie heft hij beide handen op tot schouderhoogte en verricht de openingstakbīr — het uitspreken van Allāhu Akbar terwijl je beide handen optilt.",
+        question: "Is de manier waarop Yusuf zijn handen opheft correct voor een man?",
+        answers: [
+            { text: "A) Ja, dit is de juiste hoogte voor iedereen", correct: false },
+            { text: "B) Nee, mannen heffen hun handen op tot de hoogte van de oren", correct: true },
+            { text: "C) Nee, mannen heffen hun handen helemaal niet op", correct: false }
+        ],
+        uitleg: "Mannen heffen bij de openingstakbīr (het uitspreken van Allāhu Akbar terwijl je beide handen optilt) beide handen op tot de hoogte van de oren, waarbij de duimen de oorlellen aanraken en de handpalmen naar de qiblah (gebedsrichting) zijn gericht. Vrouwen heffen hun handen op tot schouderhoogte — niet hoger. Yusuf moet dus zijn handen hoger heffen.",
+        source: "BSI Les 18 (lesbrief p.1); BSI_N1.pdf p.82"
+    },
+    {
+        type: "scenario",
+        category: "Voorwaarden & uitvoering",
+        scenario: "Hafsa bidt haar Ẓuhr-gebed (middaggebed) thuis. Na de openingstakbīr (het uitspreken van Allāhu Akbar terwijl je beide handen optilt) vouwt ze haar handen onder haar navel, zoals ze haar vader ziet doen.",
+        question: "Vouwt Hafsa haar handen op de juiste wijze?",
+        answers: [
+            { text: "A) Ja, iedereen vouwt de handen onder de navel", correct: false },
+            { text: "B) Nee, vrouwen plaatsen hun handen op de borstkast, onder de boezem", correct: true },
+            { text: "C) Nee, vrouwen laten hun handen langs het lichaam hangen", correct: false }
+        ],
+        uitleg: "Mannen vouwen beide handen onder de navel (rechterhand op de rug van de linkerhand). Vrouwen vouwen hun handen hoger, op de borstkast, onder de boezem — de rechterhandpalm op de rug van de linkerhand. Hafsa moet haar handen dus hoger plaatsen dan haar vader doet.",
+        source: "BSI Les 18 (lesbrief p.1); BSI_N1.pdf p.82"
+    },
+    {
+        type: "scenario",
+        category: "Voorwaarden & uitvoering",
+        scenario: "Ahmad verricht de rukū' (kniebuiging). Hij staat voorovergebogen met zijn handen op zijn knieën, de vingers gespreid en zijn rug recht, zodat zijn hoofd op één lijn staat met zijn rug.",
+        question: "Is de rukū' (kniebuiging) houding van Ahmad correct voor een man?",
+        answers: [
+            { text: "A) Nee, mannen buigen de rug licht en houden de vingers aaneengesloten", correct: false },
+            { text: "B) Nee, mannen plaatsen de handen langs het lichaam tijdens de rukū' (kniebuiging)", correct: false },
+            { text: "C) Ja, dit is de correcte houding voor mannen", correct: true }
+        ],
+        uitleg: "Bij de rukū' (kniebuiging) steunt de man met beide handen op zijn knieën terwijl hij ze stevig vastpakt. De vingers zijn gespreid, de rug is recht en het hoofd staat op één lijn met de rug. Ahmad doet dit correct. Voor vrouwen gelden andere regels: zij buigen minder ver en houden de vingers aaneengesloten.",
+        source: "BSI Les 18 (lesbrief p.2); BSI_N1.pdf p.86"
+    },
+    {
+        type: "scenario",
+        category: "Voorwaarden & uitvoering",
+        scenario: "Tariq maakt de sujūd (grondbuiging). Zijn knieën, handen en voorhoofd raken de grond aan, maar zijn neus zweeft er net boven.",
+        question: "Is de sujūd (grondbuiging) van Tariq geldig?",
+        answers: [
+            { text: "A) Ja, het voorhoofd raakt de grond, dus de sujūd (grondbuiging) is geldig", correct: false },
+            { text: "B) Ja, de neus is aanbevolen maar niet verplicht", correct: false },
+            { text: "C) Nee, zowel het voorhoofd als de neus moeten goed op de grond worden gedrukt", correct: true }
+        ],
+        uitleg: "Bij de sujūd (grondbuiging) moeten zeven lichaamsdelen de grond aanraken: beide voeten (met de tenen), beide knieën, beide handen, en het gezicht — waarbij neus én voorhoofd goed op de grond moeten worden gedrukt. Beide zijn verplicht. Het weglaten van de neus maakt de sujūd ongeldig.",
+        source: "BSI Les 18 (lesbrief p.3); BSI_N1.pdf p.87"
+    },
+    {
+        type: "scenario",
+        category: "Voorwaarden & uitvoering",
+        scenario: "Suleiman bidt zijn ʿAṣr-gebed (namiddaggebed). In de derde rakʿah (gebedseenheid) leest hij soera al-Fātiḥa en daarna ook nog soera al-Ikhlāṣ.",
+        question: "Is het lezen van de extra soera in de derde rakʿah (gebedseenheid) van een farḍ-gebed (verplicht gebed) correct?",
+        answers: [
+            { text: "A) Ja, het is aanbevolen om in elke rakʿah (gebedseenheid) een extra soera te lezen", correct: false },
+            { text: "B) Nee, in de 3e en 4e rakʿah (gebedseenheid) van een farḍ-gebed (verplicht gebed) leest men alleen soera al-Fātiḥa", correct: true },
+            { text: "C) Nee, in de 3e en 4e rakʿah (gebedseenheid) mag ook soera al-Fātiḥa niet worden gelezen", correct: false }
+        ],
+        uitleg: "In de 1e en 2e rakʿah (gebedseenheid) van een farḍ-gebed (verplicht gebed) leest men na soera al-Fātiḥa een extra soera of minimaal drie verzen. In de 3e en 4e rakʿah volstaat soera al-Fātiḥa alleen — een extra soera is daar niet nodig en ook niet aangewezen.",
+        source: "BSI Les 18 (lesbrief p.2); BSI_N1.pdf p.90"
+    },
+    {
+        type: "scenario",
+        category: "Voorwaarden & uitvoering",
+        scenario: "Layla zit in de tashahhud (de gebedsverklaring). Bij het reciteren van de shahādah (de geloofsgetuigenis) heft ze haar wijsvinger op bij het woord 'lā' en houdt die omhoog tot het einde van de tashahhud.",
+        question: "Is het vingergebaar van Layla correct?",
+        answers: [
+            { text: "A) Ja, de wijsvinger blijft omhoog tot het einde van de tashahhud (gebedsverklaring)", correct: false },
+            { text: "B) Nee, de wijsvinger wordt helemaal niet opgeheven", correct: false },
+            { text: "C) Nee, de wijsvinger wordt omhoog geheven bij 'lā' en neergelaten bij 'illā'", correct: true }
+        ],
+        uitleg: "Tijdens de tashahhud (gebedsverklaring) maakt men een ringvorm met de duim en middelvinger. Bij het woord 'lā' wordt de wijsvinger omhoog geheven, en bij het woord 'illā' wordt die weer neergelaten. De vinger tot het einde omhoog houden is niet de juiste handeling.",
+        source: "BSI Les 18 (lesbrief p.4); BSI_N1.pdf p.98"
+    },
+    {
+        type: "scenario",
+        category: "Voorwaarden & uitvoering",
+        scenario: "Karima sluit haar gebed af. Ze draait haar hoofd eerst naar links en zegt 'As-Salāmu ʿalaykum wa raḥmatullāh' (Vrede zij u en de genade van Allah), daarna naar rechts en geeft eveneens de salām (vredesgroet).",
+        question: "Is de volgorde van de taslīm (de afsluitende groet) correct?",
+        answers: [
+            { text: "A) Ja, de volgorde mag naar keuze worden bepaald", correct: false },
+            { text: "B) Nee, men draait eerst naar rechts, dan naar links", correct: true },
+            { text: "C) Nee, de salām (vredesgroet) wordt slechts één keer gegeven", correct: false }
+        ],
+        uitleg: "Het gebed wordt afgesloten met de taslīm (de afsluitende groet): men kijkt eerst naar de rechterschouder en zegt 'As-Salāmu ʿalaykum wa raḥmatullāh', daarna naar de linkerschouder en herhaalt de salām (vredesgroet). De volgorde rechts-dan-links is vereist.",
+        source: "BSI Les 18 (lesbrief p.5); BSI_N1.pdf p.102"
+    },
+    {
+        type: "scenario",
+        category: "Voorwaarden & uitvoering",
+        scenario: "Bilal zit voor de tashahhud (de gebedsverklaring). Hij strekt beide voeten zijdelings naar rechts uit en gaat op zijn linkerzijde zitten — een houding die hij bij vrouwen heeft gezien.",
+        question: "Is de zittingspositie van Bilal correct voor mannen?",
+        answers: [
+            { text: "A) Ja, dit is de juiste zittingspositie voor iedereen", correct: false },
+            { text: "B) Nee, mannen zitten op het linkerbeen met de rechtervoet met de tenen voorovergebogen richting de qiblah (gebedsrichting)", correct: true },
+            { text: "C) Nee, mannen zitten rechtop met beide voeten plat op de grond", correct: false }
+        ],
+        uitleg: "Voor mannen geldt bij de tashahhud (gebedsverklaring): zitten op het linkerbeen, terwijl de rechtervoet met de tenen voorovergebogen richting de qiblah (gebedsrichting) is. De vrouw strekt beide voeten naar rechts en zit op haar linkerzijde. Bilal gebruikt de vrouwelijke zittingspositie — dat is niet correct voor hem.",
+        source: "BSI Les 18 (lesbrief p.3–4); BSI_N1.pdf p.97"
+    },
+    {
+        type: "scenario",
+        category: "Gebedstijden",
+        scenario: "Nadia reist met de auto van Rotterdam naar Groningen, een afstand van ruim 220 km. Ze twijfelt of ze haar ʿAṣr-gebed (namiddaggebed) mag inkorten — qaṣr (het inkorten van het gebed van 4 naar 2 rakʿāt — gebedseenheden) — tijdens de reis.",
+        question: "Mag Nadia haar gebed inkorten (qaṣr) tijdens deze reis?",
+        answers: [
+            { text: "A) Nee, qaṣr (het inkorten) is alleen buiten Nederland toegestaan", correct: false },
+            { text: "B) Ja, de minimale reisafstand voor qaṣr (het inkorten) is 92 km en Nadia reist ruim verder", correct: true },
+            { text: "C) Nee, qaṣr (het inkorten) is alleen voor mannen", correct: false }
+        ],
+        uitleg: "Qaṣr (het inkorten van een farḍ-gebed — verplicht gebed — van 4 rakʿāt naar 2 rakʿāt) is toegestaan wanneer men een reisafstand van minimaal 92 km (48 mijl) aflegt. Nadia's reis van Rotterdam naar Groningen is ruim 220 km en overschrijdt deze grens ruimschoots. Qaṣr is voor haar dus toegestaan.",
+        source: "N2_BSI_GP_FINAL.pdf p.14"
+    },
+    {
+        type: "scenario",
+        category: "Geldigheid & herstel",
+        scenario: "Omar bidt zijn Maghrib-gebed (avondgebed). In de 2e rakʿah (gebedseenheid) vergeet hij de eerste tashahhud (de gebedsverklaring) te reciteren en staat op voor de 3e rakʿah (gebedseenheid). Hij realiseert dit pas later en zet zijn gebed voort.",
+        question: "Wat moet Omar doen om deze vergissing te herstellen?",
+        answers: [
+            { text: "A) Niets — de tashahhud (gebedsverklaring) is soenna en het gebed blijft volledig geldig", correct: false },
+            { text: "B) Zijn gebed helemaal opnieuw beginnen", correct: false },
+            { text: "C) Zijn gebed voltooien en daarna sujūd al-sahw (vergissingsbuigingen) verrichten", correct: true }
+        ],
+        uitleg: "De eerste tashahhud (gebedsverklaring) is een wājib (essentiële) handeling. Wie hem vergeet en al is opgestaan, keert niet meer terug naar de zitting. Na het voltooien van het gebed verricht men sujūd al-sahw (vergissingsbuigingen): twee vergissingsbuigingen in de laatste zitting, gevolgd door een nieuwe taslīm (afsluitende groet). Het gebed opnieuw starten is niet nodig.",
+        source: "BSI_N1.pdf p.121"
+    },
+    {
+        type: "scenario",
+        category: "Geldigheid & herstel",
+        scenario: "Hassan bidt zijn witr-gebed (oneven gebed). Omdat hij de tekst van de Duʿā Qunūt (een smeekbede die specifiek in het witr wordt uitgesproken) niet goed kent, besluit hij hem bewust weg te laten.",
+        question: "Wat is het gevolg van het opzettelijk weglaten van de Duʿā Qunūt (smeekbede) in het witr-gebed (oneven gebed)?",
+        answers: [
+            { text: "A) Geen gevolg — Duʿā Qunūt (smeekbede) is aanbevolen maar niet verplicht", correct: false },
+            { text: "B) Er is alleen sujūd al-sahw (vergissingsbuiging) nodig om het te herstellen", correct: false },
+            { text: "C) Het witr-gebed (oneven gebed) wordt ongeldig", correct: true }
+        ],
+        uitleg: "De Duʿā Qunūt (smeekbede) is een wājib (essentiële) handeling in het witr-gebed (oneven gebed). Het opzettelijk weglaten ervan maakt het gebed ongeldig. Wie de tekst per vergissing vergeet, kan sujūd al-sahw (vergissingsbuigingen) verrichten. Hassan dient de Duʿā Qunūt te leren zodat hij hem niet opzettelijk hoeft over te slaan.",
+        source: "BSI_N1.pdf pp.90, 116"
+    },
+    {
+        type: "scenario",
+        category: "Geldigheid & herstel",
+        scenario: "Fatimah leest voor zichzelf uit de Koran en reciteert een sajdah-vers (een gemarkeerd grondbuigingvers in de Koran). Ze blijft rustig zitten en verricht geen verdere handeling.",
+        question: "Welke handeling is wājib (essentieel/verplicht) wanneer men een sajdah-vers (grondbuigingvers) reciteert?",
+        answers: [
+            { text: "A) Twee rakʿāt (gebedseenheden) bidden als dankbaarheid", correct: false },
+            { text: "B) Sujūd al-tilāwah (grondbuiging bij Koranrecitatie) verrichten: één grondbuiging", correct: true },
+            { text: "C) Niets — sujūd al-tilāwah (grondbuiging bij Koranrecitatie) is slechts aanbevolen", correct: false }
+        ],
+        uitleg: "Wanneer men een sajdah-vers (grondbuigingvers) reciteert of hoort, is sujūd al-tilāwah (grondbuiging bij Koranrecitatie) wājib (essentieel/verplicht). Men onderbreekt de recitatie en verricht één grondbuiging als eerbetoon aan Allah. Het opzettelijk weglaten hiervan is zondig. Fatimah had sujūd al-tilāwah moeten verrichten.",
+        source: "N2_BSI_GP_FINAL.pdf p.26"
     }
 ];
 
@@ -343,7 +502,7 @@ const inactiveQuestionBank = [
         uitleg: "Tot de verplichtingen van de wuḍū (kleine wassing) behoort het wassen van het gezicht vanaf de haargrens tot onder de kin en van de ene oorlel tot de andere."
     },
     {
-        question: "Wat betekent ‘wassen’ bij de wuḍū (kleine wassing)?",
+        question: "Wat betekent 'wassen' bij de wuḍū (kleine wassing)?",
         answers: [
             { text: "A) Dat de huid alleen een beetje vochtig wordt", correct: false },
             { text: "B) Dat water over elk deel van het te wassen ledemaat stroomt", correct: true },
@@ -394,7 +553,7 @@ const inactiveQuestionBank = [
             { text: "B) De iqāmah", correct: false },
             { text: "C) De khuṭbah", correct: false }
         ],
-        uitleg: "De openingstakbīr, het uitspreken van Allāhu Akbar bij het begin van het gebed, behoort tot de zes voorwaarden van de ṣalāt (gebed)."
+        uitleg: "De openingstakbīr (het uitspreken van Allāhu Akbar terwijl je beide handen optilt) behoort tot de zes voorwaarden van de ṣalāt (gebed)."
     },
     {
         question: "Welke handeling is wājib (essentieel) in de ṣalāt (gebed)?",
@@ -443,6 +602,13 @@ const inactiveQuestionBank = [
     }
 ];
 
+// Gefilterde vraagsets per modus
+const standardQuestions = questions.filter(q => q.type !== "scenario");
+const scenarioQuestions = questions.filter(q => q.type === "scenario");
+
+let activeQuestions = [];
+let quizMode = null;
+
 const CATEGORIES = [
     "Gebedstijden",
     "Reinheid",
@@ -451,9 +617,12 @@ const CATEGORIES = [
 ];
 
 function getCategoryLabel(idx) {
-    if (idx < 8) return CATEGORIES[0];
-    if (idx < 16) return CATEGORIES[1];
-    if (idx < 24) return CATEGORIES[2];
+    const q = activeQuestions[idx];
+    if (q && q.category) return q.category;
+    const origIdx = questions.indexOf(activeQuestions[idx]);
+    if (origIdx < 8) return CATEGORIES[0];
+    if (origIdx < 16) return CATEGORIES[1];
+    if (origIdx < 24) return CATEGORIES[2];
     return CATEGORIES[3];
 }
 
@@ -487,17 +656,26 @@ function trackEvent(path, title) {
 function trackQuestionAnswer(questionIdx, isCorrect, categoryLabel) {
     const questionNumber = String(questionIdx + 1).padStart(2, "0");
     const resultLabel = isCorrect ? "goed" : "fout";
-    const path = `gebed-quiz/vraag-${questionNumber}-${resultLabel}`;
-    const title = `Kennisquiz Gebed vraag ${questionNumber} ${resultLabel} (${categoryLabel})`;
-
+    const prefix = quizMode === "situaties" ? "situatie" : "vraag";
+    const path = `gebed-quiz/${prefix}-${questionNumber}-${resultLabel}`;
+    const title = `Kennisquiz Gebed ${prefix} ${questionNumber} ${resultLabel} (${categoryLabel})`;
     trackEvent(path, title);
 }
 
 window.restartQuiz = function restartQuiz() {
+    if (quizMode) {
+        sessionStorage.setItem("gebedQuizMode", quizMode);
+    }
     location.reload();
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+    const modeSelector = document.getElementById("mode-selector");
+    const quizContent = document.getElementById("quiz-content");
+    const modeVragenBtn = document.getElementById("mode-vragen-btn");
+    const modeSituatiesBtn = document.getElementById("mode-situaties-btn");
+    const modeKeuzeBtn = document.getElementById("mode-keuze-btn");
+
     const characterImg = document.getElementById("character-img");
     const resultContainer = document.getElementById("result-container");
     const restartBtn = document.getElementById("restart-btn");
@@ -512,6 +690,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextBtn = document.getElementById("next-btn");
     const shareBtn = document.getElementById("whatsapp-share-btn");
     const categoryBadge = document.getElementById("category-badge");
+    const scenarioBlock = document.getElementById("scenario-block");
+    const scenarioTekst = document.getElementById("scenario-tekst");
+    const modeBackWrap = document.getElementById("mode-back-wrap");
+    const modeTerugQuizBtn = document.getElementById("mode-terug-quiz-btn");
+
+    function startQuiz(mode) {
+        quizMode = mode;
+        activeQuestions = mode === "vragen" ? standardQuestions : scenarioQuestions;
+        if (modeSelector) modeSelector.classList.add("hide");
+        if (quizContent) quizContent.classList.remove("hide");
+        showQuestion();
+        trackEvent(`gebed-quiz/modus-${mode}`, `Kennisquiz Gebed modus: ${mode}`);
+        if (!quizStartTracked) {
+            trackEvent("gebed-quiz/quiz-gestart", "Kennisquiz Gebed gestart");
+            quizStartTracked = true;
+        }
+    }
 
     if (
         !characterImg ||
@@ -525,6 +720,26 @@ document.addEventListener("DOMContentLoaded", () => {
         !nextBtn
     ) {
         return;
+    }
+
+    if (modeVragenBtn) {
+        modeVragenBtn.addEventListener("click", () => startQuiz("vragen"));
+    }
+    if (modeSituatiesBtn) {
+        modeSituatiesBtn.addEventListener("click", () => startQuiz("situaties"));
+    }
+    if (modeKeuzeBtn) {
+        modeKeuzeBtn.addEventListener("click", () => location.reload());
+    }
+    if (modeTerugQuizBtn) {
+        modeTerugQuizBtn.addEventListener("click", () => location.reload());
+    }
+
+    // Auto-start als er een opgeslagen modus is (na herladen via "Opnieuw spelen")
+    const savedMode = sessionStorage.getItem("gebedQuizMode");
+    if (savedMode) {
+        sessionStorage.removeItem("gebedQuizMode");
+        startQuiz(savedMode);
     }
 
     if (restartBtn) {
@@ -582,9 +797,20 @@ document.addEventListener("DOMContentLoaded", () => {
         resultContainer.classList.add("hide");
         uitlegContainer.classList.add("hide");
 
-        const currentQuestion = questions[currentIdx];
+        const currentQuestion = activeQuestions[currentIdx];
+
+        // Scenario-block: tonen bij type "scenario", verbergen anders
+        if (scenarioBlock && scenarioTekst) {
+            if (currentQuestion.type === "scenario" && currentQuestion.scenario) {
+                scenarioTekst.innerText = currentQuestion.scenario;
+                scenarioBlock.classList.remove("hide");
+            } else {
+                scenarioBlock.classList.add("hide");
+            }
+        }
+
         qTextElement.innerText = currentQuestion.question;
-        progressBar.style.width = `${(currentIdx / questions.length) * 100}%`;
+        progressBar.style.width = `${(currentIdx / activeQuestions.length) * 100}%`;
 
         if (categoryBadge) categoryBadge.innerText = getCategoryLabel(currentIdx);
 
@@ -609,7 +835,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (btn.disabled) {
             return;
         }
-        const huidigeVraag = questions[currentIdx];
+        const huidigeVraag = activeQuestions[currentIdx];
         const categoryLabel = getCategoryLabel(currentIdx);
 
         trackEvent(
@@ -651,9 +877,10 @@ document.addEventListener("DOMContentLoaded", () => {
     function showResult() {
         resetState();
         uitlegContainer.classList.add("hide");
+        if (modeBackWrap) modeBackWrap.classList.add("hide");
         progressBar.style.width = "100%";
         qTextElement.innerText = "Māshā Allāh! Je hebt de Kennisquiz Gebed afgerond.";
-        scoreText.innerHTML = `Eindscore: ${score} van de ${questions.length}<br><br>Moge Allah ons allen helpen ons gebed te onderhouden met aandacht, eerbiedigheid en toewijding. Āmīn!`;
+        scoreText.innerHTML = `Eindscore: ${score} van de ${activeQuestions.length}<br><br>Moge Allah ons allen helpen ons gebed te onderhouden met aandacht, eerbiedigheid en toewijding. Āmīn!`;
         resultContainer.classList.remove("hide");
         characterImg.src = "images/mw-dua.png";
         characterImg.classList.add("end");
@@ -688,16 +915,10 @@ document.addEventListener("DOMContentLoaded", () => {
     nextBtn.addEventListener("click", () => {
         uitlegContainer.classList.add("hide");
         currentIdx++;
-        if (currentIdx < questions.length) {
+        if (currentIdx < activeQuestions.length) {
             showQuestion();
         } else {
             showResult();
         }
     });
-
-    showQuestion();
-    if (!quizStartTracked) {
-        trackEvent("gebed-quiz/quiz-gestart", "Kennisquiz Gebed gestart");
-        quizStartTracked = true;
-    }
 });

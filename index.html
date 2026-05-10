@@ -116,8 +116,8 @@
         }
 
         .card[data-featured="true"] .play-btn {
-            margin-top: 0;
-            flex-shrink: 0;
+            margin-top: 20px;
+            display: inline-block;
         }
 
         /* ── EMOJI CONTAINER ── */
@@ -326,6 +326,27 @@
                 margin-top: 20px;
             }
         }
+
+        /* ── PREVIEW PANE (featured card) ── */
+        .card-preview {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-preview iframe {
+            border: none;
+            border-radius: 40px;
+            display: block;
+            pointer-events: none;
+            box-shadow: 0 24px 48px rgba(31, 41, 77, 0.18);
+        }
+
+        @media (max-width: 900px) {
+            .card-preview { display: none; }
+        }
+
     </style>
 
     <meta property="og:type" content="website">
@@ -352,14 +373,24 @@
 
         <!-- Featured card: zet data-featured="true" op de kaart die je wilt uitlichten -->
         <a href="apps/tuin-van-dzikr/" class="card" data-featured="true">
-            <div class="emoji-container">🌳</div>
             <div class="card-body">
                 <span class="featured-label">Uitgelicht</span><span class="card-tag">Nieuw</span>
                 <h2>De Tuin van Dzikr</h2>
                 <p class="card-subtitle">Laat de tuin van je hart tot bloei komen</p>
                 <p>Leer de betekenis van dzikr (het gedenken van Allah). Met elke dzikr groeit jouw tuin — en wordt er een boom geplant in het Paradijs.</p>
+                <div class="play-btn">Open ➔</div>
             </div>
-            <div class="play-btn">Open ➔</div>
+            <div class="card-preview">
+                <iframe
+                    src="apps/tuin-van-dzikr/preview.html"
+                    width="340"
+                    height="680"
+                    frameborder="0"
+                    scrolling="no"
+                    title="Interactieve preview van De Tuin van Dzikr"
+                    loading="lazy">
+                </iframe>
+            </div>
         </a>
 
         <a href="apps/gebed-quiz/" class="card">

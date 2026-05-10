@@ -1,0 +1,964 @@
+@font-face {
+  font-family: 'AlQalamQuranMajeed';
+  src: url('fonts/AlQalamQuranMajeed.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* ── Design Tokens ── */
+:root {
+  --bg-1: #f4f7fc;
+  --bg-2: #ebf0f8;
+  --bg-3: #e2e9f4;
+
+  --brand: #1f294d;
+  --brand-2: #2f4e8a;
+  --brand-soft: rgba(31, 41, 77, .1);
+
+  --emerald: #2e7d57;
+  --emerald-soft: rgba(46, 125, 87, .08);
+  --ruby: #a53b4c;
+  --ruby-soft: rgba(165, 59, 76, .1);
+
+  --text: #1f294d;
+  --text-soft: #4f5f87;
+  --text-muted: #6a7797;
+
+  --border: #d7e0ef;
+  --border-strong: #b8c5de;
+  --surface: #fff;
+  --surface-2: #f6f8fd;
+
+  --shadow-soft: 0 1px 4px rgba(12, 24, 58, .06);
+  --shadow-card: 0 10px 26px rgba(24, 40, 82, .08);
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  /* category accent colors */
+  --cat-intro: #2f4e8a;
+  --cat-tempo: #c47a1a;
+  --cat-fouten: #a53b4c;
+  --cat-qiraat: #6b4ea0;
+  --cat-overzicht: #3a6ea5;
+  --cat-makharij: #1e7a56;
+  --cat-harakat: #2a8a8a;
+  --cat-tashkil: #8a6a2a;
+  --cat-sifat: #a5652a;
+  --cat-ahkam: #4a7a1e;
+  --cat-nun: #3a4ea5;
+  --cat-mim: #6b3a8a;
+  --cat-ghunnah: #2a8a8a;
+  --cat-madd: #8a3a6b;
+  --cat-waqf: #6a6a3a;
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 10% 0, var(--bg-1), var(--bg-2) 42%, var(--bg-3));
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* subtle dot pattern */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  opacity: .05;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 15% 25%, var(--brand) 1px, transparent 1px),
+    radial-gradient(circle at 85% 30%, var(--brand) 1px, transparent 1px);
+  background-size: 140px 140px;
+}
+
+/* ── App Shell ── */
+.app-shell {
+  position: relative;
+  z-index: 1;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.25rem 3rem;
+  animation: pageIn .5s cubic-bezier(.22, 1, .36, 1);
+}
+
+/* ── Header ── */
+.app-header {
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+  padding: 1.25rem 0;
+}
+
+.back-link {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-pill);
+  color: var(--brand);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all .2s ease;
+}
+.back-link:hover {
+  background: var(--brand-soft);
+}
+
+.header-title {
+  font-family: 'Cinzel', serif;
+  color: var(--brand);
+  font-size: clamp(1.2rem, 4vw, 1.65rem);
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+.header-subtitle {
+  font-style: italic;
+  font-size: .85rem;
+  color: var(--text-soft);
+  margin-top: .1rem;
+}
+
+/* ── Intro / Quran Verse Hero ── */
+.intro-section {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.25rem;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  line-height: 1.7;
+}
+
+.intro-section::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(47, 78, 138, .06), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.intro-section p {
+  color: var(--text-soft);
+  font-size: .92rem;
+}
+
+.intro-section blockquote {
+  position: relative;
+  margin-top: .65rem;
+  border-left: 3px solid var(--brand-2);
+  padding-left: 1rem;
+  color: var(--brand);
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.intro-section blockquote span {
+  display: inline-block;
+  margin-top: .25rem;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: .75rem;
+  color: var(--text-muted);
+}
+
+/* ── Toolbar ── */
+.toolbar {
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.mode-toggle {
+  display: flex;
+  gap: 2px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 3px;
+  border-radius: var(--radius-pill);
+}
+
+.mode-btn {
+  border: 0;
+  background: transparent;
+  border-radius: var(--radius-pill);
+  padding: .5rem .85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: .85rem;
+  cursor: pointer;
+  transition: all .25s ease;
+}
+.mode-btn:hover { color: var(--text-soft); }
+.mode-btn.active {
+  background: var(--brand);
+  color: #fff;
+}
+
+.search-wrap { flex: 1 1 220px; }
+.search-input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: .55rem 1rem;
+  background: var(--surface);
+  color: var(--text);
+  font-size: .88rem;
+  transition: border-color .2s ease;
+}
+.search-input::placeholder { color: var(--text-muted); }
+.search-input:focus { outline: none; border-color: var(--brand-2); box-shadow: 0 0 0 3px rgba(47, 78, 138, .1); }
+
+/* ── Study Utilities ── */
+.study-utilities {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.utility-btn {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius-pill);
+  padding: .42rem .8rem;
+  font-weight: 600;
+  font-size: .82rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.utility-btn:hover {
+  background: var(--surface-2);
+  border-color: var(--border-strong);
+}
+
+.due-info {
+  margin-left: auto;
+  color: var(--text-soft);
+  font-size: .8rem;
+}
+
+/* ── Views ── */
+.view { display: none; }
+.view.active { display: block; animation: viewIn .35s cubic-bezier(.22, 1, .36, 1); }
+
+/* ── Gallery Grid ── */
+.rules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: .85rem;
+}
+
+.rule-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem .9rem;
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  transition: all .3s cubic-bezier(.22, 1, .36, 1);
+  position: relative;
+  overflow: hidden;
+}
+.rule-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--cat-color, var(--brand-2));
+  opacity: .6;
+  transition: opacity .3s ease;
+}
+.rule-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-card);
+}
+.rule-card:hover::before { opacity: 1; }
+
+.rule-card.learned {
+  background: linear-gradient(180deg, var(--surface), var(--surface-2));
+  border-color: rgba(46, 125, 87, .25);
+}
+.rule-card.learned::after {
+  content: '';
+  position: absolute;
+  top: .65rem;
+  right: .65rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--emerald);
+  box-shadow: 0 0 6px rgba(46, 125, 87, .3);
+}
+.rule-card.difficult {
+  border-color: rgba(47, 78, 138, .3);
+  box-shadow: 0 0 0 2px rgba(47, 78, 138, .06), var(--shadow-soft);
+}
+
+.rule-num {
+  display: block;
+  font-size: .7rem;
+  color: var(--brand-2);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.rule-cat {
+  display: inline-block;
+  margin-top: .35rem;
+  background: rgba(47, 78, 138, .12);
+  color: var(--brand);
+  font-size: .65rem;
+  padding: .18rem .5rem;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.rule-title {
+  margin-top: .55rem;
+  font-size: .95rem;
+  color: var(--brand);
+  font-weight: 700;
+}
+.rule-keyword {
+  margin-top: .3rem;
+  color: var(--text-soft);
+  font-size: .82rem;
+}
+.rule-arabic {
+  margin-top: .5rem;
+  font-family: 'AlQalamQuranMajeed', 'Amiri', serif;
+  font-size: clamp(1.3rem, 4vw, 1.7rem);
+  line-height: 2.4;
+  word-spacing: .15em;
+  color: var(--brand);
+}
+.no-results {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: var(--text-soft);
+  font-size: .92rem;
+}
+
+/* ── Flashcard ── */
+.fc-progress-wrap { margin-bottom: 1rem; }
+.fc-progress-bar {
+  height: 8px;
+  background: #dfe6f3;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+.fc-progress-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--brand-2), var(--brand));
+  transition: width .4s cubic-bezier(.22, 1, .36, 1);
+  border-radius: var(--radius-pill);
+}
+.fc-progress-text {
+  margin-top: .5rem;
+  text-align: right;
+  color: var(--text-soft);
+  font-size: .8rem;
+}
+
+.fc-card-wrap {
+  perspective: 1200px;
+  margin-bottom: 1rem;
+}
+.fc-card {
+  cursor: pointer;
+  transition: transform .25s cubic-bezier(.22, 1, .36, 1);
+}
+.fc-card:hover { transform: translateY(-3px); }
+
+.fc-card-inner {
+  position: relative;
+  min-height: 400px;
+  transform-style: preserve-3d;
+  transition: transform .6s cubic-bezier(.22, 1, .36, 1);
+}
+.fc-card-inner.flipped { transform: rotateY(180deg); }
+
+.fc-front, .fc-back {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+  backface-visibility: hidden;
+  padding: 1.5rem;
+  overflow: auto;
+}
+
+.fc-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.fc-front::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(47, 78, 138, .03), transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(46, 125, 87, .02), transparent 50%);
+  pointer-events: none;
+}
+
+.fc-number {
+  position: absolute;
+  left: 1.2rem;
+  top: 1.2rem;
+  color: var(--brand-2);
+  font-size: .72rem;
+  font-weight: 700;
+}
+.fc-category {
+  display: inline-block;
+  background: rgba(47, 78, 138, .12);
+  color: var(--brand);
+  border-radius: var(--radius-pill);
+  padding: .22rem .65rem;
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.fc-title {
+  margin-top: .8rem;
+  color: var(--brand);
+  font-weight: 700;
+  font-size: clamp(1.3rem, 5vw, 1.85rem);
+}
+.fc-arabic {
+  margin-top: 1rem;
+  font-family: 'AlQalamQuranMajeed', 'Amiri', serif;
+  font-size: clamp(2.2rem, 8vw, 3.5rem);
+  line-height: 2.4;
+  word-spacing: .15em;
+  color: var(--brand);
+}
+.fc-tap-hint {
+  margin-top: 1.25rem;
+  color: var(--text-muted);
+  font-size: .78rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+.fc-back { transform: rotateY(180deg); }
+.fc-back p {
+  font-size: .9rem;
+  line-height: 1.65;
+  color: var(--text);
+  margin-bottom: .6rem;
+}
+.fc-keyword { font-weight: 700; color: var(--brand); }
+
+.fc-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .6rem;
+}
+.fc-nav-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--brand);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.fc-nav-btn:hover {
+  background: var(--surface-2);
+  border-color: var(--border-strong);
+  transform: scale(1.05);
+}
+
+.fc-center-controls {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.fc-learned-toggle {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: .42rem .75rem;
+  background: var(--surface);
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--text);
+  display: inline-flex;
+  gap: .35rem;
+  align-items: center;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.fc-learned-toggle:hover { border-color: var(--border-strong); }
+.fc-learned-toggle input { display: none; }
+.fc-learned-toggle:has(input:checked) {
+  border-color: var(--emerald);
+  color: var(--emerald);
+  background: var(--emerald-soft);
+}
+
+.fc-shuffle-btn {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  padding: .42rem .8rem;
+  font-weight: 600;
+  font-size: .82rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.fc-shuffle-btn:hover { border-color: var(--border-strong); }
+
+.fc-counter {
+  text-align: center;
+  margin-top: .75rem;
+  color: var(--text-soft);
+  font-size: .82rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.review-controls {
+  margin-top: .8rem;
+  display: flex;
+  gap: .5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.review-btn {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  padding: .45rem .85rem;
+  font-weight: 600;
+  font-size: .85rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.review-btn:hover { border-color: var(--border-strong); }
+#reviewEasy:hover { border-color: var(--emerald); color: var(--emerald); }
+#reviewHard:hover { border-color: var(--ruby); color: var(--ruby); }
+
+.review-next {
+  text-align: center;
+  margin-top: .5rem;
+  font-size: .78rem;
+  color: var(--text-soft);
+}
+
+/* ── Highlights ── */
+.tw-highlight {
+  background: rgba(47, 78, 138, .12);
+  border-bottom: 2px solid rgba(47, 78, 138, .4);
+  border-radius: 3px;
+  padding: 0 .1em;
+}
+
+/* ── Articulation ── */
+.articulation-hint {
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  padding: .55rem .65rem;
+  margin: .55rem 0 .65rem;
+  color: var(--text-soft);
+  font-size: .82rem;
+}
+.art-icon {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(47, 78, 138, .1);
+  flex-shrink: 0;
+}
+.art-illustration { width: 100%; height: 100%; display: block; }
+.art-icon.nose .art-illustration { animation: cartoonBreathe 1.35s ease-in-out infinite; }
+.art-icon.throat .art-illustration { animation: cartoonPulse 1.6s ease-in-out infinite; }
+.art-icon.lips .art-illustration { animation: cartoonMouth 1.45s ease-in-out infinite; }
+.art-icon.tongue .art-illustration { animation: cartoonWobble 1.55s ease-in-out infinite; }
+.art-icon.stretch .art-illustration { animation: cartoonStretch 1.45s ease-in-out infinite; }
+.art-icon.echo .art-illustration { animation: cartoonEcho 1.2s ease-in-out infinite; }
+
+/* ── Quiz ── */
+.quiz-card, .lesson-shell {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 1.25rem;
+}
+
+.quiz-label {
+  font-size: .76rem;
+  font-weight: 700;
+  color: var(--brand-2);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.quiz-question {
+  margin-top: .35rem;
+  color: var(--brand);
+  font-weight: 700;
+  font-size: 1rem;
+}
+.quiz-example {
+  margin-top: .65rem;
+  font-family: 'AlQalamQuranMajeed', 'Amiri', serif;
+  font-size: clamp(1.6rem, 6vw, 2.4rem);
+  line-height: 2.4;
+  color: var(--brand);
+}
+
+.quiz-options {
+  display: grid;
+  gap: .5rem;
+  margin-top: .7rem;
+}
+.quiz-option {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  padding: .65rem .75rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.quiz-option:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-2);
+}
+.quiz-option strong {
+  display: block;
+  font-size: .9rem;
+  color: var(--text);
+}
+.quiz-option span {
+  display: block;
+  margin-top: .2rem;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  color: var(--text-muted);
+}
+.quiz-option.is-correct {
+  border-color: var(--emerald);
+  background: var(--emerald-soft);
+  animation: correctPop .35s cubic-bezier(.22, 1, .36, 1);
+}
+.quiz-option.is-wrong {
+  border-color: var(--ruby);
+  background: var(--ruby-soft);
+  animation: shake .4s ease;
+}
+
+.quiz-feedback {
+  margin-top: .55rem;
+  min-height: 1.2rem;
+  font-size: .84rem;
+}
+.quiz-feedback.ok { color: var(--emerald); }
+.quiz-feedback.bad { color: var(--ruby); }
+
+.quiz-actions {
+  margin-top: .7rem;
+  display: flex;
+  gap: .5rem;
+  justify-content: flex-end;
+}
+.quiz-score {
+  text-align: right;
+  margin-top: .7rem;
+  color: var(--text-soft);
+  font-size: .8rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Lesson ── */
+.lesson-progress {
+  font-size: .76rem;
+  font-weight: 700;
+  color: var(--brand-2);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.lesson-title {
+  margin-top: .3rem;
+  color: var(--brand);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.lesson-desc {
+  margin-top: .4rem;
+  color: var(--text-soft);
+  font-size: .86rem;
+  line-height: 1.6;
+}
+
+.lesson-notes {
+  margin-top: .85rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-2);
+  padding: .8rem .85rem;
+}
+.lesson-notes-title {
+  font-size: .82rem;
+  color: var(--brand);
+  font-weight: 700;
+}
+.lesson-notes-list {
+  margin: .5rem 0 0 1.1rem;
+  font-size: .84rem;
+  line-height: 1.65;
+  color: var(--text-soft);
+}
+.lesson-notes-list li::marker { color: var(--brand-2); }
+
+.lesson-nav {
+  display: flex;
+  gap: .5rem;
+  margin-top: .8rem;
+}
+.lesson-nav .utility-btn:disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+.lesson-cards {
+  display: grid;
+  gap: .65rem;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  margin-top: .9rem;
+}
+
+.lesson-checkpoint {
+  margin-top: 1rem;
+  border-top: 1px solid var(--border);
+  padding-top: .9rem;
+}
+.lesson-check-ar {
+  display: block;
+  margin-top: .4rem;
+  font-family: 'AlQalamQuranMajeed', 'Amiri', serif;
+  font-size: clamp(1.4rem, 6vw, 2rem);
+  line-height: 2.4;
+  color: var(--brand);
+}
+
+/* ── Modal ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: rgba(18, 28, 54, .55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: grid;
+  place-items: center;
+  padding: max(1rem, env(safe-area-inset-top)) 1rem max(1rem, env(safe-area-inset-bottom));
+  overflow-y: auto;
+  animation: fadeIn .25s ease;
+}
+.modal-overlay[hidden] { display: none; }
+
+.modal {
+  width: 100%;
+  max-width: 620px;
+  max-height: min(calc(100dvh - 2rem), 720px);
+  overflow: auto;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 48px rgba(18, 28, 54, .25);
+  padding: 1.5rem;
+  position: relative;
+  animation: modalIn .3s cubic-bezier(.22, 1, .36, 1);
+}
+
+.modal-close {
+  position: absolute;
+  right: .75rem;
+  top: .65rem;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--surface-2);
+  font-size: 1.25rem;
+  color: var(--brand);
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.modal-close:hover {
+  background: var(--border);
+}
+
+.modal-number {
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--brand-2);
+}
+.modal-category {
+  margin-top: .3rem;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-weight: 700;
+  color: var(--brand);
+}
+.modal-title {
+  margin-top: .35rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1f294d;
+}
+.modal-arabic {
+  margin-top: .55rem;
+  font-family: 'AlQalamQuranMajeed', 'Amiri', serif;
+  font-size: clamp(2.2rem, 8vw, 3.2rem);
+  line-height: 2.4;
+  word-spacing: .15em;
+  color: #1f294d;
+}
+.modal-divider {
+  margin: .85rem 0;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+.modal p {
+  margin-bottom: .6rem;
+  color: #2a3660;
+  font-size: .92rem;
+  line-height: 1.7;
+}
+.modal p strong {
+  color: #1f294d;
+}
+
+/* ── Keyframes ── */
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes viewIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(16px) scale(.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: .5; }
+  50% { opacity: 1; }
+}
+@keyframes correctPop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(2px); }
+}
+@keyframes cardStagger {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes cartoonBreathe {
+  0%, 100% { transform: translateY(0) scale(1); }
+  40% { transform: translateY(-2px) scale(1.08); }
+  70% { transform: translateY(1px) scale(.98); }
+}
+@keyframes cartoonPulse {
+  0%, 100% { transform: scale(1) rotate(0); }
+  50% { transform: scale(1.08) rotate(-1.5deg); }
+}
+@keyframes cartoonMouth {
+  0%, 100% { transform: scaleX(1); }
+  35% { transform: scaleX(.86) translateY(1px); }
+  70% { transform: scaleX(1.06); }
+}
+@keyframes cartoonWobble {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-4deg); }
+  75% { transform: rotate(4deg); }
+}
+@keyframes cartoonStretch {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(1.14) translateY(-1px); }
+}
+@keyframes cartoonEcho {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.16); opacity: .78; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 760px) {
+  .app-shell { padding: 0 .85rem 2rem; }
+  .fc-card-inner { min-height: 420px; }
+  .fc-controls { flex-wrap: wrap; justify-content: center; }
+  .fc-center-controls { order: 3; width: 100%; }
+  .due-info { width: 100%; margin-left: 0; }
+  .quiz-actions .utility-btn,
+  .lesson-nav .utility-btn { width: 100%; }
+  .lesson-nav { flex-direction: column; }
+  .lesson-cards { grid-template-columns: 1fr; }
+  .quiz-score { text-align: left; }
+  .rules-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: .65rem; }
+}
+
+@media (max-width: 420px) {
+  .mode-btn { padding: .4rem .55rem; font-size: .78rem; }
+  .rules-grid { grid-template-columns: 1fr 1fr; }
+}
