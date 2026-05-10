@@ -7,14 +7,51 @@
     var STORAGE_KEY = 'dzikrTuinV2';
     var LEGACY_KEY = 'dzikrTuin';
 
-    var DZIKR_TYPES = ['subhanallah', 'alhamdulillah', 'allahuakbar', 'lailahaillallah'];
+    var DZIKR_TYPES = [
+        'subhanallah',
+        'alhamdulillah',
+        'allahuakbar',
+        'lailahaillallah',
+        'subhanallahiwabihamdihi',
+        'subhanallahilazim',
+        'hasbunallahu',
+        'lahawla',
+        'astaghfirullah',
+        'yahayyuyaqayyum',
+        'rabbiinni',
+        'husnalkhatimah',
+        'ajirniminannar'
+    ];
 
     var DZIKR_ARABIC = {
         subhanallah: '\u0633\u064F\u0628\u0652\u062D\u064E\u0627\u0646\u064E \u0627\u0644\u0644\u0651\u0670\u0647\u0650',
         alhamdulillah: '\u0627\u064E\u0644\u0652\u062D\u064E\u0645\u0652\u062F\u064F \u0644\u0650\u0644\u0651\u0670\u0647\u0650',
         allahuakbar: '\u0627\u064E\u0644\u0644\u0651\u0670\u0647\u064F \u0623\u064E\u0643\u0652\u0628\u064E\u0631\u064F',
-        lailahaillallah: '\u0644\u064E\u0627 \u0625\u0650\u0644\u0670\u0647\u064E \u0625\u0650\u0644\u0651\u064E\u0627 \u0627\u0644\u0644\u0651\u0670\u0647\u064F'
+        lailahaillallah: '\u0644\u064E\u0627 \u0625\u0650\u0644\u0670\u0647\u064E \u0625\u0650\u0644\u0651\u064E\u0627 \u0627\u0644\u0644\u0651\u0670\u0647\u064F',
+        subhanallahiwabihamdihi: 'سُبْحَانَ اللّٰهِ وَبِحَمْدِهِ',
+        subhanallahilazim: 'سُبْحَانَ اللّٰهِ الْعَظِيمِ',
+        hasbunallahu: 'حَسْبُنَا اللّٰهُ وَنِعْمَ الْوَكِيلُ',
+        lahawla: 'لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللّٰهِ',
+        astaghfirullah: 'أَسْتَغْفِرُ اللّٰهَ',
+        yahayyuyaqayyum: 'يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ',
+        rabbiinni: 'رَبِّ إِنِّي لِمَا أَنْزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ',
+        husnalkhatimah: 'اللّٰهُمَّ إِنِّي أَسْأَلُكَ حُسْنَ الْخَاتِمَةِ',
+        ajirniminannar: 'اللّٰهُمَّ أَجِرْنِي مِنَ النَّارِ'
     };
+
+    function emptyCounts() {
+        var counts = {};
+        DZIKR_TYPES.forEach(function (type) { counts[type] = 0; });
+        return counts;
+    }
+
+    function ensureCounts(target) {
+        target = target || {};
+        DZIKR_TYPES.forEach(function (type) {
+            if (target[type] == null) target[type] = 0;
+        });
+        return target;
+    }
 
     function todayKey() {
         return new Date().toISOString().slice(0, 10);
@@ -23,7 +60,7 @@
     function defaultState() {
         return {
             version: 2,
-            totals: { subhanallah: 0, alhamdulillah: 0, allahuakbar: 0, lailahaillallah: 0 },
+            totals: emptyCounts(),
             days: {},
             settings: { tasbihSound: false, selectedDzikr: 'subhanallah' },
             tasbihSession: { dzikrType: 'subhanallah', currentBead: 0, completedRounds: 0 }
@@ -35,9 +72,13 @@
             var raw = localStorage.getItem(STORAGE_KEY);
             if (raw) {
                 var s = JSON.parse(raw);
-                // Ensure new dzikr type exists in existing state
-                if (s.totals && !('lailahaillallah' in s.totals)) s.totals.lailahaillallah = 0;
-                if (s.totals && s.totals.lailahaillallah == null) s.totals.lailahaillallah = 0;
+                s.days = s.days || {};
+                s.tasbihSession = s.tasbihSession || { dzikrType: 'subhanallah', currentBead: 0, completedRounds: 0 };
+                s.totals = ensureCounts(s.totals);
+                for (var dayKey in s.days) ensureCounts(s.days[dayKey]);
+                if (s.tasbihSession && DZIKR_TYPES.indexOf(s.tasbihSession.dzikrType) === -1) {
+                    s.tasbihSession.dzikrType = 'subhanallah';
+                }
                 return s;
             }
         } catch (e) { /* ignore */ }
@@ -52,12 +93,11 @@
                 s.totals.alhamdulillah = v1.alhamdulillah || 0;
                 s.totals.allahuakbar = v1.allahuakbar || 0;
                 var today = todayKey();
-                s.days[today] = {
+                s.days[today] = ensureCounts({
                     subhanallah: v1.subhanallah || 0,
                     alhamdulillah: v1.alhamdulillah || 0,
-                    allahuakbar: v1.allahuakbar || 0,
-                    lailahaillallah: 0
-                };
+                    allahuakbar: v1.allahuakbar || 0
+                });
                 return s;
             }
         } catch (e) { /* ignore */ }
@@ -72,23 +112,26 @@
     var state = loadState();
 
     function recordDzikr(type) {
+        if (DZIKR_TYPES.indexOf(type) === -1) return;
+        ensureCounts(state.totals);
         state.totals[type]++;
         var today = todayKey();
         if (!state.days[today]) {
-            state.days[today] = { subhanallah: 0, alhamdulillah: 0, allahuakbar: 0, lailahaillallah: 0 };
+            state.days[today] = emptyCounts();
         }
+        ensureCounts(state.days[today]);
         state.days[today][type]++;
         saveState();
     }
 
     function getTodayCounts() {
-        return state.days[todayKey()] || { subhanallah: 0, alhamdulillah: 0, allahuakbar: 0, lailahaillallah: 0 };
+        return ensureCounts(state.days[todayKey()] || emptyCounts());
     }
 
     function getDayTotal(dateKey) {
         var d = state.days[dateKey];
         if (!d) return 0;
-        return (d.subhanallah || 0) + (d.alhamdulillah || 0) + (d.allahuakbar || 0) + (d.lailahaillallah || 0);
+        return DZIKR_TYPES.reduce(function (sum, type) { return sum + (d[type] || 0); }, 0);
     }
 
     function getStreak() {
@@ -159,7 +202,14 @@
     }
 
     function getAllTimeTotal() {
-        return state.totals.subhanallah + state.totals.alhamdulillah + state.totals.allahuakbar + state.totals.lailahaillallah;
+        return DZIKR_TYPES.reduce(function (sum, type) { return sum + (state.totals[type] || 0); }, 0);
+    }
+
+    function getSupplementalTotal() {
+        return DZIKR_TYPES.reduce(function (sum, type) {
+            if (type === 'subhanallah' || type === 'alhamdulillah' || type === 'allahuakbar' || type === 'lailahaillallah') return sum;
+            return sum + (state.totals[type] || 0);
+        }, 0);
     }
 
     /* =============================================
@@ -206,12 +256,10 @@
        ============================================= */
     var gardenCanvas = document.getElementById('gardenCanvas');
     var gardenParticles = document.getElementById('gardenParticles');
-    var countEls = {
-        subhanallah: document.getElementById('countSubhanallah'),
-        alhamdulillah: document.getElementById('countAlhamdulillah'),
-        allahuakbar: document.getElementById('countAllahuakbar'),
-        lailahaillallah: document.getElementById('countLailahaillallah')
-    };
+    var countEls = {};
+    DZIKR_TYPES.forEach(function (type) {
+        countEls[type] = document.querySelector('[data-count="' + type + '"]');
+    });
 
     function seededRandom(seed) {
         var x = Math.sin(seed * 9301 + 49297) * 49297;
@@ -220,10 +268,9 @@
 
     function renderCounters() {
         var today = getTodayCounts();
-        countEls.subhanallah.textContent = today.subhanallah;
-        countEls.alhamdulillah.textContent = today.alhamdulillah;
-        countEls.allahuakbar.textContent = today.allahuakbar;
-        countEls.lailahaillallah.textContent = today.lailahaillallah || 0;
+        DZIKR_TYPES.forEach(function (type) {
+            if (countEls[type]) countEls[type].textContent = today[type] || 0;
+        });
     }
 
     /* Flower colors */
@@ -381,7 +428,8 @@
         var maxF = Math.min(state.totals.subhanallah, 25);
         var maxT = Math.min(state.totals.alhamdulillah, 12);
         var maxS = Math.min(state.totals.allahuakbar, 18);
-        var maxG = Math.min(state.totals.lailahaillallah, 15);
+        var supplementalTotal = getSupplementalTotal();
+        var maxG = Math.min((state.totals.lailahaillallah || 0) + supplementalTotal, 15);
 
         for (var i = 0; i < maxF; i++) {
             var anim = animateIndex && animateIndex.type === 'subhanallah' && i === maxF - 1;
@@ -396,7 +444,7 @@
             gardenCanvas.appendChild(createStar(k, anim3));
         }
         for (var g = 0; g < maxG; g++) {
-            var anim4 = animateIndex && animateIndex.type === 'lailahaillallah' && g === maxG - 1;
+            var anim4 = animateIndex && animateIndex.type !== 'subhanallah' && animateIndex.type !== 'alhamdulillah' && animateIndex.type !== 'allahuakbar' && g === maxG - 1;
             gardenCanvas.appendChild(createGem(g, anim4));
         }
 
@@ -425,9 +473,9 @@
                 if (glow) glow.style.boxShadow = '0 0 ' + (8 + extra) + 'px rgba(255,248,220,.6)';
             });
         }
-        if (state.totals.lailahaillallah > 15) {
+        if ((state.totals.lailahaillallah || 0) + supplementalTotal > 15) {
             var gems = gardenCanvas.querySelectorAll('.garden-gem');
-            var gf3 = 1 + (state.totals.lailahaillallah - 15) * 0.025;
+            var gf3 = 1 + (((state.totals.lailahaillallah || 0) + supplementalTotal) - 15) * 0.025;
             gems.forEach(function (gm) {
                 var m = gm.style.transform.match(/scale\(([^)]+)\)/);
                 if (m) gm.style.transform = gm.style.transform.replace(/scale\([^)]+\)/, 'scale(' + (parseFloat(m[1]) * gf3).toFixed(2) + ')');
@@ -944,16 +992,16 @@
         else fire.textContent = '';
 
         // Today
-        document.getElementById('statsTodaySubhanallah').textContent = today.subhanallah;
-        document.getElementById('statsTodayAlhamdulillah').textContent = today.alhamdulillah;
-        document.getElementById('statsTodayAllahuakbar').textContent = today.allahuakbar;
-        document.getElementById('statsTodayLailahaillallah').textContent = today.lailahaillallah || 0;
+        document.querySelectorAll('[data-stats-today]').forEach(function (el) {
+            var type = el.getAttribute('data-stats-today');
+            el.textContent = today[type] || 0;
+        });
 
         // Totals
-        document.getElementById('statsTotalSubhanallah').textContent = state.totals.subhanallah;
-        document.getElementById('statsTotalAlhamdulillah').textContent = state.totals.alhamdulillah;
-        document.getElementById('statsTotalAllahuakbar').textContent = state.totals.allahuakbar;
-        document.getElementById('statsTotalLailahaillallah').textContent = state.totals.lailahaillallah;
+        document.querySelectorAll('[data-stats-total]').forEach(function (el) {
+            var type = el.getAttribute('data-stats-total');
+            el.textContent = state.totals[type] || 0;
+        });
 
         // Records
         document.getElementById('statsRecordBestDay').textContent = getBestDay();
