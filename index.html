@@ -622,7 +622,7 @@
             grid-template-columns: minmax(0, 0.92fr) minmax(420px, 0.78fr);
             gap: clamp(34px, 6vw, 84px);
             align-items: center;
-            padding: clamp(52px, 7vw, 86px) 0 clamp(40px, 6vw, 72px);
+            padding: clamp(24px, 3vw, 42px) 0 clamp(40px, 6vw, 72px);
             margin: 0;
             background: transparent;
             text-align: left;
@@ -735,7 +735,7 @@
 
         .hero-panel {
             position: relative;
-            min-height: 640px;
+            min-height: 780px;
             overflow: hidden;
             border-left: 1px solid var(--border);
             background:
@@ -744,26 +744,45 @@
             box-shadow: inset 0 0 0 1px rgba(31, 41, 77, 0.04);
         }
 
-        .hero-panel::before {
-            content: "";
-            position: absolute;
-            width: 390px;
-            height: 390px;
-            right: -92px;
-            top: 92px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.80) 0 45%, rgba(212, 175, 55, 0.18) 46% 55%, transparent 56%);
+        .hero-panel::before,
+        .hero-panel::after {
+            content: none;
         }
 
-        .hero-panel::after {
-            content: "";
+        .hero-panel-preview {
             position: absolute;
-            width: 390px;
-            height: 390px;
-            left: -210px;
-            bottom: -96px;
-            border: 1px solid rgba(31, 41, 77, 0.20);
-            border-radius: 50%;
+            inset: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-panel-preview iframe {
+            width: 375px;
+            height: 667px;
+            border: none;
+            pointer-events: none;
+            flex-shrink: 0;
+            transform: scale(1.9);
+            transform-origin: top center;
+        }
+
+        @media (max-width: 1080px) {
+            .hero-panel-preview iframe {
+                transform: scale(1.3);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .hero-panel-preview iframe {
+                transform: scale(1.1);
+            }
+        }
+
+        @media (max-width: 560px) {
+            .hero-panel-preview iframe {
+                transform: scale(0.95);
+            }
         }
 
         .panel-figure {
@@ -1342,7 +1361,6 @@
                         </div>
                     </div>
                 </div>
-                <a href="apps/tuin-van-dzikr/">Uitgelicht</a>
             </nav>
             <a href="#leerapps" class="topbar-action">Start met leren</a>
         </header>
@@ -1359,29 +1377,17 @@
                     </div>
                 </div>
 
-                <div class="hero-panel" aria-label="Visuele samenvatting van het leerportaal">
-                    <div class="panel-figure">
-                        <span class="panel-caption">Leerportaal</span>
-                    </div>
-                    <div class="panel-logo">
-                        <img src="images/HRPC-logo.png" alt="Het Rechte Pad College" class="site-logo">
-                    </div>
-                    <div class="panel-stack" aria-hidden="true">
-                        <div class="panel-row">
-                            <span class="panel-icon">🌳</span>
-                            <strong>Dzikr</strong>
-                            <span>Nieuw</span>
-                        </div>
-                        <div class="panel-row">
-                            <span class="panel-icon">📖</span>
-                            <strong>Koran</strong>
-                            <span>Stap voor stap</span>
-                        </div>
-                        <div class="panel-row">
-                            <span class="panel-icon">🕌</span>
-                            <strong>Gebed</strong>
-                            <span>Interactief</span>
-                        </div>
+                <div class="hero-panel" aria-label="Preview van De Tuin van Dzikr">
+                    <div class="hero-panel-preview">
+                        <iframe
+                            src="apps/tuin-van-dzikr/preview.html"
+                            width="375"
+                            height="667"
+                            frameborder="0"
+                            scrolling="no"
+                            title="Preview van De Tuin van Dzikr"
+                            loading="lazy">
+                        </iframe>
                     </div>
                 </div>
             </section>
@@ -1389,7 +1395,7 @@
             <section id="leerapps" aria-labelledby="leerapps-title">
                 <div class="section-heading">
                     <h2 id="leerapps-title">Kies je <em>leerroute</em></h2>
-                    <p>Elke tegel opent direct een compacte leerervaring. De meest recente en uitgelichte leerapps staan vooraan, de rest blijft makkelijk scanbaar.</p>
+                    <p>Kies een tegel om de app te openen en direct te beginnen. Scroll voor het volledige aanbod.</p>
                 </div>
 
     <div class="portal-grid">
@@ -1403,17 +1409,6 @@
                 <p class="card-subtitle">Laat de tuin van je hart tot bloei komen</p>
                 <p>Leer de betekenis van dzikr (het gedenken van Allah). Met elke dzikr groeit jouw tuin — en wordt er een boom geplant in het Paradijs.</p>
                 <div class="play-btn">Open ➔</div>
-            </div>
-            <div class="card-preview">
-                <iframe
-                    src="apps/tuin-van-dzikr/preview.html"
-                    width="375"
-                    height="667"
-                    frameborder="0"
-                    scrolling="no"
-                    title="Interactieve preview van De Tuin van Dzikr"
-                    loading="lazy">
-                </iframe>
             </div>
         </a>
 
