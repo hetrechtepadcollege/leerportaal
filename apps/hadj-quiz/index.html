@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/icons/favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+    <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/icons/site.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://gc.zgo.at https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self' https://hetrechtepadcollege.goatcounter.com;">
+    <title>Kennisquiz Hadj</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- SRI hash must be updated if GoatCounter updates count.js -->
+    <script data-goatcounter="https://hetrechtepadcollege.goatcounter.com/count"
+            async src="https://gc.zgo.at/count.js"
+            integrity="sha384-2UjvVpptg4JlEVgJI2PdscrjOjPcil/4F1ZvIMJ81CShQnEDSlPI+l4PfogvTLYi"
+            crossorigin="anonymous"></script>
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://leer.hetrechtepadcollege.nl/apps/hadj-quiz/">
+    <meta property="og:title" content="Kennisquiz Hadj">
+    <meta property="og:description" content="Test je kennis over de hadj: voorwaarden, iḥrām, ṭawāf, Arafat, Mina en de dagen van Dhū al-Ḥijjah.">
+    <meta property="og:image" content="https://leer.hetrechtepadcollege.nl/apps/hadj-quiz/images/share-banner.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Kennisquiz Hadj">
+    <meta property="twitter:description" content="Test je kennis over de hadj. Doe nu mee!">
+    <meta property="twitter:image" content="https://leer.hetrechtepadcollege.nl/apps/hadj-quiz/images/share-banner.png">
+</head>
+<body>
+
+<header class="app-header">
+    <a href="../../" class="header-logo-link" title="Terug naar Leerportaal"><img src="../../images/HRPC-logo.png" alt="Het Rechte Pad College" class="header-logo"></a>
+    <h1 class="header-title">Kennisquiz Hadj</h1>
+    <p class="header-subtitle">Test je kennis over de hadj: voorwaarden, rituelen en kernmomenten</p>
+</header>
+
+<div class="page-wrapper">
+
+    <main class="quiz-card">
+
+        <div class="character-container">
+            <img id="character-img" src="images/mw-neutral.png" alt="Karakter" class="character animate-character">
+        </div>
+
+        <div id="ritual-scene" class="ritual-scene" data-scene="generic" data-answered="false" aria-hidden="true">
+            <div class="scene-sky">
+                <span class="scene-star scene-star-one"></span>
+                <span class="scene-star scene-star-two"></span>
+                <span class="scene-star scene-star-three"></span>
+            </div>
+            <div class="scene-orbit">
+                <span class="pilgrim pilgrim-one"></span>
+                <span class="pilgrim pilgrim-two"></span>
+                <span class="pilgrim pilgrim-three"></span>
+            </div>
+            <div class="scene-kaaba"></div>
+            <div class="scene-hill scene-hill-left"></div>
+            <div class="scene-hill scene-hill-right"></div>
+            <div class="scene-marker">9 AH</div>
+            <div class="scene-path"></div>
+            <div class="scene-tent scene-tent-one"></div>
+            <div class="scene-tent scene-tent-two"></div>
+            <div class="scene-checks">
+                <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="scene-date">8-13</div>
+            <div class="scene-detail" id="scene-detail">Hadj</div>
+        </div>
+
+        <h2 id="question-text">De vraag komt hier...</h2>
+
+        <div id="answer-buttons"></div>
+
+        <div id="uitleg-container" class="hide uitleg-box">
+            <div class="uitleg-header">
+                <span class="uitleg-icon">✓</span>
+                <span class="uitleg-label">Toelichting</span>
+            </div>
+            <p id="uitleg-tekst"></p>
+            <button id="next-btn" class="btn btn-next">Volgende vraag →</button>
+        </div>
+
+        <div id="score-display" class="score-display">Score: 0</div>
+
+        <div class="quiz-nav-actions" aria-label="Quiznavigatie">
+            <button id="prev-question-btn" class="nav-action-btn" type="button">← Vorige vraag</button>
+            <button id="restart-inline-btn" class="nav-action-btn" type="button">↺ Naar begin</button>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+        </div>
+
+        <div id="result-container" class="hide result-box">
+            <button id="whatsapp-share-btn" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> Deel via WhatsApp
+            </button>
+            <button id="restart-btn" class="btn btn-secondary">Opnieuw spelen</button>
+            <a href="../../" id="portal-link-btn" class="btn btn-secondary">Naar het Leerportaal</a>
+        </div>
+
+    </main>
+
+    <div class="portal-home-wrap">
+        <a href="https://leer.hetrechtepadcollege.nl/" class="portal-home-btn">← Terug naar Leerportaal</a>
+    </div>
+
+</div>
+
+<audio id="correct-sound" src="sounds/correct.mp3" preload="auto"></audio>
+<audio id="wrong-sound" src="sounds/wrong.mp3" preload="auto"></audio>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js" integrity="sha384-HAH79XdRvHr6axVGh4xQWVCp14kcd32bNk4Xu0sHDHtFQ42n6BAM8ykvB47dGz6D" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/icons/favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+    <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/icons/site.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://hetrechtepadcollege.goatcounter.com;">
+    <title>Hadj Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- SRI hash must be updated if GoatCounter updates count.js -->
+    <script data-goatcounter="https://hetrechtepadcollege.goatcounter.com/count"
+            async src="https://gc.zgo.at/count.js"
+            integrity="sha384-2UjvVpptg4JlEVgJI2PdscrjOjPcil/4F1ZvIMJ81CShQnEDSlPI+l4PfogvTLYi"
+            crossorigin="anonymous"></script>
+
+             <meta property="og:type" content="article">
+    <meta property="og:url" content="https://leer.hetrechtepadcollege.nl/apps/hadj-explorer/">
+    <meta property="og:title" content="Hadj Explorer">
+    <meta property="og:description" content="Ontdek de Hadj met spellen, weetjes en uitdagingen. Verzamel sterren en word een Hadj-expert!">
+    <meta property="og:image" content="https://leer.hetrechtepadcollege.nl/apps/hadj-explorer/images/share-banner.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Hadj Explorer">
+    <meta property="twitter:description" content="Ontdek de Hadj met spellen, weetjes en uitdagingen. Verzamel sterren en word een Hadj-expert!">
+    <meta property="twitter:image" content="https://leer.hetrechtepadcollege.nl/apps/hadj-explorer/images/share-banner.png">
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="../../" class="header-logo-link" title="Terug naar Leerportaal"><img src="../../images/HRPC-logo.png" alt="Het Rechte Pad College" class="header-logo"></a>
+      <h1 class="header-title">Hadj Explorer</h1>
+      <p class="header-subtitle">Ontdek de Hadj met spellen, weetjes en uitdagingen</p>
+    </header>
+    <main class="app">
+      <header class="hero">
+        <div class="scoreboard">
+          <span>⭐ Sterren: <strong id="stars">0</strong></span>
+          <span>🏆 Level: <strong id="level">Beginner</strong></span>
+        </div>
+        <div class="mode-switch" role="group" aria-label="Kies leer-modus">
+          <button id="mode-kid" class="mode-btn active">Kind-modus</button>
+          <button id="mode-mentor" class="mode-btn">Ouder-modus</button>
+          <span id="mode-badge" class="mode-badge">Kind-modus actief</span>
+        </div>
+      </header>
+
+      <section class="grid">
+        <article class="card" id="quiz-card">
+          <h2>1. Kennisquiz</h2>
+          <p id="quiz-question"></p>
+          <div id="quiz-options" class="options"></div>
+          <p id="quiz-feedback" class="feedback"></p>
+          <button id="next-question" class="btn">Volgende vraag</button>
+        </article>
+
+        <article class="card" id="memory-card">
+          <h2>2. Memory Match</h2>
+          <p>Koppel het Hadj-woord aan de juiste betekenis.</p>
+          <div id="memory-grid" class="memory-grid"></div>
+          <p id="memory-feedback" class="feedback"></p>
+        </article>
+
+        <article class="card" id="order-card">
+          <h2>3. Zet in de juiste volgorde</h2>
+          <p>
+            Zet de stappen van de Hadj in de juiste volgorde.
+          </p>
+          <ul id="order-list" class="order-list"></ul>
+          <div class="order-actions">
+            <button id="check-order" class="btn">Controleer</button>
+            <button id="shuffle-order" class="btn secondary">Hussel opnieuw</button>
+          </div>
+          <p id="order-feedback" class="feedback"></p>
+        </article>
+
+        <article class="card" id="truefalse-card">
+          <h2>4. Klopt of Niet?</h2>
+          <p id="tf-statement"></p>
+          <div class="tf-actions">
+            <button id="tf-true" class="btn">Klopt</button>
+            <button id="tf-false" class="btn secondary">Klopt niet</button>
+          </div>
+          <p id="tf-feedback" class="feedback"></p>
+          <button id="tf-next" class="btn">Nieuwe stelling</button>
+        </article>
+
+        <article class="card" id="scenario-card">
+          <h2>5. Wat zou jij doen?</h2>
+          <p id="scenario-text"></p>
+          <div id="scenario-options" class="options"></div>
+          <p id="scenario-feedback" class="feedback"></p>
+          <button id="scenario-next" class="btn">Nieuwe situatie</button>
+        </article>
+
+        <article class="card" id="speed-card">
+          <h2>6. Snelheidsronde</h2>
+          <p>Beantwoord zoveel mogelijk vragen in 45 seconden.</p>
+          <div class="speed-meta">
+            <span>⏱ Tijd: <strong id="speed-time">45</strong>s</span>
+            <span>✅ Goed: <strong id="speed-score">0</strong></span>
+          </div>
+          <div class="speed-track">
+            <div id="speed-bar" class="speed-bar"></div>
+          </div>
+          <p id="speed-question">Klik op start om te beginnen!</p>
+          <div id="speed-options" class="options"></div>
+          <p id="speed-feedback" class="feedback"></p>
+          <div class="order-actions">
+            <button id="speed-start" class="btn">Start ronde</button>
+            <button id="speed-next" class="btn secondary">Volgende</button>
+          </div>
+        </article>
+
+        <article class="card" id="riddle-card">
+          <h2>7. Wie Ben Ik?</h2>
+          <p>Lees de aanwijzingen en raad het Hadj-begrip!</p>
+          <div id="riddle-clues" class="riddle-clues"></div>
+          <div id="riddle-options" class="options"></div>
+          <p id="riddle-feedback" class="feedback"></p>
+          <button id="riddle-next" class="btn">Volgend raadsel</button>
+        </article>
+
+        <article class="card" id="moon-card">
+          <h2>8. Dhū al-Ḥijjah Mysterie</h2>
+          <p>Leer hoe de Hadj in de islamitische kalender past!</p>
+          <div class="moon-display" id="moon-display" aria-hidden="true">🌙</div>
+          <p id="moon-question"></p>
+          <div id="moon-options" class="options"></div>
+          <p id="moon-feedback" class="feedback"></p>
+          <button id="moon-next" class="btn">Volgende vraag</button>
+        </article>
+
+        <article class="card" id="world-card">
+          <h2>9. Hadj Rondom de Wereld</h2>
+          <p>Bij welke plek of groep hoort deze Hadj-traditie?</p>
+          <p id="world-tradition" class="world-tradition-text"></p>
+          <div id="world-options" class="options"></div>
+          <p id="world-feedback" class="feedback"></p>
+          <button id="world-next" class="btn">Volgende traditie</button>
+        </article>
+
+        <article class="card" id="eid-card">
+          <h2>10. ʿEid al-Aḍḥā Verkenner</h2>
+          <p>De Hadj hoort bij het Offerfeest. Hoe goed ken jij ʿEid al-Aḍḥā?</p>
+          <p id="eid-question"></p>
+          <div id="eid-options" class="options"></div>
+          <p id="eid-feedback" class="feedback"></p>
+          <button id="eid-next" class="btn">Volgende vraag</button>
+        </article>
+
+        <article class="card" id="chef-card">
+          <h2>11. Hadj-pakker</h2>
+          <p>Pak je Hadj-tas! Klik op wat een pelgrim goed kan meenemen of voorbereiden.</p>
+          <div id="chef-items" class="chef-items"></div>
+          <div class="chef-plate">
+            <span class="chef-plate-label">Jouw Hadj-tas:</span>
+            <div id="chef-selected"></div>
+          </div>
+          <div class="order-actions">
+            <button id="chef-check" class="btn">Controleer tas</button>
+            <button id="chef-reset" class="btn secondary">Opnieuw</button>
+          </div>
+          <p id="chef-feedback" class="feedback"></p>
+        </article>
+
+        <article class="card" id="deeds-card">
+          <h2>12. Goede Daden Uitdaging</h2>
+          <p>Kies een uitdaging en doe hem vandaag!</p>
+          <div id="deed-display" class="deed-display"></div>
+          <div class="order-actions">
+            <button id="deed-done" class="btn">✓ Gedaan!</button>
+            <button id="deed-shuffle" class="btn secondary">Andere uitdaging</button>
+          </div>
+          <p id="deed-feedback" class="feedback"></p>
+        </article>
+
+        <article class="card" id="afwijker-card">
+          <h2>13. Zoek de Afwijker</h2>
+          <p>Welk woord of begrip past <strong>niet</strong> bij de andere drie?</p>
+          <p id="afwijker-round" class="afwijker-round"></p>
+          <div id="afwijker-options" class="options"></div>
+          <p id="afwijker-feedback" class="feedback"></p>
+          <button id="afwijker-next" class="btn">Volgende ronde</button>
+        </article>
+
+        <article class="card" id="foutjager-card">
+          <h2>14. Fout-jager</h2>
+          <p>Lees het verhaal en klik op de foute stukjes tekst. Er zijn <strong id="foutjager-count">3</strong> fouten!</p>
+          <div id="foutjager-story" class="foutjager-story"></div>
+          <div class="order-actions">
+            <button id="foutjager-check" class="btn">Controleer</button>
+            <button id="foutjager-next" class="btn secondary">Volgend verhaal</button>
+          </div>
+          <div id="foutjager-result" class="foutjager-result"></div>
+        </article>
+
+        <article class="card" id="emoji-card">
+          <h2>15. Emoji Decoder</h2>
+          <p>Wat stelt deze emojireeks voor? Kies het juiste Hadj-begrip!</p>
+          <div id="emoji-display" class="emoji-display" aria-label="Emojireeks"></div>
+          <p id="emoji-round" class="afwijker-round"></p>
+          <div id="emoji-options" class="options"></div>
+          <p id="emoji-feedback" class="feedback"></p>
+          <button id="emoji-next" class="btn">Volgende reeks</button>
+        </article>
+
+        <article class="card" id="sorter-card">
+          <h2>16. Categorie Sorteerspel</h2>
+          <p id="sorter-intro">Klik elk item aan en plaats het bij de juiste categorie.</p>
+          <div id="sorter-items" class="sorter-items"></div>
+          <div id="sorter-buckets" class="sorter-buckets"></div>
+          <div class="order-actions">
+            <button id="sorter-check" class="btn">Controleer</button>
+            <button id="sorter-reset" class="btn secondary">Volgende ronde</button>
+          </div>
+          <p id="sorter-feedback" class="feedback"></p>
+        </article>
+
+        <article class="card" id="tweewaarheden-card">
+          <h2>17. Twee Waarheden, Één Leugen</h2>
+          <p>Drie uitspraken over Hadj — één ervan is <strong>niet waar</strong>. Welke is het?</p>
+          <p id="tw-round" class="afwijker-round"></p>
+          <div id="tw-statements" class="tw-statements"></div>
+          <p id="tw-feedback" class="feedback"></p>
+          <button id="tw-next" class="btn">Volgende set</button>
+        </article>
+
+        <article class="card" id="woordweb-card">
+          <h2>18. Woordweb</h2>
+          <p>Klik alle woorden aan die bij het centrale begrip horen. Negeer de afleidingen!</p>
+          <div id="ww-center" class="ww-center"></div>
+          <div id="ww-words" class="ww-words"></div>
+          <div class="order-actions">
+            <button id="ww-check" class="btn">Controleer</button>
+            <button id="ww-next" class="btn secondary">Volgend web</button>
+          </div>
+          <p id="ww-feedback" class="feedback"></p>
+        </article>
+
+        <article class="card" id="bingo-card">
+          <h2>19. Hadj Bingo</h2>
+          <p>Lees de omschrijving en klik het juiste vakje aan. Bingo bij een volle rij, kolom of diagonaal!</p>
+          <div id="bingo-clue" class="bingo-clue"></div>
+          <div id="bingo-grid" class="bingo-grid"></div>
+          <div class="order-actions">
+            <button id="bingo-next-clue" class="btn">Volgende omschrijving</button>
+            <button id="bingo-reset" class="btn secondary">Nieuw spel</button>
+          </div>
+          <p id="bingo-feedback" class="feedback"></p>
+        </article>
+      </section>
+
+      <section class="card facts">
+        <h2 id="facts-title">Hadj-feitjes</h2>
+        <ul id="facts-list"></ul>
+      </section>
+
+      <section class="card facts" id="mentor-note-card" hidden>
+        <h2>Extra uitleg voor ouder</h2>
+        <p id="mentor-note"></p>
+      </section>
+
+      <div class="portal-home-wrap">
+        <a class="btn portal-home-btn" href="https://leer.hetrechtepadcollege.nl/">
+          ← Terug naar Leerportaal
+        </a>
+      </div>
+
+    </main>
+
+    <script src="script.js?v=2"></script>
+  </body>
+</html>

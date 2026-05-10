@@ -632,3 +632,51 @@ body {
 .header-logo-link .header-logo { margin: 0; display: block; }
 .header-logo-link:hover,
 .header-logo-link:focus-visible { opacity: 0.85; outline: 2px solid #d4af37; outline-offset: 6px; border-radius: 4px; }
+
+/* === HERO REDESIGN === */
+.app-header {
+    background:
+        linear-gradient(rgba(31, 41, 77, .045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(31, 41, 77, .045) 1px, transparent 1px),
+        radial-gradient(circle at 88% 72%, rgba(212, 175, 55, .32) 0 0, rgba(212, 175, 55, .32) 78px, rgba(212, 175, 55, .10) 79px, transparent 128px),
+        #f9f8f6 !important;
+    background-size: 48px 48px, 48px 48px, auto, auto !important;
+    padding: 28px 20px 58px !important;
+    border-bottom: 1px solid rgba(31, 41, 77, .09);
+    margin: 0 0 42px;
+    color: #1c2340;
+}
+.header-logo {
+    width: min(360px, 78vw);
+    height: auto;
+    margin: 0 auto 38px;
+    filter: invert(1);
+    opacity: .92;
+}
+.header-logo-link .header-logo { margin: 0; }
+.header-title {
+    font-family: 'Newsreader', serif;
+    font-size: clamp(3.2rem, 10vw, 7.5rem) !important;
+    font-weight: 800;
+    letter-spacing: -0.06em;
+    line-height: .82;
+    color: #0d0e14 !important;
+    text-transform: none;
+    text-shadow: none;
+    max-width: 980px;
+    margin: 0 auto;
+}
+.header-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: .98rem !important;
+    color: #5c6e8a !important;
+    font-style: normal;
+    max-width: 620px;
+    margin: .8rem auto 0;
+    line-height: 1.65;
+}
+.header-arabic {
+    color: #d4af37;
+    font-size: clamp(1.65rem, 5vw, 2.6rem);
+    margin-top: .55rem;
+}
