@@ -11,7 +11,9 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://gc.zgo.at https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self' https://hetrechtepadcollege.goatcounter.com;">
     <title>Kennisquiz ʿEid al-Fiṭr</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
@@ -33,86 +35,16 @@
 </head>
 <body>
 
-<!-- Eid achtergrond: wassende maan + sterren + festieve decoraties -->
-<div class="eid-bg" aria-hidden="true">
-    <svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-        <!-- Sterren – warm goudachtig -->
-        <circle cx="80"  cy="55"  r="1.8" fill="rgba(251,191,36,0.75)"/>
-        <circle cx="210" cy="28"  r="1.2" fill="rgba(251,191,36,0.55)"/>
-        <circle cx="355" cy="88"  r="2.0" fill="rgba(251,191,36,0.65)"/>
-        <circle cx="478" cy="18"  r="1.4" fill="rgba(255,255,255,0.70)"/>
-        <circle cx="562" cy="110" r="1.0" fill="rgba(251,191,36,0.50)"/>
-        <circle cx="680" cy="42"  r="1.6" fill="rgba(255,255,255,0.60)"/>
-        <circle cx="792" cy="78"  r="1.2" fill="rgba(251,191,36,0.55)"/>
-        <circle cx="872" cy="22"  r="1.8" fill="rgba(255,255,255,0.65)"/>
-        <circle cx="148" cy="152" r="1.0" fill="rgba(251,191,36,0.40)"/>
-        <circle cx="312" cy="178" r="1.4" fill="rgba(255,255,255,0.45)"/>
-        <circle cx="452" cy="158" r="0.9" fill="rgba(251,191,36,0.38)"/>
-        <circle cx="622" cy="198" r="1.2" fill="rgba(255,255,255,0.42)"/>
-        <circle cx="752" cy="168" r="1.0" fill="rgba(251,191,36,0.38)"/>
-        <circle cx="38"  cy="200" r="1.3" fill="rgba(255,255,255,0.35)"/>
-        <circle cx="935" cy="50"  r="1.1" fill="rgba(251,191,36,0.50)"/>
-        <circle cx="1035" cy="105" r="1.4" fill="rgba(255,255,255,0.45)"/>
-        <circle cx="1150" cy="60"  r="1.0" fill="rgba(251,191,36,0.50)"/>
-        <circle cx="1250" cy="130" r="0.8" fill="rgba(255,255,255,0.38)"/>
-        <!-- Extra sterren linksonder -->
-        <circle cx="60"  cy="400" r="0.9" fill="rgba(251,191,36,0.25)"/>
-        <circle cx="180" cy="520" r="1.1" fill="rgba(255,255,255,0.22)"/>
-        <circle cx="100" cy="650" r="0.8" fill="rgba(251,191,36,0.20)"/>
-
-        <!-- Wassende maan (rechtsboven) – goud -->
-        <defs>
-            <mask id="moon-mask">
-                <rect width="1440" height="900" fill="white"/>
-                <circle cx="1388" cy="-32" r="155" fill="black"/>
-            </mask>
-        </defs>
-        <circle cx="1308" cy="5" r="178" mask="url(#moon-mask)" fill="rgba(251,191,36,0.13)"/>
-        <circle cx="1308" cy="5" r="178" mask="url(#moon-mask)" fill="none" stroke="rgba(251,191,36,0.22)" stroke-width="2"/>
-
-        <!-- Lantaarn links -->
-        <g transform="translate(55, 260)" opacity="0.18">
-            <rect x="0" y="12" width="28" height="38" rx="4" fill="#f59e0b"/>
-            <rect x="8" y="0"  width="12" height="16" rx="2" fill="#f59e0b"/>
-            <line x1="14" y1="16" x2="14" y2="12" stroke="#f59e0b" stroke-width="2"/>
-            <rect x="3" y="15" width="22" height="32" rx="3" fill="rgba(255,220,80,0.5)"/>
-        </g>
-
-        <!-- Lantaarn rechts -->
-        <g transform="translate(1350, 300)" opacity="0.16">
-            <rect x="0" y="12" width="28" height="38" rx="4" fill="#10b981"/>
-            <rect x="8" y="0"  width="12" height="16" rx="2" fill="#10b981"/>
-            <line x1="14" y1="16" x2="14" y2="12" stroke="#10b981" stroke-width="2"/>
-            <rect x="3" y="15" width="22" height="32" rx="3" fill="rgba(100,255,180,0.4)"/>
-        </g>
-
-        <!-- Geometrisch patroon linksonder (subtiel) -->
-        <g transform="translate(20, 700)" opacity="0.07" stroke="#f59e0b" stroke-width="1" fill="none">
-            <polygon points="30,0 60,52 0,52"/>
-            <polygon points="30,10 55,47 5,47"/>
-        </g>
-
-        <!-- Geometrisch patroon rechtsonder (subtiel) -->
-        <g transform="translate(1380, 700)" opacity="0.07" stroke="#10b981" stroke-width="1" fill="none">
-            <polygon points="30,0 60,52 0,52"/>
-            <polygon points="30,10 55,47 5,47"/>
-        </g>
-    </svg>
-</div>
+<header class="app-header">
+    <a href="../../" class="header-logo-link" title="Terug naar Leerportaal"><img src="../../images/HRPC-logo.png" alt="Het Rechte Pad College" class="header-logo"></a>
+    <p class="header-badge">🌙 ʿEid al-Fiṭr</p>
+    <h1 class="header-title">Kennisquiz ʿEid al-Fiṭr</h1>
+    <p class="header-subtitle">Test je kennis over het feest van het vasten!</p>
+</header>
 
 <div class="page-wrapper">
 
-    <header class="site-header">
-        <img src="images/HRPC-logo.png" alt="Logo Het Rechte Pad College" class="site-logo">
-    </header>
-
     <main class="quiz-card">
-
-        <div class="quiz-title-block">
-            <div class="eid-badge">🌙 ʿEid al-Fiṭr</div>
-            <h1>Kennisquiz ʿEid al-Fiṭr</h1>
-            <p class="quiz-subtitle">Test je kennis over het feest van het vasten!</p>
-        </div>
 
         <div class="character-container">
             <img id="character-img" src="images/mw-neutral.png" alt="Karakter" class="character animate-character">

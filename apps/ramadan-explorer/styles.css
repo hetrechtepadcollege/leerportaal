@@ -1037,3 +1037,94 @@ h1 {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+
+/* === LEERPORTAAL REDESIGN === */
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f9f8f6;
+    color: #1c2340;
+}
+
+.app-header {
+    width: 100%;
+    background: #1f294d;
+    text-align: center;
+    padding: 1.5rem 1.5rem 1.75rem;
+    display: block;
+}
+
+.back-link {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.65);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    transition: color 0.2s;
+}
+.back-link:hover { color: #d4af37; }
+
+.header-logo {
+    display: block;
+    height: 3.5rem;
+    width: auto;
+    margin: 0 auto 0.75rem;
+}
+
+.header-title {
+    font-family: 'Newsreader', serif;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 0.35rem;
+    letter-spacing: 0;
+    text-shadow: none;
+}
+
+.header-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-style: normal;
+}
+
+.hero {
+    background: rgba(31, 41, 77, 0.04);
+    border: 1px solid rgba(31, 41, 77, 0.09);
+    border-radius: 14px;
+    color: #1c2340;
+    box-shadow: none;
+    padding: 16px 24px;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid rgba(31, 41, 77, 0.09);
+    box-shadow: 0 1px 4px rgba(31, 41, 77, 0.06), 0 4px 16px rgba(31, 41, 77, 0.07);
+    border-radius: 14px;
+}
+
+.btn {
+    background: #f9f8f6;
+    color: #1c2340;
+    border: 1.5px solid rgba(31, 41, 77, 0.20);
+}
+.btn:hover { background: rgba(31, 41, 77, 0.06); }
+
+h1, h2 { font-family: '"'"'Newsreader'"'"', serif; color: #1c2340; }
+
+/* header-logo-link — clickable logo */
+.header-logo-link { display: block; width: fit-content; margin: 0 auto 0.75rem; border-radius: 6px; transition: opacity 0.2s; }
+.header-logo-link .header-logo { margin: 0; display: block; }
+.header-logo-link:hover,
+.header-logo-link:focus-visible { opacity: 0.85; outline: 2px solid #d4af37; outline-offset: 6px; border-radius: 4px; }
+
+/* hero scoreboard + mode controls on light background */
+.scoreboard { background: rgba(31,41,77,0.06); border-color: rgba(31,41,77,0.10); color: #1c2340; }
+.scoreboard strong { color: #c9a52e; }
+.mode-btn { border-color: rgba(31,41,77,0.25); color: #1c2340; }
+.mode-btn:hover { border-color: rgba(31,41,77,0.50); color: #1c2340; background: rgba(31,41,77,0.06); }
+.mode-badge { color: #5c6e8a; background: rgba(31,41,77,0.06); border-color: rgba(31,41,77,0.12); }

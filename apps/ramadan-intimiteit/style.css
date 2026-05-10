@@ -475,3 +475,160 @@ body {
         font-size: 1.25rem;
     }
 }
+
+
+/* === LEERPORTAAL REDESIGN === */
+:root {
+    --navy:       #1f294d;
+    --card-bg:    #ffffff;
+    --text:       #1c2340;
+    --text-muted: #5c6e8a;
+    --bg:         #f9f8f6;
+    --border:     rgba(31, 41, 77, 0.09);
+    --shadow:     0 1px 4px rgba(31, 41, 77, 0.06), 0 4px 16px rgba(31, 41, 77, 0.07);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f9f8f6;
+    color: #1c2340;
+    align-items: stretch;
+    padding: 0 0 72px;
+}
+
+.app-header {
+    width: 100%;
+    background: #1f294d;
+    text-align: center;
+    padding: 1.5rem 1.5rem 1.75rem;
+    display: block;
+}
+
+.back-link {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.65);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    transition: color 0.2s;
+}
+.back-link:hover { color: #d4af37; }
+
+.header-logo {
+    display: block;
+    height: 3.5rem;
+    width: auto;
+    margin: 0 auto 0.75rem;
+}
+
+.header-title {
+    font-family: 'Newsreader', serif;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 0.35rem;
+    letter-spacing: 0;
+}
+
+.header-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-style: normal;
+}
+
+.page-wrapper {
+    max-width: 620px;
+    margin: 2rem auto 0;
+    padding: 0 16px;
+    width: 100%;
+    align-self: center;
+}
+
+.quiz-card {
+    background: #ffffff;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: 1px solid rgba(31, 41, 77, 0.09);
+    box-shadow: 0 1px 4px rgba(31, 41, 77, 0.06), 0 4px 16px rgba(31, 41, 77, 0.07);
+}
+
+#question-text { color: #1c2340; }
+
+.uitleg-box {
+    background: #f9f8f6;
+    border-color: rgba(31, 41, 77, 0.12);
+}
+#uitleg-tekst { color: #1c2340; }
+#disclaimer-tekst { color: #1c2340; }
+#disclaimer-container { background: rgba(31,41,77,0.03); border-color: rgba(212,175,55,0.35); }
+
+.score-display { color: #5c6e8a; }
+
+.progress-container { background: rgba(31, 41, 77, 0.08); }
+
+.btn {
+    color: #1c2340;
+    background: #f9f8f6;
+    border-color: rgba(31, 41, 77, 0.20);
+}
+.btn:hover:not([disabled]):not(.correct):not(.wrong) {
+    background: rgba(31, 41, 77, 0.06);
+    border-color: rgba(31, 41, 77, 0.35);
+    color: #1c2340;
+}
+.btn.correct {
+    background: rgba(39, 174, 96, 0.12) !important;
+    border-color: rgba(39, 174, 96, 0.55) !important;
+    color: #1a6e3a !important;
+}
+.btn.wrong {
+    background: rgba(192, 57, 43, 0.10) !important;
+    border-color: rgba(192, 57, 43, 0.55) !important;
+    color: #8b2500 !important;
+}
+
+.btn-next {
+    background: #d4af37 !important;
+    border-color: #d4af37 !important;
+    color: #1f294d !important;
+}
+.btn-next:hover:not([disabled]) {
+    background: #c9a52e !important;
+    border-color: #c9a52e !important;
+}
+
+.btn-secondary {
+    background: rgba(31, 41, 77, 0.06) !important;
+    border-color: rgba(31, 41, 77, 0.20) !important;
+    color: #1f294d !important;
+}
+.btn-secondary:hover:not([disabled]) {
+    background: rgba(31, 41, 77, 0.12) !important;
+    border-color: rgba(31, 41, 77, 0.35) !important;
+    color: #1f294d !important;
+}
+
+.portal-home-wrap { margin: 18px auto 32px; }
+.portal-home-btn {
+    color: #5c6e8a;
+    background: transparent;
+    border: none;
+    font-size: 0.85rem;
+    padding: 8px 16px;
+}
+.portal-home-btn:hover {
+    color: #1f294d;
+    background: transparent;
+    border-color: transparent;
+    transform: none;
+}
+
+/* header-logo-link — clickable logo */
+.header-logo-link { display: block; width: fit-content; margin: 0 auto 0.75rem; border-radius: 6px; transition: opacity 0.2s; }
+.header-logo-link .header-logo { margin: 0; display: block; }
+.header-logo-link:hover,
+.header-logo-link:focus-visible { opacity: 0.85; outline: 2px solid #d4af37; outline-offset: 6px; border-radius: 4px; }
