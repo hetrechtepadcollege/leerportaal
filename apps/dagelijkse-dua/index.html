@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/icons/favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+    <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/icons/site.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://gc.zgo.at; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://hetrechtepadcollege.goatcounter.com;">
+
+    <title>Du'a van de Dag | Het Rechte Pad College</title>
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://leer.hetrechtepadcollege.nl/apps/dagelijkse-dua/">
+    <meta property="og:title" content="Du'a van de Dag — Smeekbeden voor elk moment">
+    <meta property="og:description" content="Een dag vol smeekbeden: van opstaan tot slapen. Ontdek de du'a's voor elk moment van de dag.">
+    <meta property="og:image" content="https://leer.hetrechtepadcollege.nl/apps/dagelijkse-dua/images/share-banner.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Du'a van de Dag — Smeekbeden voor elk moment">
+    <meta property="twitter:description" content="Een dag vol smeekbeden: van opstaan tot slapen. Ontdek de du'a's voor elk moment van de dag.">
+    <meta property="twitter:image" content="https://leer.hetrechtepadcollege.nl/apps/dagelijkse-dua/images/share-banner.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══════════ Animated Sky Canvas (fixed background) ═══════════ -->
+<canvas id="skyCanvas" aria-hidden="true"></canvas>
+
+<!-- ═══════════ Fixed Header ═══════════ -->
+<header class="app-header">
+    <a href="../../" class="header-logo-link" title="Terug naar Leerportaal">
+        <img src="../../images/HRPC-logo.png" alt="Het Rechte Pad College" class="header-logo">
+    </a>
+    <div class="header-text">
+        <h1 class="header-title">Du'a van de Dag</h1>
+        <p class="header-subtitle">Smeekbeden voor elk moment</p>
+    </div>
+    <a href="../../" class="header-back-btn" aria-label="Terug naar Leerportaal">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M11 3.5L5.5 9L11 14.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Terug</span>
+    </a>
+</header>
+
+<!-- ═══════════ Day Progress Rail (fixed left) ═══════════ -->
+<nav class="day-rail" id="dayRail" aria-label="Dag-navigatie">
+    <div class="rail-line">
+        <div class="rail-fill" id="railFill"></div>
+    </div>
+    <div class="rail-dots" id="railDots" aria-hidden="true"></div>
+    <div class="rail-celestial" id="railCelestial" aria-hidden="true">
+        <div class="celestial-body" id="celestialBody"></div>
+    </div>
+</nav>
+
+<!-- ═══════════ Main Content ═══════════ -->
+<main id="mainContent">
+
+    <!-- ── Intro ── -->
+    <section class="intro-section" aria-label="Introductie">
+        <div class="intro-inner">
+            <p class="intro-arabic" dir="rtl" lang="ar">وَقَالَ رَبُّکُمُ ادْعُوْنِیْ أَسْتَجِبْ لَکُمْ</p>
+            <p class="intro-transliteration">Wa qāla rabbukumud'ūnī astajib lakum</p>
+            <p class="intro-translation">"En uw Heer zei: Roep Mij aan, Ik zal u verhoren."</p>
+            <p class="intro-source">Al-Qur'ān · Ghāfir 40:60</p>
+            <p class="intro-body">
+                Een moslim is nooit alleen. Van het eerste moment van de dag tot het laatste — elk handeling kent een du'a. Scroll door een dag vol tawakkul.
+            </p>
+            <div class="intro-scroll-cue" aria-hidden="true">
+                <span class="scroll-cue-label">Begin</span>
+                <div class="scroll-cue-arrow">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Moment sections — gegenereerd door script.js ── -->
+    <div id="momentsContainer" class="moments-container"></div>
+
+    <!-- ── Outro ── -->
+    <section class="outro-section" aria-label="Afsluiting">
+        <div class="outro-inner">
+            <p class="outro-arabic" dir="rtl" lang="ar">وَاذْکُرِ اسْمَ رَبِّکَ بُکْرَةً وَّأَصِیْلًا</p>
+            <p class="outro-transliteration">Wadhkuris-ma rabbika bukratan wa aṣīlā</p>
+            <p class="outro-translation">"En gedenk de naam van uw Heer 's ochtends en 's avonds."</p>
+            <p class="outro-source">Al-Qur'ān · Al-Insān 76:25</p>
+            <p class="outro-body">
+                Moge Allah onze du'a's aanvaarden en onze dag tot een dag van baraka maken.
+            </p>
+            <p class="outro-ameen">آمِیْن</p>
+        </div>
+        <div class="portal-home-wrap">
+            <a href="../../" class="portal-home-btn">← Terug naar Leerportaal</a>
+        </div>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+
+<!-- GoatCounter analytics -->
+<script data-goatcounter="https://hetrechtepadcollege.goatcounter.com/count"
+        async src="https://gc.zgo.at/count.js"
+        integrity="sha384-2UjvVpptg4JlEVgJI2PdscrjOjPcil/4F1ZvIMJ81CShQnEDSlPI+l4PfogvTLYi"
+        crossorigin="anonymous"></script>
+</body>
+</html>
