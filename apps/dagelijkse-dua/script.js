@@ -51,6 +51,18 @@ const MOMENTS = [
         source: 'Muslim · Tirmidhī',
     },
     {
+        id: 'spiegel',
+        icon: '🪞',
+        label: 'Bij het kijken in de spiegel',
+        arabicTitle: 'دُعَاءُ النَّظَرِ فِی الْمِرْآة',
+        description: 'Allah verfraaide jouw uiterlijk — vraag Hem ook om verfraaiing van het innerlijk.',
+        arabic: 'اَللّٰهُمَّ کَمَا حَسَّنْتَ خَلْقِیْ فَحَسِّنْ خُلُقِیْ',
+        transliteration: "Allāhumma kamā ḥassanta khalqī faḥassin khuluqī",
+        translation: '"O Allah, zoals U mijn uiterlijk heeft verfraaid, verfraai dan ook mijn karakter."',
+        source: 'Aḥmad · Ibn Abī Shayba',
+        shortDua: true,
+    },
+    {
         id: 'ochtend-adhkar',
         icon: '🌅',
         label: 'Ochtend-adhkar',
@@ -93,6 +105,17 @@ const MOMENTS = [
         transliteration: "Subḥānal-ladhī sakhkhara lanā hādhā wa mā kunnā lahū muqrinīn, wa innā ilā rabbinā lamunqalibūn",
         translation: '"Verheerlijkt zij Degene die dit voor ons heeft onderworpen, terwijl wij het zelf niet hadden kunnen onderwerpen. En voorwaar, wij keren zeker terug tot onze Heer."',
         source: 'Abū Dāwūd · Tirmidhī (Qur\'ān 43:13-14)',
+    },
+    {
+        id: 'adhan-horen',
+        icon: '📢',
+        label: 'Bij het horen van de adhān',
+        arabicTitle: 'دُعَاءٌ بَعْدَ الْأَذَان',
+        description: 'Herhaal de woorden van de mu\'adhdhin mee, en spreek daarna deze smeekbede uit voor de Profeet ﷺ.',
+        arabic: 'اَللّٰهُمَّ رَبَّ هٰذِهِ الدَّعْوَةِ التَّامَّةِ ، وَالصَّلَاةِ الْقَائِمَةِ ، آتِ مُحَمَّدًا الْوَسِیْلَةَ وَالْفَضِیْلَةَ ، وَابْعَثْهُ مَقَامًا مَّحْمُوْدًا الَّذِیْ وَعَدْتَهُ',
+        transliteration: "Allāhumma Rabba hādhihid-da'watit-tāmmah, waṣ-ṣalātil-qā'imah, āti Muḥammadan al-wasīlata wal-faḍīlah, wab'ath-hu maqāman maḥmūdanil-ladhī wa'adtah",
+        translation: '"O Allah, Heer van deze volmaakte oproep en het staande gebed, schenk Muḥammad de wasilah en de voorrangspositie, en verhef hem naar de Geprezen Standplaats die U hem beloofd heeft."',
+        source: 'Bukhārī 614',
     },
     {
         id: 'masjid-in',
@@ -185,10 +208,12 @@ const SKY_STOPS = [
     { r: 8,   g: 12,  b: 46,  star: 0.95, sun: -1,   moon: 0.85 }, // wc-in
     { r: 10,  g: 15,  b: 55,  star: 0.88, sun: -1,   moon: 0.78 }, // wc-uit
     { r: 18,  g: 22,  b: 78,  star: 0.60, sun: -0.05,moon: 0.55 }, // wudu (fajr)
+    { r: 40,  g: 30,  b: 80,  star: 0.42, sun: -0.02,moon: 0.38 }, // spiegel (pre-dawn)
     { r: 85,  g: 52,  b: 82,  star: 0.20, sun: 0.03, moon: 0.20 }, // ochtend-adhkar (dageraad)
     { r: 198, g: 102, b: 36,  star: 0.00, sun: 0.09, moon: -1   }, // aankleden (zonsopgang)
     { r: 52,  g: 148, b: 212, star: 0.00, sun: 0.22, moon: -1   }, // verlaten-huis (ochtend)
     { r: 34,  g: 132, b: 218, star: 0.00, sun: 0.35, moon: -1   }, // voertuig (halfvoormiddag)
+    { r: 28,  g: 122, b: 212, star: 0.00, sun: 0.43, moon: -1   }, // adhan-horen (voormiddag)
     { r: 22,  g: 112, b: 205, star: 0.00, sun: 0.50, moon: -1   }, // masjid-in (middag)
     { r: 28,  g: 118, b: 200, star: 0.00, sun: 0.62, moon: -1   }, // masjid-uit (namiddag)
     { r: 48,  g: 122, b: 188, star: 0.00, sun: 0.70, moon: -1   }, // eten-voor (namiddag)
@@ -412,6 +437,255 @@ class SkyRenderer {
 }
 
 /* ═══════════════════════════════════════════════════════════════
+   SITUATIONELE DU'AS — niet tijdsgebonden, door omstandigheid
+   ═══════════════════════════════════════════════════════════════ */
+const SITUATIONAL_DUAS = [
+    // ── Categorie 1: Goed & Slecht nieuws ───────────────────────
+    {
+        id: 'goed-nieuws',
+        category: 'nieuws',
+        catLabel: 'Goed & Slecht nieuws',
+        catColor: '#C9A84C',
+        icon: '🌟',
+        label: 'Bij goed nieuws',
+        description: 'Dankbaarheid is de gepaste reactie op elke gunst van Allah.',
+        arabic: 'اَلْحَمْدُ لِلّٰهِ الَّذِیْ بِنِعْمَتِهِ تَتِمُّ الصَّالِحَاتُ',
+        transliteration: "Alhamdulillāhil-ladhī bini'matihī tatimmuṣ-ṣāliḥāt",
+        translation: '"Alle lof is voor Allah, door Wiens gunst goede zaken worden voltooid."',
+        source: 'Ibn Mājah (ḥasan)',
+    },
+    {
+        id: 'slecht-nieuws',
+        category: 'nieuws',
+        catLabel: 'Goed & Slecht nieuws',
+        catColor: '#C9A84C',
+        icon: '💔',
+        label: 'Bij slecht nieuws of ramp',
+        description: 'Bij elk verlies en elke beproeving keert de gelovige terug naar Allah.',
+        arabic: 'إِنَّا لِلّٰهِ وَإِنَّا إِلَيْهِ رَاجِعُوْنَ',
+        transliteration: "Innā lillāhi wa innā ilayhi rāji'ūn",
+        translation: '"Voorwaar, wij behoren aan Allah toe en voorwaar, wij keren tot Hem terug."',
+        source: 'Qur\'ān · Al-Baqarah 2:156',
+    },
+    {
+        id: 'bewondering',
+        category: 'nieuws',
+        catLabel: 'Goed & Slecht nieuws',
+        catColor: '#C9A84C',
+        icon: '✨',
+        label: 'Bij iets bewonderenswaardigs',
+        description: 'Bewondering roept de moslim op Allah te gedenken — niet het schepsel te prijzen zonder Schepper.',
+        arabic: 'مَا شَاءَ اللّٰهُ ، لَا قُوَّةَ إِلَّا بِاللّٰهِ',
+        transliteration: "Māshā'allāh, lā quwwata illā billāh",
+        translation: '"Wat Allah wil — er is geen kracht behalve bij Allah."',
+        source: 'Qur\'ān · Al-Kahf 18:39',
+    },
+    // ── Categorie 2: Beproevingen & Emoties ─────────────────────
+    {
+        id: 'pijn',
+        category: 'emoties',
+        catLabel: 'Beproevingen & Emoties',
+        catColor: '#378ADD',
+        icon: '🤲',
+        label: 'Bij pijn of ziekte',
+        description: 'Leg je hand op de pijnlijke plek, spreek driemaal Bismillāh en daarna zevenmaal deze du\'a.',
+        arabic: 'أَعُوْذُ بِاللّٰهِ وَقُدْرَتِهِ مِنْ شَرِّ مَا أَجِدُ وَأُحَاذِرُ',
+        transliteration: "A'ūdhu billāhi wa qudratihi min sharri mā ajidu wa uḥādhir",
+        translation: '"Ik zoek toevlucht bij Allah en Zijn almacht voor het kwaad dat ik voel en vrees."',
+        source: 'Muslim 2202',
+    },
+    {
+        id: 'angst-zorgen',
+        category: 'emoties',
+        catLabel: 'Beproevingen & Emoties',
+        catColor: '#378ADD',
+        icon: '🌊',
+        label: 'Bij angst of zorgen',
+        description: 'De du\'a van de profeet Yūnus ع uit de buik van de vis — Allah verhoort haar snel.',
+        arabic: 'لَا إِلٰهَ إِلَّا أَنْتَ سُبْحَانَکَ إِنِّیْ کُنْتُ مِنَ الظَّالِمِیْنَ',
+        transliteration: "Lā ilāha illā anta subḥānaka innī kuntu minaẓ-ẓālimīn",
+        translation: '"Er is geen god behalve U. Verheerlijkt zijt U. Voorwaar, ik behoorde tot de onrechtvaardigen."',
+        source: 'Tirmidhī (ṣaḥīḥ) · Qur\'ān 21:87',
+    },
+    {
+        id: 'woede',
+        category: 'emoties',
+        catLabel: 'Beproevingen & Emoties',
+        catColor: '#378ADD',
+        icon: '🔥',
+        label: 'Bij woede',
+        description: 'Woede is van de shaytān — zijn invloed wordt gebroken door bij Allah toevlucht te zoeken.',
+        arabic: 'أَعُوْذُ بِاللّٰهِ مِنَ الشَّيْطَانِ الرَّجِیْمِ',
+        transliteration: "A'ūdhu billāhi mina sh-shayṭānir-rajīm",
+        translation: '"Ik zoek toevlucht bij Allah voor de vervloekte shaytān."',
+        source: 'Bukhārī & Muslim',
+        shortDua: true,
+    },
+    {
+        id: 'nood',
+        category: 'emoties',
+        catLabel: 'Beproevingen & Emoties',
+        catColor: '#378ADD',
+        icon: '⚓',
+        label: 'Bij zwaarte of nood',
+        description: 'Wanneer de situatie overweldigend is, volstaat deze verklaring van volledig vertrouwen op Allah.',
+        arabic: 'حَسْبُنَا اللّٰهُ وَنِعْمَ الْوَکِیْلُ',
+        transliteration: "Ḥasbunallāhu wa ni'mal-wakīl",
+        translation: '"Allah is ons genoeg, en Hij is de beste Wakīl (Zaakwaarnemer)."',
+        source: 'Qur\'ān 3:173 · Bukhārī',
+        shortDua: true,
+    },
+    // ── Categorie 3: Natuur & bijzondere momenten ────────────────
+    {
+        id: 'regen',
+        category: 'natuur',
+        catLabel: 'Natuur & bijzondere momenten',
+        catColor: '#1D9E75',
+        icon: '🌧️',
+        label: 'Bij het vallen van regen',
+        description: 'Regen is een teken van Allahs genade — ontvang haar met dankbaarheid en smeekbede.',
+        arabic: 'اَللّٰهُمَّ صَيِّبًا نَّافِعًا',
+        transliteration: "Allāhumma ṣayyiban nāfi'ā",
+        translation: '"O Allah, maak het een zegenrijke regen."',
+        source: 'Bukhārī · Abū Dāwūd',
+        shortDua: true,
+    },
+    {
+        id: 'donder',
+        category: 'natuur',
+        catLabel: 'Natuur & bijzondere momenten',
+        catColor: '#1D9E75',
+        icon: '⛈️',
+        label: 'Bij het horen van donder',
+        description: 'Donder is een van de tekenen van Allah — de donder zelf prijst Zijn lof.',
+        arabic: 'سُبْحَانَ الَّذِیْ یُسَبِّحُ الرَّعْدُ بِحَمْدِهِ',
+        transliteration: "Subḥānal-ladhī yusabbiḥur-ra'du biḥamdih",
+        translation: '"Verheerlijkt zij Degene die de donder prijst met Zijn lof."',
+        source: 'Mālik (ḥasan)',
+        shortDua: true,
+    },
+    {
+        id: 'nieuwe-maan',
+        category: 'natuur',
+        catLabel: 'Natuur & bijzondere momenten',
+        catColor: '#1D9E75',
+        icon: '🌙',
+        label: 'Bij het zien van de nieuwe maan',
+        description: 'De nieuwe maan markeert het begin van een islamitische maand — begroet haar met deze du\'a.',
+        arabic: 'اَللّٰهُمَّ أَهِلَّهُ عَلَيْنَا بِالْيُمْنِ وَالْإِيْمَانِ ، وَالسَّلَامَةِ وَالْإِسْلَامِ ، رَبِّیْ وَرَبُّکَ اللّٰهُ',
+        transliteration: "Allāhumma ahillahu 'alaynā bil-yumni wal-īmān, was-salāmati wal-islām, rabbī wa rabbukallāh",
+        translation: '"O Allah, laat hem over ons opgaan met geluk en geloof, met veiligheid en islam. Mijn Heer en uw Heer is Allah."',
+        source: 'Tirmidhī · Aḥmad',
+    },
+    // ── Categorie 4: Sociale momenten ───────────────────────────
+    {
+        id: 'niezen',
+        category: 'sociaal',
+        catLabel: 'Sociale momenten',
+        catColor: '#D85A30',
+        icon: '🤧',
+        label: 'Bij het niezen (en het antwoord)',
+        description: 'Zeg bij het niezen alhamdulillāh. De aanwezigen antwoorden yarḥamukallāh. Jij zegt dan yahdīkumullāh.',
+        arabic: 'اَلْحَمْدُ لِلّٰهِ — يَرْحَمُکَ اللّٰهُ — يَهْدِيْکُمُ اللّٰهُ وَيُصْلِحُ بَالَکُمْ',
+        transliteration: "Alḥamdulillāh — Yarḥamukallāh — Yahdīkumullāhu wa yuṣliḥu bālakum",
+        translation: '"Alle lof is voor Allah [bij niezen] — Moge Allah jou genadig zijn [antwoord] — Moge Allah jullie leiden en jullie toestand verbeteren [jouw reactie]."',
+        source: 'Bukhārī',
+    },
+    {
+        id: 'beproeving-anderen',
+        category: 'sociaal',
+        catLabel: 'Sociale momenten',
+        catColor: '#D85A30',
+        icon: '🙏',
+        label: 'Bij het zien van iemand in beproeving',
+        description: 'Wanneer je iemand in een moeilijkheid ziet, gedenk Allahs gunst op jou — zeg het zachtjes bij jezelf.',
+        arabic: 'اَلْحَمْدُ لِلّٰهِ الَّذِیْ عَافَانِیْ مِمَّا ابْتَلَاکَ بِهِ ، وَفَضَّلَنِیْ عَلٰی کَثِیْرٍ مِّمَّنْ خَلَقَ تَفْضِیْلًا',
+        transliteration: "Alhamdulillāhil-ladhī 'āfānī mimmab-talāka bih, wa faḍḍalanī 'alā kathīrim-mimman khalaqa tafḍīlā",
+        translation: '"Alle lof is voor Allah die mij heeft gespaard van waarmee Hij jou heeft beproefd, en die mij bevoordeeld heeft boven velen van Zijn scheepselen."',
+        source: 'Tirmidhī (ḥasan)',
+    },
+];
+
+/* ═══════════════════════════════════════════════════════════════
+   SITUATIONELE SECTIE — bouw grid met categorie-filter
+   ═══════════════════════════════════════════════════════════════ */
+function buildSituationalSection() {
+    const section = document.getElementById('situationalSection');
+    if (!section) return;
+
+    // Unieke categorieën
+    const cats = [...new Map(SITUATIONAL_DUAS.map(d => [d.category, { key: d.category, label: d.catLabel, color: d.catColor }])).values()];
+    let activeCat = 'all';
+
+    // Chips
+    const chipsHTML = `
+        <div class="sit-chips" role="group" aria-label="Filter op categorie">
+            <button class="sit-chip active" data-cat="all">Alle</button>
+            ${cats.map(c => `<button class="sit-chip" data-cat="${c.key}" style="--cat-color:${c.color}">${c.label}</button>`).join('')}
+        </div>`;
+
+    // Kaarten
+    function cardHTML(d, idx) {
+        return `
+<article class="sit-card" data-cat="${d.category}" style="--cat-color:${d.catColor}" role="article" aria-label="Du'a: ${d.label}">
+    <header class="sit-card-header">
+        <span class="sit-icon" aria-hidden="true">${d.icon}</span>
+        <p class="sit-label">${d.label}</p>
+    </header>
+    <p class="sit-description">${d.description}</p>
+    <p class="sit-arabic${d.shortDua ? ' short-dua' : ''}" dir="rtl" lang="ar">${d.arabic}</p>
+    <p class="sit-transliteration">${d.transliteration}</p>
+    <p class="sit-translation">${d.translation}</p>
+    <footer class="sit-footer">
+        <span class="sit-source">${d.source}</span>
+        <button class="copy-btn sit-copy-btn" data-sit-index="${idx}" aria-label="Kopieer du'a: ${d.label}">
+            <span class="copy-icon" aria-hidden="true">📋</span>
+            <span class="copy-label">Kopieer</span>
+        </button>
+    </footer>
+</article>`.trim();
+    }
+
+    section.innerHTML = `
+<div class="sit-inner">
+    <h2 class="sit-title">Du'as voor elk moment</h2>
+    <p class="sit-subtitle">Smeekbeden die niet aan een tijdstip zijn gebonden, maar aan de situatie van het moment.</p>
+    ${chipsHTML}
+    <div class="sit-grid" id="sitGrid">
+        ${SITUATIONAL_DUAS.map((d, i) => cardHTML(d, i)).join('\n')}
+    </div>
+</div>`.trim();
+
+    // Filter-logica
+    section.addEventListener('click', (e) => {
+        const chip = e.target.closest('.sit-chip');
+        if (!chip) return;
+        activeCat = chip.dataset.cat;
+        section.querySelectorAll('.sit-chip').forEach(c => c.classList.toggle('active', c.dataset.cat === activeCat));
+        section.querySelectorAll('.sit-card').forEach(card => {
+            const show = activeCat === 'all' || card.dataset.cat === activeCat;
+            card.style.display = show ? '' : 'none';
+        });
+    });
+
+    // IntersectionObserver voor kaart-reveals
+    if ('IntersectionObserver' in window) {
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    obs.unobserve(entry.target);
+                    trackEvent('situatie-gezien', `Situatie: ${SITUATIONAL_DUAS[entry.target.dataset.sitIndex]?.id ?? ''}`);
+                }
+            });
+        }, { threshold: 0.12 });
+        section.querySelectorAll('.sit-card').forEach(c => obs.observe(c));
+    } else {
+        section.querySelectorAll('.sit-card').forEach(c => c.classList.add('revealed'));
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════
    DOM GENERATIE — bouw alle moment-secties
    ═══════════════════════════════════════════════════════════════ */
 function buildMoments() {
@@ -493,8 +767,12 @@ function initCopyButtons() {
         const btn = e.target.closest('.copy-btn');
         if (!btn) return;
 
-        const idx = parseInt(btn.dataset.index, 10);
-        const m   = MOMENTS[idx];
+        let m;
+        if (btn.dataset.sitIndex !== undefined) {
+            m = SITUATIONAL_DUAS[parseInt(btn.dataset.sitIndex, 10)];
+        } else {
+            m = MOMENTS[parseInt(btn.dataset.index, 10)];
+        }
         if (!m) return;
 
         const text = [
@@ -510,7 +788,8 @@ function initCopyButtons() {
         navigator.clipboard.writeText(text).then(() => {
             btn.classList.add('copied');
             btn.querySelector('.copy-label').textContent = 'Gekopieerd ✓';
-            trackEvent('dua-gekopieerd', `Gekopieerd: ${m.id}`);
+            const eventKey = btn.dataset.sitIndex !== undefined ? 'situatie-gekopieerd' : 'dua-gekopieerd';
+            trackEvent(eventKey, `Gekopieerd: ${m.id}`);
             setTimeout(() => {
                 btn.classList.remove('copied');
                 btn.querySelector('.copy-label').textContent = 'Kopieer';
@@ -635,6 +914,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Bouw DOM
     buildMoments();
     buildRailDots();
+    buildSituationalSection();
 
     // Start sky canvas
     const canvas = document.getElementById('skyCanvas');
