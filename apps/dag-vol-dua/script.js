@@ -903,7 +903,7 @@ function initScroll(sky) {
    ═══════════════════════════════════════════════════════════════ */
 function trackEvent(path, title) {
     if (window.goatcounter && window.goatcounter.count) {
-        window.goatcounter.count({ path: 'dagelijkse-dua/' + path, title: title, event: true });
+        window.goatcounter.count({ path: 'dag-vol-dua/' + path, title: title, event: true });
     }
 }
 
