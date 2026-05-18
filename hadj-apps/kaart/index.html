@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Hadj Routekaart — المناسك</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Tajawal:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loading">
+  <div class="loading-kaaba">🕋</div>
+  <div class="loading-text">Kaart wordt geladen...</div>
+  <div class="loading-bar"><div class="loading-fill"></div></div>
+</div>
+
+<header>
+  <div class="header-title">
+    <h1>Hadj Routekaart</h1>
+    <div class="arabic">مناسك الحج</div>
+  </div>
+  <div class="route-toggle">
+    <button class="route-btn active" onclick="toggleRoute(this, true)">Route</button>
+    <button class="route-btn" onclick="toggleRoute(this, false)">Vrij</button>
+  </div>
+</header>
+
+<div id="map"></div>
+
+<div id="day-nav">
+  <button class="day-btn active" onclick="filterDay(this, 'all')">Alle locaties</button>
+  <button class="day-btn" onclick="filterDay(this, 0)">Vóór Hadj</button>
+  <button class="day-btn" onclick="filterDay(this, 8)">8 Dhul Hijjah</button>
+  <button class="day-btn" onclick="filterDay(this, 9)">9 Dhul Hijjah — ʿArafāt</button>
+  <button class="day-btn" onclick="filterDay(this, 10)">10 Dhul Hijjah — ʿĪd</button>
+  <button class="day-btn" onclick="filterDay(this, 11)">11–13 Dhul Hijjah</button>
+</div>
+
+<div id="info-panel">
+  <div class="panel-handle"></div>
+  <div class="panel-header">
+    <div class="panel-title-group">
+      <div class="panel-cat" id="panel-cat"></div>
+      <div class="panel-name" id="panel-name"></div>
+      <div class="panel-arabic" id="panel-arabic"></div>
+    </div>
+    <button class="panel-close" onclick="closePanel()">✕</button>
+  </div>
+  <div class="panel-body" id="panel-body"></div>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
