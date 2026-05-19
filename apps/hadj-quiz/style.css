@@ -1356,6 +1356,23 @@ body {
     animation: fadeInUp 0.38s ease forwards;
 }
 
+/* Fix: quiz-screen en start-screen vullen altijd de volledige kaartbreedte */
+#quiz-screen,
+#start-screen {
+    width: 100%;
+}
+
+/* Fix: character-container volledig breed zodat centering werkt */
+.character-container {
+    width: 100%;
+}
+
+/* Fix: ritual-scene gecentreerd */
+.ritual-scene {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Responsive */
 @media (max-width: 480px) {
     .start-hero {
@@ -1363,6 +1380,7 @@ body {
     }
     .start-arabic {
         font-size: 2.9rem;
+        letter-spacing: 0;
     }
     .start-quote--featured p {
         font-size: 1.08rem;
