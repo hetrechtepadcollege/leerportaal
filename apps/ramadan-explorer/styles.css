@@ -1040,66 +1040,135 @@ h1 {
 
 
 /* === LEERPORTAAL REDESIGN === */
+
 body {
     font-family: 'Inter', sans-serif;
     background: #f9f8f6;
     color: #1c2340;
 }
 
+h1, h2 {
+    font-family: 'Newsreader', serif;
+    color: #1c2340;
+}
+
+/* ── APP-HEADER (outer hero) ── */
 .app-header {
-    width: 100%;
-    background: #1f294d;
+    background:
+        linear-gradient(rgba(31, 41, 77, .045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(31, 41, 77, .045) 1px, transparent 1px),
+        #f9f8f6;
+    background-size: 48px 48px, 48px 48px, auto;
+    padding: 28px 20px 52px;
+    border-bottom: 1px solid rgba(31, 41, 77, .09);
+    margin: 0 0 42px;
+    color: #1c2340;
     text-align: center;
-    padding: 1.5rem 1.5rem 1.75rem;
+    width: 100%;
     display: block;
 }
 
-.back-link {
-    display: inline-block;
-    color: rgba(255, 255, 255, 0.65);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-decoration: none;
-    margin-bottom: 1rem;
-    transition: color 0.2s;
+.header-logo-link {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 2rem;
+    border-radius: 6px;
+    transition: opacity 0.2s;
 }
-.back-link:hover { color: #d4af37; }
+
+.header-logo-link:hover,
+.header-logo-link:focus-visible {
+    opacity: 0.85;
+    outline: 2px solid #d4af37;
+    outline-offset: 6px;
+    border-radius: 4px;
+}
 
 .header-logo {
+    width: min(360px, 78vw);
+    height: auto;
     display: block;
-    height: 3.5rem;
-    width: auto;
-    margin: 0 auto 0.75rem;
+    margin: 0 auto 2rem;
+    filter: invert(1);
+    opacity: .92;
 }
+
+.header-logo-link .header-logo { margin: 0; }
 
 .header-title {
     font-family: 'Newsreader', serif;
-    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-size: clamp(3.2rem, 10vw, 7.5rem);
     font-weight: 700;
-    color: #ffffff;
-    margin: 0 0 0.35rem;
-    letter-spacing: 0;
+    letter-spacing: -0.06em;
+    line-height: .82;
+    color: #0d0e14;
+    text-transform: none;
     text-shadow: none;
+    max-width: 980px;
+    margin: 0 auto;
 }
 
 .header-subtitle {
     font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
-    margin: 0;
+    font-size: .98rem;
+    color: #5c6e8a;
     font-style: normal;
+    max-width: 620px;
+    margin: .8rem auto 0;
+    line-height: 1.65;
 }
 
+.header-arabic {
+    color: #d4af37;
+    font-size: clamp(1.65rem, 5vw, 2.6rem);
+    margin-top: .55rem;
+}
+
+/* ── INNER HERO (scoreboard + mode switch) ── */
 .hero {
-    background: rgba(31, 41, 77, 0.04);
+    background: #ffffff;
     border: 1px solid rgba(31, 41, 77, 0.09);
     border-radius: 14px;
     color: #1c2340;
-    box-shadow: none;
+    box-shadow: 0 1px 4px rgba(31, 41, 77, 0.06), 0 4px 16px rgba(31, 41, 77, 0.07);
     padding: 16px 24px;
 }
 
+.scoreboard,
+.scoreboard-header {
+    background: rgba(31, 41, 77, 0.04);
+    border-color: rgba(31, 41, 77, 0.10);
+    color: #1c2340;
+}
+
+.scoreboard strong,
+.scoreboard-header strong { color: #c9a52e; }
+
+.mode-btn {
+    border-color: rgba(31, 41, 77, 0.25);
+    color: #1c2340;
+    background: transparent;
+}
+
+.mode-btn:hover {
+    border-color: rgba(31, 41, 77, 0.50);
+    color: #1c2340;
+    background: rgba(31, 41, 77, 0.06);
+}
+
+.mode-btn.active {
+    background: #d4af37;
+    border-color: #d4af37;
+    color: #1a1200;
+}
+
+.mode-badge {
+    color: #5c6e8a;
+    background: rgba(31, 41, 77, 0.06);
+    border-color: rgba(31, 41, 77, 0.12);
+}
+
+/* ── CARDS ── */
 .card {
     background: #ffffff;
     border: 1px solid rgba(31, 41, 77, 0.09);
@@ -1107,71 +1176,60 @@ body {
     border-radius: 14px;
 }
 
-.btn {
-    background: #f9f8f6;
-    color: #1c2340;
-    border: 1.5px solid rgba(31, 41, 77, 0.20);
+.card h2 {
+    color: #5c6e8a;
+    border-bottom-color: rgba(31, 41, 77, 0.10);
 }
-.btn:hover { background: rgba(31, 41, 77, 0.06); }
 
-h1, h2 { font-family: '"'"'Newsreader'"'"', serif; color: #1c2340; }
-
-/* header-logo-link — clickable logo */
-.header-logo-link { display: block; width: fit-content; margin: 0 auto 2.5rem; border-radius: 6px; transition: opacity 0.2s; }
-.header-logo-link .header-logo { margin: 0; display: block; }
-.header-logo-link:hover,
-.header-logo-link:focus-visible { opacity: 0.85; outline: 2px solid #d4af37; outline-offset: 6px; border-radius: 4px; }
-
-/* hero scoreboard + mode controls on light background */
-.scoreboard { background: rgba(31,41,77,0.06); border-color: rgba(31,41,77,0.10); color: #1c2340; }
-.scoreboard strong { color: #c9a52e; }
-.mode-btn { border-color: rgba(31,41,77,0.25); color: #1c2340; }
-.mode-btn:hover { border-color: rgba(31,41,77,0.50); color: #1c2340; background: rgba(31,41,77,0.06); }
-.mode-badge { color: #5c6e8a; background: rgba(31,41,77,0.06); border-color: rgba(31,41,77,0.12); }
-
-/* === HERO REDESIGN === */
-.app-header {
-    background:
-        linear-gradient(rgba(31, 41, 77, .045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(31, 41, 77, .045) 1px, transparent 1px),
-        #f9f8f6 !important;
-    background-size: 48px 48px, 48px 48px, auto !important;
-    padding: 28px 20px 58px !important;
-    border-bottom: 1px solid rgba(31, 41, 77, .09);
-    margin: 0 0 42px;
-    color: #1c2340;
-}
-.header-logo {
-    width: min(360px, 78vw);
-    height: auto;
-    margin: 0 auto 38px;
-    filter: invert(1);
-    opacity: .92;
-}
-.header-logo-link .header-logo { margin: 0; }
-.header-title {
-    font-family: 'Newsreader', serif;
-    font-size: clamp(3.2rem, 10vw, 7.5rem) !important;
-    font-weight: 800;
-    letter-spacing: -0.06em;
-    line-height: .82;
-    color: #0d0e14 !important;
-    text-transform: none;
-    text-shadow: none;
-    max-width: 980px;
-    margin: 0 auto;
-}
-.header-subtitle {
+/* ── BUTTONS ── */
+.btn,
+.option-btn {
     font-family: 'Inter', sans-serif;
-    font-size: .98rem !important;
-    color: #5c6e8a !important;
-    font-style: normal;
-    max-width: 620px;
-    margin: .8rem auto 0;
-    line-height: 1.65;
+    background: #1f294d;
+    color: #ffffff;
+    border: none;
 }
-.header-arabic {
+
+.btn:hover,
+.option-btn:hover {
+    background: #2d3d6b;
+    transform: translateY(-1px);
+}
+
+.btn.secondary {
+    background: transparent;
+    color: #1f294d;
+    border: 1.5px solid rgba(31, 41, 77, 0.28);
+}
+
+.btn.secondary:hover {
+    background: rgba(31, 41, 77, 0.06);
+    color: #1f294d;
+}
+
+.order-item .move {
+    background: #1f294d;
+    color: #ffffff;
+}
+
+.order-item .move:hover { background: #2d3d6b; }
+
+/* ── PORTAL HOME BUTTON ── */
+.portal-home-btn {
+    color: #1f294d;
+    background: rgba(31, 41, 77, 0.06);
+    border-color: rgba(31, 41, 77, 0.20);
+}
+
+.portal-home-btn:hover {
+    color: #ffffff;
+    background: #1f294d;
+    border-color: #1f294d;
+    transform: translateY(-1px);
+}
+
+/* ── WOORDWEB CENTER ── */
+.ww-center {
+    background: #1f294d;
     color: #d4af37;
-    font-size: clamp(1.65rem, 5vw, 2.6rem);
-    margin-top: .55rem;
 }

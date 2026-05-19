@@ -35,9 +35,9 @@ const questions = [
     {
         question: "Welke voorwaarden maken de hadj verplicht voor een moslim?",
         answers: [
-            { text: "A) Geloof, volwassenheid, toerekeningsvatbaarheid, vrijheid, gezondheid, gezichtsvermogen, financiële draagkracht en tijd", correct: true },
-            { text: "B) Geloof, kennis van rituelen en Arabische taalvaardigheid", correct: false },
-            { text: "C) Geloof, reisdocumenten, vaccinaties en begeleiding", correct: false }
+            { text: "A) Geloof, kennis van rituelen en Arabische taalvaardigheid", correct: false },
+            { text: "B) Geloof, reisdocumenten, vaccinaties en begeleiding", correct: false },
+            { text: "C) Geloof, volwassenheid, toerekeningsvatbaarheid, vrijheid, gezondheid, gezichtsvermogen, financiële draagkracht en tijd", correct: true }
         ],
         uitleg: "De hadj wordt verplicht wanneer aan de voorwaarden wordt voldaan: geloof, volwassenheid, toerekeningsvatbaarheid, vrijheid, gezondheid, gezichtsvermogen, financiële draagkracht en tijd. De financiële draagkracht betekent dat iemand de reis kan bekostigen zonder zijn verplichte lasten te verwaarlozen.",
         scene: "conditions",
@@ -46,9 +46,9 @@ const questions = [
     {
         question: "Welke drie vormen van hadj worden onderscheiden?",
         answers: [
-            { text: "A) Qirān, Tamattuʿ en Ifrād", correct: true },
-            { text: "B) ʿUmrah (kleine bedevaart), Hadj en Ziyārah (bezoek)", correct: false },
-            { text: "C) Farḍ, Wājib en Soenna", correct: false }
+            { text: "A) ʿUmrah (kleine bedevaart), Hadj en Ziyārah (bezoek)", correct: false },
+            { text: "B) Farḍ, Wājib en Soenna", correct: false },
+            { text: "C) Qirān, Tamattuʿ en Ifrād", correct: true }
         ],
         uitleg: "De drie vormen verschillen in hoe ʿUmrah en hadj worden gecombineerd. Bij Qirān worden beide in één iḥrām verricht, bij Tamattuʿ gescheiden en bij Ifrād alleen hadj.",
         scene: "routes",
@@ -57,9 +57,9 @@ const questions = [
     {
         question: "Welke hadj-vorm geldt als de meest aanbevolen vorm?",
         answers: [
-            { text: "A) Qirān (vorm van hadj)", correct: true },
-            { text: "B) Tamattuʿ (vorm van hadj)", correct: false },
-            { text: "C) Ifrād (vorm van hadj)", correct: false }
+            { text: "A) Tamattuʿ (vorm van hadj)", correct: false },
+            { text: "B) Ifrād (vorm van hadj)", correct: false },
+            { text: "C) Qirān (vorm van hadj)", correct: true }
         ],
         uitleg: "Bij Qirān combineert de pelgrim ʿUmrah en hadj in één iḥrām en blijft in deze staat tot de dag van het offer. Hierbij is ook een offer verplicht.",
         scene: "routes",
@@ -80,8 +80,8 @@ const questions = [
         question: "Wanneer moet een bedevaartganger uiterlijk de intentie voor iḥrām (gewijde staat) maken?",
         answers: [
             { text: "A) In Mekka vóór de ṭawāf (rondgang)", correct: false },
-            { text: "B) Vóór het passeren van de Mīqāt (grenspunt voor bedevaartgangers)", correct: true },
-            { text: "C) In Mina (verblijfplaats tijdens hadj)", correct: false }
+            { text: "B) In Mina (verblijfplaats tijdens hadj)", correct: false },
+            { text: "C) Vóór het passeren van de Mīqāt (grenspunt voor bedevaartgangers)", correct: true }
         ],
         uitleg: "De Mīqāt is een grens die niet zonder iḥrām gepasseerd mag worden. Wie dit wel doet, moet terugkeren of een compensatie verrichten.",
         scene: "miqat",
@@ -91,8 +91,8 @@ const questions = [
         question: "Wanneer wordt iḍṭibāʿ (rechterschouder ontbloten) toegepast tijdens de hadj?",
         answers: [
             { text: "A) Het wordt gedurende de gehele iḥrām toegepast", correct: false },
-            { text: "B) Het wordt toegepast tijdens een specifieke ṭawāf (rondgang)", correct: true },
-            { text: "C) Het is verplicht tijdens gebeden", correct: false }
+            { text: "B) Het is verplicht tijdens gebeden", correct: false },
+            { text: "C) Het wordt toegepast tijdens een specifieke ṭawāf (rondgang)", correct: true }
         ],
         uitleg: "Iḍṭibāʿ wordt toegepast tijdens een specifieke ṭawāf. In dezelfde ṭawāf wordt in de eerste drie rondes versneld gelopen (raml) door mannen.",
         scene: "ihram",

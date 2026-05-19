@@ -65,16 +65,6 @@ function openPanel(loc) {
 
   let html = '';
 
-  html += `<div class="location-badges">`;
-  if (loc.day === 0) html += `<span class="badge badge-day">Vóór / Hele Hadj</span>`;
-  else if (loc.day === 8) html += `<span class="badge badge-day">8 Dhul Hijjah</span>`;
-  else if (loc.day === 9) html += `<span class="badge badge-day">9 Dhul Hijjah</span>`;
-  else if (loc.day === 10) html += `<span class="badge badge-day">10 Dhul Hijjah</span>`;
-  else if (loc.day === 11) html += `<span class="badge badge-day">11–13 Dhul Hijjah</span>`;
-  html += `<span class="badge badge-type">${loc.category}</span>`;
-  html += `<span class="badge badge-hanafi">Hanafi</span>`;
-  html += `</div>`;
-
   html += `<p class="panel-desc">${loc.desc}</p>`;
 
   if (loc.manasik && loc.manasik.length) {
