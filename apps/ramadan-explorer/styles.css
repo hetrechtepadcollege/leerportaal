@@ -1119,9 +1119,11 @@ h1, h2 {
 }
 
 .header-arabic {
+    font-family: 'AlQalamQuranMajeed', 'Noto Naskh Arabic', sans-serif;
     color: #d4af37;
-    font-size: clamp(1.65rem, 5vw, 2.6rem);
+    font-size: clamp(1.9rem, 5.5vw, 3rem);
     margin-top: .55rem;
+    direction: rtl;
 }
 
 /* ── INNER HERO (scoreboard + mode switch) ── */
@@ -1232,4 +1234,3 @@ h1, h2 {
 .ww-center {
     background: #1f294d;
     color: #d4af37;
-}

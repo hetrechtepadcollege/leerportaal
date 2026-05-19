@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'AlQalamQuranMajeed';
+  src: url('fonts/AlQalamQuranMajeed.ttf') format('truetype');
+}
+
 :root {
   --gold: #d4af37;
   --gold-light: #e8c84a;
@@ -78,8 +83,8 @@ header {
 }
 
 .header-title .arabic {
-  font-family: 'Tajawal', sans-serif;
-  font-size: 0.7rem;
+  font-family: 'AlQalamQuranMajeed', 'Tajawal', sans-serif;
+  font-size: 0.9rem;
   color: var(--text-dim);
   margin-top: 2px;
   direction: rtl;
@@ -274,8 +279,8 @@ header {
 }
 
 .panel-arabic {
-  font-family: 'Tajawal', sans-serif;
-  font-size: 0.95rem;
+  font-family: 'AlQalamQuranMajeed', 'Tajawal', sans-serif;
+  font-size: 1.15rem;
   color: var(--gold-dim);
   direction: rtl;
   margin-top: 1px;
@@ -373,9 +378,9 @@ header {
 }
 
 .manasik-name .ar {
-  font-family: 'Tajawal', sans-serif;
+  font-family: 'AlQalamQuranMajeed', 'Tajawal', sans-serif;
   color: var(--gold-dim);
-  font-size: 0.8rem;
+  font-size: 1rem;
   direction: rtl;
   margin-left: 6px;
   font-weight: 400;
@@ -423,9 +428,9 @@ header {
 }
 
 .dua-arabic {
-  font-family: 'Tajawal', sans-serif;
-  font-size: 1.05rem;
-  line-height: 1.9;
+  font-family: 'AlQalamQuranMajeed', 'Tajawal', sans-serif;
+  font-size: 1.25rem;
+  line-height: 2.1;
   direction: rtl;
   text-align: right;
   color: var(--green);
