@@ -23,21 +23,278 @@
              <meta property="og:type" content="article">
     <meta property="og:url" content="https://leer.hetrechtepadcollege.nl/apps/hadj-explorer/">
     <meta property="og:title" content="Hadj Explorer">
-    <meta property="og:description" content="Ontdek de Hadj met spellen, weetjes en uitdagingen. Verzamel sterren en word een Hadj-expert!">
+    <meta property="og:description" content="Ontdek de hadj met spellen, weetjes en uitdagingen. Verzamel sterren en word een hadj-expert!">
     <meta property="og:image" content="https://leer.hetrechtepadcollege.nl/apps/hadj-explorer/images/share-banner.png">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="Hadj Explorer">
-    <meta property="twitter:description" content="Ontdek de Hadj met spellen, weetjes en uitdagingen. Verzamel sterren en word een Hadj-expert!">
+    <meta property="twitter:description" content="Ontdek de hadj met spellen, weetjes en uitdagingen. Verzamel sterren en word een hadj-expert!">
     <meta property="twitter:image" content="https://leer.hetrechtepadcollege.nl/apps/hadj-explorer/images/share-banner.png">
   </head>
   <body>
     <header class="app-header">
       <a href="../../" class="header-logo-link" title="Terug naar Leerportaal"><img src="../../images/HRPC-logo.png" alt="Het Rechte Pad College" class="header-logo"></a>
       <h1 class="header-title">Hadj Explorer</h1>
-      <p class="header-subtitle">Ontdek de Hadj met spellen, weetjes en uitdagingen</p>
+      <p class="header-subtitle">Ontdek de hadj met spellen, weetjes en uitdagingen</p>
+      <div class="header-visual">
+        <svg class="header-kaaba-svg" viewBox="0 0 580 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="ki-sky" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#dceefa"/>
+                            <stop offset="65%" stop-color="#bfe0f3"/>
+                            <stop offset="100%" stop-color="#f7ead0"/>
+                        </linearGradient>
+                        <radialGradient id="ki-glow" cx="50%" cy="68%" r="42%">
+                            <stop offset="0%" stop-color="#f4c768" stop-opacity="0.28"/>
+                            <stop offset="100%" stop-color="#f4c768" stop-opacity="0"/>
+                        </radialGradient>
+                    </defs>
+                    <rect width="580" height="300" fill="url(#ki-sky)"/>
+                    <ellipse cx="290" cy="230" rx="180" ry="85" fill="url(#ki-glow)"/>
+                    <!-- Soft clouds and sun -->
+                    <g opacity="0.72">
+                        <ellipse cx="92" cy="44" rx="34" ry="10" fill="#ffffff" opacity="0.70"/>
+                        <ellipse cx="122" cy="38" rx="22" ry="8" fill="#ffffff" opacity="0.54"/>
+                        <ellipse cx="420" cy="58" rx="42" ry="12" fill="#ffffff" opacity="0.62"/>
+                        <ellipse cx="462" cy="51" rx="24" ry="8" fill="#ffffff" opacity="0.45"/>
+                    </g>
+                    <!-- Sun -->
+                    <g class="header-sun" aria-hidden="true">
+                        <circle cx="502" cy="50" r="24" fill="#f3bd43" opacity="0.96"/>
+                        <circle cx="502" cy="50" r="36" fill="#f3bd43" opacity="0.16"/>
+                        <line x1="502" y1="8" x2="502" y2="22" stroke="#f3bd43" stroke-width="3" stroke-linecap="round" opacity="0.58"/>
+                        <line x1="502" y1="78" x2="502" y2="92" stroke="#f3bd43" stroke-width="3" stroke-linecap="round" opacity="0.42"/>
+                        <line x1="460" y1="50" x2="474" y2="50" stroke="#f3bd43" stroke-width="3" stroke-linecap="round" opacity="0.44"/>
+                        <line x1="530" y1="50" x2="544" y2="50" stroke="#f3bd43" stroke-width="3" stroke-linecap="round" opacity="0.52"/>
+                        <line x1="472" y1="20" x2="482" y2="30" stroke="#f3bd43" stroke-width="3" stroke-linecap="round" opacity="0.45"/>
+                        <line x1="522" y1="70" x2="532" y2="80" stroke="#f3bd43" stroke-width="3" stroke-linecap="round" opacity="0.38"/>
+                    </g>
+                    <!-- Ground line -->
+                    <rect x="0" y="254" width="580" height="46" fill="#e8d9b9" opacity="0.28"/>
+                    <line x1="0" y1="256" x2="580" y2="256" stroke="#d4a84b" stroke-width="0.7" stroke-opacity="0.26"/>
+                    <!-- Back left minaret -->
+                    <rect x="56" y="84" width="18" height="172" fill="#e8dfcc" stroke="#d4a84b" stroke-width="0.3" stroke-opacity="0.40"/>
+                    <rect x="51" y="129" width="28" height="5" rx="1" fill="#cab98a"/>
+                    <rect x="51" y="129" width="28" height="1.5" fill="#d4a84b" opacity="0.32"/>
+                    <rect x="51" y="164" width="28" height="5" rx="1" fill="#cab98a"/>
+                    <rect x="51" y="164" width="28" height="1.5" fill="#d4a84b" opacity="0.28"/>
+                    <rect x="58" y="62" width="14" height="24" fill="#e1d6c4" stroke="#d4a84b" stroke-width="0.3" stroke-opacity="0.38"/>
+                    <ellipse cx="65" cy="62" rx="9" ry="5" fill="#d4a84b" opacity="0.62"/>
+                    <line x1="65" y1="43" x2="65" y2="57" stroke="#d4a84b" stroke-width="1.2" stroke-opacity="0.72"/>
+                    <circle cx="65" cy="40" r="4" fill="#d4a84b" opacity="0.80"/>
+                    <circle cx="67" cy="38" r="3" fill="#dceefa"/>
+                    <!-- Back right minaret -->
+                    <rect x="506" y="84" width="18" height="172" fill="#e8dfcc" stroke="#d4a84b" stroke-width="0.3" stroke-opacity="0.40"/>
+                    <rect x="501" y="129" width="28" height="5" rx="1" fill="#cab98a"/>
+                    <rect x="501" y="129" width="28" height="1.5" fill="#d4a84b" opacity="0.32"/>
+                    <rect x="501" y="164" width="28" height="5" rx="1" fill="#cab98a"/>
+                    <rect x="501" y="164" width="28" height="1.5" fill="#d4a84b" opacity="0.28"/>
+                    <rect x="508" y="62" width="14" height="24" fill="#e1d6c4" stroke="#d4a84b" stroke-width="0.3" stroke-opacity="0.38"/>
+                    <ellipse cx="515" cy="62" rx="9" ry="5" fill="#d4a84b" opacity="0.62"/>
+                    <line x1="515" y1="43" x2="515" y2="57" stroke="#d4a84b" stroke-width="1.2" stroke-opacity="0.72"/>
+                    <circle cx="515" cy="40" r="4" fill="#d4a84b" opacity="0.80"/>
+                    <circle cx="517" cy="38" r="3" fill="#dceefa"/>
+                    <!-- Left colonnade -->
+                    <rect x="0" y="206" width="216" height="50" fill="#e8dfcc" opacity="0.86"/>
+                    <rect x="0" y="204" width="216" height="3" fill="#d4a84b" opacity="0.16"/>
+                    <path d="M20,256 L20,222 Q28,210 36,222 L36,256" fill="#d9cfbc" stroke="#d4a84b" stroke-width="0.3" stroke-opacity="0.25"/>
+                    <path d="M52,256 L52,222 Q60,210 68,222 L68,256" fill="#d9cfbc" stroke="#d4a84b" stroke-width="0.3" stroke-opacity="0.25"/>
+                    <path d="M84,256 L84,222 Q92,210 100,222 L100,256" fill="#d9cfbc" stroke="#d4a84b" stroke-width="0.3" stroke-opacity="0.25"/>
+                    <path d="M116,256 L116,222 Q124,210 132,222 L132,256" fill="#d9cfbc" stroke="#d4a84b" stroke-width="0.3" stroke-opacity="0.25"/>
+                    <path d="M148,256 L148,222 Q156,210 164,222 L164,256" fill="#d9cfbc" stroke="#d4a84b" stroke-width="0.3" stroke-opacity="0.25"/>
+                    <path d="M180,256 L180,222 Q188,210 196,222 L196,256" fill="#d9cfbc" stroke="#d4a84b" stroke-width="0.3" stroke-opacity="0.25"/>
+                    <!-- Right colonnade -->
+                    <rect x="364" y="206" width="216" height="50" fill="#e8dfcc" opacity="0.86"/>
+                    <rect x="364" y="204" width="216" height="3" fill="#d4a84b" opacity="0.16"/>
+                    <path d="M384,256 L384,222 Q392,210 400,222 L400,256" fill="#d9cfbc" stroke="#d4a84b" stroke-width="0.3" stroke-opacity="0.25"/>
+                    <path d="M416,256 L416,222 Q424,210 432,222 L432,256" fill="#d9cfbc" stroke="#d4a84b" stroke-width="0.3" stroke-opacity="0.25"/>
+                    <path d="M448,256 L448,222 Q456,210 464,222 L464,256" fill="#d9cfbc" stroke="#d4a84b" stroke-width="0.3" stroke-opacity="0.25"/>
+                    <path d="M480,256 L480,222 Q488,210 496,222 L496,256" fill="#d9cfbc" stroke="#d4a84b" stroke-width="0.3" stroke-opacity="0.25"/>
+                    <path d="M512,256 L512,222 Q520,210 528,222 L528,256" fill="#d9cfbc" stroke="#d4a84b" stroke-width="0.3" stroke-opacity="0.25"/>
+                    <path d="M544,256 L544,222 Q552,210 560,222 L560,256" fill="#d9cfbc" stroke="#d4a84b" stroke-width="0.3" stroke-opacity="0.25"/>
+                    <!-- Front left minaret -->
+                    <rect x="152" y="114" width="14" height="142" fill="#eee5d4" stroke="#d4a84b" stroke-width="0.3" stroke-opacity="0.38"/>
+                    <rect x="148" y="156" width="22" height="4" rx="1" fill="#cab98a"/>
+                    <rect x="148" y="156" width="22" height="1.5" fill="#d4a84b" opacity="0.28"/>
+                    <rect x="154" y="96" width="10" height="20" fill="#e1d6c4" stroke="#d4a84b" stroke-width="0.3" stroke-opacity="0.36"/>
+                    <ellipse cx="159" cy="96" rx="7" ry="4" fill="#d4a84b" opacity="0.58"/>
+                    <line x1="159" y1="80" x2="159" y2="92" stroke="#d4a84b" stroke-width="1.0" stroke-opacity="0.68"/>
+                    <circle cx="159" cy="77" r="3.5" fill="#d4a84b" opacity="0.76"/>
+                    <circle cx="161" cy="75" r="2.5" fill="#dceefa"/>
+                    <!-- Front right minaret -->
+                    <rect x="414" y="114" width="14" height="142" fill="#eee5d4" stroke="#d4a84b" stroke-width="0.3" stroke-opacity="0.38"/>
+                    <rect x="410" y="156" width="22" height="4" rx="1" fill="#cab98a"/>
+                    <rect x="410" y="156" width="22" height="1.5" fill="#d4a84b" opacity="0.28"/>
+                    <rect x="416" y="96" width="10" height="20" fill="#e1d6c4" stroke="#d4a84b" stroke-width="0.3" stroke-opacity="0.36"/>
+                    <ellipse cx="421" cy="96" rx="7" ry="4" fill="#d4a84b" opacity="0.58"/>
+                    <line x1="421" y1="80" x2="421" y2="92" stroke="#d4a84b" stroke-width="1.0" stroke-opacity="0.68"/>
+                    <circle cx="421" cy="77" r="3.5" fill="#d4a84b" opacity="0.76"/>
+                    <circle cx="423" cy="75" r="2.5" fill="#dceefa"/>
+                    <!-- Tawaf rings -->
+                    <circle cx="290" cy="222" r="108" fill="none" stroke="#d4a84b" stroke-width="0.5" stroke-opacity="0.09" stroke-dasharray="5,8"/>
+                    <circle cx="290" cy="222" r="86" fill="none" stroke="#d4a84b" stroke-width="0.5" stroke-opacity="0.07" stroke-dasharray="4,6"/>
+                    <!-- Pilgrim dots -->
+                    <circle cx="212" cy="234" r="2.5" fill="#8f7540" opacity="0.48"/>
+                    <circle cx="241" cy="252" r="2.0" fill="#8f7540" opacity="0.40"/>
+                    <circle cx="350" cy="228" r="2.5" fill="#8f7540" opacity="0.46"/>
+                    <circle cx="336" cy="248" r="2.0" fill="#8f7540" opacity="0.38"/>
+                    <circle cx="214" cy="206" r="2.0" fill="#8f7540" opacity="0.36"/>
+                    <circle cx="364" cy="212" r="2.0" fill="#8f7540" opacity="0.34"/>
+                    <!-- Kaaba shadow -->
+                    <ellipse cx="290" cy="261" rx="54" ry="7" fill="#000" opacity="0.20"/>
+                    <!-- Kaaba body -->
+                    <rect x="246" y="152" width="88" height="104" fill="#09090f" rx="1"/>
+                    <line x1="246" y1="152" x2="334" y2="152" stroke="#d4a84b" stroke-width="0.8" stroke-opacity="0.32"/>
+                    <line x1="246" y1="152" x2="246" y2="256" stroke="#d4a84b" stroke-width="0.4" stroke-opacity="0.18"/>
+                    <line x1="334" y1="152" x2="334" y2="256" stroke="#d4a84b" stroke-width="0.4" stroke-opacity="0.18"/>
+                    <!-- Kiswah gold band -->
+                    <rect x="246" y="182" width="88" height="17" fill="#c9a03a" opacity="0.76"/>
+                    <line x1="256" y1="187" x2="324" y2="187" stroke="#07091a" stroke-width="0.65" stroke-opacity="0.42"/>
+                    <line x1="259" y1="191" x2="321" y2="191" stroke="#07091a" stroke-width="0.65" stroke-opacity="0.42"/>
+                    <line x1="257" y1="195" x2="323" y2="195" stroke="#07091a" stroke-width="0.65" stroke-opacity="0.42"/>
+                    <!-- Door -->
+                    <rect x="273" y="222" width="34" height="34" rx="1" fill="#c9a03a" opacity="0.80"/>
+                    <rect x="275" y="224" width="30" height="30" rx="1" fill="#8a6218" opacity="0.52"/>
+                    <rect x="277" y="226" width="26" height="26" rx="1" fill="none" stroke="#d4a84b" stroke-width="0.7" stroke-opacity="0.52"/>
+                    <circle cx="290" cy="241" r="2.0" fill="#d4a84b" opacity="0.68"/>
+                    <ellipse cx="290" cy="256" rx="20" ry="4" fill="#d4a84b" opacity="0.09"/>
+        </svg>
+        <div class="header-arabic-overlay">
+          <span class="header-arabic-word" lang="ar" dir="rtl" aria-hidden="true">الحج</span>
+        </div>
+      </div>
+
+
     </header>
     <main class="app">
-      <header class="hero">
+      <nav class="landing-top-actions" aria-label="Snelle keuze">
+        <a class="btn landing-start" href="#spelletjes">Begin met de spellen</a>
+        <a class="btn secondary landing-skip" href="#hadj-reis-doel">Bekijk eerst de route</a>
+      </nav>
+      <section class="landing-intro" id="hadj-reis-doel" aria-labelledby="landing-title">
+        <div class="landing-copy">
+          <p class="landing-kicker">Voordat je begint</p>
+          <h2 id="landing-title">De hadj is een reis met een doel</h2>
+          <p>
+            De hadj is de grote islamitische bedevaart naar Mekka en hoort bij de vijf zuilen van de islam.
+            De hadj staat in het teken van aanbidding, berouw en spirituele zuivering.
+            Pelgrims volgen vaste rituelen die de Profeet ﷺ tijdens zijn afscheidsbedevaart heeft voorgedaan en bevestigd.
+          </p>
+          <p class="term-glossary-title">Belangrijke termen bij de hadj</p>
+          <div class="term-glossary" aria-label="Korte uitleg van belangrijke hadj-termen">
+            <div><strong>Mīqāt</strong><span>de vastgestelde grens waar de pelgrim de iḥrām aanneemt.</span></div>
+            <div><strong>Iḥrām</strong><span>de gewijde staat waarin de pelgrim de hadj begint.</span></div>
+            <div><strong>Talbiyah</strong><span>de uitspraak waarmee de pelgrim zegt: “Hier ben ik, O Allah.”</span></div>
+            <div><strong>Ṭawāf</strong><span>zeven rondgangen rond de Kaʿbah.</span></div>
+            <div><strong>Saʿī</strong><span>zeven keer lopen tussen de bergen Ṣafā en Marwa.</span></div>
+            <div><strong>Wuqūf</strong><span>het staan/verblijven op Arafat in aanbidding en smeekbeden.</span></div>
+            <div><strong>Duʿā</strong><span>smeekbede: Allah vragen om hulp, leiding en vergeving.</span></div>
+            <div><strong>Ramī</strong><span>het werpen van steentjes naar de zuilen (Jamarāt) in Mina.</span></div>
+          </div>
+
+        </div>
+
+        <div class="route-visual" aria-label="Interactieve route van de hadj">
+          <div class="route-line" aria-hidden="true"></div>
+          <button type="button" class="route-point point-1 active" data-route-title="Mīqāt" data-route-detail="Hier begint de pelgrim bewust: intentie maken, iḥrām aannemen en de Talbiyah uitspreken. Iḥrām betekent dat de pelgrim een gewijde staat binnengaat."><span>Mīqāt</span><small>Intentie, iḥrām en talbiyah.</small></button>
+          <button type="button" class="route-point point-2" data-route-title="Mekka" data-route-detail="Bij de Kaʾbah verricht de pelgrim ṭawāf: zeven rondes rond de Kaʾbah. Daarna volgt saʿī: zeven keer lopen tussen Ṣafā en Marwa."><span>Mekka</span><small>Ṭawāf rond de Kaʿbah en saʿī.</small></button>
+          <button type="button" class="route-point point-3" data-route-title="Mina" data-route-detail="Mina is de tentenstad, ongeveer 8 kilometer ten oosten van de Kaʾbah. Pelgrims brengen hier de nacht door in aanbidding, gebed en bezinning."><span>Mina</span><small>Verblijf, gebed en voorbereiding op Arafat.</small></button>
+          <button type="button" class="route-point point-4" data-route-title="Arafat" data-route-detail="Arafat is het belangrijkste onderdeel van de hadj. Wuqūf betekent hier: staan op Arafat in smeekbeden, gebed, bezinning en berouw tot zonsondergang."><span>Arafat</span><small>Wuqūf, duʿā en berouw.</small></button>
+          <button type="button" class="route-point point-5" data-route-title="Muzdalifah" data-route-detail="Na zonsondergang gaan pelgrims naar Muzdalifah. Daar bidden zij Maghrib en ʿIshāʾ, overnachten zij onder de open hemel en verzamelen zij steentjes."><span>Muzdalifah</span><small>Gebed, overnachting en steentjes verzamelen.</small></button>
+          <button type="button" class="route-point point-6" data-route-title="Mina" data-route-detail="Op dag 10 keren pelgrims terug naar Mina. Daar verrichten zij ramī: het werpen van steentjes bij de zuilen. Daarna volgen het offer, knippen of scheren en terugkeer naar Mekka."><span>Mina</span><small>Ramī, offerhandeling en haar knippen/scheren.</small></button>
+          <div class="route-detail-card" aria-live="polite">
+            <strong id="route-detail-title">Mīqāt</strong>
+            <span id="route-detail-text">Hier begint de pelgrim bewust: intentie maken, iḥrām aannemen en de Talbiyah uitspreken. Iḥrām betekent dat de pelgrim een gewijde staat binnengaat.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="story-section" id="hadj-route-uitleg" aria-labelledby="story-title">
+        <div class="story-heading">
+          <p class="landing-kicker">Het verhaal in het kort</p>
+          <h2 id="story-title">Wat gebeurt er tijdens de hadj?</h2>
+          <p>
+            De belangrijkste rituelen van de hadj beginnen vanaf de 8e dag van Dzūl-Ḥijjah.
+            Veel pelgrims bereiden zich al eerder geestelijk en praktisch voor, maar tijdens deze dagen volgen zij een duidelijke route van aanbidding.
+          </p>
+        </div>
+
+        <div class="story-grid">
+          <article class="story-step">
+            <span class="step-number">1</span>
+            <h3>Iḥrām en aankomst in Mekka</h3>
+            <p>Voordat pelgrims de Mīqāt passeren, maken zij de intentie voor de hadj en treden zij in iḥrām. De eenvoudige kleding laat zien dat afkomst, bezit en status geen rol spelen voor Allah.</p>
+          </article>
+          <article class="story-step">
+            <span class="step-number">2</span>
+            <h3>Ṭawāf en saʿī</h3>
+            <p>In de Masjid al-Ḥarām lopen pelgrims zeven rondgangen om de Kaʾbah. Daarna lopen zij zeven keer tussen Ṣafā en Marwa, als herinnering aan de zoektocht naar water van Hajar voor haar zoon Ismāʿīl.</p>
+          </article>
+          <article class="story-step">
+            <span class="step-number">3</span>
+            <h3>Mina en Arafat</h3>
+            <p>In Mina verblijven pelgrims in de tentenstad. Daarna gaan zij naar Arafat voor wuqūf: staan, bidden, berouw tonen en Allah om vergeving vragen. Dit is het hart van de hadj.</p>
+          </article>
+          <article class="story-step">
+            <span class="step-number">4</span>
+            <h3>Muzdalifah en dag 10</h3>
+            <p>Na zonsondergang gaan pelgrims naar Muzdalifah, bidden daar Maghrib en ʿIshāʾ en verzamelen steentjes. De volgende dag keren zij terug naar Mina voor ramī, het offer en het knippen of scheren.</p>
+          </article>
+          <article class="story-step">
+            <span class="step-number">5</span>
+            <h3>Terug naar de Kaʾbah</h3>
+            <p>Daarna keren pelgrims terug naar Mekka voor ṭawāf al-ifāḍah. Afhankelijk van de vorm van hadj verrichten zij ook saʿī. Hiermee worden de belangrijkste onderdelen van de hadj voltooid.</p>
+          </article>
+          <article class="story-step">
+            <span class="step-number">6</span>
+            <h3>Afscheid en nieuw begin</h3>
+            <p>Voor vertrek verrichten pelgrims ṭawāf al-wadāʿ: de afscheidstawāf. Daarmee sluiten zij hun verblijf in Mekka af en keren zij terug naar het dagelijks leven met een vernieuwd hart en sterkere toewijding.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="talbiyah-section" aria-labelledby="talbiyah-title">
+        <div class="talbiyah-copy">
+          <p class="landing-kicker">Belangrijke bedevaartuitspraak</p>
+          <h2 id="talbiyah-title">De Talbiyah</h2>
+          <p>Na de intentie spreekt de pelgrim de Talbiyah uit. Het is een bekende gebedsformule (bedevaartuitspraak) die tijdens de hadj vaak wordt herhaald.</p>
+        </div>
+        <div class="talbiyah-card">
+          <p class="talbiyah-arabic" dir="rtl" lang="ar">لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ، لَبَّيْكَ لاَ شَرِيكَ لَكَ لَبَّيْكَ، إِنَّ الْحَمْدَ، وَالنِّعْمَةَ، لَكَ وَالْمُلْكَ، لاَ شَرِيكَ لَكَ</p>
+          <p class="talbiyah-translit">Labbayk allāhumma labbayk, labbayk lā sharīka laka labbayk. innal ḥamda, wan niʿmata, laka wal mulk, lā sharīka laka.</p>
+          <p class="talbiyah-translation">“Hier ben ik tot uw dienst, O Allah, hier ben ik. Hier ben ik tot uw dienst en U heeft geen partners. U alleen komt alle lof en alle gunst toe, en U alleen heeft de soevereiniteit. U heeft geen partners.”</p>
+        </div>
+      </section>
+
+      <section class="truth-section" aria-labelledby="truth-title">
+        <div>
+          <p class="landing-kicker">Belangrijk om goed te onthouden</p>
+          <h2 id="truth-title">De hadj is meer dan een fysieke reis</h2>
+        </div>
+        <div class="truth-list">
+          <div class="truth-item">
+            <strong>Iḥrām verandert ook je gedrag</strong>
+            <span>Tijdens iḥrām dragen mannen twee witte doeken en vrouwen eenvoudige, bedekkende kleding. De eenvoudige kleding herinnert aan gelijkheid, nederigheid en eenheid.</span>
+          </div>
+          <div class="truth-item">
+            <strong>Arafat is het hart van de hadj</strong>
+            <span>Op Arafat staat de pelgrim in wuqūf: een periode van smeekbeden, berouw en bezinning. Zonder wuqūf is de hadj niet geldig.</span>
+          </div>
+          <div class="truth-item">
+            <strong>Ramī is verzet tegen het kwaad</strong>
+            <span>Het gooien van steentjes bij de zuilen herinnert aan profeet Ibrāhīm, vrede zij met hem, en laat zien dat een moslim verleiding, ongehoorzaamheid en kwaad afwijst.</span>
+          </div>
+          <div class="truth-item">
+            <strong>ʿEid al-Adha gaat over toewijding</strong>
+            <span>De offerhandeling herinnert aan de gehoorzaamheid van profeet Ibrāhīm, vrede zij met hem, en symboliseert toewijding, oprechtheid en onderwerping aan Allah. Het vlees wordt gedeeld met het eigen gezin, familie en mensen die het nodig hebben.</span>
+          </div>
+          <div class="truth-item">
+            <strong>De hadj laat sporen achter in het hart</strong>
+            <span>Voor miljoenen moslims is de hadj een periode van spirituele groei, aanbidding en verbondenheid met Allah. De reis inspireert om met een vernieuwd hart en sterkere toewijding terug te keren.</span>
+          </div>
+        </div>
+      </section>
+
+      <header class="hero" id="spelletjes">
         <div class="scoreboard">
           <span>⭐ Sterren: <strong id="stars">0</strong></span>
           <span>🏆 Level: <strong id="level">Beginner</strong></span>
@@ -60,7 +317,7 @@
 
         <article class="card" id="memory-card">
           <h2>2. Memory Match</h2>
-          <p>Koppel het Hadj-woord aan de juiste betekenis.</p>
+          <p>Koppel het hadj-woord aan de juiste betekenis.</p>
           <div id="memory-grid" class="memory-grid"></div>
           <p id="memory-feedback" class="feedback"></p>
         </article>
@@ -68,7 +325,7 @@
         <article class="card" id="order-card">
           <h2>3. Zet in de juiste volgorde</h2>
           <p>
-            Zet de stappen van de Hadj in de juiste volgorde.
+            Zet de stappen van de hadj in de juiste volgorde.
           </p>
           <ul id="order-list" class="order-list"></ul>
           <div class="order-actions">
@@ -118,7 +375,7 @@
 
         <article class="card" id="riddle-card">
           <h2>7. Wie Ben Ik?</h2>
-          <p>Lees de aanwijzingen en raad het Hadj-begrip!</p>
+          <p>Lees de aanwijzingen en raad het hadj-begrip!</p>
           <div id="riddle-clues" class="riddle-clues"></div>
           <div id="riddle-options" class="options"></div>
           <p id="riddle-feedback" class="feedback"></p>
@@ -126,8 +383,8 @@
         </article>
 
         <article class="card" id="moon-card">
-          <h2>8. Dhū al-Ḥijjah Mysterie</h2>
-          <p>Leer hoe de Hadj in de islamitische kalender past!</p>
+          <h2>8. Dzūl-Ḥijjah Mysterie</h2>
+          <p>Leer hoe de hadj in de islamitische kalender past!</p>
           <div class="moon-display" id="moon-display" aria-hidden="true">🌙</div>
           <p id="moon-question"></p>
           <div id="moon-options" class="options"></div>
@@ -136,8 +393,8 @@
         </article>
 
         <article class="card" id="world-card">
-          <h2>9. Hadj Rondom de Wereld</h2>
-          <p>Bij welke plek of groep hoort deze Hadj-traditie?</p>
+          <h2>9. hadj Rondom de Wereld</h2>
+          <p>Bij welke plek of groep hoort deze hadj-traditie?</p>
           <p id="world-tradition" class="world-tradition-text"></p>
           <div id="world-options" class="options"></div>
           <p id="world-feedback" class="feedback"></p>
@@ -145,8 +402,8 @@
         </article>
 
         <article class="card" id="eid-card">
-          <h2>10. ʿEid al-Aḍḥā Verkenner</h2>
-          <p>De Hadj hoort bij het Offerfeest. Hoe goed ken jij ʿEid al-Aḍḥā?</p>
+          <h2>10. ʿEid al-Adha Verkenner</h2>
+          <p>De hadj hoort bij het Offerfeest. Hoe goed ken jij ʿEid al-Adha?</p>
           <p id="eid-question"></p>
           <div id="eid-options" class="options"></div>
           <p id="eid-feedback" class="feedback"></p>
@@ -154,11 +411,11 @@
         </article>
 
         <article class="card" id="chef-card">
-          <h2>11. Hadj-pakker</h2>
-          <p>Pak je Hadj-tas! Klik op wat een pelgrim goed kan meenemen of voorbereiden.</p>
+          <h2>11. hadj-pakker</h2>
+          <p>Pak je hadj-tas! Klik op wat een pelgrim goed kan meenemen of voorbereiden.</p>
           <div id="chef-items" class="chef-items"></div>
           <div class="chef-plate">
-            <span class="chef-plate-label">Jouw Hadj-tas:</span>
+            <span class="chef-plate-label">Jouw hadj-tas:</span>
             <div id="chef-selected"></div>
           </div>
           <div class="order-actions">
@@ -201,7 +458,7 @@
 
         <article class="card" id="emoji-card">
           <h2>15. Emoji Decoder</h2>
-          <p>Wat stelt deze emojireeks voor? Kies het juiste Hadj-begrip!</p>
+          <p>Wat stelt deze emojireeks voor? Kies het juiste hadj-begrip!</p>
           <div id="emoji-display" class="emoji-display" aria-label="Emojireeks"></div>
           <p id="emoji-round" class="afwijker-round"></p>
           <div id="emoji-options" class="options"></div>
@@ -223,7 +480,7 @@
 
         <article class="card" id="tweewaarheden-card">
           <h2>17. Twee Waarheden, Één Leugen</h2>
-          <p>Drie uitspraken over Hadj — één ervan is <strong>niet waar</strong>. Welke is het?</p>
+          <p>Drie uitspraken over hadj — één ervan is <strong>niet waar</strong>. Welke is het?</p>
           <p id="tw-round" class="afwijker-round"></p>
           <div id="tw-statements" class="tw-statements"></div>
           <p id="tw-feedback" class="feedback"></p>
@@ -243,7 +500,7 @@
         </article>
 
         <article class="card" id="bingo-card">
-          <h2>19. Hadj Bingo</h2>
+          <h2>19. hadj Bingo</h2>
           <p>Lees de omschrijving en klik het juiste vakje aan. Bingo bij een volle rij, kolom of diagonaal!</p>
           <div id="bingo-clue" class="bingo-clue"></div>
           <div id="bingo-grid" class="bingo-grid"></div>
@@ -253,10 +510,64 @@
           </div>
           <p id="bingo-feedback" class="feedback"></p>
         </article>
+
+        <article class="card" id="hadjvorm-card">
+          <h2>20. Welke hadj-vorm?</h2>
+          <p>Lees de omschrijving en kies: Qirān, Tamattuʾ of Ifrād.</p>
+          <p id="hadjvorm-question"></p>
+          <div id="hadjvorm-options" class="options"></div>
+          <p id="hadjvorm-feedback" class="feedback"></p>
+          <button id="hadjvorm-next" class="btn">Volgende vorm</button>
+        </article>
+
+        <article class="card" id="voorwaarden-card">
+          <h2>21. Voorwaarde-checker</h2>
+          <p>Is de hadj in deze situatie verplicht? Kies het beste antwoord.</p>
+          <p id="voorwaarden-question"></p>
+          <div id="voorwaarden-options" class="options"></div>
+          <p id="voorwaarden-feedback" class="feedback"></p>
+          <button id="voorwaarden-next" class="btn">Nieuwe situatie</button>
+        </article>
+
+        <article class="card" id="arafatkeuze-card">
+          <h2>22. Arafat Keuzes</h2>
+          <p>Wat past bij de Dag van Arafat?</p>
+          <p id="arafatkeuze-question"></p>
+          <div id="arafatkeuze-options" class="options"></div>
+          <p id="arafatkeuze-feedback" class="feedback"></p>
+          <button id="arafatkeuze-next" class="btn">Volgende keuze</button>
+        </article>
+
+        <article class="card" id="routedetail-card">
+          <h2>23. Route Details</h2>
+          <p>Welke stap hoort op de open plek in de hadj-route?</p>
+          <p id="routedetail-question"></p>
+          <div id="routedetail-options" class="options"></div>
+          <p id="routedetail-feedback" class="feedback"></p>
+          <button id="routedetail-next" class="btn">Volgende stap</button>
+        </article>
+
+        <article class="card" id="offerfeest-card">
+          <h2>24. Offerfeest Keuzes</h2>
+          <p>Kies wat past bij de betekenis en soenna van ʿEid al-Adha.</p>
+          <p id="offerfeest-question"></p>
+          <div id="offerfeest-options" class="options"></div>
+          <p id="offerfeest-feedback" class="feedback"></p>
+          <button id="offerfeest-next" class="btn">Volgende keuze</button>
+        </article>
+
+        <article class="card" id="hadithkaart-card">
+          <h2>25. Hadith Kaarten</h2>
+          <p>Welke les hoort bij deze overlevering over hadj?</p>
+          <p id="hadithkaart-question"></p>
+          <div id="hadithkaart-options" class="options"></div>
+          <p id="hadithkaart-feedback" class="feedback"></p>
+          <button id="hadithkaart-next" class="btn">Volgende kaart</button>
+        </article>
       </section>
 
       <section class="card facts">
-        <h2 id="facts-title">Hadj-feitjes</h2>
+        <h2 id="facts-title">hadj-feitjes</h2>
         <ul id="facts-list"></ul>
       </section>
 
