@@ -29,11 +29,11 @@ function saveData() {
 }
 
 function loadStartDate() {
-  return localStorage.getItem('waardevolle-tien-startdate') || DEFAULT_START;
+  try { return localStorage.getItem('waardevolle-tien-startdate') || DEFAULT_START; } catch { return DEFAULT_START; }
 }
 
 function saveStartDate(val) {
-  localStorage.setItem('waardevolle-tien-startdate', val);
+  try { localStorage.setItem('waardevolle-tien-startdate', val); } catch {}
 }
 
 // ─── Datum helpers ───────────────────────────────────────────

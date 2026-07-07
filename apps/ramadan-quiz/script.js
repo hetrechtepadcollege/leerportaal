@@ -252,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const websiteUrl = window.location.href;
             const uitnodiging = `As-Salām ʿAlaykum! Ik heb net een leuke Ramadan kennisquiz gedaan. Wil jij je kennis ook testen? Hier vind je de quiz: ${websiteUrl}`;
             const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(uitnodiging)}`;
-            window.open(whatsappUrl, "_blank");
+            window.open(whatsappUrl, "_blank", "noopener,noreferrer");
             trackEvent("ramadan-quiz/gedeeld-whatsapp", "Ramadan quiz gedeeld via WhatsApp");
         });
     }
@@ -302,10 +302,20 @@ document.addEventListener("DOMContentLoaded", () => {
         qTextElement.innerText = currentQuestion.question;
         progressBar.style.width = `${(currentIdx / questions.length) * 100}%`;
 
-        currentQuestion.answers.forEach((answer) => {
+        const LETTERS = ['A', 'B', 'C', 'D', 'E'];
+        currentQuestion.answers.forEach((answer, i) => {
             const button = document.createElement("button");
-            button.innerText = answer.text;
+            const ltr = document.createElement("span");
+            ltr.className = "btn-letter";
+            ltr.textContent = LETTERS[i] || String(i + 1);
+            const txt = document.createElement("span");
+            txt.className = "btn-text";
+            txt.textContent = answer.text.replace(/^[A-E]\)\s*/, '');
+            button.appendChild(ltr);
+            button.appendChild(txt);
             button.classList.add("btn");
+            button.style.cssText = `animation: optionIn 0.28s ${0.04 + i * 0.055}s ease both`;
+            button.addEventListener('animationend', () => { button.style.animation = ''; }, { once: true });
             button.onclick = () => selectAnswer(button, answer.correct);
             btnContainer.appendChild(button);
         });
@@ -314,7 +324,7 @@ document.addEventListener("DOMContentLoaded", () => {
         characterImg.classList.remove("fade-in-element", "celebrate", "shake");
         void qTextElement.offsetWidth;
         void characterImg.offsetWidth;
-        characterImg.src = "images/mw-neutral.png";
+        characterImg.src = "images/mw-neutral.webp";
         qTextElement.classList.add("fade-in-element");
         characterImg.classList.add("fade-in-element");
     }
@@ -336,7 +346,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (isCorrect) {
             btn.classList.add("correct");
-            characterImg.src = "images/mw-happy.png";
+            characterImg.src = "images/mw-happy.webp";
             characterImg.classList.add("celebrate");
             if (correctSound) {
                 correctSound.currentTime = 0;
@@ -349,7 +359,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             btn.classList.add("wrong");
             firstTry = false;
-            characterImg.src = "images/mw-sad.png";
+            characterImg.src = "images/mw-sad.webp";
             characterImg.classList.remove("shake");
             void characterImg.offsetWidth;
             characterImg.classList.add("shake");
@@ -371,7 +381,7 @@ document.addEventListener("DOMContentLoaded", () => {
         qTextElement.innerText = "Māshā Allāh! Je hebt de Kennisquiz Ramadan afgerond.";
         scoreText.innerHTML = `Eindscore: ${score} van de ${questions.length}<br><br>Moge Allah jouw Ramadan vullen met kennis, begrip, geduld en veel goeds. Āmīn!`;
         resultContainer.classList.remove("hide");
-        characterImg.src = "images/mw-happy.png";
+        characterImg.src = "images/mw-happy.webp";
         characterImg.classList.add("celebrate");
 
         if (typeof confetti === "function") {

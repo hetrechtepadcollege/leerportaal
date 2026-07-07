@@ -157,14 +157,21 @@ body {
     margin-bottom: 4px;
 }
 
+@keyframes optionIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
 .btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 12px;
     width: 100%;
-    padding: 13px 16px;
+    padding: 11px 14px;
     border-radius: 10px;
     font-family: 'Noto Sans', sans-serif;
     font-size: 0.93rem;
-    font-weight: 600;
+    font-weight: 500;
     text-align: left;
     cursor: pointer;
     border: 1.5px solid rgba(212, 175, 55, 0.28);
@@ -186,9 +193,33 @@ body {
     transform: translateY(-1px);
 }
 
+.btn:active:not([disabled]) {
+    transform: scale(0.98);
+    transition-duration: 0.05s;
+}
+
 .btn:focus {
     outline: none;
 }
+
+.btn-letter {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(184, 149, 90, 0.12);
+    border: 1.5px solid rgba(184, 149, 90, 0.32);
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0;
+    transition: background 0.16s ease, border-color 0.16s ease;
+}
+
+.btn-text { flex: 1; }
 
 .btn.correct {
     background: rgba(39, 174, 96, 0.18) !important;
@@ -196,11 +227,23 @@ body {
     color: #80ffba !important;
 }
 
+.btn.correct .btn-letter {
+    background: rgba(39, 174, 96, 0.22);
+    border-color: rgba(39, 174, 96, 0.70);
+    color: #80ffba;
+}
+
 .btn.wrong {
     background: rgba(192, 57, 43, 0.18) !important;
     border-color: rgba(192, 57, 43, 0.70) !important;
     color: #ffaaaa !important;
     animation: wrongShake 0.38s ease;
+}
+
+.btn.wrong .btn-letter {
+    background: rgba(192, 57, 43, 0.22);
+    border-color: rgba(192, 57, 43, 0.70);
+    color: #ffaaaa;
 }
 
 @keyframes wrongShake {
@@ -541,15 +584,30 @@ body {
     border-color: rgba(31, 41, 77, 0.35);
     color: #1c2340;
 }
+.btn-letter {
+    background: rgba(31, 41, 77, 0.08);
+    border-color: rgba(31, 41, 77, 0.22);
+    color: #1f294d;
+}
 .btn.correct {
     background: rgba(39, 174, 96, 0.12) !important;
     border-color: rgba(39, 174, 96, 0.55) !important;
     color: #1a6e3a !important;
 }
+.btn.correct .btn-letter {
+    background: rgba(39, 174, 96, 0.18);
+    border-color: rgba(39, 174, 96, 0.55);
+    color: #1a6e3a;
+}
 .btn.wrong {
     background: rgba(192, 57, 43, 0.10) !important;
     border-color: rgba(192, 57, 43, 0.55) !important;
     color: #8b2500 !important;
+}
+.btn.wrong .btn-letter {
+    background: rgba(192, 57, 43, 0.14);
+    border-color: rgba(192, 57, 43, 0.55);
+    color: #8b2500;
 }
 
 .btn-next {

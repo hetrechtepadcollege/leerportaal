@@ -163,14 +163,21 @@ body {
     margin-bottom: 4px;
 }
 
+@keyframes optionIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
 .btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 12px;
     width: 100%;
-    padding: 13px 16px;
+    padding: 11px 14px;
     border-radius: 10px;
     font-family: 'Noto Sans', sans-serif;
     font-size: 0.93rem;
-    font-weight: 600;
+    font-weight: 500;
     text-align: left;
     cursor: pointer;
     border: 1.5px solid rgba(0, 31, 63, 0.18);
@@ -192,9 +199,33 @@ body {
     transform: translateY(-1px);
 }
 
+.btn:active:not([disabled]) {
+    transform: scale(0.98);
+    transition-duration: 0.05s;
+}
+
 .btn:focus {
     outline: none;
 }
+
+.btn-letter {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(0, 31, 63, 0.08);
+    border: 1.5px solid rgba(0, 31, 63, 0.20);
+    color: var(--navy);
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0;
+    transition: background 0.16s ease, border-color 0.16s ease;
+}
+
+.btn-text { flex: 1; }
 
 .btn.correct {
     background: rgba(39, 174, 96, 0.12) !important;
@@ -202,11 +233,23 @@ body {
     color: #1a6e3e !important;
 }
 
+.btn.correct .btn-letter {
+    background: rgba(39, 174, 96, 0.20);
+    border-color: rgba(39, 174, 96, 0.65);
+    color: #1a6e3e;
+}
+
 .btn.wrong {
     background: rgba(192, 57, 43, 0.10) !important;
     border-color: rgba(192, 57, 43, 0.60) !important;
     color: #8b2016 !important;
     animation: wrongShake 0.38s ease;
+}
+
+.btn.wrong .btn-letter {
+    background: rgba(192, 57, 43, 0.16);
+    border-color: rgba(192, 57, 43, 0.60);
+    color: #8b2016;
 }
 
 @keyframes wrongShake {

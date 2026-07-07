@@ -1227,9 +1227,10 @@ h1, h2 {
     border-color: #1f294d;
     transform: translateY(-1px);
 }
-
-/* ── WOORDWEB CENTER ── */
-.ww-center {
-    background: #1f294d;
+.header-arabic {
+    font-family: 'AlQalamQuranMajeed', 'Noto Naskh Arabic', sans-serif;
     color: #d4af37;
+    font-size: clamp(1.9rem, 5.5vw, 3rem);
+    margin-top: .55rem;
+    direction: rtl;
 }
