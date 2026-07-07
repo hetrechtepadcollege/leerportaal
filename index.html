@@ -2,16 +2,17 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
     <link rel="icon" href="/icons/favicon.ico" sizes="48x48">
     <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
     <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96">
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
     <link rel="manifest" href="/icons/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self';">
     <meta name="description" content="Ontdek onze interactieve leerapps en verdiep je islamitische kennis op Het Rechte Pad College.">
     <title>Leerportaal - Het Rechte Pad College</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Newsreader:opsz,wght@6..72,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/fonts.css">
     <style>
         :root {
             --blue: #1f294d;
@@ -34,7 +35,7 @@
         * { box-sizing: border-box; }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--sans);
             background: var(--bg);
             color: var(--text);
             margin: 0;
@@ -52,14 +53,6 @@
             padding: 52px 20px 48px;
             background: var(--blue);
             margin-bottom: 48px;
-        }
-
-        .site-logo {
-            width: 100%;
-            max-width: 680px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
         }
 
         /* ── GRID ── */
@@ -88,8 +81,6 @@
             position: relative;
             overflow: hidden;
             transition: transform 200ms ease, box-shadow 200ms ease;
-            opacity: 0;
-            transform: translateY(16px);
             text-align: center;
         }
 
@@ -143,16 +134,16 @@
         }
 
         /* ── CARD HEADINGS & TEXT ── */
-        .card h2 {
+        .card h3 {
             margin: 0 0 6px;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--sans);
             color: var(--text);
             font-size: 1.05rem;
             font-weight: 700;
             letter-spacing: -0.1px;
         }
 
-        .card[data-featured="true"] h2 {
+        .card[data-featured="true"] h3 {
             font-size: 1.2rem;
         }
 
@@ -242,7 +233,7 @@
             background: transparent;
             padding: 10px 22px;
             border-radius: 8px;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--sans);
             font-weight: 600;
             font-size: 0.87rem;
             letter-spacing: 0.1px;
@@ -331,6 +322,7 @@
         /* Redactionele landing page, geinspireerd op het referentiebeeld en afgestemd op HRPC. */
         :root {
             --blue-ink: #11182f;
+            --gold-text: #8a6d1a;
             --gold-soft: #ead995;
             --bg-warm: #f2efe8;
             --serif: 'Newsreader', Georgia, serif;
@@ -534,7 +526,7 @@
 
         .dropdown-heading {
             margin: 0 0 2px;
-            color: var(--gold);
+            color: var(--gold-text);
             font-size: 0.66rem;
             font-weight: 900;
             letter-spacing: 0.16em;
@@ -546,11 +538,11 @@
             align-items: center;
             justify-content: space-between;
             gap: 14px;
-            min-height: 34px;
+            min-height: 44px;
             padding: 0;
             color: var(--blue-ink);
             font-size: 0.86rem;
-            font-weight: 750;
+            font-weight: 700;
             letter-spacing: -0.02em;
             text-decoration: none;
         }
@@ -577,17 +569,17 @@
             align-items: center;
             justify-content: space-between;
             gap: 14px;
-            min-height: 34px;
-            color: rgba(31, 41, 77, 0.45);
+            min-height: 44px;
+            color: rgba(31, 41, 77, 0.62);
             font-size: 0.86rem;
-            font-weight: 750;
+            font-weight: 700;
             letter-spacing: -0.02em;
             cursor: not-allowed;
         }
 
         .dropdown-soon::after {
             content: "(Binnenkort)";
-            color: rgba(31, 41, 77, 0.42);
+            color: rgba(31, 41, 77, 0.62);
             font-size: 0.64rem;
             font-weight: 900;
             letter-spacing: 0.12em;
@@ -638,7 +630,7 @@
             align-items: center;
             gap: 14px;
             margin-bottom: 28px;
-            color: var(--gold);
+            color: var(--gold-text);
             font-size: 0.72rem;
             font-weight: 900;
             letter-spacing: 0.22em;
@@ -786,96 +778,6 @@
             }
         }
 
-        .panel-figure {
-            position: absolute;
-            inset: 34px 32px;
-            border: 1px solid rgba(31, 41, 77, 0.11);
-            background:
-                radial-gradient(circle at 22% 20%, rgba(31, 41, 77, 0.14) 1.2px, transparent 1.6px) 0 0 / 18px 18px,
-                linear-gradient(180deg, rgba(255, 255, 255, 0.66), rgba(249, 248, 246, 0.88));
-            z-index: 1;
-        }
-
-        .panel-caption {
-            position: absolute;
-            top: 16px;
-            left: 16px;
-            color: rgba(31, 41, 77, 0.56);
-            font-size: 0.66rem;
-            font-weight: 800;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-        }
-
-        .panel-logo {
-            position: absolute;
-            left: clamp(26px, 5vw, 68px);
-            right: clamp(26px, 5vw, 68px);
-            top: 110px;
-            display: grid;
-            place-items: center;
-            min-height: 230px;
-            padding: 34px;
-            background: var(--blue);
-            border: 1px solid rgba(212, 175, 55, 0.32);
-            z-index: 2;
-        }
-
-        .site-logo {
-            width: 100%;
-            max-width: 330px;
-            height: auto;
-            display: block;
-            margin: 0;
-            filter: drop-shadow(0 16px 38px rgba(0, 0, 0, 0.16));
-        }
-
-        .panel-stack {
-            position: absolute;
-            left: 34px;
-            right: 34px;
-            bottom: 34px;
-            display: grid;
-            gap: 10px;
-            z-index: 2;
-        }
-
-        .panel-row {
-            display: grid;
-            grid-template-columns: 36px 1fr auto;
-            align-items: center;
-            gap: 14px;
-            min-height: 58px;
-            padding: 0 18px;
-            border: 1px solid rgba(31, 41, 77, 0.12);
-            background: rgba(255, 255, 255, 0.82);
-            backdrop-filter: blur(14px);
-        }
-
-        .panel-row strong {
-            font-size: 0.9rem;
-            color: var(--blue-ink);
-        }
-
-        .panel-row span {
-            color: rgba(31, 41, 77, 0.55);
-            font-size: 0.72rem;
-            font-weight: 800;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-        }
-
-        .panel-icon {
-            width: 36px;
-            height: 36px;
-            display: grid;
-            place-items: center;
-            border-radius: 50%;
-            color: var(--blue);
-            background: var(--gold-bg);
-            font-size: 1.05rem;
-        }
-
         .section-heading {
             display: grid;
             grid-template-columns: 1fr auto;
@@ -1011,16 +913,16 @@
             margin: 0 0 22px;
         }
 
-        .card h2 {
+        .card h3 {
             margin: 0 0 9px;
             font-family: var(--sans);
             font-size: clamp(1.08rem, 1.4vw, 1.34rem);
-            font-weight: 850;
+            font-weight: 800;
             letter-spacing: -0.035em;
             line-height: 1.05;
         }
 
-        .card[data-featured="true"] h2 {
+        .card[data-featured="true"] h3 {
             color: #fff;
             font-size: clamp(1.75rem, 3.2vw, 3.2rem);
             line-height: 0.94;
@@ -1040,7 +942,7 @@
             margin: 0 0 8px;
             color: rgba(31, 41, 77, 0.70);
             font-size: 0.78rem;
-            font-weight: 850;
+            font-weight: 800;
             letter-spacing: 0.08em;
             text-transform: uppercase;
         }
@@ -1055,7 +957,7 @@
             border: 0;
             padding: 0;
             margin-bottom: 18px;
-            font-weight: 850;
+            font-weight: 800;
             letter-spacing: 0.18em;
         }
 
@@ -1067,7 +969,7 @@
             border-radius: 0;
             padding: 0 0 4px;
             margin-bottom: 18px;
-            font-weight: 850;
+            font-weight: 800;
             letter-spacing: 0.16em;
         }
 
@@ -1082,7 +984,7 @@
             background: var(--blue);
             color: #fff;
             font-size: 0.58rem;
-            font-weight: 850;
+            font-weight: 800;
             padding: 6px 9px;
             transform: none;
             letter-spacing: 0.14em;
@@ -1118,26 +1020,6 @@
             color: var(--blue);
         }
 
-        .card-preview {
-            flex-shrink: 0;
-            width: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background: rgba(0, 0, 0, 0.22);
-        }
-
-        .card-preview iframe {
-            border: none;
-            pointer-events: none;
-            display: block;
-            width: 375px;
-            height: 667px;
-            transform: scale(0.535);
-            transform-origin: center top;
-        }
-
         .coming-soon {
             opacity: 0.58 !important;
             filter: grayscale(0.9);
@@ -1157,11 +1039,38 @@
 
         @media (max-width: 1080px) {
             .topbar {
-                grid-template-columns: 1fr auto;
+                grid-template-columns: 1fr auto auto;
             }
 
-            .main-nav {
-                display: none;
+            .main-nav a {
+                padding: 12px 0;
+            }
+
+            .nav-trigger {
+                padding: 12px 0;
+            }
+
+            .main-nav a::after,
+            .nav-trigger::after {
+                bottom: 6px;
+            }
+
+            .dropdown-menu {
+                position: fixed;
+                top: 84px;
+                left: 14px;
+                right: 14px;
+                width: auto;
+                max-height: calc(100vh - 104px);
+                overflow-y: auto;
+                grid-template-columns: 1fr;
+                transform: translateY(8px);
+            }
+
+            .nav-dropdown:hover .dropdown-menu,
+            .nav-dropdown.is-open .dropdown-menu,
+            .nav-dropdown:focus-within .dropdown-menu {
+                transform: translateY(0);
             }
 
             .hero {
@@ -1222,18 +1131,6 @@
                 border-left: 0;
             }
 
-            .panel-logo {
-                top: 84px;
-                min-height: 190px;
-                padding: 24px;
-            }
-
-            .panel-stack {
-                left: 18px;
-                right: 18px;
-                bottom: 18px;
-            }
-
             .section-heading {
                 grid-template-columns: 1fr;
                 align-items: start;
@@ -1248,10 +1145,6 @@
 
             .card[data-featured="true"] .card-body {
                 padding: 0;
-            }
-
-            .card-preview {
-                display: none;
             }
         }
 
@@ -1277,22 +1170,69 @@
                 width: 100%;
             }
 
-            .panel-figure {
-                inset: 20px 14px;
-            }
-
-            .panel-row {
-                grid-template-columns: 30px 1fr;
-                min-height: 54px;
-            }
-
-            .panel-row span {
-                display: none;
-            }
-
             .card {
                 min-height: 252px;
                 padding: 24px;
+            }
+        }
+
+        /* Kaart-animatie alleen als JS actief is; content is zonder JS gewoon zichtbaar */
+        .js-anim .card {
+            opacity: 0;
+            transform: translateY(16px);
+        }
+
+        .js-anim .card.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Zichtbare focus voor toetsenbordgebruikers */
+        .card:focus-visible,
+        .hero-button:focus-visible,
+        .hero-link:focus-visible,
+        .topbar-action:focus-visible,
+        .brand:focus-visible,
+        .nav-trigger:focus-visible,
+        .dropdown-menu a:focus-visible,
+        footer a:focus-visible {
+            outline: 2px solid var(--blue);
+            outline-offset: 3px;
+        }
+
+        .card[data-featured="true"]:focus-visible {
+            outline-color: var(--gold);
+        }
+
+        @media (max-width: 640px) {
+            .portal-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .js-anim .card {
+                opacity: 1;
+                transform: none;
+            }
+
+            .card,
+            .hero-button,
+            .hero-link,
+            .topbar-action,
+            .dropdown-menu {
+                transition: none;
+            }
+
+            .card:hover,
+            .card.is-visible:hover,
+            .hero-button:hover,
+            .hero-link:hover {
+                transform: none;
             }
         }
     </style>
@@ -1300,20 +1240,20 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://leer.hetrechtepadcollege.nl/">
     <meta property="og:title" content="Leerportaal - Het Rechte Pad College">
-    <meta property="og:description" content="Ontdek onze interactieve kennisquizzes en leer meer over de islam op een speelse manier!">
+    <meta property="og:description" content="Ontdek onze interactieve kennisquizzen en leer meer over de islam op een speelse manier!">
     <meta property="og:image" content="https://leer.hetrechtepadcollege.nl/images/share-banner.png">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://leer.hetrechtepadcollege.nl/">
     <meta property="twitter:title" content="Leerportaal - Het Rechte Pad College">
-    <meta property="twitter:description" content="Ontdek onze interactieve kennisquizzes en leer meer over de islam op een speelse manier!">
+    <meta property="twitter:description" content="Ontdek onze interactieve kennisquizzen en leer meer over de islam op een speelse manier!">
     <meta property="twitter:image" content="https://leer.hetrechtepadcollege.nl/images/share-banner.png">
 
 </head>
 <body>
 
     <div class="page-shell">
-        <header class="topbar" aria-label="Hoofdnavigatie">
+        <header class="topbar">
             <a href="/" class="brand" aria-label="Het Rechte Pad College leerportaal">
                 <span class="brand-mark">HRPC</span>
                 <span class="brand-copy">
@@ -1321,7 +1261,7 @@
                     <span class="brand-subtitle">Het Rechte Pad College</span>
                 </span>
             </a>
-            <nav class="main-nav" aria-label="Pagina">
+            <nav class="main-nav" aria-label="Hoofdmenu">
                 <div class="nav-dropdown">
                     <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="leerapps-menu">Leerapps</button>
                     <div class="dropdown-menu" id="leerapps-menu">
@@ -1370,8 +1310,8 @@
             <section class="hero" aria-labelledby="portal-title">
                 <div class="hero-copy">
                     <div class="hero-meta">Interactief leren over de islam</div>
-                    <h1 id="portal-title"><span class="hero-light">Geloof in</span><br><strong>leren</strong><span class="comma">,</span><br></strong><span class="hero-light">leren in</span><br><strong>geloof<span class="dot">.</span></strong></h1>
-                    <p class="hero-intro">Interactieve leerapps van Het Rechte Pad College: kennisquizzen, explorers, praktische tools en nog meer voor kennis over de islam.</p>
+                    <h1 id="portal-title"><span class="hero-light">Geloof in</span><br><strong>leren</strong><span class="comma">,</span><br><span class="hero-light">leren in</span><br><strong>geloof<span class="dot">.</span></strong></h1>
+                    <p class="hero-intro">Interactieve leerapps van Het Rechte Pad College: kennisquizzen, explorers, praktische tools en meer om je kennis over de islam te verdiepen.</p>
                     <div class="hero-actions">
                         <a href="#leerapps" class="hero-button">Bekijk alle leerapps</a>
                         <a href="apps/tuin-van-dzikr/" class="hero-link">Open uitgelichte app</a>
@@ -1384,10 +1324,10 @@
                             src="apps/tuin-van-dzikr/preview.html"
                             width="375"
                             height="667"
-                            frameborder="0"
-                            scrolling="no"
                             title="Preview van De Tuin van Dzikr"
-                            loading="lazy">
+                            loading="lazy"
+                            tabindex="-1"
+                            aria-hidden="true">
                         </iframe>
                     </div>
                 </div>
@@ -1405,8 +1345,8 @@
         <a href="apps/hadj-explorer/" class="card" data-featured="true">
             <div class="card-body">
                 <div class="emoji-container">🕋</div>
-                <span class="featured-label">Uitgelicht</span><span class="card-tag">Nieuw</span>
-                <h2>Hadj Explorer</h2>
+                <span class="featured-label">Uitgelicht</span>
+                <h3>Hadj Explorer</h3>
                 <p class="card-subtitle">Ontdek de hadj met spellen, weetjes en uitdagingen</p>
                 <p>Leer de route, rituelen en belangrijke begrippen van de hadj met spellen, weetjes en uitdagingen.</p>
                 <div class="play-btn">Open ➔</div>
@@ -1416,8 +1356,8 @@
         <a href="apps/tuin-van-dzikr/" class="card" data-featured="true">
             <div class="card-body">
                 <div class="emoji-container">🌳</div>
-                <span class="featured-label">Uitgelicht</span><span class="card-tag">Nieuw</span>
-                <h2>De Tuin van Dzikr</h2>
+                <span class="featured-label">Uitgelicht</span>
+                <h3>De Tuin van Dzikr</h3>
                 <p class="card-subtitle">Laat de tuin van je hart tot bloei komen</p>
                 <p>Leer de betekenis van dzikr (het gedenken van Allah). Met elke dzikr groeit jouw tuin — en wordt er een boom geplant in het Paradijs.</p>
                 <div class="play-btn">Open ➔</div>
@@ -1428,7 +1368,7 @@
             <div>
                 <span class="card-tag">Nieuw</span>
                 <div class="emoji-container">🕋</div>
-                <h2>Kennisquiz: Hadj</h2>
+                <h3>Kennisquiz: Hadj</h3>
                 <p class="card-subtitle">Van iḥrām tot ʿArafāt — hoe goed ken jij de hadj?</p>
                 <p>Test je kennis over de voorwaarden, iḥrām, ṭawāf, Arafat, de spirituele lessen van de hadj en nog meer.</p>
             </div>
@@ -1439,67 +1379,67 @@
             <div>
                 <span class="card-tag">Nieuw</span>
                 <div class="emoji-container">🤲🏽</div>
-                <h2>Kennisquiz: Gebed</h2>
+                <h3>Kennisquiz: Gebed</h3>
                 <p class="card-subtitle">Kom tot het gebed</p>
                 <p>Test je kennis over het gebed: gebedstijden, reinheid, uitvoering en wat het gebed ongeldig maakt.</p>
             </div>
-            <div class="play-btn">Speel nu</div>
+            <div class="play-btn">Open ➔</div>
         </a>
 
         <a href="apps/ramadan-quiz/" class="card">
             <div>
                 <div class="emoji-container">🌕</div>
-                <h2>Kennisquiz: Ramadan</h2>
+                <h3>Kennisquiz: Ramadan</h3>
                 <p>Test en verrijk je kennis over de heilige maand Ramadan en het vasten: van spirituele inzichten tot praktische regelgeving.</p>
             </div>
-            <div class="play-btn">Speel Nu ➔</div>
+            <div class="play-btn">Open ➔</div>
         </a>
 
         <a href="apps/ramadan-quiz-wel-niet/" class="card">
             <div>
                 <div class="emoji-container">❓</div>
-                <h2>Kennisquiz: Geldig of verbroken?</h2>
+                <h3>Kennisquiz: Geldig of verbroken?</h3>
                 <p class="card-subtitle">Ramadan</p>
                 <p>Twijfel jij ook soms of je vasten nog geldig is? Doe nu mee met de quiz en word zeker van je zaak!</p>
             </div>
-            <div class="play-btn">Speel Nu ➔</div>
+            <div class="play-btn">Open ➔</div>
         </a>
 
         <a href="apps/ramadan-intimiteit/" class="card">
             <div>
                 <div class="emoji-container">❤️‍🔥</div>
-                <h2>Kennisquiz: Intimiteit & Vasten</h2>
+                <h3>Kennisquiz: Intimiteit & Vasten</h3>
                 <p class="card-subtitle">Ramadan</p>
                 <p>Een kennisquiz over intimiteit, reinheid en de regels rondom het vasten in Ramadan.</p>
             </div>
-            <div class="play-btn">Speel Nu ➔</div>
+            <div class="play-btn">Open ➔</div>
         </a>
 
         <a href="apps/ramadan-quiz-kids/" class="card">
             <div>
                 <span class="card-tag">Kinderen</span>
                 <div class="emoji-container">🌝</div>
-                <h2>Kennisquiz: Ramadan voor kids</h2>
+                <h3>Kennisquiz: Ramadan voor kids</h3>
                 <p>Test je kennis over de regels, geschiedenis en de spirituele betekenis van de Ramadan.</p>
             </div>
-            <div class="play-btn">Speel Nu ➔</div>
+            <div class="play-btn">Open ➔</div>
         </a>
 
         <a href="apps/ramadan-quiz-eid/" class="card">
             <div>
                 <span class="card-tag">Nieuw</span>
                 <div class="emoji-container">🌙</div>
-                <h2>Kennisquiz: ʿEid al-Fiṭr</h2>
+                <h3>Kennisquiz: ʿEid al-Fiṭr</h3>
                 <p class="card-subtitle">Feest van het Vasten</p>
                 <p>Test je kennis over ʿEid al-Fiṭr! Van de geschiedenis en het gebed tot de tradities en de ware betekenis van dit feest.</p>
             </div>
-            <div class="play-btn">Speel Nu ➔</div>
+            <div class="play-btn">Open ➔</div>
         </a>
 
         <a href="apps/ramadan-kalender/" class="card">
             <div>
                 <div class="emoji-container">🗓️</div>
-                <h2>Ramadankalender</h2>
+                <h3>Ramadankalender</h3>
                 <p>Elke dag een kleine daad van grote waarde.</p>
             </div>
             <div class="play-btn">Open ➔</div>
@@ -1510,17 +1450,17 @@
             <div>
                 <span class="card-tag">Kinderen</span>
                 <div class="emoji-container">🧭</div>
-                <h2>Ramadan Explorer</h2>
+                <h3>Ramadan Explorer</h3>
                 <p>Ontdek de Ramadan met spellen, weetjes en uitdagingen. Verzamel sterren en groei stap voor stap.</p>
             </div>
-            <div class="play-btn">Speel Nu ➔</div>
+            <div class="play-btn">Open ➔</div>
         </a>
 
         <a href="apps/de-waardevolle-tien/" class="card">
             <div>
                 <span class="card-tag">Nieuw</span>
                 <div class="emoji-container">🌗</div>
-                <h2>De Waardevolle Tien</h2>
+                <h3>De Waardevolle Tien</h3>
                 <p class="card-subtitle">Op zoek naar Laylatul Qadr</p>
                 <p>Hou eenvoudig je ʿibādah (erediensten) bij, zodat je doelgericht en bewust het beste uit de laatste tien nachten haalt. Mis Laylatul Qadr niet!</p>
             </div>
@@ -1531,7 +1471,7 @@
             <div>
                 <span class="card-tag">Nieuw</span>
                 <div class="emoji-container">🌟</div>
-                <h2>Laylatul Qadr Deelkaarten</h2>
+                <h3>Laylatul Qadr Deelkaarten</h3>
                 <p class="card-subtitle">Laatste 10 nachten</p>
                 <p>Deel dagelijkse kaarten met Koranverzen, hadith, du'as en dzikr voor de laatste 10 nachten van Ramadan. Als WhatsApp-bericht of downloadbare afbeelding.</p>
             </div>
@@ -1542,7 +1482,7 @@
             <div>
                 <span class="card-tag">Nieuw</span>
                 <div class="emoji-container">🌌</div>
-                <h2>De Nacht van Qadr</h2>
+                <h3>De Nacht van Qadr</h3>
                 <p class="card-subtitle">Ontdek Laylatul Qadr</p>
                 <p>Ontdek de bijzondere Nacht van Qadr (Laylatul Qadr) in deze verhalende ervaring. Leer over soera al-Qadr en meer.</p>
             </div>
@@ -1554,63 +1494,63 @@
             <div>
                 <span class="card-tag">Binnenkort</span>
                 <div class="emoji-container">🕌</div>
-                <h2>De Vijf Gebeden</h2>
+                <h3>De Vijf Gebeden</h3>
                 <p>Alles over de vijf dagelijkse gebeden: tijden, raka'at, betekenis en een interactieve quiz.</p>
             </div>
-            <div class="play-btn">In ontwikkeling ➔</div>
+            <div class="play-btn">In ontwikkeling</div>
         </div>
 
         <div class="card coming-soon">
             <div>
                 <span class="card-tag">Binnenkort</span>
                 <div class="emoji-container">📜</div>
-                <h2>Profeten in de Koran</h2>
+                <h3>Profeten in de Koran</h3>
                 <p class="card-subtitle">Interactieve tijdlijn</p>
                 <p>Ontdek de 25 profeten die worden genoemd in de Koran via een interactieve tijdlijn met extra achtergrond en Koranverwijzingen.</p>
             </div>
-            <div class="play-btn">In ontwikkeling ➔</div>
+            <div class="play-btn">In ontwikkeling</div>
         </div>
 
         <div class="card coming-soon">
             <div>
                 <span class="card-tag">Binnenkort</span>
                 <div class="emoji-container">📘</div>
-                <h2>Tajweed: De Basisregels</h2>
+                <h3>Tajweed: De Basisregels</h3>
                 <p class="card-subtitle">Interactief leren & memoriseren</p>
                 <p>Leer de basisregels van tajweed met overzicht, flashcards, quiz en lesmodus. Oefen stap voor stap en bouw zekerheid op in je recitatie.</p>
             </div>
-            <div class="play-btn">In ontwikkeling ➔</div>
+            <div class="play-btn">In ontwikkeling</div>
         </div>
 
-        <div class="card card-disabled">
+        <div class="card coming-soon">
             <div>
-                <span class="card-tag card-tag-update">In ontwikkeling</span>
+                <span class="card-tag">Binnenkort</span>
                 <div class="emoji-container">🗺️</div>
-                <h2>Hadj Routekaart</h2>
+                <h3>Hadj Routekaart</h3>
                 <p class="card-subtitle">De manāsik in kaart</p>
                 <p>Een interactieve kaart van de heilige plaatsen en rituelen van de hadj — van Miqāt tot Ṭawāf al-Wadāʿ.</p>
             </div>
-            <div class="play-btn">Binnenkort ➔</div>
+            <div class="play-btn">In ontwikkeling</div>
         </div>
 
         <div class="card coming-soon">
             <div>
                 <span class="card-tag">Binnenkort</span>
                 <div class="emoji-container">🕋</div>
-                <h2>De Hadj</h2>
+                <h3>De Hadj</h3>
                 <p>Alles over de bedevaart naar Mekka en de rituelen van de vijfde zuil van de islam.</p>
             </div>
-            <div class="play-btn">In ontwikkeling ➔</div>
+            <div class="play-btn">In ontwikkeling</div>
         </div>
 
         <div class="card coming-soon">
             <div>
                 <span class="card-tag">Binnenkort</span>
                 <div class="emoji-container">🏛️</div>
-                <h2>Geschiedenis van de islam</h2>
+                <h3>Geschiedenis van de islam</h3>
                 <p>Een nieuw thema over belangrijke periodes, personen en gebeurtenissen uit de geschiedenis van de islam.</p>
             </div>
-            <div class="play-btn">In ontwikkeling ➔</div>
+            <div class="play-btn">In ontwikkeling</div>
         </div>
 
     </div>
@@ -1623,6 +1563,6 @@
         <a href="https://www.hetrechtepad.nl" target="_blank" rel="noopener noreferrer" class="footer-link">Bezoek ook onze website: <span class="footer-url">www.hetrechtepad.nl</span></a>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=3"></script>
 </body>
 </html>

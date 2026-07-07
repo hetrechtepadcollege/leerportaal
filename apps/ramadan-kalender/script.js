@@ -26,8 +26,15 @@ function trackEvent(path, title) {
 let messages = [...FALLBACK_MESSAGES];
 let activeDay = null;
 
-const openedDays = new Set(JSON.parse(localStorage.getItem("ramadan-opened-days") || "[]"));
-const completedDays = new Set(JSON.parse(localStorage.getItem("ramadan-completed-days") || "[]"));
+function lsGet(key, fallback) {
+  try { const v = localStorage.getItem(key); return v !== null ? JSON.parse(v) : fallback; } catch { return fallback; }
+}
+function lsSet(key, val) {
+  try { localStorage.setItem(key, JSON.stringify(val)); } catch {}
+}
+
+const openedDays = new Set(lsGet("ramadan-opened-days", []));
+const completedDays = new Set(lsGet("ramadan-completed-days", []));
 
 function parseLocalDate(dateString) {
   const [year, month, day] = dateString.split("-").map(Number);
@@ -50,8 +57,8 @@ function isDayUnlocked(day) {
 }
 
 function saveState() {
-  localStorage.setItem("ramadan-opened-days", JSON.stringify([...openedDays]));
-  localStorage.setItem("ramadan-completed-days", JSON.stringify([...completedDays]));
+  lsSet("ramadan-opened-days", [...openedDays]);
+  lsSet("ramadan-completed-days", [...completedDays]);
 }
 
 function renderProgress() {

@@ -150,7 +150,13 @@ document.getElementById('info-panel').addEventListener('touchend', e => {
   if (diff > 60) closePanel();
 }, { passive: true });
 
-// Expose to HTML onclick attributes
-window.toggleRoute = toggleRoute;
-window.filterDay = filterDay;
-window.closePanel = closePanel;
+// Knoppen koppelen (geen inline handlers i.v.m. CSP)
+document.querySelectorAll('.route-btn').forEach(btn => {
+  btn.addEventListener('click', () => toggleRoute(btn, btn.dataset.route === 'true'));
+});
+document.querySelectorAll('.day-btn').forEach(btn => {
+  const raw = btn.dataset.day;
+  const day = raw === 'all' ? 'all' : Number(raw);
+  btn.addEventListener('click', () => filterDay(btn, day));
+});
+document.querySelector('.panel-close').addEventListener('click', closePanel);

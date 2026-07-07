@@ -420,16 +420,16 @@ const questions = [
     },
     {
         type: "scenario",
-        category: "Gebedstijden",
+        category: "Reizigersgebed",
         scenario: "Nadia reist met de auto van Rotterdam naar Groningen, een afstand van ruim 220 km. Ze twijfelt of ze haar ʿAṣr-gebed (namiddaggebed) mag inkorten — qaṣr (het inkorten van het gebed van 4 naar 2 rakʿāt — gebedseenheden) — tijdens de reis.",
-        question: "Mag Nadia haar gebed inkorten (qaṣr) tijdens deze reis?",
+        question: "Wat geldt voor Nadia met betrekking tot qaṣr tijdens deze reis?",
         answers: [
             { text: "A) Nee, qaṣr (het inkorten) is alleen buiten Nederland toegestaan", correct: false },
-            { text: "B) Ja, de minimale reisafstand voor qaṣr (het inkorten) is 92 km en Nadia reist ruim verder", correct: true },
+            { text: "B) Ja, qaṣr is voor haar wājib (verplicht): de minimale reisafstand van 92 km is ruimschoots overschreden", correct: true },
             { text: "C) Nee, qaṣr (het inkorten) is alleen voor mannen", correct: false }
         ],
-        uitleg: "Qaṣr (het inkorten van een farḍ-gebed — verplicht gebed — van 4 rakʿāt naar 2 rakʿāt) is toegestaan wanneer men een reisafstand van minimaal 92 km (48 mijl) aflegt. Nadia's reis van Rotterdam naar Groningen is ruim 220 km en overschrijdt deze grens ruimschoots. Qaṣr is voor haar dus toegestaan.",
-        source: "N2_BSI_GP_FINAL.pdf p.14"
+        uitleg: "Qaṣr (het inkorten van een farḍ-gebed — verplicht gebed — van 4 rakʿāt naar 2 rakʿāt) is wājib (verplicht) voor reizigers die een afstand van minimaal 92 km (48 mijl) afleggen. Nadia's reis van Rotterdam naar Groningen is ruim 220 km en overschrijdt deze grens ruimschoots. Qaṣr is voor haar dus niet slechts toegestaan — het is verplicht.",
+        source: "N2_BSI_GP_FINAL.pdf p.14-15"
     },
     {
         type: "scenario",
@@ -469,8 +469,223 @@ const questions = [
         ],
         uitleg: "Wanneer men een sajdah-vers (grondbuigingvers) reciteert of hoort, is sujūd al-tilāwah (grondbuiging bij Koranrecitatie) wājib (essentieel/verplicht). Men onderbreekt de recitatie en verricht één grondbuiging als eerbetoon aan Allah. Het opzettelijk weglaten hiervan is zondig. Fatimah had sujūd al-tilāwah moeten verrichten.",
         source: "N2_BSI_GP_FINAL.pdf p.26"
+    },
+
+    // --- Nieuwe scenario-vragen (21–28) ---
+    {
+        type: "scenario",
+        category: "Gebedstijden",
+        scenario: "Mustafa heeft zijn Fajr-gebed (ochtendgebed) gemist. Hij wil het direct inhalen, maar op dat moment begint de zon net op te komen. Hij overweegt het gebed toch nu te verrichten.",
+        question: "Mag Mustafa zijn gemiste Fajr-gebed inhalen terwijl de zon opkomt?",
+        answers: [
+            { text: "A) Ja, een gemist gebed mag altijd direct worden ingehaald", correct: false },
+            { text: "B) Nee, het inhalen van gemiste gebeden (qaḍā) is verboden op de drie verboden tijdstippen — wacht tot de zon volledig op is", correct: true },
+            { text: "C) Ja, want het gaat om een verplicht gebed en niet om een vrijwillig gebed", correct: false }
+        ],
+        uitleg: "Qaḍā — het inhalen van gemiste farḍ-gebeden — is niet toegestaan op de drie verboden tijdstippen: bij zonsopkomst, bij zonsondergang en op het islamitische middaguur (zawāl). Mustafa moet wachten totdat de zon volledig is opgekomen voordat hij zijn Fajr inhaalt.",
+        source: "BSI_N1.pdf p.53, 126"
+    },
+    {
+        type: "scenario",
+        category: "Gebedstijden",
+        scenario: "Hamza heeft zijn ʿAṣr-gebed (namiddaggebed) uitgesteld. Wanneer hij het eindelijk wil verrichten, is de zon al aan het ondergaan en kleurt ze oranje. Hij vraagt zich af of zijn gebed nog geldig is.",
+        question: "Is het ʿAṣr-gebed van Hamza geldig als hij het verricht terwijl de zon ondergaat?",
+        answers: [
+            { text: "A) Nee, alle gebeden zijn verboden bij zonsondergang — hij moet het inhalen als qaḍā", correct: false },
+            { text: "B) Ja, het actuele ʿAṣr-gebed mag nog worden verricht bij zonsondergang — maar het onnodig uitstellen was afkeurenswaardig", correct: true },
+            { text: "C) Nee, ʿAṣr vervalt zodra de zon begint te kleuren", correct: false }
+        ],
+        uitleg: "Bij zonsondergang zijn alle gebeden in principe verboden — met één uitzondering: wie het actuele ʿAṣr-gebed nog niet heeft verricht, mag dit alsnog verrichten terwijl de zon ondergaat. Het gebed is geldig. Het onnodig uitstellen tot dit moment is echter afkeurenswaardig. Hamza had zijn ʿAṣr eerder moeten verrichten.",
+        source: "BSI_N1.pdf p.49, 53"
+    },
+    {
+        type: "scenario",
+        category: "Soenna & nafl",
+        scenario: "Yusuf arriveert bij de moskee tijdens de vrijdagse khuṭbah (preek). Omdat hij de tahiyyat al-masjid (begroetingsgebed van de moskee) wil verrichten, gaat hij zitten en begint hij twee rakʿāt (gebedseenheden) te bidden.",
+        question: "Mag Yusuf een nafl-gebed verrichten terwijl de khuṭbah (preek) aan de gang is?",
+        answers: [
+            { text: "A) Ja, de tahiyyat al-masjid is verplicht en gaat voor op de khuṭbah", correct: false },
+            { text: "B) Nee, het is verboden nafl te bidden tijdens de khuṭbah (preek)", correct: true },
+            { text: "C) Ja, maar alleen als hij stil en zittend bidt zonder anderen te storen", correct: false }
+        ],
+        uitleg: "Het verrichten van nafl-gebeden tijdens de khuṭbah (vrijdagpreek) is verboden. Wie de moskee binnenkomt terwijl de khuṭbah al begonnen is, gaat direct zitten en luistert. Yusuf had geen gebed mogen beginnen.",
+        source: "N2_BSI_GP_FINAL.pdf p.4"
+    },
+    {
+        type: "scenario",
+        category: "Soenna & nafl",
+        scenario: "Aisha bidt haar soenna-gebed na Ẓuhr zittend op een stoel, zonder dat ze ziek of moe is. Ze vraagt zich af of dit geldig is.",
+        question: "Is het toegestaan om een soenna-gebed zittend te verrichten zonder geldige reden?",
+        answers: [
+            { text: "A) Nee, soenna-gebeden moeten altijd staand worden verricht", correct: false },
+            { text: "B) Ja, nafl en soenna-gebeden mogen zittend worden verricht, maar staand bidden heeft de voorkeur", correct: true },
+            { text: "C) Ja, maar de beloning is dan de helft van een staand gebed", correct: false }
+        ],
+        uitleg: "Het is toegestaan om nafl- en soenna-gebeden zittend te verrichten, ook zonder ziekte of geldige reden. Staand bidden geniet echter de voorkeur. Aisha's gebed is geldig.",
+        source: "N2_BSI_GP_FINAL.pdf p.4-5"
+    },
+    {
+        type: "scenario",
+        category: "Sujūd al-sahw",
+        scenario: "Amina bidt haar Ẓuhr-gebed (middaggebed). Ze vergeet zowel de eerste tashahhud (de gebedsverklaring na de 2e rakʿah) als de recitatie van een soera na al-Fātiḥa in de 3e rakʿah. Ze realiseert dit pas na de salām.",
+        question: "Hoeveel sujūd al-sahw (vergissingsbuigingen) moet Amina verrichten voor deze twee vergissingen?",
+        answers: [
+            { text: "A) Vier vergissingsbuigingen — twee voor elke vergeten handeling", correct: false },
+            { text: "B) Twee vergissingsbuigingen — twee sujūd al-sahw volstaan voor alle vergissingen in één gebed", correct: true },
+            { text: "C) Geen — sujūd al-sahw geldt alleen als men één vergissing maakt", correct: false }
+        ],
+        uitleg: "Twee vergissingsbuigingen (sujūd al-sahw) volstaan voor meerdere vergissingen in één gebed — het maakt niet uit hoeveel wājib-handelingen men vergeten is. Amina verricht na de salām twee vergissingsbuigingen in de laatste zitting, gevolgd door een nieuwe taslīm. Meer dan twee buigingen zijn niet nodig.",
+        source: "BSI_N1.pdf p.121-122"
+    },
+    {
+        type: "scenario",
+        category: "Sujūd al-sahw",
+        scenario: "Dawud bidt zijn ʿAṣr-gebed (namiddaggebed). In de rukūʿ (kniebuiging) vergeet hij de soenna-recitatie 'Subḥāna Rabbiyal ʿAẓīm' te zeggen. Hij realiseert dit pas na de salām en vraagt zich af of hij sujūd al-sahw (vergissingsbuigingen) moet verrichten.",
+        question: "Moet Dawud sujūd al-sahw verrichten voor het vergeten van deze soenna-recitatie?",
+        answers: [
+            { text: "A) Ja, elke vergissing in het gebed vereist sujūd al-sahw", correct: false },
+            { text: "B) Nee, sujūd al-sahw geldt alleen bij het vergeten van een wājib-handeling — niet bij het vergeten van een soenna", correct: true },
+            { text: "C) Ja, maar alleen als hij het meerdere keren in hetzelfde gebed vergeten is", correct: false }
+        ],
+        uitleg: "Sujūd al-sahw (vergissingsbuigingen) is uitsluitend wājib (verplicht) bij het vergeten van een wājib-handeling in het gebed. Het vergeten van een soenna-handeling — zoals de recitatie 'Subḥāna Rabbiyal ʿAẓīm' in de rukūʿ — vereist geen sujūd al-sahw. Dawud hoeft niets extra's te doen.",
+        source: "BSI_N1.pdf p.121"
+    },
+    {
+        type: "scenario",
+        category: "Gemiste gebeden",
+        scenario: "Hasan was ernstig ziek en heeft daardoor zes gebeden achter elkaar gemist: ʿAṣr, Maghrib, ʿIshā, Fajr, Ẓuhr en ʿAṣr. Nu hij beter is, wil hij ze inhalen. Een vriend zegt dat hij ze per se in volgorde moet inhalen.",
+        question: "Is Hasan verplicht zijn zes gemiste gebeden in volgorde in te halen?",
+        answers: [
+            { text: "A) Ja, de volgorde is altijd verplicht bij het inhalen van gemiste gebeden", correct: false },
+            { text: "B) Nee, wie vijf of meer gebeden heeft gemist is geen Ṣāḥib al-tartīb — de volgorde is dan niet langer verplicht", correct: true },
+            { text: "C) Ja, maar alleen als de gebeden op dezelfde dag zijn gemist", correct: false }
+        ],
+        uitleg: "De verplichting tot volgorde bij het inhalen van gebeden (Ṣāḥib al-tartīb) geldt alleen voor wie minder dan vijf gebeden heeft gemist. Wie vijf of meer gebeden mist, is geen Ṣāḥib al-tartīb meer en is de volgorde niet langer verplicht. Hasan mag zijn zes gemiste gebeden in elke volgorde inhalen.",
+        source: "BSI_N1.pdf p.126-127"
+    },
+    {
+        type: "scenario",
+        category: "Gemiste gebeden",
+        scenario: "Layla heeft haar Ẓuhr-gebed (middaggebed) gemist. Ze wil bij het inhalen ook de soenna-rakʿāt van Ẓuhr meenemen, omdat ze denkt dat een volledig gemist gebed ook de soenna omvat.",
+        question: "Is Layla verplicht de soenna-rakʿāt van Ẓuhr in te halen samen met het farḍ-gebed?",
+        answers: [
+            { text: "A) Ja, wie het farḍ-gebed mist, moet ook de bijbehorende soenna inhalen", correct: false },
+            { text: "B) Nee, soenna-gebeden hoeven niet te worden ingehaald — alleen het gemiste farḍ-gebed is verplicht in te halen", correct: true },
+            { text: "C) Ja, maar alleen de soenna vóór het gebed, niet de soenna erna", correct: false }
+        ],
+        uitleg: "Bij het inhalen van gemiste gebeden (qaḍā) is alleen het inhalen van farḍ- en wājib-gebeden verplicht. Soenna-gebeden hoeven niet te worden ingehaald — met uitzondering van de soenna van Fajr, die vóór zawāl (het middaguur) nog kan worden ingehaald. Layla hoeft alleen haar Ẓuhr-farḍ in te halen.",
+        source: "BSI_N1.pdf p.126"
     }
 ];
+
+// --- Rotatieset scenario-vragen (uitgecommentarieerd) ---
+// Kan worden geactiveerd als vervanging of aanvulling van de bovenstaande scenario's.
+/*
+    {
+        type: "scenario",
+        category: "Reizigersgebed",
+        scenario: "Khalid is op reis van Amsterdam naar Maastricht (ruim 200 km). Hij bidt zijn Ẓuhr-gebed (middaggebed) en besluit het vrijwillig niet in te korten, omdat hij denkt dat qaṣr (het inkorten) een persoonlijke keuze is.",
+        question: "Heeft Khalid zijn Ẓuhr-gebed correct verricht?",
+        answers: [
+            { text: "A) Ja, qaṣr is een vergunning en de reiziger mag zelf kiezen", correct: false },
+            { text: "B) Nee, qaṣr is voor de reiziger wājib (verplicht) — hij had 2 rakʿāt moeten bidden", correct: true },
+            { text: "C) Ja, volledig bidden is altijd beter dan inkorten", correct: false }
+        ],
+        uitleg: "Qaṣr — het inkorten van Ẓuhr, ʿAṣr en ʿIshā van 4 naar 2 rakʿāt — is voor de reiziger wājib (verplicht), geen vrijblijvende keuze. Khalid had zijn Ẓuhr moeten inkorten. Wie de reisafstand van minimaal 92 km aflegt en zijn woonplaats heeft verlaten, is verplicht tot qaṣr.",
+        source: "N2_BSI_GP_FINAL.pdf p.14-15"
+    },
+    {
+        type: "scenario",
+        category: "Reizigersgebed",
+        scenario: "Amira is op reis en bidt haar Fajr-gebed (ochtendgebed). Ze denkt dat ze, net als bij Ẓuhr en ʿAṣr, het Fajr-gebed mag inkorten naar 1 rakʿah (gebedseenheid).",
+        question: "Mag Amira haar Fajr-gebed inkorten tijdens de reis?",
+        answers: [
+            { text: "A) Ja, qaṣr geldt voor alle vijf de verplichte gebeden", correct: false },
+            { text: "B) Nee, Fajr (2 rakʿāt) wordt niet ingekort — qaṣr geldt alleen voor Ẓuhr, ʿAṣr en ʿIshā", correct: true },
+            { text: "C) Ja, maar alleen als de reis langer duurt dan 3 dagen", correct: false }
+        ],
+        uitleg: "Qaṣr (inkorten) geldt uitsluitend voor de drie vierdelige gebeden: Ẓuhr, ʿAṣr en ʿIshā. Deze worden ingekort van 4 naar 2 rakʿāt. Fajr (2 rakʿāt) en Maghrib (3 rakʿāt) worden niet ingekort. Amira bidt haar Fajr-gebed gewoon volledig met 2 rakʿāt.",
+        source: "N2_BSI_GP_FINAL.pdf p.15"
+    },
+    {
+        type: "scenario",
+        category: "Reizigersgebed",
+        scenario: "Ibrahim is op reis en bidt mee in de congregatie achter een imam die geen reiziger is. De imam bidt het Ẓuhr-gebed volledig met 4 rakʿāt (gebedseenheden). Ibrahim denkt dat hij na 2 rakʿāt mag stoppen omdat hij reiziger is.",
+        question: "Mag Ibrahim zijn gebed beëindigen na 2 rakʿāt, omdat hij reiziger is?",
+        answers: [
+            { text: "A) Ja, de reiziger bidt altijd 2 rakʿāt, ook achter een niet-reiziger imam", correct: false },
+            { text: "B) Nee, de reiziger die bidt achter een niet-reiziger imam bidt het gebed volledig mee", correct: true },
+            { text: "C) Ja, maar hij moet wel wachten totdat de imam klaar is met de salām", correct: false }
+        ],
+        uitleg: "Wanneer een reiziger zijn gebed verricht achter een imam die geen reiziger is (een muqīm), dan volgt hij de imam volledig en bidt hij het gebed volledig mee — dus 4 rakʿāt voor Ẓuhr. Ibrahim had niet na 2 rakʿāt mogen stoppen.",
+        source: "N2_BSI_GP_FINAL.pdf p.16"
+    },
+    {
+        type: "scenario",
+        category: "Reizigersgebed",
+        scenario: "Samir is geen reiziger en bidt zijn ʿAṣr-gebed achter een imam die wel op reis is. De imam bidt qaṣr: 2 rakʿāt (gebedseenheden). Na de salām (afsluitende groet) van de imam staat Samir op om de overgebleven 2 rakʿāt bij te maken, maar een medebroeder zegt hem dat dit niet nodig is.",
+        question: "Moet Samir na de salām van de imam nog 2 rakʿāt bijmaken?",
+        answers: [
+            { text: "A) Nee, Samir heeft zijn ʿAṣr volledig verricht door mee te bidden achter de imam", correct: false },
+            { text: "B) Ja, Samir moet na de salām van de imam zelfstandig de resterende 2 rakʿāt bijmaken", correct: true },
+            { text: "C) Nee, Samir hoeft alleen de laatste rakʿah bij te maken", correct: false }
+        ],
+        uitleg: "Wanneer een niet-reiziger (muqīm) bidt achter een reiziger-imam, dan maakt hij na de salām van de imam de resterende rakʿāt zelfstandig af — zonder recitatie van een soera, omdat hij in het midden van zijn gebed zit. Samir had dus na de salām van de imam nog 2 rakʿāt moeten bijmaken.",
+        source: "N2_BSI_GP_FINAL.pdf p.16-17"
+    },
+    {
+        type: "scenario",
+        category: "Gebed voor zieken",
+        scenario: "Youssef heeft ernstige rugpijn. Elke keer dat hij probeert te staan voor zijn gebed, neemt de pijn ondraaglijk toe. Hij bidt zijn Maghrib-gebed (avondgebed) zittend op een stoel, zonder te proberen te staan.",
+        question: "Is het voor Youssef toegestaan om zijn gebed zittend te verrichten?",
+        answers: [
+            { text: "A) Nee, men moet altijd staand bidden tenzij men zich helemaal niet kan bewegen", correct: false },
+            { text: "B) Ja, wie door ziekte niet kan staan zonder ondraaglijke pijn mag zittend bidden", correct: true },
+            { text: "C) Nee, zittend bidden is alleen toegestaan bij nafl-gebeden (vrijwillige gebeden)", correct: false }
+        ],
+        uitleg: "Wie door ziekte niet kan staan — omdat het staan ondraaglijke pijn veroorzaakt, het herstel vertraagt of duizeligheid geeft — mag zijn gebed zittend verrichten. Het is wel aanbevolen om voor de openingstakbīr kort te staan als dat enigszins mogelijk is. Youssef handelt correct door zittend te bidden.",
+        source: "N2_BSI_GP_FINAL.pdf p.17-18"
+    },
+    {
+        type: "scenario",
+        category: "Gebed voor zieken",
+        scenario: "Nora ligt in het ziekenhuis na een operatie en kan niet zitten. De verpleegkundige legt haar op haar rug richting het plafond. Nora vraagt zich af of ze haar gebed moet uitstellen totdat ze weer kan zitten.",
+        question: "Wat moet Nora doen als ze niet kan zitten?",
+        answers: [
+            { text: "A) Het gebed uitstellen totdat ze weer kan zitten of staan", correct: false },
+            { text: "B) Het gebed liggend op haar rug verrichten, met het gezicht richting de qiblah (gebedsrichting)", correct: true },
+            { text: "C) Alleen de verplichte gebeden uitstellen; soenna-gebeden mag ze ook liggend verrichten", correct: false }
+        ],
+        uitleg: "Wie niet kan zitten, verricht zijn gebed liggend op zijn rug — met het gezicht en de voeten richting de qiblah (gebedsrichting), zodat het hoofd in de richting van de qiblah wijst. Voor rukūʿ (kniebuiging) en sujūd (grondbuiging) maakt men gebaren met het hoofd, waarbij het hoofd voor sujūd iets dieper buigt dan voor rukūʿ. Nora hoeft het gebed niet uit te stellen.",
+        source: "N2_BSI_GP_FINAL.pdf p.18-19"
+    },
+    {
+        type: "scenario",
+        category: "Soenna & nafl",
+        scenario: "Fatima heeft haar farḍ-ʿAṣr-gebed (verplicht namiddaggebed) zojuist verricht. Ze wil nog twee rakʿāt (gebedseenheden) extra bidden als nafl (vrijwillig gebed) vóór het Maghrib-gebed (avondgebed). Een vriendin zegt haar dat dit niet mag.",
+        question: "Mag Fatima nafl-gebeden verrichten tussen het farḍ-ʿAṣr-gebed en het farḍ-Maghrib-gebed?",
+        answers: [
+            { text: "A) Ja, nafl bidden is altijd toegestaan zolang het farḍ-gebed is verricht", correct: false },
+            { text: "B) Nee, na het farḍ-ʿAṣr-gebed is het verboden nafl te verrichten totdat het farḍ-Maghrib-gebed is begonnen", correct: true },
+            { text: "C) Ja, maar alleen als men minder dan 4 rakʿāt bidt", correct: false }
+        ],
+        uitleg: "Een van de verboden tijdstippen voor nafl-gebeden is de periode na het farḍ-ʿAṣr-gebed totdat het farḍ-Maghrib-gebed aanvangt. In deze periode zijn vrijwillige gebeden niet toegestaan. Fatima's vriendin heeft gelijk: zij mag geen nafl bidden tussen ʿAṣr en Maghrib.",
+        source: "N2_BSI_GP_FINAL.pdf p.3-4"
+    },
+    {
+        type: "scenario",
+        category: "Gemiste gebeden",
+        scenario: "Tariq heeft door ziekte zijn Ẓuhr-gebed (middaggebed) en ʿAṣr-gebed (namiddaggebed) gemist. Het is nu tijd voor Maghrib (avondgebed). Hij overweegt eerst Maghrib te bidden en daarna de twee gemiste gebeden in te halen.",
+        question: "In welke volgorde moet Tariq zijn gebeden verrichten?",
+        answers: [
+            { text: "A) Eerst Maghrib, daarna Ẓuhr en ʿAṣr inhalen — de volgorde maakt niet uit", correct: false },
+            { text: "B) Eerst Ẓuhr en ʿAṣr inhalen (qaḍā), dan pas Maghrib verrichten", correct: true },
+            { text: "C) Alleen Ẓuhr inhalen; ʿAṣr vervalt na het verstrijken van de tijd", correct: false }
+        ],
+        uitleg: "Wie minder dan vijf gebeden heeft gemist, is een Ṣāḥib al-tartīb: hij moet de gemiste gebeden in volgorde inhalen vóór het actuele gebed. Tariq heeft Ẓuhr en ʿAṣr gemist — dat zijn twee gebeden. Hij moet eerst Ẓuhr (qaḍā) en daarna ʿAṣr (qaḍā) inhalen, en vervolgens pas Maghrib verrichten. Gemiste farḍ-gebeden vervallen niet.",
+        source: "BSI_N1.pdf p.126-127"
+    },
+*/
 
 // Reserve-set (niet actief in de quiz)
 const inactiveQuestionBank = [
@@ -751,7 +966,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const websiteUrl = window.location.href;
             const uitnodiging = `As-Salām ʿAlaykum! Ik heb net een leuke kennisquiz over het gebed gedaan. Wil jij je kennis ook testen? Hier vind je de quiz: ${websiteUrl}`;
             const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(uitnodiging)}`;
-            window.open(whatsappUrl, "_blank");
+            window.open(whatsappUrl, "_blank", "noopener,noreferrer");
             trackEvent("gebed-quiz/gedeeld-whatsapp", "Kennisquiz Gebed gedeeld via WhatsApp");
         });
     }
@@ -814,10 +1029,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (categoryBadge) categoryBadge.innerText = getCategoryLabel(currentIdx);
 
-        currentQuestion.answers.forEach((answer) => {
+        const LETTERS = ['A', 'B', 'C', 'D', 'E'];
+        currentQuestion.answers.forEach((answer, i) => {
             const button = document.createElement("button");
-            button.innerText = answer.text;
+            const ltr = document.createElement("span");
+            ltr.className = "btn-letter";
+            ltr.textContent = LETTERS[i] || String(i + 1);
+            const txt = document.createElement("span");
+            txt.className = "btn-text";
+            txt.textContent = answer.text.replace(/^[A-E]\)\s*/, '');
+            button.appendChild(ltr);
+            button.appendChild(txt);
             button.classList.add("btn");
+            button.style.cssText = `animation: optionIn 0.28s ${0.04 + i * 0.055}s ease both`;
+            button.addEventListener('animationend', () => { button.style.animation = ''; }, { once: true });
             button.onclick = () => selectAnswer(button, answer.correct);
             btnContainer.appendChild(button);
         });
@@ -826,7 +1051,7 @@ document.addEventListener("DOMContentLoaded", () => {
         characterImg.classList.remove("fade-in-element", "celebrate", "shake");
         void qTextElement.offsetWidth;
         void characterImg.offsetWidth;
-        characterImg.src = "images/mw-neutral.png";
+        characterImg.src = "images/mw-neutral.webp";
         qTextElement.classList.add("fade-in-element");
         characterImg.classList.add("fade-in-element");
     }
@@ -846,7 +1071,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (isCorrect) {
             btn.classList.add("correct");
-            characterImg.src = "images/mw-happy.png";
+            characterImg.src = "images/mw-happy.webp";
             characterImg.classList.add("celebrate");
             if (correctSound) {
                 correctSound.currentTime = 0;
@@ -859,7 +1084,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             btn.classList.add("wrong");
             firstTry = false;
-            characterImg.src = "images/mw-thinking.png";
+            characterImg.src = "images/mw-thinking.webp";
             characterImg.classList.remove("shake");
             void characterImg.offsetWidth;
             characterImg.classList.add("shake");
@@ -882,7 +1107,7 @@ document.addEventListener("DOMContentLoaded", () => {
         qTextElement.innerText = "Māshā Allāh! Je hebt de Kennisquiz Gebed afgerond.";
         scoreText.innerHTML = `Eindscore: ${score} van de ${activeQuestions.length}<br><br>Moge Allah ons allen helpen ons gebed te onderhouden met aandacht, eerbiedigheid en toewijding. Āmīn!`;
         resultContainer.classList.remove("hide");
-        characterImg.src = "images/mw-dua.png";
+        characterImg.src = "images/mw-dua.webp";
         characterImg.classList.add("end");
 
         if (typeof confetti === "function") {
