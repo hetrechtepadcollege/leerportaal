@@ -8,7 +8,7 @@ export const gebeden: Gebed[] = [
     betekenis: 'Het ochtendgebed',
     emoji: '🌙',
     tijd:
-      'Van de ochtendschemering (al-ṣubḥ al-ṣādiq) tot zonsopgang. Aanbevolen: wacht tot het licht buiten flink is uitgezaaid.',
+      'Van de ochtendschemering (al-ṣubḥ al-ṣādiq) tot zonsopgang. Aanbevolen: wacht tot het licht buiten flink is toegenomen.',
     rakatItems: [
       { label: 'Soenna voor', type: 'soenna-mua', aantal: 2 },
       { label: 'Farḍ', type: 'fard', aantal: 2 },

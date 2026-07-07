@@ -42,7 +42,7 @@ export default function QuizSectie() {
                   disabled={beantwoord}
                   className={cn(
                     'px-4 py-[11px] rounded-[10px] border-[1.5px] text-[0.875rem] text-left cursor-pointer',
-                    'transition-all duration-150 font-medium font-["Plus_Jakarta_Sans",sans-serif]',
+                    'transition-all duration-150 font-medium',
                     'disabled:cursor-not-allowed',
                     showCorrect && 'border-[#1a7a45] bg-[rgba(31,120,70,0.08)] text-[#1a5c38] font-semibold',
                     showWrong && 'border-[#c0392b] bg-[rgba(200,50,50,0.07)] text-[#8b1a1a] font-semibold',
@@ -84,7 +84,7 @@ export default function QuizSectie() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
                 onClick={volgende}
-                className="mt-3.5 px-5 py-3 bg-[#1f294d] text-white border-none rounded-[10px] text-[0.875rem] font-semibold cursor-pointer transition-all duration-200 hover:bg-[#172540] hover:-translate-y-px hover:shadow-card font-['Plus_Jakarta_Sans',sans-serif]"
+                className="mt-3.5 px-5 py-3 bg-[#1f294d] text-white border-none rounded-[10px] text-[0.875rem] font-semibold cursor-pointer transition-all duration-200 hover:bg-[#172540] hover:-translate-y-px hover:shadow-card"
               >
                 {isLastVraag ? 'Quiz opnieuw starten →' : 'Volgende →'}
               </motion.button>

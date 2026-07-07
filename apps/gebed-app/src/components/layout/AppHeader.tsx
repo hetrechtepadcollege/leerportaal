@@ -1,35 +1,33 @@
-import Link from 'next/link'
-
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
-
 export default function AppHeader() {
   return (
-    <header className="w-full bg-[#1f294d] px-6 pb-4 pt-4 flex flex-col items-center gap-4">
-      <div className="flex flex-col items-center gap-3 text-center">
+    <header
+      className="w-full text-center px-5 pt-7 pb-[58px] mb-11 border-b border-hrpc-border text-hrpc-text"
+      style={{
+        backgroundImage:
+          'linear-gradient(rgba(31, 41, 77, .045) 1px, transparent 1px), linear-gradient(90deg, rgba(31, 41, 77, .045) 1px, transparent 1px)',
+        backgroundColor: '#f9f8f6',
+        backgroundSize: '48px 48px, 48px 48px, auto',
+      }}
+    >
+      <a
+        href="../../"
+        title="Terug naar Leerportaal"
+        className="inline-block mx-auto mb-10 rounded-md transition-opacity duration-200 hover:opacity-85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold focus-visible:outline-offset-[6px]"
+      >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={`${basePath}/images/HRPC-logo.png`}
+          src="/images/HRPC-logo.webp"
           alt="Het Rechte Pad College"
-          width={240}
-          height={80}
-          className="w-full max-w-[240px] h-auto"
+          className="block mx-auto h-auto opacity-90"
+          style={{ width: 'min(360px, 78vw)', filter: 'invert(1)' }}
         />
-        <div>
-          <h1 className="text-[1.8rem] font-bold text-white m-0">Het Gebed</h1>
-          <p className="mt-1 text-[0.95rem] text-white/70">
-            Ontdek en leer alles over het gebed
-          </p>
-        </div>
-      </div>
-
-      <div className="text-center mt-2">
-        <Link
-          href="../../"
-          className="inline-block text-white/70 font-semibold px-6 py-2 text-[0.85rem] no-underline transition-colors duration-200 hover:text-[#d4af37]"
-        >
-          ← Terug naar Leerportaal
-        </Link>
-      </div>
+      </a>
+      <h1 className="font-serif text-[clamp(1.5rem,5vw,2rem)] font-bold text-hrpc-text m-0 mb-[0.35rem]">
+        Het Gebed
+      </h1>
+      <p className="font-sans text-[0.9rem] text-hrpc-muted m-0">
+        Ontdek en leer alles over het gebed
+      </p>
     </header>
   )
 }

@@ -4,6 +4,7 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Het Gebed | Het Rechte Pad College',
   description: 'Ontdek en leer alles over het gebed.',
+  referrer: 'strict-origin-when-cross-origin',
   openGraph: {
     type: 'article',
     url: 'https://leer.hetrechtepadcollege.nl/apps/vijf-gebeden/',
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="nl" dir="ltr">
       <head>
+        <link rel="stylesheet" href="/fonts/fonts.css" />
         <link rel="icon" href="/icons/favicon.ico" sizes="48x48" />
         <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
         <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96" />
@@ -42,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           data-goatcounter="https://hetrechtepadcollege.goatcounter.com/count"
           async
           src="https://gc.zgo.at/count.js"
-          integrity="sha384-DGiREytotlUiLflu8vLo0vvfxKWn36pKPT1ZBhh3R+3vhwrS/4p3H9eys9Zr2bPQ"
+          integrity="sha384-2UjvVpptg4JlEVgJI2PdscrjOjPcil/4F1ZvIMJ81CShQnEDSlPI+l4PfogvTLYi"
           crossOrigin="anonymous"
         />
       </body>

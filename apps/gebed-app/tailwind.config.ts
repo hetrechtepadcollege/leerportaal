@@ -38,12 +38,13 @@ const config: Config = {
       },
       fontFamily: {
         sans: [
-          'Plus Jakarta Sans',
+          'Inter',
           '-apple-system',
           'BlinkMacSystemFont',
           'Segoe UI',
           'sans-serif',
         ],
+        serif: ['Newsreader', 'Georgia', 'serif'],
       },
       boxShadow: {
         card: '0 1px 4px rgba(31, 41, 77, 0.06), 0 4px 16px rgba(31, 41, 77, 0.07)',
