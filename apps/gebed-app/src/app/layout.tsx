@@ -5,6 +5,8 @@ export const metadata: Metadata = {
   title: 'Het Gebed | Het Rechte Pad College',
   description: 'Ontdek en leer alles over het gebed.',
   referrer: 'strict-origin-when-cross-origin',
+  // Nog niet live: niet laten indexeren. Verwijder bij live-zetting.
+  robots: { index: false, follow: false },
   openGraph: {
     type: 'article',
     url: 'https://leer.hetrechtepadcollege.nl/apps/vijf-gebeden/',
@@ -34,8 +36,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96" />
         <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
         <link rel="manifest" href="/icons/site.webmanifest" />
-        {/* CSP wordt ingesteld via serverheaders (Cloudflare / GitHub Pages configuratie),
-            niet via meta-tag — meta-tag blokkeert Next.js dev-runtime (eval, WebSocket HMR) */}
+        {/* CSP-meta wordt na de build ingevoegd door scripts/inject-csp.mjs (met hashes van
+            de inline-scripts), niet hier — een meta-CSP blokkeert de Next.js dev-runtime. */}
       </head>
       <body>
         {children}
@@ -43,9 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           data-goatcounter="https://hetrechtepadcollege.goatcounter.com/count"
           async
-          src="https://gc.zgo.at/count.js"
-          integrity="sha384-2UjvVpptg4JlEVgJI2PdscrjOjPcil/4F1ZvIMJ81CShQnEDSlPI+l4PfogvTLYi"
-          crossOrigin="anonymous"
+          src="/vendor/goatcounter/count.js"
         />
       </body>
     </html>
