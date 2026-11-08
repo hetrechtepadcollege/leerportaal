@@ -848,15 +848,7 @@ let completionTracked = false;
 let completionTrackingRequested = false;
 let completionTrackingRetries = 0;
 let quizStartTracked = false;
-const TRACK_DEBUG_ENABLED =
-    new URLSearchParams(window.location.search).get("trackdebug") === "1" ||
-    window.localStorage.getItem("gebedQuizTrackDebug") === "1";
-
 function trackEvent(path, title) {
-    if (TRACK_DEBUG_ENABLED) {
-        console.log("[Kennisquiz Gebed tracking]", { path, title });
-    }
-
     if (window.goatcounter && typeof window.goatcounter.count === "function") {
         window.goatcounter.count({
             path,

@@ -1,0 +1,5 @@
+# Beveiligingsprobleem gevonden in het leerportaal van Het Rechte Pad College?
+# Meld het ons via onderstaande contactpagina. Dank je wel!
+Contact: https://www.hetrechtepad.nl/contact
+Expires: 2027-11-08T00:00:00.000Z
+Preferred-Languages: nl, en

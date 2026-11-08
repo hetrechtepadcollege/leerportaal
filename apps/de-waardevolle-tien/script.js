@@ -452,7 +452,7 @@ document.addEventListener('keydown', (e) => {
 
 // ─── Logo fallback ───────────────────────────────────────────
 const logoImg = document.getElementById('hrpcLogo');
-logoImg.addEventListener('error', () => {
+if (logoImg) logoImg.addEventListener('error', () => {
   logoImg.classList.add('broken');
   const fallback = document.createElement('span');
   fallback.className = 'logo-fallback';
